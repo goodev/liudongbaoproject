@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_width="fill_parent" android:layout_height="55dp"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal" 
+	android:id="@+id/storeItem" android:paddingBottom="1dip"
+	android:paddingLeft="3dip" 
+	>
+ 
+ 	<LinearLayout android:layout_width="180dp" android:layout_height="55dp"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" 
+	android:id="@+id/storeItem2"
+	android:layout_gravity="center_vertical"
+	android:paddingBottom="1dip" 
+	android:layout_weight="3"
+	>
+
+		<TextView android:textSize="6sp" android:id="@+id/tmp1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:text=""/> 
+		<TextView android:id="@+id/numStreet" 
+			android:layout_gravity="center_vertical"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:paddingLeft="10dip"
+			android:textColor="#535252"
+			android:textSize="12sp"
+			android:text=""
+			 />
+		<TextView android:id="@+id/cityPro" 
+			android:layout_gravity="center_vertical"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:paddingLeft="10dip"
+			android:textColor="#535252"
+			android:textSize="12sp"
+			android:text=""
+			 /> 			
+ </LinearLayout>  
+
+	<ImageView android:id="@+id/couponIcon"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:paddingLeft="1dip"
+       android:layout_gravity="center_vertical"
+       android:src="@drawable/coupon_icon"
+       	android:layout_weight="1"
+		 />
+ 		<ImageView android:id="@+id/flyerIcon"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:paddingLeft="1dip"
+       android:layout_gravity="center_vertical"
+       android:src="@drawable/flyer_icon"
+       android:layout_weight="1"
+		 />
+ 	<TextView android:id="@+id/distance" 
+			android:layout_gravity="center_vertical"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:paddingLeft="10dip"
+			android:textColor="#535252"
+			android:textSize="12sp"
+			android:text=""
+			android:layout_weight="1"
+			 /> 
+ 
+ 
+</LinearLayout>  

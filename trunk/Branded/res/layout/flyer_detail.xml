@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/widget_flyerdetail"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:orientation="vertical"
+android:background="#FFFFFF"
+> 
+
+
+	
+	<include android:id="@+id/comm_top" layout="@layout/top" />	
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:layout_marginTop="50dp"
+	>	
+
+	<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+	android:layout_height="330dp"
+	android:layout_marginBottom="50dp"
+	 android:scrollbars="none"
+	 		android:layout_gravity="center"
+	>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:layout_centerHorizontal="true"
+	>	
+	 <HorizontalScrollView android:layout_width="fill_parent" 
+	 android:layout_height="wrap_content" 
+	 android:layout_gravity="center"
+	 >
+        <FrameLayout android:orientation="horizontal" android:layout_gravity="center"
+            android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+	<ImageView android:id="@+id/flyer_detail_img" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:scaleType="matrix"
+		android:layout_gravity="center"
+		android:layout_marginTop="0dp"
+
+
+	/>
+		<ZoomControls android:id="@+id/zoomControls"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:layout_gravity="center"
+ 		android:layout_centerInParent="true"
+        />
+		  </FrameLayout>
+    </HorizontalScrollView>
+		<TextView  
+			android:id="@+id/fbrief"
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:layout_gravity="center_horizontal"
+		    android:gravity="center_horizontal"
+		    android:textStyle="bold"
+		    android:text="" 
+		    android:textColor="#7F7F7F"/>	
+		<TextView  
+			android:id="@+id/fexpiry"
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:layout_gravity="center_horizontal"
+		    android:gravity="center_horizontal"
+		    android:textStyle="bold"
+		    android:text="" 
+		    android:textColor="#FE7430"/>	    
+	</LinearLayout>
+	</ScrollView>
+	</LinearLayout>	
+	
+	
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/widgetdetail_4"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:layout_alignParentBottom="true"
+	>
+ 			<Button android:id="@+id/pre_flyer" 
+			android:text="@string/BUTTON_PRE_FLYERS" 
+			android:layout_width="80dp" android:layout_height="wrap_content"
+			android:textStyle="bold" android:textColor="#FFFFFF"
+			android:background="@drawable/most_button"
+			android:layout_marginLeft="20dip"
+			android:layout_marginRight="10dip"
+			android:textSize="13sp"
+			/>
+			
+ 			<Button android:id="@+id/next_flyer" 
+			android:text="@string/BUTTON_NEXT_FLYERS" 
+			android:layout_width="80dp" android:layout_height="wrap_content"
+			android:textStyle="bold" android:textColor="#FFFFFF"
+			android:background="@drawable/most_button"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip"
+			android:textSize="13sp"
+			/>
+ 			<Button android:id="@+id/curr_total" 
+			android:text="1" 
+			android:layout_width="80dp" android:layout_height="wrap_content"
+			android:textStyle="bold" android:textColor="#FFFFFF"
+			android:background="@drawable/most_button"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip"
+			android:textSize="13sp"
+			/>
+	</LinearLayout>	
+</RelativeLayout>
+
