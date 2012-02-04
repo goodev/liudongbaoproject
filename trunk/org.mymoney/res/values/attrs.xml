@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="animationDuration" format="integer" />
+    <attr name="position">
+        <enum name="top" value="0" />
+        <enum name="bottom" value="1" />
+        <enum name="left" value="2" />
+        <enum name="right" value="3" />
+    </attr>
+    <attr name="handle" format="reference" />
+    <attr name="content" format="reference" />
+    <attr name="linearFlying" format="boolean" />
+    <attr name="weight" format="fraction" />
+    <attr name="openedHandle" format="reference|color" />
+    <attr name="closedHandle" format="reference|color" />
+    <attr name="maskDrawable" format="reference" />
+    <attr name="frameRate" format="integer" />
+    <attr name="animationDurationTime" format="integer" />
+    <attr name="contentWidth" format="integer" />
+    <attr name="contentHeight" format="integer" />
+    <attr name="contentPaddingLeft" format="integer" />
+    <attr name="contentPaddingRight" format="integer" />
+    <attr name="contentPaddingTop" format="integer" />
+    <attr name="contentPaddingBottom" format="integer" />
+    <attr name="batteryContentTopImage" format="reference" />
+    <attr name="batteryContentMiddleImage" format="reference" />
+    <attr name="batteryContentBottomImage" format="reference" />
+    <attr name="batteryContentLowImage" format="reference" />
+    <attr name="overlayerImage" format="reference" />
+    <attr name="currency" format="string" />
+    <attr name="totalLableTextSize" format="float" />
+    <attr name="amountLabelTextSize" format="float" />
+    <attr name="categoryOfSectorLabelTextSize" format="float" />
+    <attr name="displayOfSectorLabelTextSize" format="float" />
+    <attr name="totalLabelStr" format="string" />
+    <attr name="drawAminationDuration" format="integer" />
+    <attr name="adjustAminationDuration" format="integer" />
+    <attr name="pieCircleRadius" format="float" />
+    <attr name="pieCircleMarginTop" format="float" />
+    <attr name="totalLabelDrawInY" format="float" />
+    <attr name="categoryOfSectorLabelDrawInY" format="float" />
+    <attr name="displayOfSectorDrawInY" format="float" />
+    <attr name="indicationCenterInX" format="float" />
+    <attr name="indicationCenterInY" format="float" />
+    <attr name="indicationCircleRadius" format="float" />
+    <attr name="indicationDisclosureDrawable" format="reference" />
+    <attr name="redRate" format="float" />
+    <attr name="mBackgroundLeftImage" format="reference" />
+    <attr name="mBackgroundRightImage" format="reference" />
+    <attr name="mBackgroundMiddleImage" format="reference" />
+    <attr name="mOverGreenLeftImage" format="reference" />
+    <attr name="mOverGreenRightImage" format="reference" />
+    <attr name="mOverGreenMiddleImage" format="reference" />
+    <attr name="mOverRedLeftImage" format="reference" />
+    <attr name="mOverRedRightImage" format="reference" />
+    <attr name="mOverRedMiddleImage" format="reference" />
+    <attr name="mMaskImage" format="reference" />
+    <attr name="kbBtnWidth" format="integer" />
+    <attr name="kbBtnHeight" format="integer" />
+    <attr name="animationDsuration" format="reference" />
+    
+</resources>

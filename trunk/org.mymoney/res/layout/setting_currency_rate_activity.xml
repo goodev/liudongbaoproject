@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:background="@drawable/title_bar_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/back_btn" android:background="@drawable/common_titlebar_back_btn" android:layout_marginLeft="8.0dip" android:text="返回" style="@style/common_titlebar_btn" />
+        <TextView android:textSize="20.0dip" android:textColor="@color/white" android:ellipsize="end" android:gravity="center" android:id="@id/title_tv" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" android:layout_weight="1.0" />
+        <Button android:id="@id/titlebar_right_btn" android:background="@drawable/exchange_rate_update_button" android:layout_width="38.0dip" android:layout_height="36.0dip" android:layout_marginRight="8.0dip" style="@style/common_titlebar_btn" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/default_currency_rl" android:background="@drawable/setting_default_currency_row_stat" android:layout_width="fill_parent" android:layout_height="54.0dip">
+        <ImageView android:id="@id/default_currency_icon_iv" style="@style/main_row_stat_icon" />
+        <LinearLayout android:layout_toRightOf="@id/default_currency_icon_iv" style="@style/main_row_stat_time_ly">
+            <TextView android:textColor="#ffffffff" android:id="@id/default_currency_name_tv" style="@style/main_row_stat_time_tips" />
+            <TextView android:textColor="#ffffffff" android:id="@id/default_currency_code_tv" style="@style/main_row_stat_time_str" />
+        </LinearLayout>
+        <TextView android:textColor="#ffffffff" android:id="@id/default_currency_rate_tv" android:layout_marginTop="15.0dip" style="@style/main_row_expense_amount" />
+        <ImageView style="@style/main_row_go_detail" />
+    </RelativeLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ListView android:id="@id/currency_lv" android:layout_width="fill_parent" android:layout_height="fill_parent" android:choiceMode="singleChoice" style="@style/list_view_for_setting" />
+        <TextView android:id="@id/listview_loading_tv" android:visibility="gone" android:text="正在加载汇率数据..." style="@style/common_lv_loading_tv" />
+    </LinearLayout>
+</LinearLayout>

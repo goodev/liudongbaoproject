@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/root_rl" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <org.mymoney.ui.addtrans.ImageViewTouch android:id="@id/image_ivt" android:background="#ff000000" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/control_panel_rl" android:background="@drawable/common_float_toolbar_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:textSize="16.0sp" android:textColor="@color/white" android:gravity="right|center" android:id="@id/save_photo_btn" android:background="@null" android:layout_width="80.0dip" android:layout_height="50.0dip" android:layout_marginLeft="25.0dip" android:layout_marginRight="25.0dip" android:text="返回" android:drawableLeft="@drawable/common_return_btn" android:layout_alignParentLeft="true" />
+        <Button android:textSize="16.0sp" android:textColor="@color/white" android:gravity="right|center" android:id="@id/pick_photo_btn" android:background="@null" android:layout_width="115.0dip" android:layout_height="50.0dip" android:layout_marginLeft="25.0dip" android:layout_marginRight="25.0dip" android:text="选择照片" android:drawableLeft="@drawable/common_pick_photo_btn" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <org.mymoney.ui.widget.ZoomControls android:orientation="horizontal" android:id="@id/image_zoom_control_zc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+</RelativeLayout>

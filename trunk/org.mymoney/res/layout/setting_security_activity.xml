@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="密码保护" layout="@layout/common_titlebar" />
+    <LinearLayout android:id="@id/security_or_not_ly" android:layout_marginTop="10.0dip" style="@style/common_row_layout_top">
+        <TextView android:text="@string/password_setting" style="@style/common_row_label" />
+        <CheckBox android:layout_gravity="center_vertical" android:id="@id/security_or_not_cb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="190.0dip" style="@style/Widget.CompoundButton.CheckBox" />
+    </LinearLayout>
+    <LinearLayout android:gravity="right" android:id="@id/set_password_ly" style="@style/common_row_layout_bottom">
+        <TextView android:layout_width="287.0dip" android:layout_marginRight="13.0dip" android:text="设置密码" android:drawableRight="@drawable/go_detail" style="@style/common_row_label" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/quick_mode_or_not_ly" android:layout_marginTop="10.0dip" style="@style/common_row_layout">
+        <TextView android:text="快速记账" style="@style/common_row_label" />
+        <CheckBox android:layout_gravity="center_vertical" android:id="@id/quick_mode_or_not_cb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="190.0dip" style="@style/Widget.CompoundButton.CheckBox" />
+    </LinearLayout>
+</LinearLayout>

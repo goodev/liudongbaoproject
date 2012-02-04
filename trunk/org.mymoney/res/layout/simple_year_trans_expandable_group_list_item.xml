@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_vertical" android:id="@id/item_rl" android:background="@drawable/nav_year_trans_lv_group_item_bg" android:layout_width="fill_parent" android:layout_height="45.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0dip" android:textColor="#ff5b2201" android:gravity="left" android:layout_gravity="center_vertical" android:id="@id/month_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="月份" android:layout_centerVertical="true" style="@style/lv_item_text" />
+    <ImageView android:layout_gravity="center_vertical" android:background="@drawable/year_trans_lv_group_item_div" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+    <LinearLayout android:layout_gravity="center_vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="30.0dip" android:layout_weight="1.0">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textColor="@color/black" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="收入:" style="@style/lv_item_text" />
+            <TextView android:layout_gravity="center_vertical" android:id="@id/income_amount_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="收入总额" style="@style/lv_item_text" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textColor="@color/black" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="支出:" style="@style/lv_item_text" />
+            <TextView android:layout_gravity="center_vertical" android:id="@id/payout_amount_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="支出总额" style="@style/lv_item_text" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

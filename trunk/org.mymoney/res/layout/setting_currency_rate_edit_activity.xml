@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/common_titlebar" />
+    <LinearLayout android:id="@id/manual_or_not_ly" android:layout_marginTop="10.0dip" style="@style/common_row_layout_top">
+        <TextView android:text="手动设置" style="@style/common_row_label" />
+        <CheckBox android:layout_gravity="center_vertical" android:id="@id/manual_or_not_cb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="195.0dip" style="@style/Widget.CompoundButton.CheckBox" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/set_currency_rate_ly" android:layout_below="@id/manual_or_not_ly" style="@style/common_row_layout_bottom">
+        <TextView android:text="汇率修改" style="@style/common_row_label" />
+        <EditText android:textSize="15.0dip" android:textColor="@color/black" android:gravity="right" android:layout_gravity="center" android:id="@id/currency_rate_et" android:background="@drawable/sync_panel_et" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="210.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginBottom="2.0dip" android:hint="请输入汇率" android:singleLine="true" android:maxLength="10" android:numeric="signed|decimal" />
+    </LinearLayout>
+</LinearLayout>
