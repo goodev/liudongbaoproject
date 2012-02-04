@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="hello">Hello World</string>
+    <string name="app_name">Domino\'s Pizza</string>
+    
+    
+    <!-- Note:following several value should get from BrandedConstant.msgMap -->
+    <string name="mGPSNotAvailable">We are sorry, but your location could not obtained at this time. Please try searching by  postal code/location.</string>
+    <string name="mGPSNoPermission">You have not accepted the terms of use for the Google Location Service, or the Google Service is off.</string>
+    <string name="mGPSServiceOff">No Location source available. Both Google and GPS are off.</string>
+    <string name="mAddrNotResolved">No locations found for the postal code/address that you entered</string>
+    <string name="mNoStore">Sorry, there are no locations close to the postal code/address that you entered.</string>
+    <string name="mNoCoupon">There are currently no coupons available.</string>
+    <string name="mNoFlyer">There are currently no flyers available</string>
+	<string name="mAbout"></string>
+	<string name="mNoStoreForInput">Sorry, there are no locations close to the postal code/address that you entered.</string>
+	<string name="mNoStoreForGPS">Sorry, there are no locations close to your current location</string>
+
+	<string name="mMultiAddrFound">More than one address matched your input, please input more information" ask user to input again.</string>
+	<string name="mainTitle">Domino\'s Pizza</string>
+	<string name="mainTitleResults">Results</string>
+	<string name="mainTip">Locate Nearest Store</string>
+	<string name="mainButton1">LOCATE BY GPS</string>
+	<string name="mainButton2">LOCATE BY ADDRESS</string>
+	<string name="BUTTON_OK">OK</string>
+	<string name="BUTTON_CANCEL">CANCEL</string>
+	<string name="BUTTON_CALL">CALL</string>
+	<string name="BUTTON_DIRECTIONS">DIRECTIONS</string>
+	<string name="BUTTON_LOCALCOUPONS">LOCAL COUPONS</string>
+	<string name="BUTTON_LOCALFLYERS">LOCAL FLYERS</string>
+	<string name="BUTTON_PRE_COUPONS">Previous</string>
+	<string name="BUTTON_NEXT_COUPONS">Next</string>
+	<string name="BUTTON_PRE_FLYERS">Previous</string>
+	<string name="BUTTON_NEXT_FLYERS">Next</string>
+	<string name="store_addr">Address</string>
+	<string name="store_hours">Store Hours</string>	
+	
+	
+	<string name="find_store_title">Find a Store</string>	
+	<string name="find_store_tip1">Please enter a postal code or address</string>
+	<string name="find_store_tip2">Address format:</string>
+	<string name="find_store_tip3">number street name,city,province</string>
+	<string name="email"><u>customersfirst@dominos.ca</u></string>
+	<string name="web"><u>www.dominos.ca</u></string>
+	<string name="view_more"><u>More Details</u></string>
+
+
+	<string name="store_info">Store Information</string>
+	<string name="coupon_list_title">Coupons</string>
+	<string name="flyer_list_title">Flyers</string>
+	
+	<string name="while_retrieving_tip">Retrieving from network, please wait...</string>
+	<string  name="first_show">Thank you for downloading Domino’s Canada Mobile Coupon App. Please enjoy this exclusive offer of $4.00 off a large pizza when purchased at regular menu price. Please visit <u>http://www.dominos.ca</u> and enter promo code 4pizza to redeem this offer. Offer valid at participating Ontario locations only not valid with any other offer. No cash value. Drivers carry less than $20.00.</string>
+</resources>

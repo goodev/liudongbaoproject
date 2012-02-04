@@ -1,0 +1,70 @@
+package com.test;
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import com.branded.android.R;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.widget.Toast;
+
+public class Test extends Activity {
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        
+        grabURL("http://android.com");
+    }
+    
+    public void grabURL(String url) {
+    	new GrabURL().execute(url);
+    }
+    
+    private class GrabURL extends AsyncTask<String, Void, Void> {
+    	private final HttpClient Client = new DefaultHttpClient();
+    	private String Content;
+    	private String Error = null;
+    	private ProgressDialog Dialog = new ProgressDialog(Test.this);
+    	
+    	protected void onPreExecute() {
+    		Dialog.setMessage("Downloading source..");
+    		Dialog.show();
+    	}
+
+		protected Void doInBackground(String... urls) {
+			try {
+				HttpGet httpget = new HttpGet(urls[0]);
+				ResponseHandler<String> responseHandler = new BasicResponseHandler();
+				Content = Client.execute(httpget, responseHandler);
+			} catch (ClientProtocolException e) {
+				Error = e.getMessage();
+				cancel(true);
+			} catch (IOException e) {
+				Error = e.getMessage();
+				cancel(true);
+			}
+			
+			return null;
+		}
+		
+		protected void onPostExecute(Void unused) {
+			Dialog.dismiss();
+			if (Error != null) {
+				Toast.makeText(Test.this, Error, Toast.LENGTH_LONG).show();
+			} else {
+				Toast.makeText(Test.this, "Source: " + Content, Toast.LENGTH_LONG).show();
+			}
+		}
+    	
+    }
+}

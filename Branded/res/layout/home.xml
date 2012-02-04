@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+android:id="@+id/widget31"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:orientation="vertical"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:background="@drawable/background"
+>
+
+	<include android:id="@+id/comm_top" layout="@layout/top" />
+	<FrameLayout     
+ 	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	android:layout_gravity="center_horizontal"
+    >
+
+ 
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_horizontal"
+	    >
+	    	<TextView  
+		    android:layout_width="wrap_content" 
+		    android:layout_height="152dp" 
+		    android:gravity="bottom"
+		    android:textStyle="bold"
+		    android:textColor="#FFFFFF"
+		    android:background="@drawable/blue_square"
+		    android:text=""
+		    android:layout_marginLeft="20dp"
+		    android:layout_marginRight="20dp"
+		    android:layout_marginTop="113dp"
+		    />
+	</LinearLayout>
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_horizontal"
+	    >
+	    	<TextView  
+		    android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content" 
+		    android:layout_gravity="center_horizontal"
+		    android:background="@drawable/dominos_large_logo"
+		    android:layout_marginLeft="35dp"
+		    android:layout_marginRight="35dp"
+		    android:text=""
+		    />
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_horizontal"
+	    >
+	    	<TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+			android:gravity="center_horizontal"
+		    android:textStyle="bold"
+		    android:textColor="#FFFFFF"
+		    android:text="@string/mainTip"
+		    android:layout_marginLeft="20dp"
+		    android:layout_marginRight="20dp"
+		    android:layout_marginTop="234dp" android:textSize="17sp"/>
+ 
+	</LinearLayout>
+
+
+    </FrameLayout>
+   
+   
+    <FrameLayout
+        	android:layout_width="fill_parent"
+    		android:layout_height="fill_parent"
+			android:layout_gravity="center_horizontal"
+ 			android:layout_marginTop="0dp"
+       >
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="vertical"
+	    android:layout_width="255dp"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_horizontal"
+	    android:background="@drawable/main_bt_bkgrd"
+	    >
+
+
+	 			<Button android:text="@string/mainButton1" 
+				android:id="@+id/mainButton1" 
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:textStyle="bold" android:textColor="#FFFFFF"
+				android:background="@drawable/most_button"
+	 			android:layout_marginLeft="9dip"
+				android:layout_marginRight="9dip"				
+			    android:layout_marginTop="0dp" android:textSize="14sp"/>
+
+	 			<Button android:text="@string/mainButton2" 
+				android:id="@+id/mainButton2" 
+				android:layout_width="fill_parent" android:layout_height="52dp"
+				android:textStyle="bold" android:textColor="#FFFFFF"
+				android:background="@drawable/most_button"
+	 			android:layout_marginLeft="9dip"
+				android:layout_marginRight="9dip"
+				android:textSize="14sp"
+				/>
+	</LinearLayout>	
+
+		</FrameLayout>
+		
+</LinearLayout>

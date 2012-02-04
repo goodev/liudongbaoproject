@@ -1,0 +1,131 @@
+<baStoreList>
+	<count>9</count>
+	<list>
+		<bastoreinfo>
+			<sid>72</sid>
+			<sn>Dominos Pizza -10285</sn>
+			<city>Mississauga</city>
+			<prov>ON</prov>
+			<ctry>CA</ctry>
+			<addr>5920 Turney Drive</addr>
+			<ps>L5M 2R8</ps>
+			<pn>905-567-7777</pn>
+			<lat>43.580475</lat>
+			<lon>-79.726711</lon>
+			<cc>2</cc>
+			<fc>1</fc>
+		</bastoreinfo>
+		<bastoreinfo>
+			<sid>73</sid>
+			<sn>Dominos Pizza -10295</sn>
+			<city>Mississauga</city>
+			<prov>ON</prov>
+			<ctry>CA</ctry>
+			<addr>2560 SHEPARD AVE. #8</addr>
+			<ps>L5A 4C8</ps>
+			<pn>905-270-3030</pn>
+			<lat>43.580508</lat>
+			<lon>-79.6139</lon>
+			<cc>2</cc>
+			<fc>1</fc>
+		</bastoreinfo>
+		<bastoreinfo>
+			<sid>74</sid>
+			<sn>Dominos Pizza -10344</sn>
+			<city>Mississauga</city>
+			<prov>ON</prov>
+			<ctry>CA</ctry>
+			<addr>6750 Winston Churchill Blvd.</addr>
+			<ps>L5N 4C4</ps>
+			<pn>905-824-0300</pn>
+			<lat>43.584221</lat>
+			<lon>-79.765728</lon>
+			<cc>2</cc>
+			<fc>1</fc>
+		</bastoreinfo>
+		<bastoreinfo>
+			<sid>75</sid>
+			<sn>Dominos Pizza -10346</sn>
+			<city>Mississauga</city>
+			<prov>ON</prov>
+			<ctry>CA</ctry>
+			<addr>3405 Glen Erin Dr.</addr>
+			<ps>L5L 3S2</ps>
+			<pn>905-569-9900</pn>
+			<lat>43.5376</lat>
+			<lon>-79.686981</lon>
+			<cc>2</cc>
+			<fc>1</fc>
+		</bastoreinfo>
+		<bastoreinfo>
+			<sid>76</sid>
+			<sn>Dominos Pizza -10347</sn>
+			<city>Mississauga</city>
+			<prov>ON</prov>
+			<ctry>CA</ctry>
+			<addr>4040 Creditview Road</addr>
+			<ps>L5C 3Y8</ps>
+			<pn>905-803-9000</pn>
+			<lat>43.569257</lat>
+			<lon>-79.665927</lon>
+			<cc>2</cc>
+			<fc>1</fc>
+		</bastoreinfo>
+		<bastoreinfo>
+			<sid>77</sid>
+			<sn>Dominos Pizza -10352</sn>
+			<city>Mississauga</city>
+			<prov>ON</prov>
+			<ctry>CA</ctry>
+			<addr>1575 Clarkson Road North</addr>
+			<ps>L5J 2X1</ps>
+			<pn>905-855-9000</pn>
+			<lat>43.528225</lat>
+			<lon>-79.638864</lon>
+			<cc>2</cc>
+			<fc>1</fc>
+		</bastoreinfo>
+		<bastoreinfo>
+			<sid>78</sid>
+			<sn>Dominos Pizza -10400</sn>
+			<city>Mississauga</city>
+			<prov>ON</prov>
+			<ctry>CA</ctry>
+			<addr>645 Lakeshore Road E</addr>
+			<ps>L5G 1J5</ps>
+			<pn>905-891-7878</pn>
+			<lat>43.569498</lat>
+			<lon>-79.566641</lon>
+			<cc>2</cc>
+			<fc>1</fc>
+		</bastoreinfo>
+		<bastoreinfo>
+			<sid>79</sid>
+			<sn>Dominos Pizza -10402</sn>
+			<city>Mississauga</city>
+			<prov>ON</prov>
+			<ctry>CA</ctry>
+			<addr>801 Matheson Blvd. #6</addr>
+			<ps>L5V 2N6</ps>
+			<pn>905-755-0596</pn>
+			<lat>43.607926</lat>
+			<lon>-79.690486</lon>
+			<cc>2</cc>
+			<fc>1</fc>
+		</bastoreinfo>
+		<bastoreinfo>
+			<sid>80</sid>
+			<sn>Dominos Pizza -10278</sn>
+			<city>Oakville</city>
+			<prov>ON</prov>
+			<ctry>CA</ctry>
+			<addr>380 Iroquois Shore Road</addr>
+			<ps>L6H 1M4</ps>
+			<pn>905-844-0030</pn>
+			<lat>43.465434</lat>
+			<lon>-79.684713</lon>
+			<cc>2</cc>
+			<fc>1</fc>
+		</bastoreinfo>
+	</list>
+</baStoreList>

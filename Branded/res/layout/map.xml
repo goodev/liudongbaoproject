@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    >
+	    <include android:id="@+id/comm_top" layout="@layout/top" />
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:paddingTop="50dp"
+	>
+	
+	
+	
+	<com.branded.android.view.StoreMapView
+		android:id="@+id/map" android:enabled="true"
+		android:apiKey="0MxsVHvyyN3VuwRzeMheFSeUvE_mS0pXaSyLgzA"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:clickable="true" android:keepScreenOn="true"
+		android:focusableInTouchMode="true" android:focusable="true"
+		android:drawingCacheQuality="auto"
+		 />
+	<RelativeLayout android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content">
+		<Button android:text="Satellite" android:id="@+id/SatelliteMode"
+			android:layout_width="70dip" android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:background="#BFFFFFFF"
+			/>
+		<Button android:text="Map" android:id="@+id/NormalMode"
+			android:layout_width="50dip" android:layout_height="wrap_content"
+			android:layout_toLeftOf="@id/SatelliteMode" 
+			android:layout_alignTop="@id/SatelliteMode"
+			android:background="#BFFFFFFF"
+
+			/>
+	</RelativeLayout>
+
+
+</FrameLayout>
+</RelativeLayout>

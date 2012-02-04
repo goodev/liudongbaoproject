@@ -1,0 +1,21 @@
+
+%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;D:\Program Files\TortoiseSVN\bin;d:\Program Files\IDM Computer Solutions\UltraEdit-32;D:\Program Files\Java\jdk1.6.0_10\bin
+
+keytool -list -alias androiddebugkey -keystore F:\work\android\Branded\debug.keystore -storepass android -keypass android
+
+androiddebugkey, 2010-6-4, PrivateKeyEntry,
+»œ÷§÷∏Œ∆ (MD5)£∫ 3F:D5:77:3B:D0:E3:FD:1A:4F:33:E1:6F:EA:34:E1:A9
+
+
+http://code.google. com/android/maps-api-signup.html
+0sSMiqRjwgifCwsCB0bWgrwA5ddgVyZL7jA6qdw
+
+
+<com.google.android.maps.MapView
+                 android:layout_width="fill_parent"
+                 android:layout_height="fill_parent"
+                 android:apiKey="0sSMiqRjwgifCwsCB0bWgrwA5ddgVyZL7jA6qdw"
+                 />
+
+
+
