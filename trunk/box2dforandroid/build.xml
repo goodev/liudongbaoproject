@@ -1,0 +1,7 @@
+<project name="box2dforandroid" basedir="." default="all">
+	<target name="all">
+		<copy todir="./libs/armeabi/">
+			<fileset file="./libs/lib*.so"></fileset>
+		</copy>
+	</target>	
+</project>
