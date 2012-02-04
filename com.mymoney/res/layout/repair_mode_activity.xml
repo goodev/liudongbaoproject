@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="20.0dip" android:textColor="#ffa32109" android:gravity="center" android:layout_gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="系统发生错误,请备份数据!" />
+        <LinearLayout android:id="@id/setting_sync_backup_ly" android:layout_marginTop="10.0dip" style="@style/common_row_layout_top">
+            <TextView android:text="备份数据" style="@style/common_row_label" />
+            <TextView android:text="点击进入备份和恢复数据界面" style="@style/common_row_default_item_name" />
+            <ImageView android:layout_gravity="center_vertical" style="@style/go_detail" />
+        </LinearLayout>
+        <LinearLayout style="@style/common_row_layout_bottom">
+            <TextView android:text="说明 " style="@style/common_row_label" />
+            <TextView android:textSize="12.0dip" android:textColor="@color/black" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="先备份数据，卸载并重新安装随手记后再恢复数据，如有其它问题，请到论坛反馈(http://www.feidee.com/service/)。" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

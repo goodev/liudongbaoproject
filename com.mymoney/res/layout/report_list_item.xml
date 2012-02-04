@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_vertical" android:id="@id/item_rl" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/lv_item"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/icon_iv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" />
+    <RelativeLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:layout_marginTop="3.0dip" android:layout_marginBottom="2.0dip" android:layout_weight="1.0">
+        <TextView android:gravity="left" android:id="@id/name_tv" android:layout_width="80.0dip" android:layout_height="wrap_content" android:layout_alignParentLeft="true" style="@style/lv_item_text" />
+        <TextView android:gravity="right" android:id="@id/amount_tv" android:layout_width="130.0dip" android:layout_height="wrap_content" android:layout_alignParentRight="true" style="@style/lv_item_text" />
+        <TextView android:gravity="right" android:layout_gravity="center_vertical" android:id="@id/count_tv" android:visibility="gone" android:layout_width="60.0dip" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_centerVertical="true" style="@style/lv_item_text" />
+        <com.mymoney.ui.widget.ReportBarView android:id="@id/amount_rbv" android:layout_width="290.0dip" android:layout_height="12.0dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <ImageView android:layout_gravity="right|center" android:id="@id/go_detail_iv" android:background="@drawable/common_list_item_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="8.0dip" />
+</LinearLayout>

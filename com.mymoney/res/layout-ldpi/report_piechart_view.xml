@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="280.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:animationChart="http://schemas.android.com/apk/res/com.mymoney">
+    <org.achartengine.chart.AnimationPieChartForMymoney android:id="@id/chartView" android:layout_width="fill_parent" android:layout_height="280.0px" animationChart:maskDrawable="@drawable/mask_piechartformymoney" animationChart:frameRate="30" animationChart:currency="￥" animationChart:totalLableTextSize="15.0" animationChart:amountLabelTextSize="14.0" animationChart:categoryOfSectorLabelTextSize="13.0" animationChart:displayOfSectorLabelTextSize="11.0" animationChart:totalLabelStr="总计:" animationChart:drawAminationDuration="1000" animationChart:adjustAminationDuration="1000" animationChart:pieCircleRadius="105.0" animationChart:pieCircleMarginTop="21.0" animationChart:totalLabelDrawInY="116.0" animationChart:categoryOfSectorLabelDrawInY="245.0" animationChart:displayOfSectorDrawInY="260.0" animationChart:indicationCenterInX="195.0" animationChart:indicationCenterInY="248.0" animationChart:indicationCircleRadius="8.0" animationChart:indicationDisclosureDrawable="@drawable/pie_indication_disclosure"
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:animationChart="http://schemas.android.com/apk/res/com.mymoney" />
+</LinearLayout>

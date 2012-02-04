@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/common_titlebar" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:background="@drawable/copyright_about_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textStyle="bold" android:textColor="#ff7b2910" android:id="@id/product_version_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="265.0px" android:layout_marginTop="305.0px" />
+            <LinearLayout android:id="@id/friend_link_ly" android:layout_marginTop="70.0dip" style="@style/friend_link_ly">
+                <TextView android:id="@id/friend_link_tv" style="@style/friend_link_tv" />
+            </LinearLayout>
+            <LinearLayout style="@style/about_item_ly_hdpi">
+                <TextView android:text="金蝶理财网: " style="@style/about_item_title_tv" />
+                <TextView android:text="http://www.feidee.com" style="@style/about_item_content_tv" />
+            </LinearLayout>
+            <LinearLayout style="@style/about_item_ly_hdpi">
+                <TextView android:text="服务论坛: " style="@style/about_item_title_tv" />
+                <TextView android:text="http://www.feidee.com/service" style="@style/about_item_content_tv" />
+            </LinearLayout>
+            <LinearLayout style="@style/about_item_ly_hdpi">
+                <TextView android:text="腾讯/新浪官方微博:" style="@style/about_item_title_tv" />
+                <TextView android:text=" @feidee" style="@style/about_item_content_tv" />
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout android:layout_gravity="bottom" android:id="@id/partner_ad_rl" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="45.0dip">
+            <Button android:id="@id/partner_apk_download_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_marginRight="15.0dip" android:text="立即下载" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </FrameLayout>
+</LinearLayout>

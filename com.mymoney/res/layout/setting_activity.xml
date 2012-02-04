@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/common_titlebar" />
+    <ScrollView android:orientation="vertical" android:scrollbars="none" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:id="@id/setting_sync_account_ly" android:background="@drawable/setting_top_sync_row_bg" android:layout_marginTop="10.0dip" style="@style/common_row_layout">
+                <TextView android:text="账号" style="@style/common_row_label" />
+                <TextView android:id="@id/setting_sync_account_or_not_tv" android:layout_width="195.0dip" style="@style/common_row_default_item_name" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:id="@id/sync_ly" android:background="@drawable/setting_bottom_sync_row_bg" style="@style/common_row_layout">
+                <Button android:id="@id/sync_btn" android:background="@drawable/setting_sync_button" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/first_level_payout_category_ly" android:layout_marginTop="10.0dip" style="@style/common_row_layout_top">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_category_payout_icon" style="@style/setting_item_icon" />
+                <TextView android:text="支出类别" style="@style/common_row_label_new" />
+                <TextView android:id="@id/default_payout_category_name_tv" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/first_level_income_category_ly" style="@style/common_row_layout_middle">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_category_income_icon" style="@style/setting_item_icon" />
+                <TextView android:text="收入类别" style="@style/common_row_label_new" />
+                <TextView android:id="@id/default_income_category_name_tv" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/first_level_project_category_ly" style="@style/common_row_layout_middle">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_project_icon" style="@style/setting_item_icon" />
+                <TextView android:text="项目分类" style="@style/common_row_label_new" />
+                <TextView android:id="@id/default_project_category_name_tv" android:text="轻击管理项目" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/account_ly" style="@style/common_row_layout_middle">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_account_icon" style="@style/setting_item_icon" />
+                <TextView android:text="账户" style="@style/common_row_label_new" />
+                <TextView android:id="@id/default_account_name_tv" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/corporation_ly" style="@style/common_row_layout_bottom">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_corp_icon" style="@style/setting_item_icon" />
+                <TextView android:text="商家" style="@style/common_row_label_new" />
+                <TextView android:id="@id/default_corporation_name_tv" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/security_ly" android:layout_marginTop="10.0dip" style="@style/common_row_layout_top">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_pass_icon" style="@style/setting_item_icon" />
+                <TextView android:text="密码保护" style="@style/common_row_label_new" />
+                <TextView android:id="@id/security_on_or_off_tv" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/add_trans_mode_switch_ly" style="@style/common_row_layout_middle">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_icon_addtrans_mode_switch" style="@style/setting_item_icon" />
+                <TextView android:text="记账模式" style="@style/common_row_label_new" />
+                <TextView android:text="切换新旧记账界面" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/aotu_upgrade_ly" style="@style/common_row_layout_middle">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_aotu_upgrade_icon" style="@style/setting_item_icon" />
+                <TextView android:text="自动升级" style="@style/common_row_label_new" />
+                <TextView android:text="点击升级" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/inport_data_from_meizu_hd_ly" android:visibility="gone" style="@style/common_row_layout_middle">
+                <TextView android:text="从hd版直接导入数据" style="@style/common_row_label" />
+                <TextView android:text="从hd版直接导入数据" style="@style/common_row_default_item_name" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/trans_remind_ly" style="@style/common_row_layout_bottom">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_trans_remind_icon" style="@style/setting_item_icon" />
+                <TextView android:text="记账提醒" style="@style/common_row_label_new" />
+                <TextView android:id="@id/trans_remind_on_or_off_tv" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/backup_ly" android:layout_marginTop="10.0dip" style="@style/common_row_layout_top">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_backup_icon" style="@style/setting_item_icon" />
+                <TextView android:text="备份恢复" style="@style/common_row_label_new" />
+                <TextView android:text="备份数据到手机SD卡" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/export_data_to_csv_ly" style="@style/common_row_layout_middle">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_icon_export_to_csv" style="@style/setting_item_icon" />
+                <TextView android:text="导出数据" style="@style/common_row_label_new" />
+                <TextView android:text="导出数据到Excel(CSV)" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/currency_rate_ly" style="@style/common_row_layout_bottom">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_item_icon_currency" style="@style/setting_item_icon" />
+                <TextView android:text="默认币种" style="@style/common_row_label_new" />
+                <TextView android:id="@id/default_currency_name_tv" android:text="本位币" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/sms_add_trans_ly" android:visibility="gone" android:layout_marginTop="10.0dip" style="@style/common_row_layout">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_item_icon_currency" style="@style/setting_item_icon" />
+                <TextView android:text="短信记账" style="@style/common_row_label_new" />
+                <TextView android:text="点击管理记账短信" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/about_ly" android:layout_marginTop="10.0dip" style="@style/common_row_layout_top">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_about_icon" style="@style/setting_item_icon" />
+                <TextView android:text="关于" style="@style/common_row_label_new" />
+                <TextView android:text="关于随手记" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/help_ly" style="@style/common_row_layout_bottom">
+                <ImageView android:layout_gravity="center_vertical" android:background="@drawable/setting_backup_icon" style="@style/setting_item_icon" />
+                <TextView android:text="在线帮助" style="@style/common_row_label_new" />
+                <TextView android:text="" style="@style/common_row_default_item_name_new" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail_new" />
+            </LinearLayout>
+            <Button android:id="@id/restore_original_data_btn" android:text="恢复初始数据" style="@style/setting_restore_original_data_btn" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/common_titlebar" />
+    <LinearLayout android:id="@id/backup_ly" android:layout_marginTop="10.0dip" style="@style/common_row_layout_top">
+        <TextView android:text="数据备份" style="@style/common_row_label" />
+        <TextView android:text="点击备份数据" style="@style/common_row_default_item_name" />
+        <ImageView android:layout_gravity="center_vertical" style="@style/go_detail" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/restore_ly" style="@style/common_row_layout_middle">
+        <TextView android:text="数据恢复" style="@style/common_row_label" />
+        <TextView android:text="点击恢复数据" style="@style/common_row_default_item_name" />
+        <ImageView android:layout_gravity="center_vertical" style="@style/go_detail" />
+    </LinearLayout>
+    <LinearLayout style="@style/common_row_layout_bottom">
+        <TextView android:text="备份目录" style="@style/common_row_label" />
+        <TextView android:text="sd卡/.mymoney/backup" style="@style/common_row_default_item_name" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/auto_backup_or_not_ly" android:layout_marginTop="10.0dip" style="@style/common_row_layout_top">
+        <TextView android:text="自动备份" style="@style/common_row_label" />
+        <CheckBox android:layout_gravity="center_vertical" android:id="@id/auto_backup_or_not_cb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="195.0dip" style="@style/Widget.CompoundButton.CheckBox" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/set_auto_backup_cycle_ly" style="@style/common_row_layout_middle">
+        <TextView android:text="设置周期" style="@style/common_row_label" />
+        <TextView android:text="点击设置自动备份周期" style="@style/common_row_default_item_name" />
+        <ImageView android:layout_gravity="center_vertical" style="@style/go_detail" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/set_auto_backup_time_ly" style="@style/common_row_layout_bottom">
+        <TextView android:text="设置时间" style="@style/common_row_label" />
+        <TextView android:text="点击设置自动备份时间" style="@style/common_row_default_item_name" />
+        <ImageView android:layout_gravity="center_vertical" style="@style/go_detail" />
+    </LinearLayout>
+</LinearLayout>

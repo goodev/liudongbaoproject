@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/add_trans_wheelview_ly"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mymoney.ui.widget.wheelview.WheelView android:id="@id/account_wv" android:layout_width="0.0dip" android:layout_weight="1.0" style="@style/add_trans_wheelview" />
+</LinearLayout>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider android:maxWidth="320.0dip" android:minWidth="250.0dip" android:minHeight="72.0dip" android:initialLayout="@layout/mymoney_appwidget_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

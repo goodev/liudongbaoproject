@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="33" android:versionName="4.1.0" package="com.mymoney"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:theme="@style/mymoneyDefaultTheme" android:label="@string/app_name" android:icon="@drawable/icon" android:name="com.mymoney.core.application.ApplicationContext" android:debuggable="false">
+        <meta-data android:name="UMENG_APPKEY" android:value="4db0e06b112cf75b7e000c25" />
+        <meta-data android:name="UMENG_CHANNEL" android:value="yingyonghui" />
+        <activity android:label="@string/app_name" android:name="com.mymoney.ui.splash.SplashScreenActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.mymoney.ui.security.SecurityActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" android:windowSoftInputMode="stateHidden" />
+        <activity android:name="com.mymoney.ui.main.MainActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.navtrans.NavTransactionActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.navtrans.NavYearTransactionActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.navtrans.NavYearTransactionFilterActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name="com.mymoney.ui.addtrans.AddOrEditTransactionActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.mymoney.ui.action.ADD_TRANS_OLD" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.mymoney.ui.addtrans.AddOrEditTransNewActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.mymoney.ui.action.ADD_TRANS_NEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.mymoney.ui.addtrans.TransactionPhotoEditActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.report.ReportActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.report.ReportTransListActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.report.ReportFilterActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name="com.mymoney.ui.sync.SyncActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.sync.BuyFlowActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingAccountActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingAccountTransactionListActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingCorporationActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingFirstLevelCategoryActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingProjectActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingSecurityActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingBackUpActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingExportDataToExcelActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingTransRemindActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingSubcategoryActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingEditCommonActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingEditCategoryActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" android:windowSoftInputMode="stateHidden" />
+        <activity android:name="com.mymoney.ui.setting.SettingAddOrEditAccountActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.AboutActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.AddTransModeSwitchActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingCurrencySelectActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingCurrencyRateActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.SettingCurrencyRateEditActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.transfer.TransferActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="com.mymoney.ui.action.TRANSFER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.mymoney.ui.budget.BudgetActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.repair.RepairModeActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.mymoney.ui.setting.HelpActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity-alias android:label="@string/app_name" android:name=".CreateShortcuts" android:targetActivity="com.mymoney.ui.splash.SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+        <service android:name="com.mymoney.ui.main.BackgroundService" />
+        <receiver android:label="@string/app_name" android:name="com.mymoney.ui.appwidget.MyMoneyAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/mymoney_appwidget" />
+        </receiver>
+        <receiver android:name="com.mymoney.ui.setting.AutoBackupBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.mymoney.ui.setting.Action.AUTO_BACKUP" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.mymoney.ui.setting.AutoBackupService" />
+        <receiver android:name="com.mymoney.ui.main.AddTransRemindReceiver">
+            <intent-filter>
+                <action android:name="com.mymoney.ui.main.ADD_TRANS_REMIND" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.mymoney.ui.main.receiver.BootCompletedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="false" android:resizeable="true" />
+    <uses-sdk android:minSdkVersion="3" android:targetSdkVersion="4" />
+</manifest>
