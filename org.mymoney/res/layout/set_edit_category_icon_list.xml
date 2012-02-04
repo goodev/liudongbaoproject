@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_yfsp_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_yfsp_yfkz_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_yfsp_xmbb_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_yfsp_hzsp_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_spjs_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_spjs_zwwc_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_spjs_yjc_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_spjs_sgls_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jjwy_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jjwy_rcyp_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jjwy_sdmq_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jjwy_fz_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jjwy_wygl_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jjwy_yxby_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xcjt_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xcjt_ggjt_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xcjt_dczc_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xcjt_sjcfy_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jltx_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jltx_zjf_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jltx_sjf_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jltx_swf_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jltx_yjf_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xxyl_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xxyl_ydjs_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xxyl_fbjh_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xxyl_xxwl_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xxyl_cwbb_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xxyl_lydj_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xxjx_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xxjx_sbzz_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xxjx_pxjx_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_xxjx_smzb_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_rqwl_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_rqwl_slqk_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_rqwl_xjjz_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_rqwl_hrqc_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_rqwl_csjz_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_ylbj_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_ylbj_ypf_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_ylbj_bjf_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_ylbj_mrf_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_ylbj_zlf_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jrbx_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jrbx_yhsx_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jrbx_tzks_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jrbx_ajhk_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jrbx_xfss_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jrbx_lxzc_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_jrbx_pcfk_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_qtzx_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_qtzx_qtzc_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_qtzx_ywds_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_qtzx_lzss_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_zysr_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_zysr_gzsr_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_zysr_lxsr_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_zysr_jbsr_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_zysr_jjsr_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_zysr_tzsr_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_zysr_jzsr_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_qtsr_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_qtsr_ljsr_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_qtsr_zjsr_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_right_rb" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@null" android:layout_width="wrap_content" android:layout_height="53.0dip" style="@style/common_row_layout">
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_qtsr_ywlq_rb" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_bottom_left_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:id="@id/icon_qtsr_jysd_rb" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_bottom_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:enabled="false" android:layout_width="75.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_bottom_center_rb" />
+        <org.mymoney.ui.widget.CategoryIconPicker android:enabled="false" android:layout_width="76.0dip" android:layout_height="fill_parent" android:button="@drawable/edit_category_bottom_right_rb" />
+    </LinearLayout>
+</LinearLayout>

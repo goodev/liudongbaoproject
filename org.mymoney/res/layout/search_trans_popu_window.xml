@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/search_input_panel_bg" android:layout_width="fill_parent" android:layout_height="86.0dip">
+        <EditText android:textSize="14.0sp" android:id="@id/search_keyword_et" android:background="@color/transparent" android:layout_width="185.0dip" android:layout_height="wrap_content" android:layout_marginLeft="45.0dip" android:layout_marginTop="12.0dip" android:hint="搜索" android:singleLine="true" />
+        <Button android:id="@id/search_clear_btn" android:background="@drawable/search_clear_btn" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_toRightOf="@id/search_keyword_et" />
+        <Button android:id="@id/search_cancel_btn" android:background="@drawable/search_cancel_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginRight="6.0dip" android:layout_alignParentRight="true" />
+        <RadioGroup android:orientation="horizontal" android:id="@id/search_tab_rg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+            <RadioButton android:id="@id/search_tab_all_rb" android:layout_width="76.0dip" android:layout_height="34.0dip" android:button="@drawable/search_tab_all_rb" />
+            <RadioButton android:id="@id/search_tab_amount_rb" android:layout_width="76.0dip" android:layout_height="34.0dip" android:button="@drawable/search_tab_amount_rb" />
+            <RadioButton android:id="@id/search_tab_category_rb" android:layout_width="76.0dip" android:layout_height="34.0dip" android:button="@drawable/search_tab_category_rb" />
+            <RadioButton android:id="@id/search_tab_memo_rb" android:layout_width="76.0dip" android:layout_height="34.0dip" android:button="@drawable/search_tab_memo_rb" />
+        </RadioGroup>
+    </RelativeLayout>
+    <FrameLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <ListView android:id="@id/search_expense_lv" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/Widget.ListView" />
+    </FrameLayout>
+</LinearLayout>

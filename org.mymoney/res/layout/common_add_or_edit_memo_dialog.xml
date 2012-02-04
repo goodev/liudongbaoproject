@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EditText android:id="@id/memo_et" android:layout_width="fill_parent" android:layout_height="100.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:lines="5"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:keepScreenOn="true" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/common_titlebar" />
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip">
+                <RelativeLayout android:id="@id/username_rl" android:background="@drawable/setting_top_bg" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                    <TextView android:text="@string/username" android:layout_centerVertical="true" style="@style/sync_panel_label" />
+                    <EditText android:ellipsize="end" android:gravity="right|center" android:id="@id/username_et" android:background="@null" android:layout_width="200.0dip" android:layout_marginRight="15.0dip" android:hint="请输入用户名" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:inputType="textEmailAddress" style="@style/sync_panel_et" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/password_rl" android:background="@drawable/setting_bottom_bg" android:layout_width="fill_parent" android:layout_height="50.0dip">
+                    <TextView android:text="@string/password" android:layout_centerVertical="true" style="@style/sync_panel_label" />
+                    <EditText android:ellipsize="end" android:gravity="right|center" android:id="@id/password_et" android:background="@null" android:layout_width="200.0dip" android:layout_marginRight="15.0dip" android:hint="请输入密码" android:password="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/sync_panel_et" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <Button android:textSize="18.0dip" android:textColor="@color/white" android:id="@id/clear_btn" android:background="@drawable/setting_restore_original_data" android:layout_width="145.0dip" android:layout_height="45.0dip" android:layout_marginLeft="10.0dip" android:text="清空" />
+                <Button android:textSize="18.0dip" android:textColor="@color/white" android:id="@id/sync_btn" android:background="@drawable/sync_btn" android:layout_width="145.0dip" android:layout_height="45.0dip" android:layout_marginLeft="10.0dip" android:text="同步" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:background="@drawable/sync_logs_panel_bg" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="20.0dip" android:layout_weight="1.0">
+                <TextView android:textSize="19.0dip" android:textColor="@color/white" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="同步动态" />
+                <ListView android:layout_gravity="center" android:id="@id/sync_logs_lv" android:layout_weight="1.0" style="@style/list_view_for_sync_logs" />
+                <TextView android:textSize="15.0dip" android:textColor="@color/white" android:layout_gravity="center" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="免费网络同步截止日期为2010-09-31" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/test_sync_ly" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/red" android:id="@id/test_trans_count_tv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="账单总数" />
+                <Button android:id="@id/test_sync_photo_only_btn" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="开始同步(消费记录图片同步服务)" />
+                <Button android:id="@id/dump_database_to_sd" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="导出数据到sd卡" />
+                <Button android:id="@id/btn_auto_sync_test" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="自动同步测试" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

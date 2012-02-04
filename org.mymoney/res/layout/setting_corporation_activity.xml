@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/common_titlebar" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <org.mymoney.ui.widget.DragListView android:id="@id/corporation_lv" android:layout_width="fill_parent" android:layout_height="fill_parent" android:choiceMode="singleChoice" style="@style/list_view_for_setting" />
+            <TextView android:id="@id/listview_loading_tv" style="@style/common_lv_loading_tv" />
+        </LinearLayout>
+        <LinearLayout style="@style/common_add_toolbar">
+            <EditText android:id="@id/corporation_et" style="@style/common_add_toolbar_et" />
+            <Button android:id="@id/add_btn" android:text="@string/add" style="@style/common_add_toolbar_btn" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

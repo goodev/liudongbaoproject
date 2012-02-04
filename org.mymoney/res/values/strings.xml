@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="haha">mymoney</string>
+    <string name="app_name">随手记</string>
+    <string name="done">完成</string>
+    <string name="clear">清除</string>
+    <string name="listview_data_loading">正在加载数据...</string>
+    <string name="listview_empty">没有数据</string>
+    <string name="back_btn">返回</string>
+    <string name="edit_btn">编辑</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="alert_dialog_ok">确定</string>
+    <string name="alert_dialog_cancel">取消</string>
+    <string name="spn_prompt_category">类别</string>
+    <string name="spn_prompt_subcategory">子类别</string>
+    <string name="spn_prompt_account">账户</string>
+    <string name="spn_prompt_corporation">商家</string>
+    <string name="spn_prompt_project">项目</string>
+    <string name="spn_prompt_time">时间</string>
+    <string name="add_user">添加用户</string>
+    <string name="add_expense_quickly">随手记一笔</string>
+    <string name="list_expense">流水</string>
+    <string name="nav_add_expense">记账</string>
+    <string name="nav_yeartrans">流水</string>
+    <string name="nav_report">报表</string>
+    <string name="nav_planning">计划</string>
+    <string name="nav_budget">预算</string>
+    <string name="nav_account">账户</string>
+    <string name="nav_setting">设置</string>
+    <string name="search">搜索</string>
+    <string name="take_pic">拍照</string>
+    <string name="sync_or_not">是否同步</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="add">添加</string>
+    <string name="password_setting">密码保护</string>
+    <string name="delete_title">删除提示</string>
+    <string name="delete_message">是否删除该记录?</string>
+    <string name="delete">删除</string>
+    <string name="delete_cancel">取消</string>
+    <string name="account_canot_delete">账户不允许删除,请先清空该账户有关的所有消费记录</string>
+    <string name="category_canot_delete">分类不允许删除,请先清空该分类有关的子分类和消费记录</string>
+    <string name="corporation_canot_delete">商家不允许删除,请先清空该商家有关的所有消费记录</string>
+    <string name="magic_code">0</string>
+    <string name="budget_max_expense_tips">本月总预算金额</string>
+    <string name="budget_category_expense_tips">设置月分类预算金额</string>
+    <string name="export_data_csv_info">"您可以导出数据到CSV中然后在电脑中查看。
+ 您如果在Windows里用Excel打开出现乱码，请用记事本打开CSV文件，
+ 点击文件－》另存为，将编码改为ANSI，再保存。
+
+"</string>
+    <string name="version_update_log">"1.支持负债转债权功能,理财记账更科学更专业.
+
+ 2.支持转账编辑功能,你的账单你做主.
+
+ 3.UI大调整,菜单显示优化修改，菜单更易用.
+
+ 4.优化记一笔界面键盘,记账更随心所欲.
+
+ 5.结识新朋友,不忘老朋友,优化android1.5ROM下显示,为老手机添加精彩.
+
+ 6.已知bug小修改,让随手记更安全、更稳定、更靠谱儿.
+"</string>
+</resources>

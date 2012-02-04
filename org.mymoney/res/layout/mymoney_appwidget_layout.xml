@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:id="@id/appwidget_ly" android:layout_width="320.0dip" android:layout_height="80.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:layout_gravity="center_vertical" android:id="@id/appwidget_main_btn" android:background="@drawable/mymoney_appwidget_main_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <Button android:layout_gravity="center_vertical" android:id="@id/appwidget_payout_btn" android:background="@drawable/mymoney_appwidget_payout_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <Button android:layout_gravity="center_vertical" android:id="@id/appwidget_income_btn" android:background="@drawable/mymoney_appwidget_income_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <Button android:layout_gravity="center_vertical" android:id="@id/appwidget_transfer_btn" android:background="@drawable/mymoney_appwidget_transfer_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>
