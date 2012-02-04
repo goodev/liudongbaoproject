@@ -1,19 +1,19 @@
 package com.hellogame;
 
 import com.badlogic.gdx.math.Vector2;
-import com.box2dforandroid.Body;
-import com.box2dforandroid.BodyDef;
-import com.box2dforandroid.BodyDef.BodyType;
-import com.box2dforandroid.CircleShape;
-import com.box2dforandroid.EdgeShape;
-import com.box2dforandroid.Joint;
-import com.box2dforandroid.PolygonShape;
-import com.box2dforandroid.joints.GearJoint;
-import com.box2dforandroid.joints.GearJointDef;
-import com.box2dforandroid.joints.PrismaticJoint;
-import com.box2dforandroid.joints.PrismaticJointDef;
-import com.box2dforandroid.joints.RevoluteJoint;
-import com.box2dforandroid.joints.RevoluteJointDef;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
+import com.badlogic.gdx.physics.box2d.CircleShape;
+import com.badlogic.gdx.physics.box2d.EdgeShape;
+import com.badlogic.gdx.physics.box2d.Joint;
+import com.badlogic.gdx.physics.box2d.PolygonShape;
+import com.badlogic.gdx.physics.box2d.joints.GearJoint;
+import com.badlogic.gdx.physics.box2d.joints.GearJointDef;
+import com.badlogic.gdx.physics.box2d.joints.PrismaticJoint;
+import com.badlogic.gdx.physics.box2d.joints.PrismaticJointDef;
+import com.badlogic.gdx.physics.box2d.joints.RevoluteJoint;
+import com.badlogic.gdx.physics.box2d.joints.RevoluteJointDef;
 
 public class GearsGame extends Box2DTestGame {
 
@@ -34,7 +34,7 @@ public class GearsGame extends Box2DTestGame {
 		EdgeShape edgeShape = new EdgeShape();
 		edgeShape.set(new Vector2(50.0f, 0.0f), new Vector2(50.0f, 0.0f));
 		groundBody.createFixture(edgeShape, 0.0f);
-       
+
 		createFirstGroupShape();
 		// the second group
 		createSecondGroupShape();
@@ -143,12 +143,12 @@ public class GearsGame extends Box2DTestGame {
 		jd2.initialize(body2, body3, bd3.position);
 		Joint joint2 = world.createJoint(jd2);
 
-		GearJointDef jd4 = new GearJointDef();//��
+		GearJointDef jd4 = new GearJointDef();// ��
 		jd4.bodyA = body1;
 		jd4.bodyB = body3;
 		jd4.joint1 = joint1;
 		jd4.joint2 = joint2;
 		jd4.ratio = circle2.getRadius() / circle1.getRadius();
-		//world.createJoint(jd4);
+		// world.createJoint(jd4);
 	}
 }

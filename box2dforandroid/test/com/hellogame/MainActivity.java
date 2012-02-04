@@ -1,9 +1,6 @@
 package com.hellogame;
 
-import android.app.Activity;
 import android.os.Bundle;
-
-import com.box2dforandorid.R;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 
