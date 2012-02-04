@@ -1,15 +1,15 @@
 package com.hellogame;
 
 import com.badlogic.gdx.math.Vector2;
-import com.box2dforandroid.Body;
-import com.box2dforandroid.BodyDef;
-import com.box2dforandroid.BodyDef.BodyType;
-import com.box2dforandroid.Contact;
-import com.box2dforandroid.EdgeShape;
-import com.box2dforandroid.Fixture;
-import com.box2dforandroid.FixtureDef;
-import com.box2dforandroid.Manifold;
-import com.box2dforandroid.PolygonShape;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
+import com.badlogic.gdx.physics.box2d.Contact;
+import com.badlogic.gdx.physics.box2d.EdgeShape;
+import com.badlogic.gdx.physics.box2d.Fixture;
+import com.badlogic.gdx.physics.box2d.FixtureDef;
+import com.badlogic.gdx.physics.box2d.Manifold;
+import com.badlogic.gdx.physics.box2d.PolygonShape;
 
 public class ConveyorBeltGame extends Box2DTestGame {
 
@@ -49,20 +49,19 @@ public class ConveyorBeltGame extends Box2DTestGame {
 			body.createFixture(shape, 20.0f);
 		}
 	}
+
 	@Override
 	public void preSolve(Contact contact, Manifold oldManifold) {
 		super.preSolve(contact, oldManifold);
 		Fixture fixtureA = contact.getFixtureA();
-		Fixture fixtureB =  contact.getFixtureB();
+		Fixture fixtureB = contact.getFixtureB();
 
-		if (fixtureA == this.platformFixture)
-		{
-		//contact.setTangentSpeed(5.0f);
+		if (fixtureA == this.platformFixture) {
+			// contact.setTangentSpeed(5.0f);
 		}
 
-		if (fixtureB == this.platformFixture)
-		{
-			//contact.setTangentSpeed(-5.0f);
+		if (fixtureB == this.platformFixture) {
+			// contact.setTangentSpeed(-5.0f);
 		}
 	}
 }
