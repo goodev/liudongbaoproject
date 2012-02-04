@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/add_trans_wheelview_item"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/icon" style="@style/widget_wheelview_item_icon" />
+    <TextView android:ellipsize="marquee" android:gravity="left|center" android:id="@id/name" android:layout_width="0.0dip" android:singleLine="true" android:layout_weight="1.0" style="@style/widget_wheelview_item_name" />
+</LinearLayout>

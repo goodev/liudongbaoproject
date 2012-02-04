@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@drawable/setting_account_header_bg" android:layout_width="fill_parent" android:layout_height="52.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingRight="8.0dip" android:layout_width="106.0dip" android:layout_height="52.0dip">
+        <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="资产" android:drawableLeft="@drawable/setting_account_header_assets" android:layout_alignParentRight="true" />
+        <TextView android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/asset_amount_tv" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="正在计算..." android:singleLine="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout android:paddingRight="8.0dip" android:layout_width="106.0dip" android:layout_height="52.0dip">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="12.0dip" android:src="@drawable/setting_account_header_minus" android:adjustViewBounds="true" />
+        <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="负债" android:drawableLeft="@drawable/setting_account_header_liabilities" android:layout_alignParentRight="true" />
+        <TextView android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/liabilitiy_amount_tv" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="正在计算..." android:singleLine="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout android:paddingRight="8.0dip" android:layout_width="106.0dip" android:layout_height="52.0dip">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="12.0dip" android:src="@drawable/setting_account_header_equal" android:adjustViewBounds="true" />
+        <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="净资产" android:drawableLeft="@drawable/setting_account_header_balance" android:layout_alignParentRight="true" />
+        <TextView android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/surplus_amount_tv" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="正在计算..." android:singleLine="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

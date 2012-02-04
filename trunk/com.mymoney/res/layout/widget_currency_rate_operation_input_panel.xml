@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/digit_input_panel_ly" android:background="@drawable/widget_currency_rate_operation_bg" android:layout_width="fill_parent" android:layout_height="200.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/widget_payout_income_rl" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <RadioGroup android:orientation="vertical" android:id="@id/trans_type_tab_rg" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip">
+            <RadioButton android:layout_gravity="top" android:id="@id/payout_tab_rb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:button="@drawable/keyboard_payout_rb" android:layout_weight="1.0" />
+            <RadioButton android:layout_gravity="bottom" android:id="@id/income_tab_rb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/keyboard_income_rb" android:layout_weight="1.0" />
+            <RadioButton android:layout_gravity="bottom" android:id="@id/transfer_tab_rb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/keyboard_transfer_rb" android:layout_weight="1.0" />
+        </RadioGroup>
+        <ImageView android:id="@id/keyboard_triangle_iv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="38.0dip" android:layout_marginTop="25.0dip" android:src="@drawable/keyboard_triangle" />
+    </RelativeLayout>
+    <TableLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="2.0dip" android:layout_weight="1.0">
+        <TableRow>
+            <Button android:id="@id/seven" android:layout_marginLeft="2.0dip" android:text="7" style="@style/widget_currency_rate_input_btn" />
+            <Button android:id="@id/eight" android:layout_marginLeft="3.0dip" android:text="8" style="@style/widget_currency_rate_input_btn" />
+            <Button android:id="@id/nine" android:layout_marginLeft="3.0dip" android:text="9" style="@style/widget_currency_rate_input_btn" />
+        </TableRow>
+        <TableRow>
+            <Button android:id="@id/four" android:layout_marginLeft="2.0dip" android:text="4" style="@style/widget_currency_rate_input_btn" />
+            <Button android:id="@id/five" android:layout_marginLeft="3.0dip" android:text="5" style="@style/widget_currency_rate_input_btn" />
+            <Button android:id="@id/six" android:layout_marginLeft="3.0dip" android:text="6" style="@style/widget_currency_rate_input_btn" />
+        </TableRow>
+        <TableRow>
+            <Button android:id="@id/one" android:layout_marginLeft="2.0dip" android:text="1" style="@style/widget_currency_rate_input_btn" />
+            <Button android:id="@id/two" android:layout_marginLeft="3.0dip" android:text="2" style="@style/widget_currency_rate_input_btn" />
+            <Button android:id="@id/three" android:layout_marginLeft="3.0dip" android:text="3" style="@style/widget_currency_rate_input_btn" />
+        </TableRow>
+        <TableRow>
+            <Button android:id="@id/clear" android:background="@drawable/keyboard_operation_clear_button" android:layout_marginLeft="2.0dip" style="@style/widget_currency_rate_input_btn" />
+            <Button android:id="@id/zero" android:layout_marginLeft="3.0dip" android:text="0" style="@style/widget_currency_rate_input_btn" />
+            <Button android:id="@id/dot" android:layout_marginLeft="3.0dip" android:text="." style="@style/widget_currency_rate_input_btn" />
+        </TableRow>
+    </TableLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="2.0dip">
+        <Button android:id="@id/subtract" android:background="@drawable/keyboard_subtract_button" android:layout_marginLeft="3.0dip" style="@style/widget_currency_rate_input_btn" />
+        <Button android:id="@id/add" android:background="@drawable/keyboard_add_button" android:layout_marginLeft="3.0dip" style="@style/widget_currency_rate_input_btn" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/ok" android:background="@drawable/keyboard_vertical_ok_button" android:layout_height="fill_parent" android:layout_marginLeft="3.0dip" style="@style/widget_currency_rate_input_btn" />
+            <Button android:id="@id/equal" android:background="@drawable/keyboard_vertical_equal_button" android:visibility="gone" android:layout_height="fill_parent" android:layout_marginLeft="3.0dip" style="@style/widget_currency_rate_input_btn" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/common_titlebar" />
+    <LinearLayout android:id="@id/export_data_to_sd_ly" android:layout_marginTop="10.0dip" style="@style/common_row_layout_top">
+        <TextView android:layout_width="90.0dip" android:text="导出到sd卡" style="@style/common_row_label" />
+        <TextView android:layout_width="175.0dip" android:text="点击导出Excel(CSV)到sd卡" style="@style/common_row_default_item_name" />
+        <ImageView android:layout_gravity="center_vertical" style="@style/go_detail" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/export_data_to_email_ly" style="@style/common_row_layout_middle">
+        <TextView android:layout_width="90.0dip" android:text="导出到邮件" style="@style/common_row_label" />
+        <TextView android:layout_width="175.0dip" android:text="点击导出Excel(CSV)到邮件" style="@style/common_row_default_item_name" />
+        <ImageView android:layout_gravity="center_vertical" style="@style/go_detail" />
+    </LinearLayout>
+    <LinearLayout android:layout_height="wrap_content" style="@style/common_row_layout_bottom">
+        <TextView android:text="说明 " style="@style/common_row_label" />
+        <TextView android:textSize="14.0dip" android:textColor="@color/black" android:id="@id/export_data_csv_info_tv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+    </LinearLayout>
+</LinearLayout>

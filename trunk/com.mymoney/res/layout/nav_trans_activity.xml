@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/root_ly" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:panel="http://schemas.android.com/apk/res/com.mymoney">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/common_titlebar_include_menu_btn" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:background="@drawable/nav_trans_amount_summary" android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:layout_width="fill_parent" android:layout_height="36.0dip">
+                <TextView android:text="支出" style="@style/list_all_exp_title_tv" />
+                <TextView android:textColor="@color/transaction_payout_amount" android:id="@id/payout_amount_tv" android:text="计算中..." style="@style/list_all_exp" />
+                <TextView android:text="收入" style="@style/list_all_income_title_tv" />
+                <TextView android:textColor="@color/transaction_income_amount" android:id="@id/income_amount_tv" android:text="计算中..." style="@style/list_all_income" />
+                <TextView android:text="结余" style="@style/list_all_balance_title_tv" />
+                <TextView android:textColor="@color/white" android:id="@id/balance_amount_tv" android:text="计算中..." style="@style/list_all_balance" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/search_rl" android:background="@drawable/search_static_bg" android:layout_width="wrap_content" android:layout_height="44.0dip" android:adjustViewBounds="true">
+                <EditText android:textSize="12.0dip" android:background="@color/transparent" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="55.0dip" android:hint="搜索所有流水" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:id="@id/lv_empty_iv" android:visibility="gone" style="@style/common_lv_empty_for_expense" />
+                <ListView android:id="@id/expense_lv" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/Widget.ListView" />
+                <TextView android:id="@id/listview_loading_tv" android:height="300.0dip" style="@style/common_lv_loading_tv" />
+            </FrameLayout>
+        </LinearLayout>
+        <com.mymoney.ui.widget.Panel android:id="@id/menu_pn" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" panel:animationDuration="300" panel:position="top" panel:handle="@id/panelHandle" panel:content="@id/panelContent" panel:linearFlying="true" panel:openedHandle="@drawable/widget_dropdown_menubar_expanded_bg" panel:closedHandle="@drawable/widget_dropdown_menubar_expanded_bg">
+            <Button android:id="@id/panelHandle" android:layout_width="fill_parent" android:layout_height="16.0dip" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/panelContent" android:background="@drawable/widget_drop_menu_panel_old_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <Button android:id="@id/pre_btn" android:background="@drawable/pre_month_btn" android:layout_marginLeft="2.0dip" android:layout_marginTop="1.0dip" style="@style/common_menu_btn" />
+                <TextView android:textSize="13.0dip" android:textColor="@color/white" android:gravity="center" android:id="@id/time_interval_tv" android:background="@color/transparent" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="月份" android:layout_weight="1.0" />
+                <Button android:id="@id/next_btn" android:background="@drawable/next_month_btn" android:layout_marginTop="1.0dip" android:layout_marginRight="2.0dip" style="@style/common_menu_btn" />
+            </LinearLayout>
+        </com.mymoney.ui.widget.Panel>
+    </FrameLayout>
+</LinearLayout>

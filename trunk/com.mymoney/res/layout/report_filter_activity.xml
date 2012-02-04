@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/common_titlebar" />
+    <ScrollView android:orientation="vertical" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:id="@id/time_ly" android:layout_marginTop="10.0dip" style="@style/common_row_layout_top">
+                <TextView android:text="日期区间" style="@style/common_row_label" />
+                <TextView android:id="@id/time_tv" style="@style/common_row_default_item_name" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/begin_time_ly" style="@style/common_row_layout_middle">
+                <TextView android:text="起始日期" style="@style/common_row_label" />
+                <TextView android:id="@id/begin_time_tv" style="@style/common_row_default_item_name" />
+                <ImageView android:layout_gravity="center_vertical" android:visibility="gone" style="@style/go_detail" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/end_time_ly" style="@style/common_row_layout_bottom">
+                <TextView android:text="结束日期" style="@style/common_row_label" />
+                <TextView android:id="@id/end_time_tv" style="@style/common_row_default_item_name" />
+                <ImageView android:layout_gravity="center_vertical" android:visibility="gone" style="@style/go_detail" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/category_ly" android:layout_marginTop="10.0dip" style="@style/common_row_layout_top">
+                <TextView android:text="选择分类" style="@style/common_row_label" />
+                <TextView android:id="@id/category_tv" android:text="全部" style="@style/common_row_default_item_name" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/account_ly" style="@style/common_row_layout_middle">
+                <TextView android:text="选择账户" style="@style/common_row_label" />
+                <TextView android:id="@id/account_tv" android:text="全部" style="@style/common_row_default_item_name" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/project_ly" style="@style/common_row_layout_middle">
+                <TextView android:text="选择项目" style="@style/common_row_label" />
+                <TextView android:id="@id/project_tv" android:text="全部" style="@style/common_row_default_item_name" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/corporation_ly" style="@style/common_row_layout_middle">
+                <TextView android:text="选择商家" style="@style/common_row_label" />
+                <TextView android:id="@id/corporation_tv" android:text="全部" style="@style/common_row_default_item_name" />
+                <ImageView android:layout_gravity="center_vertical" style="@style/go_detail" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/memo_ly" style="@style/common_row_layout_bottom">
+                <TextView android:text="筛选备注" style="@style/common_row_label" />
+                <EditText android:ellipsize="end" android:gravity="right|center" android:id="@id/memo_et" android:background="@null" android:layout_width="200.0dip" android:layout_height="fill_parent" android:layout_marginRight="15.0dip" android:hint="请填写备注关键字" android:singleLine="true" android:layout_centerVertical="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

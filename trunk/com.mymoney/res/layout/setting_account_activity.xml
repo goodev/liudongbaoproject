@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/common_bg"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:panel="http://schemas.android.com/apk/res/com.mymoney">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/common_titlebar_include_menu_btn" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/setting_account_listview_header" />
+                <com.mymoney.ui.widget.AccountDragListView android:id="@id/account_lv" android:layout_width="fill_parent" android:layout_height="fill_parent" android:choiceMode="singleChoice" style="@style/list_view_for_setting" />
+            </LinearLayout>
+            <TextView android:id="@id/listview_loading_tv" style="@style/common_lv_loading_tv" />
+        </LinearLayout>
+        <com.mymoney.ui.widget.Panel android:id="@id/menu_pn" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" panel:animationDuration="300" panel:position="top" panel:handle="@id/panelHandle" panel:content="@id/panelContent" panel:linearFlying="true" panel:openedHandle="@drawable/widget_dropdown_menubar_expanded_bg" panel:closedHandle="@drawable/widget_dropdown_menubar_expanded_bg">
+            <Button android:id="@id/panelHandle" android:layout_width="fill_parent" android:layout_height="16.0dip" />
+            <RelativeLayout android:gravity="center_vertical" android:id="@id/panelContent" android:background="@drawable/widget_dropdown_menubar_panel_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.mymoney.ui.widget.ColorButton android:id="@id/change_account_filter_status_btn" android:background="@drawable/setting_account_menu_display_btn" android:layout_marginLeft="10.0dip" android:text="显示" android:layout_alignParentLeft="true" style="@style/common_menu_btn" />
+                <com.mymoney.ui.widget.ColorButton android:id="@id/transfer_account_btn" android:background="@drawable/common_transfer_btn" android:layout_marginRight="10.0dip" android:text="转帐" android:layout_alignParentRight="true" style="@style/common_menu_btn" />
+            </RelativeLayout>
+        </com.mymoney.ui.widget.Panel>
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@drawable/main_budget_lv_header" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_gravity="left|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="本月总预算:" style="@style/budget_lv_header_text" />
+    <Button android:textStyle="bold" android:gravity="left" android:layout_gravity="center_vertical" android:id="@id/budget_amount_input_btn" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawableBottom="@drawable/main_budget_amount_input_line" style="@style/budget_lv_header_text" />
+    <Button android:layout_gravity="center_vertical" android:id="@id/budget_amount_edit_btn" android:background="@drawable/main_budget_amount_input_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>
