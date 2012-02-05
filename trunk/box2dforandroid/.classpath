@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry excluding="com/badlogic/gdx/utils/GdxBuild.java" kind="src" path="mysrc"/>
-	<classpathentry kind="src" path="gdxsrc"/>
+	<classpathentry excluding="com/badlogic/gdx/utils/GdxBuild.java" kind="src" path="gdxsrc"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>

@@ -317,11 +317,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 
 	@Override
 	public void render() {
-		float timeStep = Gdx.app.getGraphics().getDeltaTime();
-		int velocityIterations = 6;
-		int positionIterations = 2;
-		world.step(timeStep, velocityIterations, positionIterations);
-		world.clearForces();
+		step();
 		GL10 gl = Gdx.app.getGraphics().getGL10();
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		camera.update();
@@ -329,6 +325,15 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 		renderer.render(world, camera.combined);
 	}
 
+	protected void step() {
+		float timeStep = Gdx.app.getGraphics().getDeltaTime();
+		int velocityIterations = 6;
+		int positionIterations = 2;
+		world.step(timeStep, velocityIterations, positionIterations);
+		world.clearForces();
+	}
+
+	
 	@Override
 	public void resize(int width, int height) {
 
