@@ -1,7 +1,13 @@
-<project name="box2dforandroid" basedir="." default="all">
-	<target name="all">
+<project name="box2dforandroid" basedir="." default="generatorcheader">
+	<target name="copy">
 		<copy todir="./libs/armeabi/">
-			<fileset file="./libs/lib*.so"></fileset>
+			<fileset file="./libs/lib*.so">
+			</fileset>
 		</copy>
-	</target>	
+	</target>
+	<target name="generatorcheader">
+		<javah verbose="yes" old="no" force="yes" classpath="./bin/classes" outputfile="./jni/com.badlogic.gdx.physics.box2d.Contact.h">
+			<class name="com.badlogic.gdx.physics.box2d.Contact" />
+		</javah>
+	</target>
 </project>
