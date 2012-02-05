@@ -16,31 +16,40 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration buildProperties="" description="" id="com.android.toolchain.gcc.1868706261" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
+				<configuration artifactName="box2dforandroid" buildProperties="" description="" errorParsers="" id="com.android.toolchain.gcc.1868706261" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
 					<folderInfo id="com.android.toolchain.gcc.1868706261.53270466" name="/" resourcePath="">
-						<toolChain id="com.android.toolchain.gcc.1541995660" name="com.android.toolchain.gcc" superClass="com.android.toolchain.gcc">
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.android.targetPlatform.1821796405" name="Android Platform" osList="all" superClass="com.android.targetPlatform"/>
-							<builder arguments="F:\soft\android\android-ndk-r7\ndk-build" command="bash" id="com.android.builder.300694875" keepEnvironmentInBuildfile="false" managedBuildOn="false" superClass="com.android.builder">
-								<outputEntries>
-									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="libs"/>
-								</outputEntries>
-							</builder>
-							<tool id="cdt.managedbuild.tool.gnu.archiver.base.219001897" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
-							<tool id="com.android.tool.compiler.g++.1260932222" name="Android G++" superClass="com.android.tool.compiler.g++">
-								<inputType id="com.android.tool.compiler.g++.input.1202170350" superClass="com.android.tool.compiler.g++.input"/>
+						<toolChain id="com.android.toolchain.gcc.1440643875" name="Android GCC" superClass="com.android.toolchain.gcc">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.android.targetPlatform.1002624860" name="Android Platform" osList="all" superClass="com.android.targetPlatform"/>
+							<builder arguments="F:\soft\android\android-ndk-r7\ndk-build" command="bash" id="com.android.builder.1499985587" keepEnvironmentInBuildfile="false" superClass="com.android.builder"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.370628924" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool id="com.android.tool.compiler.g++.1608541707" name="Android G++" superClass="com.android.tool.compiler.g++">
+								<option id="gnu.cpp.compiler.option.include.paths.361185887" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;F:\soft\android\android-ndk-r7\sources\cxx-stl\system\include&quot;"/>
+								</option>
+								<inputType id="com.android.tool.compiler.g++.input.2097161628" superClass="com.android.tool.compiler.g++.input"/>
 							</tool>
-							<tool id="com.android.tool.compiler.c.1938013537" name="Android GCC" superClass="com.android.tool.compiler.c">
-								<inputType id="com.android.tool.compiler.c.input.141906377" superClass="com.android.tool.compiler.c.input"/>
+							<tool id="com.android.tool.compiler.c.1959867416" name="Android GCC" superClass="com.android.tool.compiler.c">
+								<option id="gnu.c.compiler.option.include.paths.2121543303" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;F:\soft\android\android-ndk-r7\sources\cxx-stl\system\include&quot;"/>
+								</option>
+								<inputType id="com.android.tool.compiler.c.input.622083264" superClass="com.android.tool.compiler.c.input"/>
 							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.417567279" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.685413191" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
-								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1236107484" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.134435812" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.1924251634" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
+								<option id="gnu.cpp.link.option.libs.1006855695" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="&quot;F:\soft\android\android-ndk-r7\platforms\android-9\arch-x86\usr\lib&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1974908808" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
 								</inputType>
 							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.assembler.base.1097032448" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
-								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.468268538" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.base.1979068766" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
+								<option id="gnu.both.asm.option.include.paths.1711313669" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;F:\soft\android\android-ndk-r7\platforms\android-9\arch-x86\usr\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;F:\soft\android\android-ndk-r7\sources\cxx-stl\system\include&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1645873811" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
@@ -55,9 +64,19 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="box2dforandroid.null.1839242361" name="box2dforandroid"/>
 	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="1">
+		<resource resourceType="PROJECT" workspacePath="/box2dforandroid"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="com.android.toolchain.gcc.1868706261;com.android.toolchain.gcc.1868706261.53270466;com.android.tool.compiler.g++.1608541707;com.android.tool.compiler.g++.input.2097161628">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile"/>
+		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="com.android.toolchain.gcc.216646299;com.android.toolchain.gcc.216646299.636506963;com.android.tool.compiler.g++.469826159;com.android.tool.compiler.g++.input.395452953">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.android.toolchain.gcc.1868706261;com.android.toolchain.gcc.1868706261.53270466;com.android.tool.compiler.c.1959867416;com.android.tool.compiler.c.input.622083264">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="com.android.toolchain.gcc.216646299;com.android.toolchain.gcc.216646299.636506963;com.android.tool.compiler.c.1627231342;com.android.tool.compiler.c.input.2059288971">
@@ -75,8 +94,5 @@
 		<scannerConfigBuildInfo instanceId="com.android.toolchain.gcc.216646299;com.android.toolchain.gcc.216646299.636506963;com.android.tool.compiler.g++.1633923507;com.android.tool.compiler.g++.input.1779563168">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile"/>
 		</scannerConfigBuildInfo>
-	</storageModule>
-	<storageModule moduleId="refreshScope" versionNumber="1">
-		<resource resourceType="PROJECT" workspacePath="/box2dforandroid"/>
 	</storageModule>
 </cproject>

@@ -121,4 +121,8 @@ public class Manifold {
 	public enum ManifoldType {
 		Circle, FaceA, FaceB
 	}
+
+	public long getAddr() {
+		return addr;
+	}
 }

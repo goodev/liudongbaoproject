@@ -24,6 +24,9 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.QueryCallback;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.physics.box2d.WorldManifold;
+import com.badlogic.gdx.physics.box2d.collision.Collision;
+import com.badlogic.gdx.physics.box2d.collision.Collision.PointState;
 import com.badlogic.gdx.physics.box2d.joints.MouseJoint;
 import com.badlogic.gdx.physics.box2d.joints.MouseJointDef;
 
@@ -91,13 +94,6 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 		int singleStep;
 	};
 
-	enum PointState {
-		nullState, // /< point does not exist
-		addState, // /< point was added in the update
-		persistState, // /< point persisted across the update
-		removeState // /< point was removed in the update
-	}
-
 	class ContactPoint {
 		Fixture fixtureA;
 		Fixture fixtureB;
@@ -137,7 +133,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 
 	protected float RandomFloat() {
 		Random random = new Random();
-		float f = random.nextFloat()*10;
+		float f = random.nextFloat() * 10;
 		boolean b = random.nextBoolean();
 		if (b)
 			return f;
@@ -269,8 +265,8 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 		Vector2 gravity = new Vector2(0.0f, -10.0f);
 		boolean doSleep = true;
 		world = new World(gravity, doSleep); // һ���׼������
-		//creatingGroundBox();
-		//creatingDynamicBody();
+		// creatingGroundBox();
+		// creatingDynamicBody();
 		Gdx.input.setInputProcessor(this);
 	}
 
@@ -357,34 +353,28 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 
 	@Override
 	public void preSolve(Contact contact, Manifold oldManifold) {
-		/*final WorldManifold  manifold = contact.getWorldManifold();
-
-		if (manifold.getNumberOfContactPoints() == 0)
-		{
+		Manifold manifold = contact.getManifold();
+		if (manifold.getPointCount() == 0) {
 			return;
 		}
 
 		Fixture fixtureA = contact.getFixtureA();
 		Fixture fixtureB = contact.getFixtureB();
 
-		PointState[] state1= new PointState[2];
-		PointState[] state2= new PointState[2];
-		GetPointStates(state1, state2, oldManifold, manifold);
-
-		WorldManifold worldManifold= contact.getWorldManifold();
-
-		for (int i = 0; i < manifold->pointCount && m_pointCount < k_maxContactPoints; ++i)
-		{
-			ContactPoint* cp = m_points + m_pointCount;
-			cp->fixtureA = fixtureA;
-			cp->fixtureB = fixtureB;
-			cp->position = worldManifold.points[i];
-			cp->normal = worldManifold.normal;
-			cp->state = state2[i];
-			cp->normalImpulse = manifold->points[i].normalImpulse;
-			cp->tangentImpulse = manifold->points[i].tangentImpulse;
+		PointState[] state1 = new PointState[2];
+		PointState[] state2 = new PointState[2];
+		new Collision().getPointStates(state1, state2, oldManifold, manifold);
+		WorldManifold worldManifold = contact.getWorldManifold();
+		for (int i = 0; i < manifold.getPointCount()
+				&& m_pointCount < k_maxContactPoints; ++i) {
+			ContactPoint cp = m_points[m_pointCount];
+			cp.fixtureA = fixtureA;
+			cp.fixtureB = fixtureB;
+			cp.position = worldManifold.getPoints()[i];
+			cp.normal = worldManifold.getNormal();
+			cp.state = state2[i];
 			++m_pointCount;
-		}*/
+		}
 	}
 
 	@Override

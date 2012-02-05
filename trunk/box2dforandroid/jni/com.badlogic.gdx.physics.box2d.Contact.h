@@ -119,6 +119,14 @@ JNIEXPORT jfloat JNICALL Java_com_badlogic_gdx_physics_box2d_Contact_jniGetResti
 JNIEXPORT void JNICALL Java_com_badlogic_gdx_physics_box2d_Contact_jniResetRestitution
   (JNIEnv *, jobject, jlong);
 
+/*
+ * Class:     com_badlogic_gdx_physics_box2d_Contact
+ * Method:    jniGetManifold
+ * Signature: (J)J
+ */
+JNIEXPORT jlong JNICALL Java_com_badlogic_gdx_physics_box2d_Contact_jniGetManifold
+  (JNIEnv *, jobject, jlong);
+
 #ifdef __cplusplus
 }
 #endif

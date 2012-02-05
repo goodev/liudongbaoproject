@@ -179,3 +179,14 @@ JNIEXPORT void JNICALL Java_com_badlogic_gdx_physics_box2d_Contact_jniResetResti
 
 }
 
+JNIEXPORT jlong JNICALL Java_com_badlogic_gdx_physics_box2d_Contact_jniGetManifold(JNIEnv* env, jobject object, jlong addr) {
+
+
+	//@line:215
+
+		  	b2Contact* contact = (b2Contact*)addr;
+		  	b2Manifold* result =contact->GetManifold();
+			return (jlong)result;
+
+
+	}
