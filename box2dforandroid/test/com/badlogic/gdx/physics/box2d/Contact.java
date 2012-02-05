@@ -206,4 +206,14 @@ public class Contact {
 	  	b2Contact* contact = (b2Contact*)addr;
 		contact->ResetRestitution();
 	*/
+	public Manifold getManifold(){
+		long manifoldAddr=this.jniGetManifold(addr);
+	    return  new Manifold(manifoldAddr);
+	}
+	
+	private native long jniGetManifold (long addr); /*
+  	b2Contact* contact = (b2Contact*)addr;
+	contact->ResetRestitution();
+*/
+	
 }

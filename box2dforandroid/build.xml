@@ -9,5 +9,8 @@
 		<javah verbose="yes" old="no" force="yes" classpath="./bin/classes" outputfile="./jni/com.badlogic.gdx.physics.box2d.Contact.h">
 			<class name="com.badlogic.gdx.physics.box2d.Contact" />
 		</javah>
+		<javah verbose="yes" old="no" force="yes" classpath="./bin/classes" outputfile="./jni/com.badlogic.gdx.physics.box2d.collision.Collision.h">
+			<class name="com.badlogic.gdx.physics.box2d.collision.Collision" />
+		</javah>
 	</target>
 </project>
