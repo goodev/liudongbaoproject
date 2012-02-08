@@ -8,6 +8,6 @@ public class MainActivity extends AndroidApplication {
 
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
-		initialize(new CantileverGame(), false);
+		initialize(new VaryingRestitutionGame(), false);
 	}
 }
