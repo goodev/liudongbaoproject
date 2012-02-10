@@ -47,6 +47,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 	protected boolean bombSpawning;
 	protected Vector2 mouseWorld;
 	protected int stepCount;
+	protected final float b2_pi = 3.14159265f;
 
 	class Settings {
 		public Settings() {
@@ -427,7 +428,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 
 	@Override
 	public boolean touchMoved(int x, int y) {
-		// TODO Auto-generated method stub
+		this.MouseMove(new Vector2(x,y));
 		return false;
 	}
 
