@@ -16,8 +16,6 @@
         <item>com.hellogame.TumblerGame</item>
         <item>com.hellogame.ShapeEditingGame</item>
         <item>com.hellogame.VaryingRestitutionGame</item>
-        <item>com.hellogame. 13</item>
-        <item>com.hellogame. 14</item>
-        <item>com.hellogame. 15</item>
-    </string-array>
+        <item>com.hellogame.CarGame</item>
+     </string-array>
 </resources>
