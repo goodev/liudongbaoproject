@@ -1,0 +1,586 @@
+box2D 2.1的基础
+box2d HelloWorld
+一、 HelloWorld
+
+开始之前，我假想你已经看过了HelloWorld的源代码，并看了用户手册中关于HelloWorld的相关说明，而且已经大致明白了大多数内容。
+其实HelloWorld已经用极其简单的语言向你描述了Box2D物理引擎的运作机制，我们可以归纳一下步骤：
+1、 建立一个世界，这个世界基于一个b2AABB框，并设立了一个g值和一个是否允许休眠的bool型变量。
+2、 建立一个静态刚体地表，这里讲述了定义Box2D物理引擎中最为重要的一个东西——刚体的详细过程：首先是定义一个形状（可以是复合形状，这个在第二部分讲述），然后把形状通过AddShape添加进刚体定义，创建这个刚体。
+3、 重复创建刚体这个过程，直至你没有需求了。
+4、 在你的循环中加入世界的更新函数。
+其实上面的步骤也是众多物理引擎甚至于其他引擎采用的方式。
+HelloWorld教程是相当简单的，这个时候你甚至都不用去想世界是怎么运作的，你可以利用相关函数取得刚体的位置和旋转角度，然后在游戏的渲染部分去更新渲染你的角色对象。
+看完HelloWorld，你可以不去想整个世界是怎样的，因为这个世界相对这时的你来说，确实是太复杂了，而你静下心来时，不妨回头看看我们用到的概念和数据类型，来温顾一下。
+概念
+在这一个例子中有几个概念，
+世界(b2World)：世界就是一个环境，所有物理运算都在这个里面进行。
+形状定义(b2ShapeDef)：形状定义是什么？说简单点形状定义就是定义你这个对象的样子，它用来做什么？就是用来确定你的碰撞。
+刚体定义(b2BodyDef)：刚体定义就是设定刚体的初始具体，在目前来说，最大的功能就是把你定义好的形状加到你想到的刚体上。
+刚体(b2Body)：刚体就是物理引擎里面的东西（对象），它可以受力的作用进行当前位置的变化旋转等。你要在世界中使用的所有物体目前来说都是刚体。
+类型定义
+几个类型定义（熟悉Box2D里面的类型定义可以对我们将来正确赋值运算有着很大的帮助）：
+typedef signed char int8;
+typedef signed short int16;
+typedef signed int int32;
+typedef unsigned char uint8;
+typedef unsigned short uint16;
+typedef unsigned int uint32;
+typedef float float32;
+const float32 b2_pi = 3.14159265359f;
+数据类型
+1、 b2Vec2
+就像在3D中Vector3类的使用一样，b2Vec2在Box2D中也应用广泛，你几乎在每个时刻都用到它，比如说定义坐标位置，定义Box大小等
+
+b2Vec2是由float32类型的x,y组成，支持负向量，+=，-=，*=操作符，
+支持的方法有
+Void SetZero()；设置x,y为0
+Void Set(float32 x_, float32 y_);设置x,y为指定值
+b2Vec2 Make(float32 x_, float32 y_),生成一个值指定的b2Vec2
+float32 Length()取得向量的长度或模
+float32 Normalize()标准化向量
+bool IsValid()检查是否有效
+如果在这里你并不了解我在这里所提到的一些数学概念，比如说标准化向量，模，可以参照b2Math.h文件，或者直接找本数学书来看。
+
+
+2、b2Mat22
+在HelloWorld教程中，b2Mat22虽然没有被使用到，我们这里先提出这个概念，以便于在下一节中讨论。
+其实b2Mat22一个由两个b2Vec2组成的2*2方阵，你可以直接由两个b2Vec2（col1、col2）构造或者由一个角度值构造。
+他的主要方法有：
+void Set(const b2Vec2& c1, const b2Vec2& c2)
+void Set(float32 angle)，
+提供两种方式赋值方法
+void SetIdentity()，设定恒等式
+void SetZero()，把col1、col2的x,y都清为0
+b2Mat22 Invert()，转换相关数据
+b2Vec2 Solve(const b2Vec2& b)，解决A * x = b
+
+3、b2AABB
+
+b2AABB就是一个盒子，是由两个向量组成，一个为minVertex是最小顶点，另一个为maxVertex是最大顶点，通过这两个顶点来表示最为普通的AABB框。
+
+4、b2ShapeDef
+b2ShapeDef直翻为形状定义，它用一个b2ShapeType型量type来表示形状类型，用函数指针来表示用户数据(userdata)，用一个b2Vec2向量localPosition来表示当前位置，用float32的localRotation来表示当前角度，用float32的 friction、density、restitution来表示摩擦力、密度、弹性系数，用uint16的categoryBits和maskBits 来表示碰撞位及位标识（可以用来过滤一些碰撞）,用int16的groupIndex来表示组号，这个组号可以用来过滤还比位标识优先。
+
+相关常量
+enum b2ShapeType
+{
+e_unknownShape = -1,
+e_circleShape,
+e_boxShape,
+e_polyShape,
+e_meshShape,
+e_shapeTypeCount,
+};
+相关形状定义
+b2CircleDef继承于b2ShapeDef，type 为 e_circleShape，另外带有一个类型为float32的量radius来表示半径值。
+b2BoxDef继承于b2ShapeDef，type 为 e_ boxShape，另外带有一个类型为b2Vec2的量extents来表示区域值。
+b2PolyDef继承于b2ShapeDef，type 为 e_ polyShape，另外带有一个类型为b2Vec2的数组vertices来表示顶点，并带有一个int32型的量vertexCount来表示顶点数，目前顶点数最多支持8个。
+5、b2BodyDef
+b2BodyDef是刚体定义结构，由一个函数指针userData来表示用户数据，一组类型为b2ShapeDef*指针数组shapes来表示形状队列，目前形状数最大支持64个，用一个b2Vec2向量position来表示当前位置，用类型为float32的量rotation来表示当前角度，用类型为b2Vec2的量linearVelocity表示线速度，用类型为float32的angularVelocity来表示角速度,用类型为 float32的量linearDamping来表示线性阻尼，用类型为float32的量angularDamping来表示角阻抗，用类型为bool 的allowSleep 来表示是否可以允许休眠，用一个类型为bool的isSleeping来表示是否正在休眠，用一个类型为bool的量preventRotation来表示是否防止旋转，支持方法：
+AddShape(b2ShapeDef* shape)。
+
+上面这些东西，其实现在没有必要去记住，慢慢运用中就可以熟练掌握。
+源文件包里除了这个HelloWorld之外还有不少的例子，个人建议先从CompoundShapes开始。
+
+二、CompoundShapes
+
+
+CompoundShapes其实也没有做什么事情，相对于HelloWorld来说，我认为，仅仅是多了一个方法的应用，即是有关b2Mat22方阵和向量的相乘应用，这里被用来获得转换后的位置。
+这个例子对于看过HelloWorld的你来说，应该会很简单，只是建议看这个例子的时候再翻翻数学书，并复习一下使用到的几种数据类型说明。
+
+三、 VaryingRestitution、VaryingFriction、Pyramid、PolyShapes
+
+
+Box2D本身所自带的教程相当的少，前两个例程是关于摩擦力和弹性系数的例子，也仅仅修改了相关数据，算是一种演示吧，Pyramid这个例子也就是一个简单的例子，只是使用了Make方法来创建向量。没什么参考价值。
+PolyShapes这个例子举个自定义多边形形状的方法，你只要记住当前多边形最多支持顶点数为8就行了。
+四、 CollisionFiltering、
+
+
+碰撞过滤是用来防止形状与形状之间进行碰撞的，就像上文所示，它可以用碰撞种类和组名来区别，Box2D总共提供16种碰撞种类，每个形状都可以提定属于什么种类，那么它就可以和其他不同种类的形状碰撞，如果在一个多人在线游戏中，你想你的玩家在他们之间不进行碰撞，怪物和怪物之间不进行碰撞，但人和怪物进行碰撞，你可以使用
+playerShapeDef.categoryBits = 0x0002;
+monsterShapeDef.categoryBits = 0x0004;
+playerShape.maskBits = 0x0004;
+monsterShapeDef.maskBits = 0x0002;
+碰撞组索引是一个可以大量指定物体碰撞规则的东西，你可以通过它来指定成百上千的物体，当碰撞组索引为负数时，东西之间不碰撞，当为正数时进行碰撞，而且碰撞组索引的优先级比碰撞种类要高。
+shape1Def.groupIndex = 2;
+shape2Def.groupIndex = 2;
+shape3Def.groupIndex = -8;
+shape4Def.groupIndex = -8;
+形状1和2就碰撞,因为组索引大于0,而3和4不碰撞,因为小于0
+可以参考例子代码来确定你的碰撞方法.
+
+五、 ApplyForce
+
+
+应力的应用是物理引擎中必不可少的部分，你有刚体能碰撞却不能推动它，那么它必定会给你带来很强的挫败感。
+在这个教程中，主要是对刚体的几个方法进行了应用，这些方法都很简单易用。
+刚体有两个点对我们有用，一个是刚体的坐标点，另一个是刚体的质心位置。刚体的质心位置就不需要你自己指出，Box2D将会自己算出这个坐标。
+刚体有如下几个成员变量，
+uint32 m_flags;
+质心位置：
+b2Vec2 m_position;
+质心旋转度：
+float32 m_rotation;
+线性速度：
+b2Vec2 m_linearVelocity;
+角速度：
+float32 m_angularVelocity;
+力：
+b2Vec2 m_force;
+扭矩：
+float32 m_torque;
+
+形状表：
+b2Shape* m_shapeList;
+形状数：
+int32 m_shapeCount;
+关节表：
+b2JointNode* m_jointList;
+关节数：
+b2ContactNode* m_contactList;
+质量：
+float32 m_mass, m_invMass;
+float32 m_I, m_invI;
+线性阻尼：
+float32 m_linearDamping;
+角阻尼：
+float32 m_angularDamping;
+休眠时间
+float32 m_sleepTime;
+用户数据：
+void* m_userData;
+
+
+并有以下几种方法：
+1、设置刚体位置和旋转度
+void SetOriginPosition(const b2Vec2& position, float32 rotation);
+
+2、取刚体当前位置
+
+b2Vec2 GetOriginPosition() const;
+
+3、设置刚体的质心位置及旋转度
+
+void SetCenterPosition(const b2Vec2& position, float32 rotation);
+
+4、取得刚体的质心位置
+
+b2Vec2 GetCenterPosition() const;
+
+5、取得旋转度
+
+float32 GetRotation() const;
+6、取得旋转矩阵
+
+const b2Mat22& GetRotationMatrix() const;
+
+7、设置和取得质心的线性速度
+void SetLinearVelocity(const b2Vec2& v);
+b2Vec2 GetLinearVelocity() const;
+8、设置和取得角速度
+void SetAngularVelocity(float32 w);
+float32 GetAngularVelocity() const;
+9、应用一个力到世界点上
+void ApplyForce(const b2Vec2& force, const b2Vec2& point);
+force为力的大小，point为作用点
+10、应用一个扭矩
+void ApplyTorque(float32 torque);
+11、在点上应用一个推力
+
+void ApplyImpulse(const b2Vec2& impulse, const b2Vec2& point);
+12、取得质量
+float32 GetMass() const;
+13、取得惯性
+float32 GetInertia() const;
+14、取得世界点（取得给定相对于质心的点的世界坐标）
+b2Vec2 GetWorldPoint(const b2Vec2& localPoint);
+15、根据届出当前坐标系给的向量来得到世界向量
+b2Vec2 GetWorldVector(const b2Vec2& localVector);
+16、根据给定世界坐标来得到相对于质心的坐标
+b2Vec2 GetLocalPoint(const b2Vec2& worldPoint);
+17、根据一个世界向量来取得一个此时的向量
+b2Vec2 GetLocalVector(const b2Vec2& worldVector);
+18、判断刚体是否静止
+bool IsStatic() const;
+19、判断刚体是否冷冻
+bool IsFrozen() const;
+20、判断刚体是否休眠
+bool IsSleeping() const;
+21、你可以用它来单独设置这个刚体是否可以休眠
+void AllowSleeping(bool flag);
+22、唤醒这个刚体
+void WakeUp();
+23、取得附加在这个刚体上的形状表
+b2Shape* GetShapeList();
+24、取得附加在这个刚体上的联系表
+b2ContactNode* GetContactList();
+25、取得附加在这个刚体上的所有关节表
+b2JointNode* GetJointList();
+26、取得这个刚体在世界刚体表中的下一刚体
+b2Body* GetNext();
+27、取得用户数据
+void* GetUserData();
+
+void SynchronizeShapes();
+void QuickSyncShapes();
+// This is used to prevent connected bodies from colliding.
+// It may lie, depending on the collideConnected flag.
+bool IsConnected(const b2Body* other) const;
+// This is called when the child shape has no proxy.
+void Freeze();
+
+
+标记
+enum
+{
+e_staticFlag = 0x0001,
+e_frozenFlag = 0x0002,
+e_islandFlag = 0x0004,
+e_sleepFlag = 0x0008,
+e_allowSleepFlag = 0x0010,
+e_destroyFlag = 0x0020,
+};
+
+虽然说刚体这个类的很多成员变量没有私有化，但是还是建议你使用它的众多方法来管理。
+在进行力学应用的时候，经常会需要相关转换坐标，所以建议找找相关书看看。
+
+六、 Web
+
+
+在开始之前，我们先来回顾一下以前所讨论过的形状，刚体，在这里我们来看看使用他们有什么值得注意的地方。
+1、关于多边形形状定义，我们由b2_maxPolyVertices决定了最大顶点数为8，如果你想要更多的多边形，那么我可以在 b2Setting.h里面修改相关数值。你在使用多边形时，一定要指定顶点数，而且顶点坐标得按逆时针顺序（CCW），你不能交叠任何的顶点，多边形会自动帮你闭合，同时这个多边形得凸起的，也就是说你必须让每个顶点都向外扩展一定角度，以上几点很重要，不要因此引起许多莫名其妙的错误。
+2、关于摩擦力和弹性系数，摩擦力与应力是成比例关系，它介出0和1之间，0表示无摩擦，1表示摩擦力很强，如果有两个形状都定义了摩擦力，那么它实际摩擦力将会是两个摩擦力的乘积开根。
+3、弹性系数让物体能够弹起来，值也介于0与1之间，如果一个球掉到桌面上来，这个值是0的时候则不会弹起来，如果是1的话那么就叫完全弹性碰撞，如果刚体中有两个形状都有不同的弹性系数，那么使用这个方法：
+float32 restitution;
+restitution = b2Max(shape1->restitution, shape2->restitution);
+4、关于碰撞过滤，有三种情况下是附加影响碰撞的，静态物体之间形状不发生碰撞，同一个刚体中的形状不发生碰撞，你能设置的在关节连接的两个物体形状间是否发生碰撞。
+5、关于创建和销毁一个形状，你没有必要去讨论形状的创建和销毁，Box2D会帮你自动完成。
+6、每一刚体添加形状是由参数b2_maxShapesPerBody来控制的，目前最大设为64，如果你想要更大的话，那么你修改b2Setting.h里面相关数值。
+7、关于刚体创建与销毁，你不需要手动为一个刚体分配和释放内存，这些都由引擎自动完成，所以你创建的时候，你仅仅需要：
+b2Body* body = myWorld->CreateBody(&bodyDef);
+销毁的时候：
+myWorld->DestroyBody(body);
+body = NULL;
+8、当刚体被销毁时，附加在上面的关节都会自动销毁，你必须清空这些关节指针，不然你的程序会在你以后销毁关卡的时候死得很难看。为了帮助你清空你的关卡指针，Box2D提供一个叫作b2WorldListener的监听类，你可以应用它来清空，之后世界就会告诉你到一个关节被销毁。
+9、唤醒一个休眠物体你只能用b2Body::WakeUp，在它上面应用任何力是不可以唤醒一个刚体的。
+10、要擅于利用刚体的转换函数，它会帮我们解决很多问题。
+11、在Debug模式下，最好能利用下列代码把形状显示出来，帮助我们调试。
+for (b2Shape* s = body->GetShapeList(); s; s = s->GetNext())
+{
+GameDrawShape(s);
+}
+12、Box2D里面所说的角度都是指弧度。
+正文
+在这一教程开始之前，先来讨论关节。
+关节(Joint)其实就是用来连接刚体的，你可以想像一下你的手。每一个关节也有一个关节定义b2JointDef，所有关节都连接在两个不同的刚体之间，一个可能是静态，如果你想浪费内存的话，就创建一个连在两个静态刚体上吧。
+关节是物体引擎中的另一重要部分，所以Box2D中把它作了细分，我们目前暂时先讨论在这个例程中使用的Distance关节。
+先来看b2JointDef的结构：
+struct b2JointDef
+{
+
+b2JointType type;
+void* userData;
+b2Body* body1;
+b2Body* body2;
+bool collideConnected;
+};
+Type表示为类别e_unknownJoint、 e_revoluteJoint、e_prismaticJoint、 e_distanceJoint、 e_pulleyJoint、 e_mouseJoint、 e_gearJoint。Userdata是用户数据，body1、body2为两个刚体指针，collideConnected表示是否在两个刚体之间检查碰撞。
+Distance Joint是一种用来连接两个刚体的有距线段关节。你使用它的时候必须分别给两个刚体指定两个锚点，这两个点意味着此关节的长度。
+
+b2DistanceJointDef的结构
+struct b2DistanceJointDef : public b2JointDef
+{
+
+b2Vec2 anchorPoint1;
+b2Vec2 anchorPoint2;
+};
+继承于b2JointDef，只是多了两个锚点。
+
+下面是此关节定义的一个应用：
+b2DistanceJointDef jointDef;
+jointDef.body1 = myBody1;
+jointDef.body2 = myBody2;
+jointDef.collideConnected = true;
+jointDef.anchorPoint1 = myBody1->GetCenterPosition();
+jointDef.anchorPoint2 = myBody2->GetCenterPosition();
+
+
+参照Web例子，我们会发现定义一个关节其实也很简单
+1、指定关节定义
+2、创建关节
+3、结束时销毁关节
+
+七、 Chain、Bridge、Cradle
+
+
+Chain、Bridge两个例程是对Revolute Joint的应用，Revolute Joint是两个刚体共用一个锚点，它有一个自由度，在这里被叫作关节角度。
+
+为了指定一个Revolute你必须提供两个刚体和一个锚点，引擎会假定这两个刚体已经在正确位置上。
+它的结构如下：
+struct b2RevoluteJointDef : public b2JointDef
+{
+b2Vec2 anchorPoint;
+float32 lowerAngle;
+float32 upperAngle;
+float32 motorTorque;
+float32 motorSpeed;
+bool enableLimit;
+bool enableMotor;
+};
+它也是继承于b2JointDef，anchorPoint是锚点，lowerAngle为转动角底限，upperAngle为转动角上限，其他的这里暂时先不介绍。
+Chain、Bridge两个例子非常简单，和Distance Joint相差不大，算是对Joint使用的再次巩固。
+八、 Pulleys
+
+
+Pulleys是对Prismatic Joint、Pulley Joint的应用，Prismatic Joint是一种允许两个刚体沿指定轴相对移动的关节，不允许相对旋转，所以有一个自由度。
+
+它的结构下：
+struct b2PrismaticJointDef : public b2JointDef
+{
+b2Vec2 anchorPoint;
+b2Vec2 axis;
+float32 lowerTranslation;
+float32 upperTranslation;
+float32 motorForce;
+float32 motorSpeed;
+bool enableLimit;
+bool enableMotor;
+};
+我们这时暂时只应用到anchorPoint，axis，axis为轴，lowerTranslation为移动底限，upperTranslation为移动上限，而其他几项我们在Joint motor块讨论。
+Pulley Joint用来创建理想滑轮，滑轮连接两个刚体，一个上去，一个便下来，根据你的最初设定来决定你的绳长。
+length1 + length2 ==常数C
+
+你可以应用一个比例关系来模拟滑车装置，这会导致一边伸展得比另一边快，同时约束力也是一边大一边小，你可以用它来创建杠杆。
+length1 + ratio * length2 == 常数C
+举个例子，如果ratio（比例关系）是2，那么length1会变成length2的两倍，当作用在附加在刚体1上的绳上的力将会是作用在附加在刚体2上的力的一半。
+struct b2PulleyJointDef : public b2JointDef
+{
+b2Vec2 groundPoint1;
+b2Vec2 groundPoint2;
+b2Vec2 anchorPoint1;
+b2Vec2 anchorPoint2;
+float32 maxLength1;
+float32 maxLength2;
+float32 ratio;
+};
+groundPoint1、groundPoint2是刚体1、2上面绳子的顶点，anchorPoint1、anchorPoint2是刚体与绳子连接的点，maxLength1、maxLength2为两刚体的最大长度，ratio是比例系数。
+九、 Gears
+
+Gears内容里面有关于Revolute Joint、Prismatic Joint、Gear Joint的应用，前两种已经在前面讨论过，现在我们先看Gear Joint。
+
+Gear Joint直接翻译为齿轮关节，顾名思义就是用来处理齿轮类物体的相互关联。
+你在使用Gear Joint的时候必须先有一个附加了Prismatic Joint（此关节连接你的刚体和你的包容盒）的刚体和一个附加了Revolute Joint（此关节连接你的刚体和你的包容盒）的刚体咬合在一起。然后再用Gear Joint把这两个刚体连接到一起。
+和Pulley Joint一样也有ratio值，在这里这个值可以是负数，记住我们两必要关节一个是Revolute Joint，另一个是Prismatic Joint，所以
+coordinate1 + ratio * coordinate2 == 常数C
+这个例子已经应用了ratio值，你可以自己动手调调，来看看效果和作用。
+Gear Joint依赖于两个子关节，一般是在两个子关节之前删除，甚至于是在所有有关刚体被删除之前删除。
+结构如下：
+struct b2GearJointDef : public b2JointDef
+{
+b2Joint* joint1;
+b2Joint* joint2;
+float32 ratio;
+};
+继承于关节定义， joint1、joint2表示两个定义在刚体上面的关节，ratio表示比例关系。
+
+十、Joint（附加）
+
+
+其实上面讲了那么多种关节，但是我们都还没有真正讨论过joint，joint这里翻译为关节，它的结构为
+b2JointType m_type;
+b2Joint* m_prev;
+b2Joint* m_next;
+b2JointNode m_node1;
+b2JointNode m_node2;
+b2Body* m_body1;
+b2Body* m_body2;
+
+bool m_islandFlag;
+bool m_collideConnected;
+
+void* m_userData;
+
+m_type是类型，分为 e_unknownJoint、e_revoluteJoint、 e_prismaticJoint、e_distanceJoint、e_pulleyJoint、e_mouseJoint、e_gearJoint。指针节点这些都应用在数据结构上，定义是两个刚体对象：m_body1、m_body2，m_collideConnected表示连接刚体之间是否碰撞，还有一个函数指针型的m_userData来存储自己的数据。m_islandFlag这个标识暂时不用去管。
+
+支持的方法有：
+1、b2JointType GetType() const;
+取得关节类型。
+2、b2Body* GetBody1();
+取得刚体1
+3、b2Body* GetBody2();
+取得刚体2
+4、virtual b2Vec2 GetAnchor1() const = 0;
+取得锚点1
+5、virtual b2Vec2 GetAnchor2() const = 0;
+取得锚点2
+6、virtual b2Vec2 GetReactionForce(float32 invTimeStep) const = 0;
+取得反作用力
+7、virtual float32 GetReactionTorque(float32 invTimeStep) const = 0;
+取得反作用扭矩
+8、b2Joint* GetNext();
+取得下一个关节
+9、void* GetUserData();
+取得用户数据
+10、static b2Joint* Create(const b2JointDef* def, b2BlockAllocator* allocator);
+创建关节
+11、static void Destroy(b2Joint* joint, b2BlockAllocator* allocator);
+销毁关节
+12、其他方法（暂不介绍）
+virtual void PrepareVelocitySolver() = 0;
+virtual void SolveVelocityConstraints(const b2TimeStep* step) = 0;
+virtual void PreparePositionSolver() {}
+virtual bool SolvePositionConstraints() = 0;
+
+以前所讨论过的几种关节都是继承于b2Joint而来，下面列出了相关附加属性和方法。不推荐直接使用相关成员变量来取值或赋值，要擅于利用相关功能函数来取值。
+Gear Joint：
+附加属性（常用）：
+b2Body* m_ground1;
+地面刚体1指针
+b2Body* m_ground2;
+地面刚体2指针
+
+b2RevoluteJoint* m_revolute1;
+
+RevoluteJoint指针1
+
+b2PrismaticJoint* m_prismatic1;
+
+PrismaticJoint指针1
+
+b2RevoluteJoint* m_revolute2;
+
+RevoluteJoint指针2
+
+b2PrismaticJoint* m_prismatic2;
+
+PrismaticJoint指针2
+
+
+b2Vec2 m_groundAnchor1;
+地面锚点1
+
+b2Vec2 m_groundAnchor2;
+地面锚点2
+
+b2Vec2 m_localAnchor1;
+当前锚点1
+
+b2Vec2 m_localAnchor2;
+当前锚点2
+float32 m_ratio;
+比例关系
+
+float32 m_mass;
+质量
+float32 m_impulse;
+推力
+附加方法：
+1、float32 GetRatio() const;
+取得比例关系
+Revolute Joint：
+附加属性：
+b2Vec2 m_localAnchor1;
+
+b2Vec2 m_localAnchor2;
+b2Vec2 m_ptpImpulse;
+float32 m_motorImpulse;
+float32 m_limitImpulse;
+float32 m_limitPositionImpulse;
+
+b2Mat22 m_ptpMass; // effective mass for point-to-point constraint.
+float32 m_motorMass; // effective mass for motor/limit angular constraint.
+float32 m_intialAngle;
+float32 m_lowerAngle;
+float32 m_upperAngle;
+float32 m_maxMotorTorque;
+float32 m_motorSpeed;
+
+bool m_enableLimit;
+bool m_enableMotor;
+b2LimitState m_limitState;
+附加方法：
+
+1、float32 GetJointAngle() const;
+取得关节角度
+2、float32 GetJointSpeed() const;
+取得关节速度
+3、float32 GetMotorTorque(float32 invTimeStep) const;
+取得发动扭矩
+4、void SetMotorSpeed(float32 speed);
+取得发动速度
+5、void SetMotorTorque(float32 torque);
+设置发动扭矩
+Prismatic Joint：
+附加方法：
+1、float32 GetJointTranslation() const;
+取得关节位移
+2、float32 GetJointSpeed() const;
+取得关节速度
+3、float32 GetMotorForce(float32 invTimeStep) const;
+取得发动应力
+
+4、 void SetMotorSpeed(float32 speed);
+设置发动速度
+5、void SetMotorForce(float32 force);
+设置发动速度
+Revolute Joint：
+附加方法：
+1、float32 GetJointAngle () const;
+取得关节角度
+2、float32 GetJointSpeed() const;
+取得关节速度
+3、float32 GetMotorTorque (float32 invTimeStep) const;
+取得发动扭矩
+
+4、 void SetMotorSpeed(float32 speed);
+设置发动速度
+5、void SetMotorTorque (float32 torque);
+设置发动扭矩
+十一、Joint motor（MotorsAndLimits、SliderCrank）
+
+
+在开始之前，我们再来回顾一下Joint，我们前面讨论过的情况来看，在几种Joint中应用到motor的只有Prismatic Joint和Revolute Joint。在使用motor时总有那么几个常见量，float32 motorTorque或者float32 motorForce、 float32 motorSpeed、bool enableLimit、bool enableMotor。
+motorTorque或motorForce表示现在的扭矩或应力，Revolute Joint就是扭矩，因为他共用一个锚点，只能沿这锚点转动，而Prismatic Joint支持基于轴的移动，所以他是应力。
+motorSpeed表示的是把这应力或者扭距应用到刚体上的数值增减程度。（仅当参考，事实是你加大减少这个值会让游戏数值瞬间变化量变多或变少，理解就行）
+enableMotor是决定使用不使用Motor。
+enableLimit决定上下限（角度或者长度）是否有用。
+在SliderCrank这个例子中，先是定义了一个刚体，并用这个刚体和地面创建了一个Revolute Joint，这个Revolute Joint的motorTorque值设为一定值，让这个刚体持续转动，当然你的速度越快，转动就越快。这个刚体又用Revolute Joint连接了一个刚体，但这个Revolute Joint无效了motor，所以这个刚体只能靠其他刚体让他移动。又用Revolute Joint连接了活塞刚体，同样是无效了motor，之后创建了Prismatic Joint来连接你的活塞和地面，给定了应力，所以这个应力就使得上面掉下来的块上升。
+注意他的相关坐标设置。
+总结一下，这里真正提供动力的有两个东西，一个是活塞，他是给下面掉下来的块提供力量，另一个是最持续转动的刚体盒子，他供给活塞以及他上面的块能量。
+MotorsAndLimits这个例子同样很好理解，除了对motor的应用外，还使用了enableLimit值，这个值是用来做什么，上面说过了，是用来决定在JointDef中定义的相关上下限是否起效。
+试着改动相关数据对你理解更有效。
+十二、CollisionProcessing
+
+
+CollisionProcessing这个例子是有关于Contacts的使用。这个东西是Box2D用来在形状间检测碰撞的，有很多不同种类的 Contacts，比如说负责圆和圆碰撞的，负责圆和多边形碰撞的。这些其实你都没有必要去了解它，你只要会应用你最需要的就行了。
+这里你最起码需要了解的几个概念：
+Contact：就是用来管理碰撞的
+contact manifold：这个东西就是碰撞时候产生的，是一个由碰撞点组成的矢量线段。
+contact point：碰撞点
+
+在例子CollisionProcessing中的Step部分，先从世界的Contacts表里取出你需要的连接，然后取得contact manifold的数量，如果有连接，然后再做出相应的处理。
+b2Contact的结构：
+重要的属性：
+发生碰撞的两个形状
+b2Shape* m_shape1;
+
+b2Shape* m_shape2;
+contact manifold的数量
+int32 m_manifoldCount;
+组合摩擦力和弹性系数
+float32 m_friction;
+float32 m_restitution;
+重要的成员函数：
+取得相应的contact manifold
+virtual b2Manifold* GetManifolds() = 0;
+取得contact manifold数
+int32 GetManifoldCount() const
+取得下一个Contact
+b2Contact* GetNext();
+取得这个Contact的两个形状
+b2Shape* GetShape1();
+
+b2Shape* GetShape2();
+
+来自: http://hi.baidu.com/sgfswen/blog/item/36a6651cbf831d07314e155a.html
+  
