@@ -254,4 +254,11 @@ public class CarGame extends Box2DTestGame {
 		return super.keyTyped(character);
 	}
 
+	@Override
+	protected void step() {
+		//settings->viewCenter.x = m_car->GetPosition().x;
+		super.step();
+		
+	}
+
 }
