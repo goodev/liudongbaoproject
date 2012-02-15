@@ -17,5 +17,6 @@
         <item>com.hellogame.ShapeEditingGame</item>
         <item>com.hellogame.VaryingRestitutionGame</item>
         <item>com.hellogame.CarGame</item>
-     </string-array>
+        <item>com.hellogame.ApplyForceGame</item>      
+    </string-array>
 </resources>
