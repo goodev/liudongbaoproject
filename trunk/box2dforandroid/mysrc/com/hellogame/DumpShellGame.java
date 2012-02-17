@@ -17,7 +17,7 @@ public class DumpShellGame extends Box2DTestGame {
 	public void create() {
 		super.create();
 		Vector2 g = new Vector2(0.000000000000000e+00f, 0.000000000000000e+00f);
-		world.setGravity(g);
+		m_world.setGravity(g);
 		Body[] bodies = new Body[3];
 		Joint[] joints = new Joint[2];
 		createBody0(bodies);
@@ -42,7 +42,7 @@ public class DumpShellGame extends Box2DTestGame {
 		jd.enableMotor = false;
 		jd.motorSpeed = 0.000000000000000e+00f;
 		jd.maxMotorTorque = 0.000000000000000e+00f;
-		joints[1] = world.createJoint(jd);
+		joints[1] = m_world.createJoint(jd);
 	}
 
 	private void createJonit0ForBody1AndBody0(Body[] bodies, Joint[] joints) {
@@ -60,7 +60,7 @@ public class DumpShellGame extends Box2DTestGame {
 		jd.enableMotor = true;
 		jd.motorSpeed = 0.000000000000000e+00f;
 		jd.maxMotorForce = 1.000000000000000e+01f;
-		joints[0] = world.createJoint(jd);
+		joints[0] = m_world.createJoint(jd);
 	}
 
 	private void createBody2AndFixture(Body[] bodies) {
@@ -78,7 +78,7 @@ public class DumpShellGame extends Box2DTestGame {
 		bd.bullet = false;
 		bd.active = true;
 		bd.gravityScale = 1.000000000000000e+00f;
-		bodies[2] = world.createBody(bd);
+		bodies[2] = m_world.createBody(bd);
 		{
 			FixtureDef fd = new FixtureDef();
 			fd.friction = 1.000000000000000e+01f;
@@ -167,7 +167,7 @@ public class DumpShellGame extends Box2DTestGame {
 		bd.bullet = false;
 		bd.active = true;
 		bd.gravityScale = 1.000000000000000e+00f;
-		bodies[1] = world.createBody(bd);
+		bodies[1] = m_world.createBody(bd);
 
 		FixtureDef fd = new FixtureDef();
 		fd.friction = 1.000000000000000e+00f;
@@ -206,7 +206,7 @@ public class DumpShellGame extends Box2DTestGame {
 		bd.bullet = false;
 		bd.active = true;
 		bd.gravityScale = 1.000000000000000e+00f;
-		bodies[0] = world.createBody(bd);
+		bodies[0] = m_world.createBody(bd);
 
 		FixtureDef fd = new FixtureDef();
 		fd.friction = 1.000000000000000e+00f;

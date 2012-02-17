@@ -16,7 +16,7 @@ public class VaryingRestitutionGame extends Box2DTestGame {
 		super.create();
 		// Ground
 		BodyDef groundBodyDef = new BodyDef();
-		groundBody = world.createBody(groundBodyDef);
+		groundBody = m_world.createBody(groundBodyDef);
 		EdgeShape edgeShape = new EdgeShape();
 		edgeShape.set(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
 		groundBody.createFixture(edgeShape, 0.0f);
@@ -33,7 +33,7 @@ public class VaryingRestitutionGame extends Box2DTestGame {
 				BodyDef bd = new BodyDef();
 				bd.type = BodyType.DynamicBody;
 				bd.position.set(-10.0f + 3.0f * i, 20.0f);
-				Body body = world.createBody(bd);
+				Body body = m_world.createBody(bd);
 				fd.restitution = restitution[i];
 				body.createFixture(fd);
 			}

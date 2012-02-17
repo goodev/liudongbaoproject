@@ -19,13 +19,13 @@ public class TumblerGame extends Box2DTestGame {
 		super.create();
 		// Ground
 		BodyDef groundBodyDef = new BodyDef();
-		groundBody = world.createBody(groundBodyDef);
+		groundBody = m_world.createBody(groundBodyDef);
 
 		BodyDef bd = new BodyDef();
 		bd.type = BodyType.DynamicBody;
 		bd.allowSleep = false;
 		bd.position.set(0.0f, 10.0f);
-		Body body = world.createBody(bd);
+		Body body = m_world.createBody(bd);
 
 		PolygonShape shape = new PolygonShape();
 		shape.setAsBox(0.5f, 10.0f, new Vector2(10.0f, 0.0f), 0.0f);
@@ -46,7 +46,7 @@ public class TumblerGame extends Box2DTestGame {
 		jd.motorSpeed = 0.05f * 3.14159265f;
 		jd.maxMotorTorque = 1e8f;
 		jd.enableMotor = true;
-		m_joint = (RevoluteJoint) world.createJoint(jd);
+		m_joint = (RevoluteJoint) m_world.createJoint(jd);
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class TumblerGame extends Box2DTestGame {
 			BodyDef bd = new BodyDef();
 			bd.type = BodyType.DynamicBody;
 			bd.position.set(0.0f, 10.0f);
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 			PolygonShape shape = new PolygonShape();
 			shape.setAsBox(0.5f, 0.5f);
 			body.createFixture(shape, 1.0f);

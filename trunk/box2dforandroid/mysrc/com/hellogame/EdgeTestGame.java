@@ -16,7 +16,7 @@ public class EdgeTestGame extends Box2DTestGame {
 		super.create();
 		{
 			BodyDef bd = new BodyDef();
-			Body ground = world.createBody(bd);
+			Body ground = m_world.createBody(bd);
 			Vector2 v1 = new Vector2(-10.0f, 0.0f);
 			Vector2 v2 = new Vector2(-7.0f, -2.0f);
 			Vector2 v3 = new Vector2(-4.0f, 0.0f);
@@ -54,7 +54,7 @@ public class EdgeTestGame extends Box2DTestGame {
 			bd.type = BodyType.DynamicBody;
 			bd.allowSleep = false;
 
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 
 			CircleShape shape = new CircleShape();
 			shape.setRadius(0.5f);
@@ -69,7 +69,7 @@ public class EdgeTestGame extends Box2DTestGame {
 			bd.type = BodyType.DynamicBody;
 			bd.allowSleep = false;
 
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 
 			PolygonShape shape = new PolygonShape();
 			shape.setAsBox(0.5f, 0.5f);

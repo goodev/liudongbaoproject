@@ -21,7 +21,7 @@ public class CharacterCollisionGame extends Box2DTestGame {
 		{
 			BodyDef bd = new BodyDef();
 
-			Body ground = world.createBody(bd);
+			Body ground = m_world.createBody(bd);
 			EdgeShape shape = new EdgeShape();
 			shape.set(new Vector2(-20.0f, 0.0f), new Vector2(20.0f, 0.0f));
 			ground.createFixture(shape, 0.0f);
@@ -31,7 +31,7 @@ public class CharacterCollisionGame extends Box2DTestGame {
 		// an internal vertex.
 		{
 			BodyDef bd = new BodyDef();
-			Body ground = world.createBody(bd);
+			Body ground = m_world.createBody(bd);
 			EdgeShape shape = new EdgeShape();
 			shape.set(new Vector2(-8.0f, 1.0f), new Vector2(-6.0f, 1.0f));
 			ground.createFixture(shape, 0.0f);
@@ -48,7 +48,7 @@ public class CharacterCollisionGame extends Box2DTestGame {
 		{
 			BodyDef bd = new BodyDef();
 			bd.angle = 0.25f * 3.15149265f;
-			Body ground = world.createBody(bd);
+			Body ground = m_world.createBody(bd);
 
 			Vector2[] vs = new Vector2[4];
 			vs[0] = new Vector2(5.0f, 7.0f);
@@ -65,7 +65,7 @@ public class CharacterCollisionGame extends Box2DTestGame {
 		// to this problem.
 		{
 			BodyDef bd = new BodyDef();
-			Body ground = world.createBody(bd);
+			Body ground = m_world.createBody(bd);
 
 			PolygonShape shape = new PolygonShape();
 			shape.setAsBox(1.0f, 1.0f, new Vector2(4.0f, 3.0f), 0.0f);
@@ -79,7 +79,7 @@ public class CharacterCollisionGame extends Box2DTestGame {
 		// Square made from an edge loop. Collision should be smooth.
 		{
 			BodyDef bd = new BodyDef();
-			Body ground = world.createBody(bd);
+			Body ground = m_world.createBody(bd);
 
 			Vector2[] vs = new Vector2[4];
 			vs[0] = new Vector2(-1.0f, 3.0f);
@@ -95,7 +95,7 @@ public class CharacterCollisionGame extends Box2DTestGame {
 		{
 			BodyDef bd = new BodyDef();
 			bd.position.set(-10.0f, 4.0f);
-			Body ground = world.createBody(bd);
+			Body ground = m_world.createBody(bd);
 
 			Vector2[] vs = new Vector2[10];
 			vs[0] = new Vector2(0.0f, 0.0f);
@@ -121,7 +121,7 @@ public class CharacterCollisionGame extends Box2DTestGame {
 			bd.fixedRotation = true;
 			bd.allowSleep = false;
 
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 
 			PolygonShape shape = new PolygonShape();
 			shape.setAsBox(0.5f, 0.5f);
@@ -140,7 +140,7 @@ public class CharacterCollisionGame extends Box2DTestGame {
 			bd.fixedRotation = true;
 			bd.allowSleep = false;
 
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 
 			PolygonShape shape = new PolygonShape();
 			shape.setAsBox(0.25f, 0.25f);
@@ -159,7 +159,7 @@ public class CharacterCollisionGame extends Box2DTestGame {
 			bd.fixedRotation = true;
 			bd.allowSleep = false;
 
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 
 			float angle = 0.0f;
 			float delta = 3.14159265f / 3.0f;
@@ -187,7 +187,7 @@ public class CharacterCollisionGame extends Box2DTestGame {
 			bd.fixedRotation = true;
 			bd.allowSleep = false;
 
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 
 			CircleShape shape = new CircleShape();
 			shape.setRadius(0.5f);
@@ -205,7 +205,7 @@ public class CharacterCollisionGame extends Box2DTestGame {
 			bd.type = BodyType.DynamicBody;
 			bd.allowSleep = false;
 
-			Body m_character = world.createBody(bd);
+			Body m_character = m_world.createBody(bd);
 
 			CircleShape shape = new CircleShape();
 			shape.setRadius(0.25f);

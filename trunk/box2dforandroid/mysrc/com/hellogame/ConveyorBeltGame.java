@@ -21,14 +21,14 @@ public class ConveyorBeltGame extends Box2DTestGame {
 		super.create();
 		// Ground
 		BodyDef groundBodyDef = new BodyDef();
-		Body groundBody = world.createBody(groundBodyDef);
+		Body groundBody = m_world.createBody(groundBodyDef);
 		EdgeShape edgeShape = new EdgeShape();
 		edgeShape.set(new Vector2(-20.0f, 0.0f), new Vector2(20.0f, 0.0f));
 		groundBody.createFixture(edgeShape, 0.0f);
 		// Platform
 		BodyDef platformBodyDef = new BodyDef();
 		platformBodyDef.position.set(-5.0f, 5.0f);
-		Body platformBody = world.createBody(platformBodyDef);
+		Body platformBody = m_world.createBody(platformBodyDef);
 
 		PolygonShape polygonShape = new PolygonShape();
 		polygonShape.setAsBox(10.0f, 0.5f);
@@ -43,7 +43,7 @@ public class ConveyorBeltGame extends Box2DTestGame {
 			BodyDef bd = new BodyDef();
 			bd.type = BodyType.DynamicBody;
 			bd.position.set(-10.0f + 2.0f * i, 7.0f);
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 			PolygonShape shape = new PolygonShape();
 			shape.setAsBox(0.5f, 0.5f);
 			body.createFixture(shape, 20.0f);

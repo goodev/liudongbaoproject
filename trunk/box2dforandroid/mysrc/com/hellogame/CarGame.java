@@ -36,7 +36,7 @@ public class CarGame extends Box2DTestGame {
 		// Ground
 		{
 			BodyDef bd = new BodyDef();
-			ground = world.createBody(bd);
+			ground = m_world.createBody(bd);
 			EdgeShape shape = new EdgeShape();
 
 			FixtureDef fd = new FixtureDef();
@@ -92,7 +92,7 @@ public class CarGame extends Box2DTestGame {
 			BodyDef bd = new BodyDef();
 			bd.position.set(140.0f, 1.0f);
 			bd.type = BodyType.DynamicBody;
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 
 			PolygonShape box = new PolygonShape();
 			box.setAsBox(10.0f, 0.25f);
@@ -103,7 +103,7 @@ public class CarGame extends Box2DTestGame {
 			jd.lowerAngle = -8.0f * b2_pi / 180.0f;
 			jd.upperAngle = 8.0f * b2_pi / 180.0f;
 			jd.enableLimit = true;
-			world.createJoint(jd);
+			m_world.createJoint(jd);
 			body.applyAngularImpulse(100.0f);
 		}
 
@@ -125,19 +125,19 @@ public class CarGame extends Box2DTestGame {
 				BodyDef bd = new BodyDef();
 				bd.type = BodyType.DynamicBody;
 				bd.position.set(161.0f + 2.0f * i, -0.125f);
-				Body body = world.createBody(bd);
+				Body body = m_world.createBody(bd);
 				body.createFixture(fd);
 
 				Vector2 anchor = new Vector2(160.0f + 2.0f * i, -0.125f);
 				jd.initialize(prevBody, body, anchor);
-				world.createJoint(jd);
+				m_world.createJoint(jd);
 
 				prevBody = body;
 			}
 
 			Vector2 anchor = new Vector2(160.0f + 2.0f * N, -0.125f);
 			jd.initialize(prevBody, ground, anchor);
-			world.createJoint(jd);
+			m_world.createJoint(jd);
 		}
 		// Boxes
 		{
@@ -149,23 +149,23 @@ public class CarGame extends Box2DTestGame {
 			bd.type = BodyType.DynamicBody;
 
 			bd.position.set(230.0f, 0.5f);
-			body = world.createBody(bd);
+			body = m_world.createBody(bd);
 			body.createFixture(box, 0.5f);
 
 			bd.position.set(230.0f, 1.5f);
-			body = world.createBody(bd);
+			body = m_world.createBody(bd);
 			body.createFixture(box, 0.5f);
 
 			bd.position.set(230.0f, 2.5f);
-			body = world.createBody(bd);
+			body = m_world.createBody(bd);
 			body.createFixture(box, 0.5f);
 
 			bd.position.set(230.0f, 3.5f);
-			body = world.createBody(bd);
+			body = m_world.createBody(bd);
 			body.createFixture(box, 0.5f);
 
 			bd.position.set(230.0f, 4.5f);
-			body = world.createBody(bd);
+			body = m_world.createBody(bd);
 			body.createFixture(box, 0.5f);
 		}
 
@@ -187,7 +187,7 @@ public class CarGame extends Box2DTestGame {
 			BodyDef bd = new BodyDef();
 			bd.type = BodyType.DynamicBody;
 			bd.position.set(0.0f, 1.0f);
-			m_car = world.createBody(bd);
+			m_car = m_world.createBody(bd);
 			m_car.createFixture(chassis, 1.0f);
 
 			FixtureDef fd = new FixtureDef();
@@ -196,11 +196,11 @@ public class CarGame extends Box2DTestGame {
 			fd.friction = 0.9f;
 
 			bd.position.set(-1.0f, 0.35f);
-			m_wheel1 = world.createBody(bd);
+			m_wheel1 = m_world.createBody(bd);
 			m_wheel1.createFixture(fd);
 
 			bd.position.set(1.0f, 0.4f);
-			m_wheel2 = world.createBody(bd);
+			m_wheel2 = m_world.createBody(bd);
 			m_wheel2.createFixture(fd);
 
 			WheelJointDef jd = new WheelJointDef();
@@ -212,7 +212,7 @@ public class CarGame extends Box2DTestGame {
 			jd.enableMotor = true;
 			jd.frequencyHz = m_hz;
 			jd.dampingRatio = m_zeta;
-			m_spring1 = (WheelJoint) world.createJoint(jd);
+			m_spring1 = (WheelJoint) m_world.createJoint(jd);
 
 			jd.initialize(m_car, m_wheel2, m_wheel2.getPosition(), axis);
 			jd.motorSpeed = 0.0f;
@@ -220,7 +220,7 @@ public class CarGame extends Box2DTestGame {
 			jd.enableMotor = false;
 			jd.frequencyHz = m_hz;
 			jd.dampingRatio = m_zeta;
-			m_spring2 = (WheelJoint) world.createJoint(jd);
+			m_spring2 = (WheelJoint) m_world.createJoint(jd);
 		}
 	}
 

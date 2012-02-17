@@ -16,7 +16,7 @@ import com.badlogic.gdx.physics.box2d.World;
 public class HelloBox2DGame implements ApplicationListener {
 
 	protected OrthographicCamera camera;
-	protected Box2DDebugRenderer renderer; // ²âÊÔÓÃ»æÖÆÆ÷
+	protected Box2DDebugRenderer renderer; // ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
 	private World world;
 
 	@Override
@@ -27,38 +27,38 @@ public class HelloBox2DGame implements ApplicationListener {
 		Vector2 gravity = new Vector2(0.0f, -10.0f);
 		boolean doSleep = true;
 
-		world = new World(gravity, doSleep); // Ò»°ã±ê×¼ÖØÁ¦³¡
+		world = new World(gravity, doSleep); // Ò»ï¿½ï¿½ï¿½×¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		creatingGroundBox();
 		creatingDynamicBody();
 	}
 
 	/***
-	 * ´´½¨µØÃæºÐ(Creating a Ground Box)
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Creating a Ground Box)
 	 */
 	private void creatingGroundBox() {
-		BodyDef groundBodyDef = new BodyDef(); // ÉùÃ÷ÎïÌå¶¨Òå
+		BodyDef groundBodyDef = new BodyDef(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å¶¨ï¿½ï¿½
 		groundBodyDef.position.set(0.0f, -10.0f);
 		// bd.type=BodyType.DynamicBody;
-		Body groundBody = world.createBody(groundBodyDef); // Í¨¹ýworld´´½¨Ò»¸öÎïÌå
+		Body groundBody = world.createBody(groundBodyDef); // Í¨ï¿½ï¿½m_worldï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		PolygonShape groundBox = new PolygonShape();
 		groundBox.setAsBox(50.0f, 10.0f);
-		groundBody.createFixture(groundBox, 1f);// ½«ÐÎ×´ºÍÃÜ¶È¸³¸øÎïÌå
+		groundBody.createFixture(groundBox, 1f);// ï¿½ï¿½ï¿½ï¿½×´ï¿½ï¿½ï¿½Ü¶È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	/***
-	 * ´´½¨¶¯Ì¬ÎïÌå(Creating a Dynamic Body)
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½(Creating a Dynamic Body)
 	 */
 	private void creatingDynamicBody() {
-		BodyDef bodyDef = new BodyDef(); // ÉùÃ÷ÎïÌå¶¨Òå
+		BodyDef bodyDef = new BodyDef(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å¶¨ï¿½ï¿½
 		bodyDef.position.set(0.0f, 4.0f);
 		bodyDef.type=BodyType.DynamicBody;
-		Body body = world.createBody(bodyDef); // Í¨¹ýworld´´½¨Ò»¸öÎïÌå
+		Body body = world.createBody(bodyDef); // Í¨ï¿½ï¿½m_worldï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		PolygonShape dynamicBox = new PolygonShape();
 		dynamicBox.setAsBox(1.0f, 1.0f);
 		FixtureDef fixtureDef = new FixtureDef();
 		fixtureDef.shape =dynamicBox;
 		fixtureDef.density = 1.0f;
 		fixtureDef.friction = 0.3f;
-		body.createFixture(fixtureDef);// ½«ÐÎ×´ºÍÃÜ¶È¸³¸øÎïÌå
+		body.createFixture(fixtureDef);// ï¿½ï¿½ï¿½ï¿½×´ï¿½ï¿½ï¿½Ü¶È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	@Override
 	public void dispose() {

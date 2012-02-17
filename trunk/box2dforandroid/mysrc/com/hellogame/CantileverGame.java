@@ -21,7 +21,7 @@ public class CantileverGame extends Box2DTestGame {
 		super.create();
 		// Ground
 		BodyDef groundBodyDef = new BodyDef();
-		Body ground = world.createBody(groundBodyDef);
+		Body ground = m_world.createBody(groundBodyDef);
 		EdgeShape edgeShape = new EdgeShape();
 		edgeShape.set(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
 		ground.createFixture(edgeShape, 0.0f);
@@ -44,7 +44,7 @@ public class CantileverGame extends Box2DTestGame {
 			BodyDef bd = new BodyDef();
 			bd.type = BodyType.DynamicBody;
 			bd.position.set(-6.0f + 6.0f * i, 10.0f);
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 			body.createFixture(fd);
 		}
 	}
@@ -64,7 +64,7 @@ public class CantileverGame extends Box2DTestGame {
 			BodyDef bd = new BodyDef();
 			bd.type = BodyType.DynamicBody;
 			bd.position.set(-8.0f + 8.0f * i, 12.0f);
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 			body.createFixture(fd);
 		}
 	}
@@ -81,12 +81,12 @@ public class CantileverGame extends Box2DTestGame {
 			BodyDef bd = new BodyDef();
 			bd.type = BodyType.DynamicBody;
 			bd.position.set(5.0f + 1.0f * i, 10.0f);
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 			body.createFixture(fd);
 			if (i > 0) {
 				Vector2 anchor = new Vector2(5.0f + 1.0f * i, 10.0f);
 				jd.initialize(prevBody, body, anchor);
-				world.createJoint(jd);
+				m_world.createJoint(jd);
 			}
 			prevBody = body;
 		}
@@ -104,12 +104,12 @@ public class CantileverGame extends Box2DTestGame {
 			BodyDef bd = new BodyDef();
 			bd.type = BodyType.DynamicBody;
 			bd.position.set(-4.5f + 1.0f * i, 5.0f);
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 			body.createFixture(fd);
 			if (i > 0) {
 				Vector2 anchor = new Vector2(-5.0f + 1.0f * i, 5.0f);
 				jd.initialize(prevBody, body, anchor);
-				world.createJoint(jd);
+				m_world.createJoint(jd);
 			}
 			prevBody = body;
 		}
@@ -128,11 +128,11 @@ public class CantileverGame extends Box2DTestGame {
 			BodyDef bd = new BodyDef();
 			bd.type = BodyType.DynamicBody;
 			bd.position.set(-14.0f + 2.0f * i, 15.0f);
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 			body.createFixture(fd);
 			Vector2 anchor = new Vector2(-15.0f + 2.0f * i, 15.0f);
 			jd.initialize(prevBody, body, anchor);
-			world.createJoint(jd);
+			m_world.createJoint(jd);
 			prevBody = body;
 		}
 	}
@@ -149,11 +149,11 @@ public class CantileverGame extends Box2DTestGame {
 			BodyDef bd = new BodyDef();
 			bd.type = BodyType.DynamicBody;
 			bd.position.set(-14.5f + 1.0f * i, 5.0f);
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 			body.createFixture(fd);
 			Vector2 anchor = new Vector2(-15.0f + 1.0f * i, 5.0f);
 			jd.initialize(prevBody, body, anchor);
-			world.createJoint(jd);
+			m_world.createJoint(jd);
 			prevBody = body;
 		}
 	}
