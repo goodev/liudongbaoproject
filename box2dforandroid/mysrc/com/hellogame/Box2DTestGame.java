@@ -36,7 +36,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 	protected static final String tag = "Box2DTestGame";
 	protected OrthographicCamera camera;
 	protected Box2DDebugRenderer renderer; // �����û�����
-	protected World world;
+	protected World m_world;
 	final int k_maxContactPoints = 2048;
 	protected Body groundBody;
 	protected ContactPoint m_points[] = new ContactPoint[k_maxContactPoints];
@@ -162,9 +162,9 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 		float lowerY = p.y - 0.001f;
 		float upperX = p.x + 0.001f;
 		float upperY = p.y + 0.001f;
-		// Query the world for overlapping shapes.
+		// Query the m_world for overlapping shapes.
 		MYQueryCallback callback = new MYQueryCallback(p);
-		this.world.QueryAABB(callback, lowerX, lowerY, upperX, upperY);
+		this.m_world.QueryAABB(callback, lowerX, lowerY, upperX, upperY);
 		if (callback.fixture != null) {
 			Body body = callback.fixture.getBody();
 			MouseJointDef md = new MouseJointDef();
@@ -173,7 +173,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 			md.target.x = p.x;
 			md.target.y = p.y;
 			md.maxForce = 1000.0f * body.getMass();
-			mouseJoint = (MouseJoint) world.createJoint(md);
+			mouseJoint = (MouseJoint) m_world.createJoint(md);
 			body.setAwake(true);
 		}
 	}
@@ -188,7 +188,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 
 	public void MouseUp(Vector2 p) {
 		if (mouseJoint != null) {
-			world.destroyJoint(mouseJoint);
+			m_world.destroyJoint(mouseJoint);
 			mouseJoint = null;
 		}
 
@@ -223,7 +223,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 
 	public void LaunchBomb(Vector2 position, Vector2 velocity) {
 		if (bombBody != null) {
-			world.destroyBody(bombBody);
+			m_world.destroyBody(bombBody);
 			bombBody = null;
 		}
 
@@ -232,7 +232,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 		bd.position.x = position.x;
 		bd.position.y = position.y;
 		bd.bullet = true;
-		bombBody = world.createBody(bd);
+		bombBody = m_world.createBody(bd);
 		bombBody.setLinearVelocity(velocity);
 
 		CircleShape circle = new CircleShape();
@@ -265,7 +265,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 		renderer = new Box2DDebugRenderer();
 		Vector2 gravity = new Vector2(0.0f, -10.0f);
 		boolean doSleep = true;
-		world = new World(gravity, doSleep); // һ���׼������
+		m_world = new World(gravity, doSleep); // һ���׼������
 		// creatingGroundBox();
 		// creatingDynamicBody();
 		Gdx.input.setInputProcessor(this);
@@ -278,7 +278,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 		BodyDef groundBodyDef = new BodyDef(); // �������嶨��
 		groundBodyDef.position.set(0.0f, -10.0f);
 		// bd.type=BodyType.DynamicBody;
-		Body groundBody = world.createBody(groundBodyDef); // ͨ��world����һ������
+		Body groundBody = m_world.createBody(groundBodyDef); // ͨ��m_world����һ������
 		PolygonShape groundBox = new PolygonShape();
 		groundBox.setAsBox(50.0f, 10.0f);
 		groundBody.createFixture(groundBox, 1f);// ����״���ܶȸ�������
@@ -291,7 +291,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 		BodyDef bodyDef = new BodyDef(); // �������嶨��
 		bodyDef.position.set(0.0f, 4.0f);
 		bodyDef.type = BodyType.DynamicBody;
-		Body body = world.createBody(bodyDef); // ͨ��world����һ������
+		Body body = m_world.createBody(bodyDef); // ͨ��m_world����һ������
 		PolygonShape dynamicBox = new PolygonShape();
 		dynamicBox.setAsBox(1.0f, 1.0f);
 		FixtureDef fixtureDef = new FixtureDef();
@@ -305,10 +305,10 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 	public void dispose() {
 
 		renderer.dispose();
-		world.dispose();
+		m_world.dispose();
 
 		renderer = null;
-		world = null;
+		m_world = null;
 	}
 
 	@Override
@@ -323,15 +323,15 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		camera.update();
 		camera.apply(gl);
-		renderer.render(world, camera.combined);
+		renderer.render(m_world, camera.combined);
 	}
 
 	protected void step() {
 		float timeStep = Gdx.app.getGraphics().getDeltaTime();
 		int velocityIterations = 6;
 		int positionIterations = 2;
-		world.step(timeStep, velocityIterations, positionIterations);
-		world.clearForces();
+		m_world.step(timeStep, velocityIterations, positionIterations);
+		m_world.clearForces();
 	}
 
 	

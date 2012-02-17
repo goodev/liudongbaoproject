@@ -19,7 +19,7 @@ public class BodyTypesGame extends Box2DTestGame {
 		Body ground = null, m_attachment = null, m_platform = null;
 		{
 			BodyDef bd = new BodyDef();
-			ground = world.createBody(bd);
+			ground = m_world.createBody(bd);
 
 			EdgeShape shape = new EdgeShape();
 			shape.set(new Vector2(-20.0f, 0.0f), new Vector2(20.0f, 0.0f));
@@ -34,7 +34,7 @@ public class BodyTypesGame extends Box2DTestGame {
 			BodyDef bd = new BodyDef();
 			bd.type = BodyType.DynamicBody;
 			bd.position.set(0.0f, 3.0f);
-			m_attachment = world.createBody(bd);
+			m_attachment = m_world.createBody(bd);
 
 			PolygonShape shape = new PolygonShape();
 			shape.setAsBox(0.5f, 2.0f);
@@ -45,7 +45,7 @@ public class BodyTypesGame extends Box2DTestGame {
 			BodyDef bd = new BodyDef();
 			bd.type = BodyType.DynamicBody;
 			bd.position.set(-4.0f, 5.0f);
-			m_platform = world.createBody(bd);
+			m_platform = m_world.createBody(bd);
 
 			PolygonShape shape = new PolygonShape();
 			shape.setAsBox(0.5f, 4.0f, new Vector2(4.0f, 0.0f), 0.5f * b2_pi);
@@ -60,7 +60,7 @@ public class BodyTypesGame extends Box2DTestGame {
 			rjd.initialize(m_attachment, m_platform, new Vector2(0.0f, 5.0f));
 			rjd.maxMotorTorque = 50.0f;
 			rjd.enableMotor = true;
-			world.createJoint(rjd);
+			m_world.createJoint(rjd);
 
 			PrismaticJointDef pjd = new PrismaticJointDef();
 			pjd.initialize(ground, m_platform, new Vector2(0.0f, 5.0f),
@@ -72,7 +72,7 @@ public class BodyTypesGame extends Box2DTestGame {
 			pjd.upperTranslation = 10.0f;
 			pjd.enableLimit = true;
 
-			world.createJoint(pjd);
+			m_world.createJoint(pjd);
 
 		}
 		// Create a payload
@@ -80,7 +80,7 @@ public class BodyTypesGame extends Box2DTestGame {
 			BodyDef bd = new BodyDef();
 			bd.type = BodyType.DynamicBody;
 			bd.position.set(0.0f, 8.0f);
-			Body body = world.createBody(bd);
+			Body body = m_world.createBody(bd);
 
 			PolygonShape shape = new PolygonShape();
 			shape.setAsBox(0.75f, 0.75f);

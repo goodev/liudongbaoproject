@@ -18,7 +18,7 @@ public class ApplyForceGame extends Box2DTestGame {
 	public void create() {
 		// TODO Auto-generated method stub
 		super.create();
-		world.setGravity(new Vector2(0.0f, 0.0f));
+		m_world.setGravity(new Vector2(0.0f, 0.0f));
 
 		final float k_restitution = 0.4f;
 
@@ -26,7 +26,7 @@ public class ApplyForceGame extends Box2DTestGame {
 		{
 			BodyDef bd = new BodyDef();
 			bd.position.set(0.0f, 20.0f);
-			ground = world.createBody(bd);
+			ground = m_world.createBody(bd);
 
 			EdgeShape shape = new EdgeShape();
 
@@ -93,7 +93,7 @@ public class ApplyForceGame extends Box2DTestGame {
 			bd.position.set(0.0f, 2.0f);
 			bd.angle = b2_pi;
 			bd.allowSleep = false;
-			m_body = world.createBody(bd);
+			m_body = m_world.createBody(bd);
 			m_body.createFixture(sd1);
 			m_body.createFixture(sd2);
 		}
@@ -112,7 +112,7 @@ public class ApplyForceGame extends Box2DTestGame {
 				bd.type = BodyType.DynamicBody;
 
 				bd.position.set(0.0f, 5.0f + 1.54f * i);
-				Body body = world.createBody(bd);
+				Body body = m_world.createBody(bd);
 
 				body.createFixture(fd);
 
@@ -132,7 +132,7 @@ public class ApplyForceGame extends Box2DTestGame {
 				jd.maxForce = mass * gravity;
 				jd.maxTorque = mass * radius * gravity;
 
-				world.createJoint(jd);
+				m_world.createJoint(jd);
 			}
 		}
 

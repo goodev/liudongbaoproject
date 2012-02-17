@@ -30,7 +30,7 @@ public class GearsGame extends Box2DTestGame {
 		super.create();
 		// Ground
 		BodyDef groundBodyDef = new BodyDef();
-		groundBody = world.createBody(groundBodyDef);
+		groundBody = m_world.createBody(groundBodyDef);
 		EdgeShape edgeShape = new EdgeShape();
 		edgeShape.set(new Vector2(50.0f, 0.0f), new Vector2(50.0f, 0.0f));
 		groundBody.createFixture(edgeShape, 0.0f);
@@ -54,13 +54,13 @@ public class GearsGame extends Box2DTestGame {
 		BodyDef bd1 = new BodyDef();
 		bd1.type = BodyType.DynamicBody;
 		bd1.position.set(-3.0f, 12.0f);
-		Body body1 = world.createBody(bd1);
+		Body body1 = m_world.createBody(bd1);
 		body1.createFixture(circle1, 5.0f);
 
 		BodyDef bd2 = new BodyDef();
 		bd2.type = BodyType.DynamicBody;
 		bd2.position.set(0.0f, 12.0f);
-		Body body2 = world.createBody(bd2);
+		Body body2 = m_world.createBody(bd2);
 		body2.createFixture(circle2, 5.0f);
 
 		RevoluteJointDef jd1 = new RevoluteJointDef();
@@ -70,16 +70,16 @@ public class GearsGame extends Box2DTestGame {
 		jd1.localAnchorB.set(body1.getLocalPoint(bd1.position));
 		jd1.referenceAngle = body1.getAngle() - groundBody.getAngle();
 		jd1.initialize(body2, body1, bd1.position);
-		joint1 = (RevoluteJoint) world.createJoint(jd1);
+		joint1 = (RevoluteJoint) m_world.createJoint(jd1);
 
 		RevoluteJointDef jd2 = new RevoluteJointDef();
 		jd2.initialize(groundBody, body2, bd2.position);
-		joint2 = (RevoluteJoint) world.createJoint(jd2);
+		joint2 = (RevoluteJoint) m_world.createJoint(jd2);
 
 		BodyDef bd3 = new BodyDef();
 		bd3.type = BodyType.DynamicBody;
 		bd3.position.set(2.5f, 12.0f);
-		Body body3 = world.createBody(bd3);
+		Body body3 = m_world.createBody(bd3);
 		body3.createFixture(box, 5.0f);
 
 		PrismaticJointDef jd3 = new PrismaticJointDef();
@@ -87,7 +87,7 @@ public class GearsGame extends Box2DTestGame {
 		jd3.lowerTranslation = -5.0f;
 		jd3.upperTranslation = 5.0f;
 		jd3.enableLimit = true;
-		joint3 = (PrismaticJoint) world.createJoint(jd3);
+		joint3 = (PrismaticJoint) m_world.createJoint(jd3);
 
 		GearJointDef jd4 = new GearJointDef();
 		jd4.bodyA = body1;
@@ -95,7 +95,7 @@ public class GearsGame extends Box2DTestGame {
 		jd4.joint1 = joint1;
 		jd4.joint2 = joint2;
 		jd4.ratio = circle2.getRadius() / circle1.getRadius();
-		joint4 = (GearJoint) world.createJoint(jd4);
+		joint4 = (GearJoint) m_world.createJoint(jd4);
 
 		GearJointDef jd5 = new GearJointDef();
 		jd5.bodyA = body2;
@@ -103,7 +103,7 @@ public class GearsGame extends Box2DTestGame {
 		jd5.joint1 = joint2;
 		jd5.joint2 = joint3;
 		jd5.ratio = -1.0f / circle2.getRadius();
-		joint5 = (GearJoint) world.createJoint(jd5);
+		joint5 = (GearJoint) m_world.createJoint(jd5);
 
 	}
 
@@ -120,28 +120,28 @@ public class GearsGame extends Box2DTestGame {
 		BodyDef bd1 = new BodyDef();
 		bd1.type = BodyType.StaticBody;
 		bd1.position.set(10.0f, 9.0f);
-		Body body1 = world.createBody(bd1);
+		Body body1 = m_world.createBody(bd1);
 		body1.createFixture(circle1, 5.0f);
 
 		BodyDef bd2 = new BodyDef();
 		bd2.type = BodyType.DynamicBody;
 		bd2.position.set(10.0f, 8.0f);
-		Body body2 = world.createBody(bd2);
+		Body body2 = m_world.createBody(bd2);
 		body2.createFixture(box, 5.0f);
 
 		BodyDef bd3 = new BodyDef();
 		bd3.type = BodyType.DynamicBody;
 		bd3.position.set(10.0f, 6.0f);
-		Body body3 = world.createBody(bd3);
+		Body body3 = m_world.createBody(bd3);
 		body3.createFixture(circle2, 5.0f);
 
 		RevoluteJointDef jd1 = new RevoluteJointDef();
 		jd1.initialize(body2, body1, bd1.position);
-		Joint joint1 = world.createJoint(jd1);
+		Joint joint1 = m_world.createJoint(jd1);
 
 		RevoluteJointDef jd2 = new RevoluteJointDef();
 		jd2.initialize(body2, body3, bd3.position);
-		Joint joint2 = world.createJoint(jd2);
+		Joint joint2 = m_world.createJoint(jd2);
 
 		GearJointDef jd4 = new GearJointDef();// ��
 		jd4.bodyA = body1;
@@ -149,6 +149,6 @@ public class GearsGame extends Box2DTestGame {
 		jd4.joint1 = joint1;
 		jd4.joint2 = joint2;
 		jd4.ratio = circle2.getRadius() / circle1.getRadius();
-		// world.createJoint(jd4);
+		// m_world.createJoint(jd4);
 	}
 }

@@ -26,7 +26,7 @@ public class TilesGame extends Box2DTestGame {
 		float a = 0.5f;
 		BodyDef groundBodyDef = new BodyDef();
 		groundBodyDef.position.y = -a;
-		groundBody = world.createBody(groundBodyDef);
+		groundBody = m_world.createBody(groundBodyDef);
 		int N = 200;
 		int M = 10;
 		Vector2 position = new Vector2();
@@ -61,7 +61,7 @@ public class TilesGame extends Box2DTestGame {
 					BodyDef bd = new BodyDef();
 					bd.type = BodyType.DynamicBody;
 					bd.position.set(y);
-					Body body = world.createBody(bd);
+					Body body = m_world.createBody(bd);
 					body.createFixture(shape, 5.0f);
 					++m_fixtureCount;
 					y.add(deltaY);

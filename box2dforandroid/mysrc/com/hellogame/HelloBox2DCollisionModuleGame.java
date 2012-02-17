@@ -15,7 +15,7 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 
 /**
- * ¶ÔÓ¦ Box2D+v2.1.0ÓÃ»§ÊÖ²áÖÐÎÄ µÚËÄÕÂ
+ * ï¿½ï¿½Ó¦ Box2D+v2.1.0ï¿½Ã»ï¿½ï¿½Ö²ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * 
  * @author liudongbao
  * 
@@ -23,7 +23,7 @@ import com.badlogic.gdx.physics.box2d.World;
 public class HelloBox2DCollisionModuleGame implements ApplicationListener {
 
 	protected OrthographicCamera camera;
-	protected Box2DDebugRenderer renderer; // ²âÊÔÓÃ»æÖÆÆ÷
+	protected Box2DDebugRenderer renderer; // ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
 	private World world;
 
 	@Override
@@ -33,7 +33,7 @@ public class HelloBox2DCollisionModuleGame implements ApplicationListener {
 		renderer = new Box2DDebugRenderer();
 		Vector2 gravity = new Vector2(0.0f, -10.0f);
 		boolean doSleep = true;
-		world = new World(gravity, doSleep); // Ò»°ã±ê×¼ÖØÁ¦³¡
+		world = new World(gravity, doSleep); // Ò»ï¿½ï¿½ï¿½×¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		creatingGroundBox();
 		creatingCircleShape();
 		creatingPolygonShape();
@@ -42,23 +42,23 @@ public class HelloBox2DCollisionModuleGame implements ApplicationListener {
 
 	private void creatingPolygonShape() {
 		// TODO Auto-generated method stub
-		// °´ÄæÊ±ÕëË³Ðò¶¨ÒåÒ»¸öÈý½ÇÐÎ
+		// ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		/*
 		 * b2Vec2 vertices[3]; vertices[0].Set(0.0f, 0.0f);
 		 * vertices[1].Set(1.0f, 0.0f); vertices[2].Set(0.0f, 1.0f); int32 count
 		 * = 3;
 		 * 
 		 * b2PolygonShape polygon; polygon.Set(vertices, count);
-		 * ¶à±ßÐÎÓÐÒ»Ð©¶¨ÒåºÃµÄ³õÊ¼»¯º¯ÊýÀ´´´½¨Ïä(box)ºÍ±ß(edge,Ò²¾ÍÊÇÏß¶Î)¡£ void SetAsBox(float32 hx,
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½ÃµÄ³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(box)ï¿½Í±ï¿½(edge,Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½)ï¿½ï¿½ void SetAsBox(float32 hx,
 		 * float32hy); void SetAsBox(float32 hx, float32hy, const b2Vec2&
 		 * center, float32 angle); void SetAsEdge(const b2Vec2& v1,const b2Vec2&
 		 * v2);
 		 */
 
-		BodyDef bodyDef = new BodyDef(); // ÉùÃ÷ÎïÌå¶¨Òå
+		BodyDef bodyDef = new BodyDef(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å¶¨ï¿½ï¿½
 		bodyDef.position.set(0.0f, 0.0f);
 		bodyDef.type = BodyType.DynamicBody;
-		Body body = world.createBody(bodyDef); // Í¨¹ýworld´´½¨Ò»¸öÎïÌå
+		Body body = world.createBody(bodyDef); // Í¨ï¿½ï¿½m_worldï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		PolygonShape shape = new PolygonShape();
 		Vector2[] vector2s = { new Vector2(0.0f, 0.0f),
 				new Vector2(1.0f, 0.0f), new Vector2(0.0f, 1.0f) };
@@ -68,7 +68,7 @@ public class HelloBox2DCollisionModuleGame implements ApplicationListener {
 		fixtureDef.shape = shape;
 		fixtureDef.density = 1.0f;
 		fixtureDef.friction = 1.0f;
-		body.createFixture(fixtureDef);// ½«ÐÎ×´ºÍÃÜ¶È¸³¸øÎïÌå
+		body.createFixture(fixtureDef);// ï¿½ï¿½ï¿½ï¿½×´ï¿½ï¿½ï¿½Ü¶È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	private void creatingCircleShape() {
@@ -77,10 +77,10 @@ public class HelloBox2DCollisionModuleGame implements ApplicationListener {
 		 * b2CircleShape circle; circle.m_p.Set(1.0f, 2.0f, 3.0f);
 		 * circle.m_radius = 0.5f;
 		 */
-		BodyDef bodyDef = new BodyDef(); // ÉùÃ÷ÎïÌå¶¨Òå
+		BodyDef bodyDef = new BodyDef(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å¶¨ï¿½ï¿½
 		bodyDef.position.set(0.0f, 4.0f);
 		bodyDef.type = BodyType.DynamicBody;
-		Body body = world.createBody(bodyDef); // Í¨¹ýworld´´½¨Ò»¸öÎïÌå
+		Body body = world.createBody(bodyDef); // Í¨ï¿½ï¿½m_worldï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		CircleShape circle = new CircleShape();
 		circle.setPosition(new Vector2(1.0f, 2.0f));
 		circle.setRadius(0.5f);
@@ -88,37 +88,37 @@ public class HelloBox2DCollisionModuleGame implements ApplicationListener {
 		fixtureDef.shape = circle;
 		fixtureDef.density = 1.0f;
 		fixtureDef.friction = 1.0f;
-		body.createFixture(fixtureDef);// ½«ÐÎ×´ºÍÃÜ¶È¸³¸øÎïÌå
+		body.createFixture(fixtureDef);// ï¿½ï¿½ï¿½ï¿½×´ï¿½ï¿½ï¿½Ü¶È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	/***
-	 * ´´½¨µØÃæºÐ(Creating a Ground Box)
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Creating a Ground Box)
 	 */
 	private void creatingGroundBox() {
-		BodyDef groundBodyDef = new BodyDef(); // ÉùÃ÷ÎïÌå¶¨Òå
+		BodyDef groundBodyDef = new BodyDef(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å¶¨ï¿½ï¿½
 		groundBodyDef.position.set(0.0f, -10.0f);
 		// bd.type=BodyType.DynamicBody;
-		Body groundBody = world.createBody(groundBodyDef); // Í¨¹ýworld´´½¨Ò»¸öÎïÌå
+		Body groundBody = world.createBody(groundBodyDef); // Í¨ï¿½ï¿½m_worldï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		PolygonShape groundBox = new PolygonShape();
 		groundBox.setAsBox(50.0f, 10.0f);
-		groundBody.createFixture(groundBox, 1f);// ½«ÐÎ×´ºÍÃÜ¶È¸³¸øÎïÌå
+		groundBody.createFixture(groundBox, 1f);// ï¿½ï¿½ï¿½ï¿½×´ï¿½ï¿½ï¿½Ü¶È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	/***
-	 * ´´½¨¶¯Ì¬ÎïÌå(Creating a Dynamic Body)
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½(Creating a Dynamic Body)
 	 */
 	private void creatingDynamicBody() {
-		BodyDef bodyDef = new BodyDef(); // ÉùÃ÷ÎïÌå¶¨Òå
+		BodyDef bodyDef = new BodyDef(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å¶¨ï¿½ï¿½
 		bodyDef.position.set(0.0f, 4.0f);
 		bodyDef.type = BodyType.DynamicBody;
-		Body body = world.createBody(bodyDef); // Í¨¹ýworld´´½¨Ò»¸öÎïÌå
+		Body body = world.createBody(bodyDef); // Í¨ï¿½ï¿½m_worldï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		PolygonShape dynamicBox = new PolygonShape();
 		dynamicBox.setAsBox(1.0f, 1.0f);
 		FixtureDef fixtureDef = new FixtureDef();
 		fixtureDef.shape = dynamicBox;
 		fixtureDef.density = 1.0f;
 		fixtureDef.friction = 0.3f;
-		body.createFixture(fixtureDef);// ½«ÐÎ×´ºÍÃÜ¶È¸³¸øÎïÌå
+		body.createFixture(fixtureDef);// ï¿½ï¿½ï¿½ï¿½×´ï¿½ï¿½ï¿½Ü¶È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	@Override

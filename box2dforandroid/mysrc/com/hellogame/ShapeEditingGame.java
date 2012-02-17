@@ -22,7 +22,7 @@ public class ShapeEditingGame extends Box2DTestGame {
 		super.create();
 		{
 			BodyDef bd = new BodyDef();
-			Body ground = world.createBody(bd);
+			Body ground = m_world.createBody(bd);
 
 			EdgeShape shape = new EdgeShape();
 			shape.set(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
@@ -33,7 +33,7 @@ public class ShapeEditingGame extends Box2DTestGame {
 		BodyDef bd = new BodyDef();
 		bd.type = BodyType.DynamicBody;
 		bd.position.set(0.0f, 10.0f);
-		m_body = world.createBody(bd);
+		m_body = m_world.createBody(bd);
 
 		PolygonShape shape = new PolygonShape();
 		shape.setAsBox(4.0f, 4.0f, new Vector2(0.0f, 0.0f), 0.0f);
