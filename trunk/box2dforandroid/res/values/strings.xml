@@ -19,5 +19,7 @@
         <item>com.hellogame.CarGame</item>
         <item>com.hellogame.ApplyForceGame</item>
         <item>com.hellogame.PrismaticGame</item>
+        <item>com.hellogame.VerticalStackGame</item>
+        <item>com.hellogame.SphereStackGame</item>        
     </string-array>
 </resources>
