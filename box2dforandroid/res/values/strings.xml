@@ -21,5 +21,6 @@
         <item>com.hellogame.PrismaticGame</item>
         <item>com.hellogame.VerticalStackGame</item>
         <item>com.hellogame.SphereStackGame</item>        
+        <item>com.hellogame.RevoluteGame</item>        
     </string-array>
 </resources>
