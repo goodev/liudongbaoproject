@@ -20,7 +20,8 @@
         <item>com.hellogame.ApplyForceGame</item>
         <item>com.hellogame.PrismaticGame</item>
         <item>com.hellogame.VerticalStackGame</item>
-        <item>com.hellogame.SphereStackGame</item>        
-        <item>com.hellogame.RevoluteGame</item>        
+        <item>com.hellogame.SphereStackGame</item>
+        <item>com.hellogame.RevoluteGame</item>
+        <item>com.hellogame.PulleysGame</item>
     </string-array>
 </resources>
