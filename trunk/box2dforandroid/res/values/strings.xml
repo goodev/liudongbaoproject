@@ -26,5 +26,7 @@
         <item>com.hellogame.WebGame</item>
         <item>com.hellogame.RopeJointGame</item>
         <item>com.hellogame.PinballGame</item>
+        <item>com.hellogame.PinballGame</item>
+        <item>com.hellogame.BulletTestGame</item>        
     </string-array>
 </resources>
