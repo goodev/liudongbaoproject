@@ -24,5 +24,6 @@
         <item>com.hellogame.RevoluteGame</item>
         <item>com.hellogame.PulleysGame</item>
         <item>com.hellogame.WebGame</item>
+         <item>com.hellogame.RopeJointGame</item>
     </string-array>
 </resources>
