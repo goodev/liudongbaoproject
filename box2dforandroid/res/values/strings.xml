@@ -28,5 +28,6 @@
         <item>com.hellogame.PinballGame</item>
         <item>com.hellogame.PinballGame</item>
         <item>com.hellogame.BulletTestGame</item>        
+        <item>com.hellogame.ContinuousTestGame</item>        
     </string-array>
 </resources>
