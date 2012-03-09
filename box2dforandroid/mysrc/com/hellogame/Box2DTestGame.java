@@ -35,7 +35,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 
 	protected static final String tag = "Box2DTestGame";
 	protected OrthographicCamera camera;
-	protected Box2DDebugRenderer renderer; // �����û�����
+	protected Box2DDebugRenderer m_debugDraw; // �����û�����
 	protected World m_world;
 	final int k_maxContactPoints = 2048;
 	protected Body groundBody;
@@ -262,7 +262,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 	public void create() {
 		camera = new OrthographicCamera(48, 32);
 		camera.position.set(0, 15, 0);
-		renderer = new Box2DDebugRenderer();
+		m_debugDraw = new Box2DDebugRenderer();
 		Vector2 gravity = new Vector2(0.0f, -10.0f);
 		boolean doSleep = true;
 		m_world = new World(gravity, doSleep); // һ���׼������
@@ -304,10 +304,10 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 	@Override
 	public void dispose() {
 
-		renderer.dispose();
+		m_debugDraw.dispose();
 		m_world.dispose();
 
-		renderer = null;
+		m_debugDraw = null;
 		m_world = null;
 	}
 
@@ -323,7 +323,7 @@ public class Box2DTestGame implements ApplicationListener, ContactListener,
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		camera.update();
 		camera.apply(gl);
-		renderer.render(m_world, camera.combined);
+		m_debugDraw.render(m_world, camera.combined);
 	}
 
 	protected void step() {
