@@ -109,6 +109,12 @@ public class RayCastGame extends Box2DTestGame {
 	Body[] m_bodies = new Body[e_maxBodies];
 	int[] m_userData = new int[e_maxBodies];
 	PolygonShape[] m_polygons = new PolygonShape[4];
+	{
+		m_polygons[0] = new PolygonShape();
+		m_polygons[1] = new PolygonShape();
+		m_polygons[2] = new PolygonShape();
+		m_polygons[3] = new PolygonShape();
+	}
 	CircleShape m_circle = new CircleShape();
 
 	float m_angle = 0.0f;
@@ -251,69 +257,68 @@ public class RayCastGame extends Box2DTestGame {
 	protected void step() {
 		boolean advanceRay = true;
 
-		super.step() ;
- 
+		super.step();
 
-		float  L = 11.0f;
+		float L = 11.0f;
 		Vector2 point1 = new Vector2(0.0f, 10.0f);
-		Vector2 d = new Vector2((float)(L * Math.cos(m_angle)), (float)(L * Math.sin(m_angle)));
+		Vector2 d = new Vector2((float) (L * Math.cos(m_angle)),
+				(float) (L * Math.sin(m_angle)));
 		Vector2 point2 = point1.add(d);
 
-		if (m_mode == Mode.e_closest)
-		{
-			RayCastClosestCallback callback =new RayCastClosestCallback();
-			m_world.rayCast( callback, point1, point2);
-
-			if (callback.m_hit)
-			{
-				/*
-				m_debugDraw.drawPoint(callback.m_point, 5.0f, new Color(0.4f, 0.9f, 0.4f));
-				m_debugDraw.drawSegment(point1, callback.m_point,new Color(0.8f, 0.8f, 0.8f));
-				b2Vec2 head = callback.m_point + 0.5f * callback.m_normal;
-				m_debugDraw.DrawSegment(callback.m_point, head, b2Color(0.9f, 0.9f, 0.4f));*/
-			}
-			else
-			{
-				//m_debugDraw.DrawSegment(point1, point2, b2Color(0.8f, 0.8f, 0.8f));
-			}
-		}
-		else if (m_mode == Mode.e_any)
-		{
-			RayCastAnyCallback callback =new RayCastAnyCallback();
+		if (m_mode == Mode.e_closest) {
+			RayCastClosestCallback callback = new RayCastClosestCallback();
 			m_world.rayCast(callback, point1, point2);
 
-			if (callback.m_hit)
-			{/*
-				m_debugDraw.DrawPoint(callback.m_point, 5.0f, b2Color(0.4f, 0.9f, 0.4f));
-				m_debugDraw.DrawSegment(point1, callback.m_point, b2Color(0.8f, 0.8f, 0.8f));
-				b2Vec2 head = callback.m_point + 0.5f * callback.m_normal;
-				m_debugDraw.DrawSegment(callback.m_point, head, b2Color(0.9f, 0.9f, 0.4f));*/
+			if (callback.m_hit) {
+				/*
+				 * m_debugDraw.drawPoint(callback.m_point, 5.0f, new Color(0.4f,
+				 * 0.9f, 0.4f)); m_debugDraw.drawSegment(point1,
+				 * callback.m_point,new Color(0.8f, 0.8f, 0.8f)); b2Vec2 head =
+				 * callback.m_point + 0.5f * callback.m_normal;
+				 * m_debugDraw.DrawSegment(callback.m_point, head, b2Color(0.9f,
+				 * 0.9f, 0.4f));
+				 */
+			} else {
+				// m_debugDraw.DrawSegment(point1, point2, b2Color(0.8f, 0.8f,
+				// 0.8f));
 			}
-			else
-			{
-				//m_debugDraw.DrawSegment(point1, point2, b2Color(0.8f, 0.8f, 0.8f));
-			}
-		}
-		else if (m_mode == Mode.e_multiple)
-		{
-			RayCastMultipleCallback callback =new RayCastMultipleCallback();
-			m_world.rayCast( callback, point1, point2);
-			//m_debugDraw.DrawSegment(point1, point2, b2Color(0.8f, 0.8f, 0.8f));
+		} else if (m_mode == Mode.e_any) {
+			RayCastAnyCallback callback = new RayCastAnyCallback();
+			m_world.rayCast(callback, point1, point2);
 
-			for (int  i = 0; i < callback.m_count; ++i)
-			{
+			if (callback.m_hit) {/*
+								 * m_debugDraw.DrawPoint(callback.m_point, 5.0f,
+								 * b2Color(0.4f, 0.9f, 0.4f));
+								 * m_debugDraw.DrawSegment(point1,
+								 * callback.m_point, b2Color(0.8f, 0.8f, 0.8f));
+								 * b2Vec2 head = callback.m_point + 0.5f *
+								 * callback.m_normal;
+								 * m_debugDraw.DrawSegment(callback.m_point,
+								 * head, b2Color(0.9f, 0.9f, 0.4f));
+								 */
+			} else {
+				// m_debugDraw.DrawSegment(point1, point2, b2Color(0.8f, 0.8f,
+				// 0.8f));
+			}
+		} else if (m_mode == Mode.e_multiple) {
+			RayCastMultipleCallback callback = new RayCastMultipleCallback();
+			m_world.rayCast(callback, point1, point2);
+			// m_debugDraw.DrawSegment(point1, point2, b2Color(0.8f, 0.8f,
+			// 0.8f));
+
+			for (int i = 0; i < callback.m_count; ++i) {
 				Vector2 p = callback.m_points[i];
 				Vector2 n = callback.m_normals[i];
-				/*m_debugDraw.DrawPoint(p, 5.0f, b2Color(0.4f, 0.9f, 0.4f));
-				m_debugDraw.DrawSegment(point1, p, b2Color(0.8f, 0.8f, 0.8f));
-				b2Vec2 head = p + 0.5f * n;
-				m_debugDraw.DrawSegment(p, head, b2Color(0.9f, 0.9f, 0.4f));
-				*/
+				/*
+				 * m_debugDraw.DrawPoint(p, 5.0f, b2Color(0.4f, 0.9f, 0.4f));
+				 * m_debugDraw.DrawSegment(point1, p, b2Color(0.8f, 0.8f,
+				 * 0.8f)); b2Vec2 head = p + 0.5f * n;
+				 * m_debugDraw.DrawSegment(p, head, b2Color(0.9f, 0.9f, 0.4f));
+				 */
 			}
 		}
 
-		if (advanceRay)
-		{
+		if (advanceRay) {
 			m_angle += 0.25f * b2_pi / 180.0f;
 		}
 
