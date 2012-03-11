@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-    <string name="hello">Hello World</string>
-    <string name="app_name">Box2D Testbed for Android</string>
-    <string name="sample_simple_list_selected">Selected: </string>
-    <string-array name="sample_simple_list_items">
-        <item>com.hellogame.ActionGame</item>
-        <item>com.hellogame.BodyTypesGame</item>
-        <item>com.hellogame.CantileverGame</item>
-        <item>com.hellogame.CharacterCollisionGame</item>
-        <item>com.hellogame.ConveyorBeltGame</item>
-        <item>com.hellogame.DumpShellGame</item>
-        <item>com.hellogame.EdgeTestGame</item>
-        <item>com.hellogame.GearsGame</item>
-        <item>com.hellogame.TilesGame</item>
-        <item>com.hellogame.TumblerGame</item>
-        <item>com.hellogame.ShapeEditingGame</item>
-        <item>com.hellogame.VaryingRestitutionGame</item>
-        <item>com.hellogame.CarGame</item>
-        <item>com.hellogame.ApplyForceGame</item>
-        <item>com.hellogame.PrismaticGame</item>
-        <item>com.hellogame.VerticalStackGame</item>
-        <item>com.hellogame.SphereStackGame</item>
-        <item>com.hellogame.RevoluteGame</item>
-        <item>com.hellogame.PulleysGame</item>
-        <item>com.hellogame.WebGame</item>
-        <item>com.hellogame.RopeJointGame</item>
-        <item>com.hellogame.PinballGame</item>
-        <item>com.hellogame.PinballGame</item>
-        <item>com.hellogame.BulletTestGame</item>        
-        <item>com.hellogame.ContinuousTestGame</item>        
-        <item>com.hellogame.RayCastGame</item>        
-    </string-array>
+	<string name="hello">Hello World</string>
+	<string name="app_name">Box2D Testbed for Android</string>
+	<string name="sample_simple_list_selected">Selected: </string>
+	<string-array name="sample_simple_list_items">
+		<item>com.hellogame.ActionGame</item>
+		<item>com.hellogame.BodyTypesGame</item>
+		<item>com.hellogame.CantileverGame</item>
+		<item>com.hellogame.CharacterCollisionGame</item>
+		<item>com.hellogame.ConveyorBeltGame</item>
+		<item>com.hellogame.DumpShellGame</item>
+		<item>com.hellogame.EdgeTestGame</item>
+		<item>com.hellogame.GearsGame</item>
+		<item>com.hellogame.TilesGame</item>
+		<item>com.hellogame.TumblerGame</item>
+		<item>com.hellogame.ShapeEditingGame</item>
+		<item>com.hellogame.VaryingRestitutionGame</item>
+		<item>com.hellogame.CarGame</item>
+		<item>com.hellogame.ApplyForceGame</item>
+		<item>com.hellogame.PrismaticGame</item>
+		<item>com.hellogame.VerticalStackGame</item>
+		<item>com.hellogame.SphereStackGame</item>
+		<item>com.hellogame.RevoluteGame</item>
+		<item>com.hellogame.PulleysGame</item>
+		<item>com.hellogame.WebGame</item>
+		<item>com.hellogame.RopeJointGame</item>
+		<item>com.hellogame.PinballGame</item>
+		<item>com.hellogame.PinballGame</item>
+		<item>com.hellogame.BulletTestGame</item>
+		<item>com.hellogame.ContinuousTestGame</item>
+		<item>com.hellogame.RayCastGame</item>
+		<item>com.hellogame.ConfinedGame</item>
+	</string-array>
 </resources>
