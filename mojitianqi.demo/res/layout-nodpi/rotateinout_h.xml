@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:id="@id/fl_h_linear1" android:layoutAnimation="@anim/la_four_gone1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_h_image1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/fl_h_linear2" android:layoutAnimation="@anim/la_four_gone2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_h_image2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/fl_h_linear3" android:layoutAnimation="@anim/la_four_gone3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_h_image3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/fl_h_linear4" android:layoutAnimation="@anim/la_four_gone4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_h_image4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:id="@id/fl_h_linear5" android:layoutAnimation="@anim/la_four_gone5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_h_image5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/fl_h_linear6" android:layoutAnimation="@anim/la_four_gone6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_h_image6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/fl_h_linear7" android:layoutAnimation="@anim/la_four_gone7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_h_image7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/fl_h_linear8" android:layoutAnimation="@anim/la_four_gone8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_h_image8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

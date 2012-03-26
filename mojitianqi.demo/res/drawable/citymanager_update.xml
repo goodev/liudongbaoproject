@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector android:constantSize="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@drawable/city_manager_update_press" />
+    <item android:state_window_focused="false" android:drawable="@drawable/city_manager_update" />
+    <item android:state_window_focused="true" android:drawable="@drawable/city_manager_update" />
+</selector>

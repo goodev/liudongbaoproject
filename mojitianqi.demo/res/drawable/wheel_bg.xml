@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient android:startColor="@color/picker_view_bg_bottom_startcolor" android:endColor="@color/picker_view_bg_bottom_endcolor" android:angle="90.0" android:centerColor="@color/picker_view_bg_bottom_centercolor" />
+            <stroke android:width="@dimen/picker_view_bg_bottom_stroke_width" android:color="@color/picker_view_bg_bottom_strokecolor" />
+        </shape>
+    </item>
+    <item android:left="@dimen/picker_view_bg_topitem_pading_left" android:top="@dimen/picker_view_bg_topitem_pading_top" android:right="@dimen/picker_view_bg_topitem_pading_right" android:bottom="@dimen/picker_view_bg_topitem_pading_bottom">
+        <shape android:shape="rectangle">
+            <gradient android:startColor="@color/picker_view_bg_top_startcolor" android:endColor="@color/picker_view_bg_top_endcolor" android:angle="90.0" android:centerColor="@color/picker_view_bg_top_centercolor" />
+        </shape>
+    </item>
+</layer-list>

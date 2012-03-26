@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@id/widgetLayout" android:clickable="true" android:descendantFocusability="beforeDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <AbsoluteLayout android:id="@id/widgetABSLayout" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageView android:id="@id/widgetBkgLayer" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/loading_bg4x2" android:scaleType="fitCenter" />
+        <ImageView android:id="@id/widgetCustomLayer" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" />
+        <ImageView android:id="@id/widgetTimeLayer" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" android:layout_x="0.0px" android:layout_y="0.0px" />
+        <ImageView android:id="@id/widgetHour1TimeLayer" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" android:layout_x="0.0px" android:layout_y="0.0px" />
+        <ImageView android:id="@id/widgetHour2TimeLayer" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" android:layout_x="0.0px" android:layout_y="0.0px" />
+        <ImageView android:id="@id/widgetMinute1TimeLayer" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" android:layout_x="0.0px" android:layout_y="0.0px" />
+        <ImageView android:id="@id/widgetMinute2TimeLayer" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" android:layout_x="0.0px" android:layout_y="0.0px" />
+        <ImageView android:id="@id/hour_background" android:layout_width="@dimen/time_mask_width" android:layout_height="@dimen/time_mask_height" android:scaleType="fitXY" android:layout_x="@dimen/left_time_mask_layout_x" android:layout_y="@dimen/time_mask_layout_y" />
+        <ImageView android:id="@id/minute_background" android:layout_width="@dimen/time_mask_width" android:layout_height="@dimen/time_mask_height" android:scaleType="fitXY" android:layout_x="@dimen/right_time_mask_layout_x" android:layout_y="@dimen/time_mask_layout_y" />
+        <FrameLayout android:id="@id/widget_hour" android:layout_width="@dimen/time_mask_width" android:layout_height="@dimen/time_mask_height" android:layout_x="@dimen/left_time_mask_layout_x" android:layout_y="@dimen/time_mask_layout_y" />
+        <FrameLayout android:id="@id/widget_minute" android:layout_width="@dimen/time_mask_width" android:layout_height="@dimen/time_mask_height" android:layout_x="@dimen/right_time_mask_layout_x" android:layout_y="@dimen/time_mask_layout_y" />
+        <ImageView android:id="@id/widgetTextInfoLayerForOrg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" android:layout_x="0.0px" android:layout_y="0.0px" />
+        <LinearLayout android:orientation="vertical" android:id="@id/HotAreaLayout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_x="0.0dip" android:layout_y="0.0dip">
+            <LinearLayout android:orientation="horizontal" android:id="@id/HotAreaUpLayout" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_x="0.0dip" android:layout_y="0.0dip" android:layout_weight="0.43">
+                <ImageView android:id="@id/TimeLeftHotArea" android:background="@drawable/w42time_press" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" android:layout_weight="0.5" />
+                <ImageView android:id="@id/TimeRightHotArea" android:background="@drawable/w42time_press" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" android:layout_weight="0.5" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/HotAreaDownLayout" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_x="0.0dip" android:layout_y="0.0dip" android:layout_weight="0.57">
+                <ImageView android:id="@id/TextInfoLeftHotArea" android:background="@drawable/w42time_press" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" android:layout_weight="0.34" />
+                <ImageView android:id="@id/WeatherIconHotArea" android:background="@drawable/w42time_press" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" android:layout_weight="0.33" />
+                <ImageView android:id="@id/TextInfoRightHotArea" android:background="@drawable/w42time_press" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" android:layout_weight="0.34" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:textSize="19.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/TextViewMessage" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="载入皮肤中,请稍候..." />
+    </AbsoluteLayout>
+</LinearLayout>

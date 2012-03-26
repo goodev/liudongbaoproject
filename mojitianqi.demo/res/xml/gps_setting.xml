@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/Auto_Location_setting">
+        <CheckBoxPreference android:title="@string/Auto_Location_Gps" android:key="CheckBox_Gps_Location" android:summaryOn="@string/Auto_Location_Gps_ON" android:summaryOff="@string/Auto_Location_Gps_OFF" />
+    </PreferenceCategory>
+</PreferenceScreen>

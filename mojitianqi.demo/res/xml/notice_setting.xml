@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.moji.mjweather">
+    <PreferenceCategory android:title="@string/auto_update_notification_setting">
+        <CheckBoxPreference android:title="@string/auto_update_notification_ok" android:key="checkbox_notification" android:defaultValue="true" android:summaryOn="@string/auto_update_notification_summary" android:summaryOff="@string/voice_close_already" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/auto_update_alert_notification_setting">
+        <CheckBoxPreference android:title="@string/auto_update_alert_notification_title" android:key="alert_checkbox_notification" android:defaultValue="true" android:summaryOn="@string/auto_update_alert_notification_summary_on" android:summaryOff="@string/auto_update_alert_notification_summary_off" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/auto_update_notification_way">
+        <CheckBoxPreference android:title="@string/auto_update_notification_voice" android:key="checkbox_voice" />
+        <CheckBoxPreference android:title="@string/auto_update_notification_skake" android:key="checkbox_shake" />
+    </PreferenceCategory>
+</PreferenceScreen>

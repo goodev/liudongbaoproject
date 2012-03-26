@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/clockanim_category">
+        <CheckBoxPreference android:enabled="true" android:title="@string/clockanim_checkbox_title" android:key="clock_animation" android:defaultValue="true" android:summaryOn="@string/clockanim_checkbox_summaryon" android:summaryOff="@string/clockanim_checkbox_summaryoff" />
+        <ListPreference android:entries="@array/clock_anim_entries" android:title="@string/clockanim_listpreference_title" android:key="clock_animation_items" android:dependency="clock_animation" android:defaultValue="3" android:dialogTitle="@string/clockanim_listpreference_dialog" android:dialogIcon="@drawable/icon" android:entryValues="@array/clock_anim_entryvalues" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/desktopsetting_others">
+        <Preference android:title="@string/Setting_desktop_InstallSkin_sdcard" android:key="InstallSkin_sdcard" android:summary="@string/Setting_desktop_InstallSkin_sdcard_summary" />
+        <Preference android:title="@string/Setting_desktop_defaultDesktop" android:key="DefaultDesktop" android:summary="@string/Setting_desktop_defaultDesktop_summary" />
+        <Preference android:title="@string/Setting_desktop_widget_bg" android:key="BackgroundCheck" android:summary="@string/Setting_desktop_widget_bg_summary" />
+        <Preference android:title="@string/Setting_desktop_Customize_Shortcut_Button" android:key="Customize_Shortcut_Button" android:summary="@string/Setting_desktop_Customize_Shortcut_Button_summary" />
+    </PreferenceCategory>
+</PreferenceScreen>

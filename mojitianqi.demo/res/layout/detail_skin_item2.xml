@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/edit_matter_list2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/LinearLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:id="@id/LinearLayout02" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip">
+            <TextView android:textSize="18.0sp" android:textColor="#ffcecece" android:layout_gravity="left" android:id="@id/TextView_UserID" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/COAuthShareUsername" />
+            <TextView android:textColor="#ffb1b1b1" android:id="@id/TextView_CommentDate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="@string/skin_comment_date" />
+            <LinearLayout android:gravity="right" android:layout_gravity="center_vertical" android:id="@id/LinearLayout04" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip">
+                <RatingBar android:id="@id/RatingBar" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/ratingBarStyleSmall" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="left" android:orientation="vertical" android:id="@id/LinearLayout03" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip">
+            <TextView android:textColor="#ffb1b1b1" android:id="@id/TextView_AllComment" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/skin_comment_content" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

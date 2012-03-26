@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/add_concern_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/rlIndexTitle" android:background="@drawable/title_bg" android:layout_width="fill_parent" android:layout_height="@dimen/workspace_title_height">
+        <TextView android:textSize="@dimen/title_text_size" android:textColor="@color/white" android:id="@id/add_concern_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/add_concern_title" android:singleLine="true" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <FrameLayout android:id="@id/fl_add_concern" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ListView android:id="@id/add_concern_ListView" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@color/transparent" android:cacheColorHint="@color/transparent" android:divider="@color/transparent" android:dividerHeight="@dimen/life_driver_height" android:headerDividersEnabled="true" android:footerDividersEnabled="true" />
+    </FrameLayout>
+</LinearLayout>

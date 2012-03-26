@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/frameLayout_main" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:id="@id/layout_workspace" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:id="@id/workspace_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+            <include layout="@layout/layout_workspace_title" />
+        </LinearLayout>
+        <com.moji.mjweather.view.Workspace android:id="@id/workspace_weather_info" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/workspace_city_index_layout" android:layout_below="@id/workspace_title" />
+        <LinearLayout android:gravity="center" android:id="@id/workspace_city_index_layout" android:layout_width="fill_parent" android:layout_height="20.0dip" android:layout_alignParentBottom="true">
+            <com.moji.mjweather.view.CityIndexControlView android:id="@id/workspace_city_index" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+    <ImageView android:layout_gravity="bottom" android:id="@id/workspace_ad" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</FrameLayout>

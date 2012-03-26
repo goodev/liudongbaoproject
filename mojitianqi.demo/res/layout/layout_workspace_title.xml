@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/title_bg" android:layout_width="fill_parent" android:layout_height="@dimen/workspace_title_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/title_city_manager" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/title_city_manager_press" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <RelativeLayout android:background="@drawable/title_line" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/title_update" android:layout_toRightOf="@id/title_city_manager">
+        <com.moji.mjweather.view.CityNameView android:textSize="@dimen/weather_current_city_name" android:textColor="@color/white" android:id="@id/title_city_name" android:background="@drawable/button_press" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/title_broadcast" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/title_city_broadcast_press" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ImageView android:id="@id/title_update" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/title_city_update_press" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:title="@string/share_weather_info" android:key="share_weather_info_preference" />
+    <PreferenceCategory android:title="@string/share_setting_title" />
+    <Preference android:title="@string/share_setting_title" android:key="share_setting" android:summary="@string/share_setting_summary" />
+    <PreferenceCategory android:title="@string/share_manual_share">
+        <Preference android:title="@string/share_micro_share" android:key="share_micro_share_preference" android:summary="@string/share_setting_manual_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/share_auto_share">
+        <CheckBoxPreference android:title="@string/share_auto_share" android:key="share_checkbox_preference" android:defaultValue="true" android:summaryOn="@string/share_on_summary" android:summaryOff="@string/voice_close_already" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/share_weibo_contact" android:key="share_weibo_contact_category" />
+    <Preference android:title="@string/share_add_weibo" android:key="share_add_weibo" />
+    <Preference android:title="@string/share_add_contact" android:key="share_add_contact" />
+</PreferenceScreen>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/custom_title"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.moji.mjweather">
+    <Preference android:title="@string/custom_fixedarea_title" android:key="custom_fixed_introduction" settings:more="@drawable/expander_ic_minimized" />
+    <PreferenceCategory android:title="@string/custom_widget_hotarea_title">
+        <Preference android:enabled="false" android:title="@string/custom_notice" android:summary="@string/custom_notice_all" />
+        <Preference android:title="@string/custom_4X2_A" android:key="custom_4x2_topleft" android:summary="" settings:more="@drawable/expander_ic_minimized" />
+        <Preference android:title="@string/custom_4X2_B" android:key="custom_4x2_topright" android:summary="" settings:more="@drawable/expander_ic_minimized" />
+        <Preference android:title="@string/custom_4X2_D" android:key="custom_4x2_bottomright" android:summary="" settings:more="@drawable/expander_ic_minimized" />
+        <Preference android:title="@string/custom_4X1_B" android:key="custom_4x1_right" android:summary="" settings:more="@drawable/expander_ic_minimized" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/custom_ninegrid_title">
+        <Preference android:enabled="false" android:title="@string/custom_notice" android:summary="@string/custom_notice_detail" />
+        <Preference android:title="@string/custom_edittext_9item_1" android:key="ninegrid_custom1" android:summary="" settings:more="@drawable/expander_ic_minimized" />
+        <Preference android:title="@string/custom_edittext_9item_2" android:key="ninegrid_custom2" android:summary="" settings:more="@drawable/expander_ic_minimized" />
+        <Preference android:title="@string/custom_edittext_9item_3" android:key="ninegrid_custom3" android:summary="" settings:more="@drawable/expander_ic_minimized" />
+        <Preference android:title="@string/custom_edittext_9item_4" android:key="ninegrid_custom4" android:summary="" settings:more="@drawable/expander_ic_minimized" />
+        <Preference android:title="@string/custom_edittext_9item_5" android:key="ninegrid_custom5" android:summary="" settings:more="@drawable/expander_ic_minimized" />
+        <Preference android:title="@string/custom_edittext_9item_6" android:key="ninegrid_custom6" android:summary="" settings:more="@drawable/expander_ic_minimized" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/LinearLayout02" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center" android:id="@id/skinLogo" android:background="@drawable/edit_matter_list2" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:paddingRight="5.0dip" android:paddingBottom="5.0dip" android:layout_width="130.0dip" android:layout_height="130.0dip" android:src="@drawable/logo" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout03" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:layout_weight="1.0">
+            <TextView android:textSize="18.0sp" android:textColor="#ffcecece" android:id="@id/skinName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_value" />
+            <TextView android:textColor="#ffb1b1b1" android:id="@id/skinAuthror" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_value_skin_author" />
+            <TextView android:textColor="#ffb1b1b1" android:id="@id/skinPublishTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_value_skin_publishDate" />
+            <TextView android:textColor="#ffb1b1b1" android:id="@id/skinSize" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_value_skin_size" />
+            <RatingBar android:id="@id/skinRating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5" style="?android:attr/ratingBarStyleSmall" />
+            <Button android:textColor="#ffe1ffe2" android:gravity="center" android:layout_gravity="right" android:id="@id/skinDownload" android:background="@drawable/skin_detail_btn_download" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginTop="-10.0dip" android:text="@string/download_btn" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

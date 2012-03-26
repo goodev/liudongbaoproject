@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/layout_test" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="2.0">
+        <TextView android:textSize="@dimen/weather_current_temp_size" android:textColor="@color/white" android:id="@id/cityview_temp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="@style/textview_shadow_black" />
+    </RelativeLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="4.0">
+            <include android:layout_gravity="bottom" android:id="@id/layout_cityview_detail" layout="@layout/layout_current_info" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:layout_weight="5.0">
+            <include android:id="@id/layout_forecast" layout="@layout/layout_forecast_info" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

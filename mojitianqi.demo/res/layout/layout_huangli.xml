@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/huangli_bg2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_horizontal" android:orientation="horizontal" android:background="@drawable/wap_title_bg" android:layout_width="fill_parent" android:layout_height="@dimen/bottom_tab_height">
+        <Button android:id="@id/huangli_back" android:background="@drawable/huangli_button_back_press" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <Button android:textColor="#ffffffff" android:id="@id/huangli_date_bt" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        <Button android:id="@id/huangli_broadcast" android:background="@drawable/title_city_broadcast_press" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/ShareButton" android:layout_centerVertical="true" />
+        <Button android:id="@id/ShareButton" android:background="@drawable/huangli_button_share" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ScrollView android:id="@id/ScrollView01" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ViewFlipper android:id="@id/ViewFlipper01" android:scrollbars="none" android:animationCache="true" android:persistentDrawingCache="all" android:alwaysDrawnWithCache="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="@layout/layout_huangli_day1" />
+            <include layout="@layout/layout_huangli_day2" />
+        </ViewFlipper>
+    </ScrollView>
+</LinearLayout>

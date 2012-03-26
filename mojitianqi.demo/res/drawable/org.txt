@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SkinInformation Name="example" Author="moji" Description="this is a skin example" DirectoryName="" SkinVersion="1.00" SkinEngineVersion="1">
+  <SingleScreenSetting useIconClock="True" useTextClock="False" useOrgNumberIcon="True" useOrgBackground="True" useOrgWeahterIcon="True" UseColorMask="True" DefaultMaskColor="123456" DefaultMaskAlpha="125" WidgetType="4x1" Orientation="vertical" Resolution="480*854">
+    <DrawText TextKey="$date_short_type3 $week $date_nl" X="460" Y="130" Size="24" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="24" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$city_name" X="210" Y="70" Size="25" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="25" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_cd_desp" X="210" Y="100" Size="25" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="25" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_fd1_day_temp~$w_fd1_night_temp°" X="210" Y="130" Size="25" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="25" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_cd_temp_type1°" X="15" Y="135" Size="33" Font="" Color="bdff30" Align="left" UseShadow="True" ShadowSize="33" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND_MASK" X="0" Y="0" Width="480" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_TENS" X="217" Y="8" Width="56" Height="106" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_UNITS" X="275" Y="8" Width="56" Height="106" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_COLON" X="332" Y="40" Width="18" Height="45" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_TENS" X="350" Y="8" Width="56" Height="106" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_UNITS" X="407" Y="8" Width="56" Height="106" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND" X="0" Y="0" Width="480" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_WEATHER_ICON_CURRENT" X="0" Y="0" Width="150" Height="150" NeedScale="False" />
+  </SingleScreenSetting>
+  <SingleScreenSetting useIconClock="True" useTextClock="False" useOrgNumberIcon="True" useOrgBackground="True" useOrgWeahterIcon="True" UseColorMask="True" DefaultMaskColor="123456" DefaultMaskAlpha="125" WidgetType="4x1" Orientation="vertical" Resolution="480*800">
+    <DrawText TextKey="$date_short_type3 $week $date_nl" X="460" Y="130" Size="24" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="24" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$city_name" X="210" Y="70" Size="25" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="25" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_cd_desp" X="210" Y="100" Size="25" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="25" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_fd1_day_temp~$w_fd1_night_temp°" X="210" Y="130" Size="25" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="25" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_cd_temp_type1°" X="15" Y="135" Size="33" Font="" Color="bdff30" Align="left" UseShadow="True" ShadowSize="33" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_TENS" X="217" Y="8" Width="56" Height="106" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_UNITS" X="275" Y="8" Width="56" Height="106" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_COLON" X="332" Y="40" Width="18" Height="45" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_TENS" X="350" Y="8" Width="56" Height="106" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_UNITS" X="407" Y="8" Width="56" Height="106" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND" X="0" Y="0" Width="480" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND_MASK" X="0" Y="0" Width="480" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_WEATHER_ICON_CURRENT" X="0" Y="0" Width="150" Height="150" NeedScale="False" />
+  </SingleScreenSetting>
+  <SingleScreenSetting useIconClock="True" useTextClock="False" useOrgNumberIcon="True" useOrgBackground="True" useOrgWeahterIcon="True" UseColorMask="True" DefaultMaskColor="123456" DefaultMaskAlpha="125" WidgetType="4x1" Orientation="vertical" Resolution="320*480">
+    <DrawText TextKey="$date_short_type3 $week $date_nl" X="305" Y="85" Size="15" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="24" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$city_name" X="140" Y="46" Size="16" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="25" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_cd_desp" X="140" Y="66" Size="16" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="25" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_fd1_day_temp~$w_fd1_night_temp°" X="140" Y="85" Size="16" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="25" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_cd_temp_type1°" X="11" Y="89" Size="21" Font="" Color="bdff30" Align="left" UseShadow="True" ShadowSize="33" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_TENS" X="145" Y="5" Width="36" Height="69" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_UNITS" X="183" Y="5" Width="36" Height="69" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_COLON" X="221" Y="26" Width="11" Height="29" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_TENS" X="233" Y="5" Width="36" Height="69" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_UNITS" X="270" Y="5" Width="36" Height="69" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND" X="0" Y="0" Width="320" Height="100" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND_MASK" X="0" Y="0" Width="320" Height="100" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_WEATHER_ICON_CURRENT" X="2" Y="0" Width="99" Height="99" NeedScale="False" />
+  </SingleScreenSetting>
+  <SingleScreenSetting useIconClock="True" useTextClock="False" useOrgNumberIcon="True" useOrgBackground="True" useOrgWeahterIcon="True" UseColorMask="True" DefaultMaskColor="123456" DefaultMaskAlpha="125" WidgetType="4x1" Orientation="vertical" Resolution="240*320">
+    <DrawText TextKey="$date_short_type3 $week $date_nl" X="230" Y="66" Size="12" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="24" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$city_name" X="105" Y="35" Size="12" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="25" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_cd_desp" X="105" Y="50" Size="12" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="25" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_fd1_day_temp~$w_fd1_night_temp°" X="105" Y="65" Size="12" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="25" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_cd_temp_type1°" X="7" Y="67" Size="16" Font="" Color="bdff30" Align="left" UseShadow="True" ShadowSize="33" ShadowColor="555555" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_TENS" X="108" Y="4" Width="28" Height="53" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_UNITS" X="137" Y="4" Width="28" Height="53" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_COLON" X="166" Y="20" Width="9" Height="22" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_TENS" X="175" Y="4" Width="28" Height="53" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_UNITS" X="203" Y="4" Width="28" Height="53" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND" X="0" Y="0" Width="240" Height="75" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND_MASK" X="0" Y="0" Width="240" Height="75" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_WEATHER_ICON_CURRENT" X="0" Y="0" Width="75" Height="75" NeedScale="False" />
+  </SingleScreenSetting>
+  <SingleScreenSetting useIconClock="True" useTextClock="False" useOrgNumberIcon="True" useOrgBackground="True" useOrgWeahterIcon="True" UseColorMask="True" DefaultMaskColor="123456" DefaultMaskAlpha="125" WidgetType="4x2" Orientation="vertical" Resolution="480*854">
+    <DrawText TextKey="$city_name" X="31" Y="230" Size="35" Font="" Color="ffffff" Align="left" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_cd_desp $w_cd_temp_type1°" X="31" Y="269" Size="27" Font="" Color="ffffff" Align="left" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$date_short_type3 $week" X="446" Y="222" Size="23" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$date_nl" X="446" Y="248" Size="23" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_fd1_day_temp~$w_fd1_night_temp°" X="446" Y="273" Size="23" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawPicture FileName="" Type="CT_WEATHER_ICON_CURRENT" X="164" Y="160" Width="150" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND" X="0" Y="0" Width="480" Height="300" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND_MASK" X="0" Y="0" Width="480" Height="300" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_TENS" X="63" Y="30" Width="75" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_UNITS" X="140" Y="30" Width="75" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_TENS" X="266" Y="30" Width="75" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_UNITS" X="343" Y="30" Width="75" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_COLON_AUTO" X="222" Y="65" Width="36" Height="89" NeedScale="False" />
+  </SingleScreenSetting>
+  <SingleScreenSetting useIconClock="True" useTextClock="False" useOrgNumberIcon="True" useOrgBackground="True" useOrgWeahterIcon="True" UseColorMask="True" DefaultMaskColor="123456" DefaultMaskAlpha="125" WidgetType="4x2" Orientation="vertical" Resolution="480*800">
+    <DrawText TextKey="$city_name" X="31" Y="230" Size="35" Font="" Color="ffffff" Align="left" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_cd_desp $w_cd_temp_type1°" X="31" Y="269" Size="27" Font="" Color="ffffff" Align="left" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$date_short_type3 $week" X="446" Y="222" Size="23" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$date_nl" X="446" Y="248" Size="23" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_fd1_day_temp~$w_fd1_night_temp°" X="446" Y="273" Size="23" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawPicture FileName="" Type="CT_WEATHER_ICON_CURRENT" X="164" Y="160" Width="150" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND" X="0" Y="0" Width="480" Height="300" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND_MASK" X="0" Y="0" Width="480" Height="300" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_TENS" X="63" Y="30" Width="75" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_UNITS" X="140" Y="30" Width="75" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_TENS" X="266" Y="30" Width="75" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_UNITS" X="343" Y="30" Width="75" Height="150" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_COLON_AUTO" X="222" Y="65" Width="36" Height="89" NeedScale="False" />
+  </SingleScreenSetting>
+  <SingleScreenSetting useIconClock="True" useTextClock="False" useOrgNumberIcon="True" useOrgBackground="True" useOrgWeahterIcon="True" UseColorMask="True" DefaultMaskColor="123456" DefaultMaskAlpha="125" WidgetType="4x2" Orientation="vertical" Resolution="320*480">
+    <DrawText TextKey="$city_name" X="21" Y="153" Size="21" Font="" Color="ffffff" Align="left" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_cd_desp $w_cd_temp_type1°" X="21" Y="176" Size="15" Font="" Color="ffffff" Align="left" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$date_short_type3 $week" X="297" Y="147" Size="15" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$date_nl" X="297" Y="164" Size="15" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_fd1_day_temp~$w_fd1_night_temp°" X="297" Y="180" Size="15" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="2" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawPicture FileName="" Type="CT_WEATHER_ICON_CURRENT" X="112" Y="101" Width="100" Height="100" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND" X="0" Y="0" Width="320" Height="188" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND_MASK" X="0" Y="0" Width="320" Height="188" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_TENS" X="41" Y="16" Width="51" Height="95" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_UNITS" X="92" Y="16" Width="51" Height="95" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_TENS" X="176" Y="16" Width="51" Height="95" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_UNITS" X="226" Y="16" Width="51" Height="95" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_COLON_AUTO" X="150" Y="42" Width="20" Height="51" NeedScale="False" />
+  </SingleScreenSetting>
+  <SingleScreenSetting useIconClock="True" useTextClock="False" useOrgNumberIcon="True" useOrgBackground="True" useOrgWeahterIcon="True" UseColorMask="True" DefaultMaskColor="123456" DefaultMaskAlpha="125" WidgetType="4x2" Orientation="vertical" Resolution="240*320">
+    <DrawText TextKey="$city_name" X="17" Y="103" Size="15" Font="" Color="ffffff" Align="left" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_cd_desp $w_cd_temp_type1°" X="17" Y="119" Size="13" Font="" Color="ffffff" Align="left" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$date_short_type3 $week" X="222" Y="97" Size="12" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$date_nl" X="222" Y="110" Size="12" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawText TextKey="$w_fd1_day_temp~$w_fd1_night_temp°" X="222" Y="123" Size="12" Font="" Color="ffffff" Align="right" UseShadow="True" ShadowSize="12" ShadowColor="0" ShadowBlurSize="1" ShadowOffsetX="1" ShadowOffsetY="1" Type="CT_CUSTOM" />
+    <DrawPicture FileName="" Type="CT_WEATHER_ICON_CURRENT" X="83" Y="70" Width="70" Height="70" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND" X="0" Y="2" Width="240" Height="129" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_BACKGROUND_MASK" X="0" Y="0" Width="240" Height="129" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_TENS" X="30" Y="11" Width="39" Height="73" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_HOUR_UNITS" X="67" Y="11" Width="39" Height="73" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_TENS" X="131" Y="11" Width="39" Height="73" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_MINUTE_UNITS" X="170" Y="11" Width="39" Height="73" NeedScale="False" />
+    <DrawPicture FileName="" Type="CT_TIME_COLON_AUTO" X="113" Y="35" Width="14" Height="35" NeedScale="False" />
+  </SingleScreenSetting>
+</SkinInformation>

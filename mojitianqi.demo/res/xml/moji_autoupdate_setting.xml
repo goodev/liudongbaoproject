@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.moji.mjweather">
+    <CheckBoxPreference android:title="@string/auto_update_set_ok" android:key="checkbox_preference" android:summary="@string/auto_update_notice" android:defaultValue="true" />
+    <com.moji.mjweather.ImitateListPreference android:title="@string/auto_update_interval_time_setting" android:key="update_interval" android:summary="@string/auto_update_default_time" android:dependency="checkbox_preference" settings:more="@drawable/expander_ic_minimized" />
+    <PreferenceCategory android:title="@string/auto_update_time_setting">
+        <com.moji.mjweather.ImitateListPreference android:title="@string/auto_update_start_time_setting" android:key="update_start_time" android:dependency="checkbox_preference" settings:more="@drawable/expander_ic_minimized" />
+        <com.moji.mjweather.ImitateListPreference android:title="@string/auto_update_end_time_setting" android:key="update_end_time" android:dependency="checkbox_preference" settings:more="@drawable/expander_ic_minimized" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/auto_update_notification_setting">
+        <CheckBoxPreference android:title="@string/auto_update_notification_ok" android:key="checkbox_notification" android:summary="@string/auto_update_notification_summary" android:dependency="checkbox_preference" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/auto_update_alert_notification_setting">
+        <CheckBoxPreference android:title="@string/auto_update_alert_notification_title" android:key="alert_checkbox_notification" android:dependency="checkbox_preference" android:defaultValue="true" android:summaryOn="@string/auto_update_alert_notification_summary_on" android:summaryOff="@string/auto_update_alert_notification_summary_off" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/auto_update_notification_way">
+        <CheckBoxPreference android:title="@string/auto_update_notification_voice" android:key="checkbox_voice" android:dependency="checkbox_preference" />
+        <CheckBoxPreference android:title="@string/auto_update_notification_skake" android:key="checkbox_shake" android:dependency="checkbox_preference" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/auto_update_remind">
+        <Preference android:title="@string/auto_update_remind_title" android:key="auto_update_summary" android:summary="@string/auto_update_remind_contents" android:dependency="checkbox_preference" />
+    </PreferenceCategory>
+</PreferenceScreen>

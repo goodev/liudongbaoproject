@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/ImageViewSkinImage" android:background="@drawable/list_image_bg" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:paddingRight="5.0dip" android:paddingBottom="5.0dip" android:layout_width="130.0dip" android:layout_height="130.0dip" android:layout_marginLeft="8.0dip" android:layout_marginTop="6.0dip" android:layout_marginBottom="6.0dip" android:src="@drawable/loading_cn" />
+    <FrameLayout android:id="@id/frameLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0sp" android:textColor="#ffcecece" android:id="@id/TextViewSkinName" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textColor="#ffb5b5b5" android:id="@id/TextViewSkinAuthor" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textColor="#ffb5b5b5" android:ellipsize="end" android:id="@id/TextViewSkinDownloadNum" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+            <RatingBar android:id="@id/RatingBar" android:layout_width="wrap_content" android:layout_height="fill_parent" android:numStars="5" style="?android:attr/ratingBarStyleSmall" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="bottom|right|center" android:id="@id/downloadImageView" android:layout_width="80.0dip" android:layout_height="80.0dip" android:src="@drawable/skin_download" />"
+</FrameLayout>
+</LinearLayout>

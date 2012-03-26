@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="aboutview_textsize">23</integer>
+    <integer name="aboutview_totalmove">1800</integer>
+    <integer name="weathertrendactivity_ondraw_weathericonscale">45</integer>
+    <integer name="daysmatter_picker_text_size">18</integer>
+</resources>

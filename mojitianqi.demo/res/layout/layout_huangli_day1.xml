@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/layout_date" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ffbf0003" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_date_month" android:layout_width="80.0dip" android:layout_marginRight="22.0dip" android:singleLine="true" style="@style/huangli_item_value_text" />
+        <TextView android:textSize="35.0sp" android:textStyle="bold" android:textColor="#ffbf0003" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_date_year" android:layout_width="wrap_content" style="@style/huangli_item_value_text" />
+        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ffbf0003" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_date_week" android:layout_width="80.0dip" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/linearLayout2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-40.0dip" android:layout_marginBottom="-20.0dip">
+        <TextView android:textSize="160.0sp" android:textStyle="bold" android:textColor="#ffbf0003" android:id="@id/tv_date_day" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:id="@id/linearLayout3" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/linearLayout5" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <TextView android:textColor="#ffc99c4e" android:gravity="center" android:id="@id/tv_huangli_date_year_month" android:background="@drawable/huangli_hongbg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/huangli_nodate2" />
+            <TextView android:textSize="15.0sp" android:textColor="#ffbf0003" android:id="@id/tv_huangli_date_day" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="45.0dip" android:layout_marginTop="12.0dip" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/linearLayout6" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@id/imageView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/huangli_logo" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/linearLayout4" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <TextView android:textColor="#ffc99c4e" android:gravity="center" android:id="@id/tv_nongli_date" android:background="@drawable/huangli_hongbg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/huangli_nodate2" />
+            <TextView android:textSize="15.0sp" android:textColor="#ffbf0003" android:id="@id/tv_jieqi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="12.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout7" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip">
+        <LinearLayout android:orientation="vertical" android:id="@id/linearLayout8" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="2.0">
+            <TextView android:textColor="#ffbf0003" android:id="@id/textView8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:text="@string/huangli_taishen" />
+            <TextView android:textSize="20.0sp" android:textColor="#ffc99c4e" android:gravity="center" android:id="@id/tv_taishen" android:background="@drawable/huangli_hongbg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="25.0dip" android:maxWidth="25.0sp" android:text="@string/huangli_nodate2" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/linearLayout9" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="-10.0dip" android:layout_marginRight="-10.0dip" android:layout_weight="1.0">
+            <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="13.0dip">
+                <TextView android:textSize="16.0sp" android:textColor="#ffbf0003" android:id="@id/textView9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/huangli_yi" />
+                <TextView android:textSize="16.0sp" android:textColor="#ffbf0003" android:id="@id/tv_yi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/huangli_nodate2" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout11" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="5.0dip">
+                <TextView android:textSize="16.0sp" android:textColor="#ff000000" android:id="@id/textView9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/huangli_ji" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff000000" android:id="@id/tv_ji" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+                <TextView android:textSize="16.0sp" android:textColor="#ff652d00" android:id="@id/textView9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/huangli_chong" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff652d00" android:id="@id/tv_chong" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+                <TextView android:textSize="16.0sp" android:textColor="#ff652d00" android:id="@id/textView9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/huangli_sha" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff652d00" android:id="@id/tv_sha" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+                <TextView android:textSize="16.0sp" android:textColor="#ff652d00" android:id="@id/textView9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/huangli_cheng" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff652d00" android:id="@id/tv_cheng" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="right" android:orientation="vertical" android:id="@id/linearLayout8" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="2.0">
+            <TextView android:textColor="#ffbf0003" android:id="@id/textView8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1.0dip" android:text="@string/huangli_zhengchong" />
+            <TextView android:textSize="20.0sp" android:textColor="#ffc99c4e" android:gravity="center" android:id="@id/tv_zhengchong" android:background="@drawable/huangli_hongbg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:maxWidth="25.0sp" android:text="@string/huangli_nodate2" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/linearLayout12" android:layout_width="wrap_content" android:layout_height="10.0dip" />
+</LinearLayout>
