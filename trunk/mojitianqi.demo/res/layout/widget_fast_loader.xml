@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/LinearLayout01" android:layout_width="250.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/LinearLayout02" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/Button01" android:layout_width="84.0dip" android:layout_height="73.0dip" android:text="切换城市" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/Button02" android:layout_width="84.0dip" android:layout_height="73.0dip" android:text="更新天气" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/Button03" android:layout_width="84.0dip" android:layout_height="73.0dip" android:text="插件设置" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:id="@id/LinearLayout03" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/Button04" android:layout_width="84.0dip" android:layout_height="73.0dip" android:text="自定项1" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/Button05" android:layout_width="84.0dip" android:layout_height="73.0dip" android:text="自定项2" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/Button06" android:layout_width="84.0dip" android:layout_height="73.0dip" android:text="自定项3" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:id="@id/LinearLayout04" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/Button07" android:layout_width="84.0dip" android:layout_height="73.0dip" android:text="自定项4" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/Button08" android:layout_width="84.0dip" android:layout_height="73.0dip" android:text="自定项5" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/Button09" android:layout_width="84.0dip" android:layout_height="73.0dip" android:text="自定项6" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

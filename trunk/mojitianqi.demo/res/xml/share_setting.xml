@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/share_weather_info">
+        <Preference android:title="@string/share_weather_info" android:selectable="false" android:key="share_weather_info_preference" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/share_content_setting">
+        <ListPreference android:entries="@array/share_days_entries" android:title="@string/share_forecast_days" android:key="share_days_list_preference" android:summary="@string/share_forecast_3days" android:defaultValue="3" android:dialogTitle="@string/share_days_dialog_title" android:entryValues="@array/share_days_entryValues" />
+        <Preference android:title="@string/share_personal_regards" android:key="share_personal_regards" android:summary="@string/summary_personal_regards" android:dialogTitle="@string/share_regards_dialog_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/share_manaul_setting">
+        <ListPreference android:entries="@array/share_type_entries" android:title="@string/share_manual_type" android:key="share_manual_type_list_preference" android:summary="@string/share_type_text_summary" android:defaultValue="0" android:dialogTitle="@string/share_type_dialog_title" android:entryValues="@array/share_type_entryValues" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/share_setting_title">
+        <CheckBoxPreference android:title="@string/share_auto_share" android:key="share_checkbox_preference" android:defaultValue="false" android:summaryOn="@string/share_on_summary" android:summaryOff="@string/voice_close_already" />
+        <ListPreference android:entries="@array/share_type_entries" android:title="@string/share_type" android:key="share_type_list_preference" android:summary="@string/share_type_pic_summary" android:defaultValue="1" android:dialogTitle="@string/share_type_dialog_title" android:entryValues="@array/share_type_entryValues" />
+        <ListPreference android:title="@string/share_city" android:key="share_city_list_preference" android:dialogTitle="@string/share_city_dialog_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/share_weibo_contact" android:key="share_weibo_contact_category" />
+    <Preference android:title="@string/share_add_weibo" android:key="share_add_weibo" />
+    <Preference android:title="@string/share_add_kaixin" android:key="share_add_kaixin" />
+    <Preference android:title="@string/share_add_contact" android:key="share_add_contact" />
+</PreferenceScreen>

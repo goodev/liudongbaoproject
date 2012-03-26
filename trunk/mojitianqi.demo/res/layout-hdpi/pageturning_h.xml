@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/pt_h_background" android:paddingTop="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:id="@id/topnewnum_h" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/topnewhalf_h" android:paddingTop="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+                </LinearLayout>
+                <LinearLayout android:id="@id/topoldnum_h" android:layoutAnimation="@anim/la_pageturning_top" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/topoldhalf_h" android:paddingTop="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:id="@id/bottomoldnum_h" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/bottomoldhalf_h" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+                </LinearLayout>
+                <LinearLayout android:id="@id/bottomnewnum_h" android:layoutAnimation="@anim/la_pageturning_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:id="@id/bottomnewhalf_h" android:paddingBottom="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

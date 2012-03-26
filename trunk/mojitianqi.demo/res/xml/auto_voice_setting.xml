@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/setting_voice_auto_setting">
+        <CheckBoxPreference android:title="@string/advanced_auto_voice" android:key="EnableAutoVoicePlay" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/advanced_voice_working_days" android:key="alarm_only_working_day" android:dependency="EnableAutoVoicePlay" android:defaultValue="false" />
+        <Preference android:title="@string/advanced_voice_time" android:key="setautotime" android:dependency="EnableAutoVoicePlay" />
+    </PreferenceCategory>
+    <Preference android:title="@string/voice_data_upate_title" android:key="UpdateVoiceData" android:summary="@string/voice_data_upate_summary" />
+</PreferenceScreen>

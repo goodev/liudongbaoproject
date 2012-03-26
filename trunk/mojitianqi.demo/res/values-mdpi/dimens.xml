@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="weather_forecast_pading_top">5.0dip</dimen>
+    <dimen name="weather_current_temp_size">90.0sp</dimen>
+    <dimen name="weather_current_city_name">22.0sp</dimen>
+    <dimen name="weather_current_info_size_big">30.0sp</dimen>
+    <dimen name="weather_current_info_size_normal">18.0sp</dimen>
+    <dimen name="weather_current_info_size_small">13.0sp</dimen>
+    <dimen name="setting_text_size">17.0sp</dimen>
+    <dimen name="weather_alert_text_size">16.0sp</dimen>
+    <dimen name="weather_forecast_text_size">13.0sp</dimen>
+    <dimen name="weather_current_info_description_textsize">22.0sp</dimen>
+    <dimen name="time_mask_width">105.0dip</dimen>
+    <dimen name="time_mask_height">109.0dip</dimen>
+    <dimen name="left_time_mask_layout_x">50.0dip</dimen>
+    <dimen name="right_time_mask_layout_x">165.0dip</dimen>
+    <dimen name="time_mask_layout_y">5.0dip</dimen>
+</resources>

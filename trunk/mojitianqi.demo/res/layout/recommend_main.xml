@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/rc_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@color/rc_title_bkg" android:layout_width="fill_parent" android:layout_height="@dimen/bottom_tab_height">
+        <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/title_bg" android:scaleType="fitXY" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/rc_title_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rc_title" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <LinearLayout android:id="@id/rc_loading" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/recommend_loading" />
+    </LinearLayout>
+    <ListView android:id="@id/rc_softlist" android:animationCache="false" android:layout_width="fill_parent" android:layout_height="0.0dip" android:cacheColorHint="@color/rc_white" android:divider="@color/rc_background" android:dividerHeight="0.0dip" android:layout_weight="1.0" />
+</LinearLayout>

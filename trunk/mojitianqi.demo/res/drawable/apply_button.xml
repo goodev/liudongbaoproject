@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector android:constantSize="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <gradient android:startColor="#ff3b462a" android:endColor="#ffb7d136" android:angle="270.0" />
+            <stroke android:width="1.0dip" android:color="#ff2d3520" />
+            <corners android:radius="5.0dip" />
+            <padding android:left="10.0dip" android:top="10.0dip" android:right="10.0dip" android:bottom="10.0dip" />
+        </shape>
+    </item>
+    <item>	//无焦点
+<shape>
+            <gradient android:startColor="#ff2d3520" android:endColor="#ff566319" android:angle="270.0" />
+            <stroke android:width="1.0dip" android:color="#ff292c1a" />
+            <corners android:radius="5.0dip" />
+            <padding android:left="10.0dip" android:top="10.0dip" android:right="10.0dip" android:bottom="10.0dip" />
+        </shape>
+    </item>
+</selector>

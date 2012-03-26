@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/exchange_panelHeight" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="440.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/exchange_message" android:background="@drawable/exchange_more_top" android:layout_width="fill_parent" android:layout_height="51.0dip" />
+    <TextView android:textSize="15.0dip" android:textStyle="bold" android:textColor="#ff4b4b4b" android:id="@id/exchange_download_popup_title" android:layout_width="fill_parent" android:layout_height="51.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="是否下载推荐应用？" android:shadowColor="#ffeeeeee" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="1.0" />
+    <RelativeLayout android:id="@id/exchange_detail0" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="200.0dip" android:layout_below="@id/exchange_message">
+        <RelativeLayout android:id="@id/exchange_dlCon" android:layout_width="fill_parent" android:layout_height="80.0dip">
+            <ImageView android:id="@id/exchange_photo" android:background="@drawable/exchange_zhanwei" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" />
+            <TextView android:textSize="16.0dip" android:textColor="#ff000000" android:gravity="left" android:id="@id/exchange_appname" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="15.0dip" android:text="名称：漂流瓶" android:singleLine="true" android:layout_toRightOf="@id/exchange_photo" />
+            <TextView android:textSize="16.0dip" android:textColor="#ff000000" android:gravity="left" android:id="@id/exchange_dev" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:text="开发：开卷有益" android:singleLine="true" android:layout_toRightOf="@id/exchange_photo" android:layout_below="@id/exchange_appname" />
+            <TextView android:textSize="14.0dip" android:textColor="#ff000000" android:gravity="left" android:id="@id/exchange_size" android:layout_width="200.0dip" android:layout_height="18.0dip" android:layout_marginLeft="20.0dip" android:text="大小：125KB" android:layout_toRightOf="@id/exchange_photo" android:layout_below="@id/exchange_dev" />
+        </RelativeLayout>
+        <ScrollView android:layout_gravity="center" android:id="@id/exchange_ScrollView" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_weight="1.0" android:layout_below="@id/exchange_dlCon">
+            <TextView android:textSize="15.0dip" android:textColor="#ff777777" android:id="@id/exchange_des0" android:background="#ffffffff" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="安卓优化大师是一款功能强大的手机系统优化软件，它提供了全面有效且简便安全的手机体检、开机加速、批量卸载、文件管理四大功能模块及数个附加的工具软件。使用安卓优化大师，能够有效地帮助用户了解自己的手机软硬件信息。" android:layout_below="@id/exchange_dlCon" />
+        </ScrollView>
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="55.0dip" android:layout_marginTop="5.0dip" android:layout_below="@id/exchange_detail0" android:layout_centerVertical="true">
+        <Button android:textSize="17.0dip" android:textColor="#ff666666" android:gravity="center" android:id="@id/exchange_ok" android:layout_marginRight="5.0dip" android:layout_weight="1.0" style="@style/exchange_dialog_download" />
+        <Button android:textSize="17.0dip" android:textColor="#ff666666" android:gravity="center" android:id="@id/exchange_cancel" android:layout_marginLeft="5.0dip" android:layout_weight="1.0" style="@style/exchange_dialog_cancel" />
+    </LinearLayout>
+</RelativeLayout>

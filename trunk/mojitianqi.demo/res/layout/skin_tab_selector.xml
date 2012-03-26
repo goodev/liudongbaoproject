@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TabHost android:id="@android:id/tabhost" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RadioGroup android:layout_gravity="top" android:orientation="horizontal" android:id="@id/skin_radio" android:background="@drawable/skin_tab_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RadioButton android:id="@id/hottest" android:tag="radio_weather" android:checked="true" android:text="@string/skin_selector_hottest" style="@style/skin_tab_top" />
+                <RadioButton android:id="@id/newest" android:tag="radio_trend" android:text="@string/skin_selector_newest" style="@style/skin_tab_top" />
+                <RadioButton android:id="@id/installed" android:tag="radio_index" android:text="@string/skin_selector_installed" style="@style/skin_tab_top" />
+            </RadioGroup>
+            <TabWidget android:id="@android:id/tabs" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0" android:layout_alignParentBottom="true" />
+            <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+    </TabHost>
+</FrameLayout>

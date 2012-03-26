@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="exchange_size">大小</string>
+    <string name="exchange_action_open">打开</string>
+    <string name="exchange_action_browse">浏览</string>
+    <string name="exchange_action_download">下载</string>
+    <string name="exchange_network_break_alert">请确定设备成功联接网络</string>
+    <string name="exchange_more">更多精彩推荐</string>
+    <string name="exchange_back_to_top">回到顶部</string>
+    <string name="exchange_dowloadOrNot">是否下载推荐应用？</string>
+    <string name="tab_item_weather">天气</string>
+    <string name="tab_item_trend">趋势</string>
+    <string name="tab_item_index">生活</string>
+    <string name="tab_item_tools">工具</string>
+    <string name="tab_item_setting">设置</string>
+    <string name="menu_item_skin">皮肤管理</string>
+    <string name="menu_item_huangli">黄历查询</string>
+    <string name="menu_item_share">分享天气</string>
+    <string name="menu_item_test">测试</string>
+    <string name="menu_item_del_all_city">删除所有城市</string>
+    <string name="app_name">墨迹天气</string>
+    <string name="widget_title_big">墨迹天气插件(4x2)</string>
+    <string name="widget_title_mid">墨迹天气插件(4x1)</string>
+    <string name="auto_share">自动或手动分享到微博及联系人</string>
+    <string name="setting_btn">设置</string>
+    <string name="ok_btn">确定</string>
+    <string name="cancel_btn">取消</string>
+    <string name="apply_btn">应用</string>
+    <string name="edit_btn">编辑</string>
+    <string name="delete_btn">删除</string>
+    <string name="setup_btn">安装</string>
+    <string name="download_btn">下载</string>
+    <string name="update_btn">更新</string>
+    <string name="laterdo_btn">以后再说</string>
+    <string name="uninstall_btn">立即卸载</string>
+    <string name="install_btn">立即下载</string>
+    <string name="do_not_show_again">不再显示</string>
+    <string name="just_this_once">始终提示</string>
+    <string name="gave_score">给我们评分</string>
+    <string name="go_market">去市场下载</string>
+    <string name="exit">退出</string>
+    <string name="installed_skin">已安装</string>
+    <string name="no_market">您尚未安装Market软件。</string>
+    <string name="tomorrow">明天：</string>
+    <string name="download_method_selection">请选择下载方式</string>
+    <string name="immediately_check_skin">更换皮肤</string>
+    <string name="continue_download_skin">返回列表</string>
+    <string name="contacts_no_name">无姓名</string>
+    <string name="retry_btn">重试</string>
+    <string name="first_run_dlg_title">墨迹天气提示信息</string>
+    <string name="first_run_dlg_msg">这是您第一次运行墨迹天气软件，正在根据您的手机型号下载合适的数据设置，第一次运行需要连接网络，请稍后......</string>
+    <string name="first_run_dlg_btn1_text">取消连接网络</string>
+    <string name="msg_network_register_error">抱歉，由于网络连接问题，无法为您更新天气数据，请检查您的网络连接或稍后再试。</string>
+    <string name="msg_network_register_success">恭喜您，初始化成功，请您点击城市索引界面的“＋”号来添加一个您需要关注天气的城市。</string>
+    <string name="msg_city_none_select">您还没有选择城市，请您选择一个或多个您关心的城市。</string>
+    <string name="msg_city_same_city">抱歉，您不能添加一个城市两次。</string>
+    <string name="msg_city_no_city_to_delete">已经没有城市可以删除</string>
+    <string name="msg_city_cannot_delete_city_in_updating">更新中不能删除城市！</string>
+    <string name="msg_city_deleting_share_city">删除的城市为分享城市,请进入分享设置界面重新选择分享城市！</string>
+    <string name="msg_updating_canceled">更新已经被您取消</string>
+    <string name="msg_updating_newly_added_city">自动尝试更新新添加的城市的天气...</string>
+    <string name="msg_first_city_tips">已经是第一个城市!</string>
+    <string name="msg_last_city_tips">已经是最后一个城市!</string>
+    <string name="msg_isexit">再按一下返回键退出程序！</string>
+    <string name="msg_weather_data_no_found">抱歉，暂无此城市天气数据。请您稍后再试！</string>
+    <string name="msg_city_same_city_auto_locate">抱歉，自动定位城市只能够选择一个，请您在管理界面留意 “当前位置” 的更新结果。</string>
+    <string name="dialog_title_select_add_remove_cancel">请选择操作类型</string>
+    <string name="msg_disable_move">正在更新数据，请您稍后再切换画面。点击标题栏上的“Ｘ”形状的可取消更新。</string>
+    <string name="dialog_title_about">墨迹天气</string>
+    <string name="dialog_no_cityinfo">抱歉暂时无此地区的天气数据，请选择附近的地区。</string>
+    <string name="msg_about_description">墨迹风云团队致力于为国内用户打造最优秀的手机软件。</string>
+    <string name="msg_about_moijiurl">墨迹官网:www.mojichina.com</string>
+    <string name="msg_version_type">内测版</string>
+    <string name="msg_not_open">抱歉，本版本暂未开放本功能，若您需要此功能请随时留意我们最新的发布信息，谢谢。</string>
+    <string name="screen1_title">城 市 管 理</string>
+    <string name="screen2_title">墨迹天气</string>
+    <string name="screen3_title">趋势图</string>
+    <string name="screen3_title_temp">温度趋势图</string>
+    <string name="screen3_wind_title">风力趋势图</string>
+    <string name="current_location">当前位置</string>
+    <string name="weather_update">同步</string>
+    <string name="weather_waiting_update">待同步</string>
+    <string name="weather_updating">同步中...</string>
+    <string name="system_return_message_0">成功</string>
+    <string name="system_return_message_2">"温馨提示：为了您更好的使用墨迹天气软件，需要更新您当前安装的版本，请去官方论坛升级到最新版本。
+
+网址：www.mojichina.com
+"</string>
+    <string name="system_return_message_5">"温馨提示：墨迹天气已经有新的版本,建议您去更新。
+
+网址：www.mojichina.com
+"</string>
+    <string name="system_return_message_8">"对不起，您还没有申请到测试资格，请您去官方论坛申请。
+
+网址：www.mojichina.com
+"</string>
+    <string name="system_return_message_9">很抱歉，在城市数据库中未查找到您的所在位置对应的城市，请您暂时手动选择您所在的当前城市，我们会尽快完善城市位置信息的对应。</string>
+    <string name="msg_check_version_no_new">"您当前是最新版本,无需更新,欢迎去论坛看看. 
+
+网址：www.mojichina.com
+"</string>
+    <string name="msg_check_version_network_error">"因为手机网络问题,暂时无法连接,您可以去论坛反映问题. 
+
+网址：www.mojichina.com
+"</string>
+    <string name="dialog_title_select_sub_menu">请选择以下设定:</string>
+    <string name="dialog_title_auto_update">桌面自动更新设定:</string>
+    <string name="msg_no_weather_data">抱歉,当前城市需要更新天气之后才能分享给您的好友.</string>
+    <string name="help_widget">"
+插件设定说明 
+1.4x2大小插件拥有五个热区，分别是小时，分钟，城市名（切换城市），天气图标（进入墨迹），日期（更新天气），其中小时和分钟部分可自定义，请在主程序‘桌面设置-&amp;gt;自定义快捷按钮设定’菜单设置。
+ 
+2.4x1大小插件拥有两个热区，分别是左半部分和右半部分，右半部分可自定义。
+ 
+3.九宫格快捷方式默认不开启，可以在‘桌面设置-&amp;gt;自定义快捷按钮设定’菜单设置开启九宫格快捷方式。
+"</string>
+    <string name="msg_no_widget_use">抱歉,墨迹天气的插件放在桌面上之后才能使该操作生效,请返回到桌面加载墨迹天气插件.</string>
+    <string name="msg_no_widget_skin">"抱歉，暂时没有支持您
+设备分辨率的皮肤。"</string>
+    <string name="msg_setwidget">"长按桌面空白处 -&amp;gt; 选择桌面小部件 -&amp;gt; 选择墨迹天气4×1或4×2。 
+"</string>
+    <string name="msg_timedead">"绝大多数桌面插件显示、时间停止等异常问题可以通过移除桌面出问题的插件（拖到垃圾桶），再重新添加墨迹天气插件的方式解决。还不行？请切换回默认皮肤，再重新切换成你喜欢的皮肤，基本能解决问题。
+"</string>
+    <string name="msg_install_skin">"第一步，拷贝mja格式的皮肤文件到SD卡下面的moji目录下，若没有这个目录，请手工建立。之后请重新挂载sd卡或者拔掉数据线。
+ 第二步，进入设置页面，选择“桌面插件”，选择“从SD卡安装皮肤”，然后安装你想要的皮肤。
+ 第三步，皮肤安装完毕，退出安装界面，返回到主界面进入已安装皮肤列表，点击进入你喜欢的皮肤详情界面，按下“使用”按钮，就好了。 
+"</string>
+    <string name="msg_duty">因为更改签名有效期，新版墨迹天气不再支持覆盖安装1.15及其之前的较旧版本，最新的1.16版本或更高版本不受影响，请单击“打开旧版卸载”按钮卸载并存的较旧版本。本提示在您卸载旧版本之后不会再次出现。</string>
+    <string name="COAuthShareUsername">用户名</string>
+    <string name="COAuthSharePassword">密码</string>
+    <string name="COAuthShare_CHANNEL_SINA">新浪微博</string>
+    <string name="COAuthShare_CHANNEL_TENCENT">腾讯微博</string>
+    <string name="COAuthShare_CHANNEL_RENREN">人人网社区</string>
+    <string name="COAuthShare_CHANNEL_KAIXIN">开心网社区</string>
+    <string name="add_contacts">添加联系人</string>
+    <string name="no_contact">通讯录中无联系人</string>
+    <string name="no_contact_notice">你的手机通讯录中没有联系人，请先添加联系人！</string>
+    <string name="contact_to_share">您设定分享的联系人为：</string>
+    <string name="share_notice">我们会按您设定的时间每天转发天气信息，所产生的短信费用由您的运营商收取。</string>
+    <string name="no_contact_selected_notice">您当前没有选择可用的联系人，请选择！</string>
+    <string name="share_type_text_summary">分享类型为:文字</string>
+    <string name="share_type_pic_summary">"分享类型为:文字和图片
+注:图片最大在35KB左右"</string>
+    <string name="share_weather_info">天气信息预览</string>
+    <string name="share_setting_title">自动分享设置</string>
+    <string name="share_auto_share">自动分享</string>
+    <string name="share_on_summary">已开启（仅自动在每天第一次更新时发送，没有设置联系人或微博则不发送）</string>
+    <string name="share_forecast_days">预报天数:</string>
+    <string name="share_forecast_2days">预报天数:2天</string>
+    <string name="share_forecast_3days">预报天数:3天</string>
+    <string name="share_type">自动分享类型</string>
+    <string name="share_city">自动分享城市</string>
+    <string name="share_weibo_contact">微博和联系人(列表项可长按或点击)</string>
+    <string name="share_add_weibo">+ 添加新浪微博</string>
+    <string name="share_add_kaixin">+ 添加开心网账号</string>
+    <string name="share_add_contact">+ 添加联系人(短信分享)</string>
+    <string name="share_days_dialog_title">选择预报天数</string>
+    <string name="share_type_dialog_title">选择分享类型</string>
+    <string name="share_city_dialog_title">选择分享城市</string>
+    <string name="share_weibo_dialog_title">选择分享微博</string>
+    <string name="share_add_city_dialog_title">请添加城市</string>
+    <string name="share_current_weather_dialog_title">当前天气</string>
+    <string name="share_header_title">请选择操作类型</string>
+    <string name="share_delete_weibo">删除此分享账户</string>
+    <string name="share_delete_contact">删除此短信分享联系人</string>
+    <string name="share_delete_note">删除提示</string>
+    <string name="share_delete_weibo_message">确定删除此分享账户?</string>
+    <string name="share_delete_contact_message">确定删除此短信分享联系人?</string>
+    <string name="share_city_default">未选择分享城市，默认城市为:</string>
+    <string name="share_city_current">当前城市为:</string>
+    <string name="share_city_select">您选择的城市为:</string>
+    <string name="share_city_null">分享城市不能为空，请返回城市管理界面添加城市！</string>
+    <string name="share_positive_button">确定</string>
+    <string name="share_neutral_button">取消</string>
+    <string name="share_select">选择</string>
+    <string name="share_day">天</string>
+    <string name="save">保存</string>
+    <string name="share">分享</string>
+    <string name="close">关闭</string>
+    <string name="register_with_one_key">一键注册</string>
+    <string name="register_weibo_info">"发送短信注册新浪微博，费用0.1元，由运营商收取。
+1、发送注册短信新浪不收取任何费用，您仅需支付由运营商收取的标准短信费。
+2、手机号仅用于个人登录，其他用户不可见。"</string>
+    <string name="cannot_register_in_current_mode">当前模式不可注册</string>
+    <string name="check_sim_prompt">"请检查您的SIM卡是否可用，或关闭飞行模式！
+然后重新尝试一键注册。"</string>
+    <string name="validating_user_info">正在验证用户信息,请稍候...</string>
+    <string name="sharing">正在分享天气信息,请稍候...</string>
+    <string name="share_content">我正在使用#墨迹天气#玩微博，分享天气非常方便，让手机看天气成为享受！快来体验：</string>
+    <string name="COAuthShareNull">用户名或密码不能为空,请重新输入!</string>
+    <string name="CErrorInit">墨迹天气--墨迹因您而精彩!</string>
+    <string name="COAuthFail">认证失败,请确认是否已开通或者更改过密码!</string>
+    <string name="COAuthSuccess">认证成功,您可以点击\"分享\"按钮,把天气信息和截图同时分享到你的账号!</string>
+    <string name="CNotFirstTimeLogin">您可以点击\"分享\"按钮,把天气信息和截图同时分享到你的账号!</string>
+    <string name="CNotShareScreenShot">您可以点击\"分享\"按钮,把天气信息分享到你的账号!</string>
+    <string name="CNetFail">连接失败,请检查网络状况,重新进行操作!</string>
+    <string name="CShareSuccess">分享成功,您可以把天气信息分享给更多的朋友!</string>
+    <string name="CShareRateLimited">分享失败,请确认是否重复提交同一条天气信息或者超过请求频率限制!</string>
+    <string name="CShareFail">分享失败,请重新尝试分享到你的账号!</string>
+    <string name="CSystemError">系统内部错误,请联系工作人员帮忙解决或者重新尝试!</string>
+    <string name="VoicePlayData">为了给你带来更方便的天气信息，墨迹天气此版本加入每天语音定时播报服务，建议下载语音播报数据包，以体验更好的语音天气播报服务。语音数据包为2M左右，建议使用wifi下载。</string>
+    <string name="systemVersionnotify">抱歉，暂时不支持1.5Rom语音播报功能，请等待后续版本。</string>
+    <string name="VoicePlayNotify">检测到你还未添加墨迹天气插件，为了给你带来更准确的语音天气播报信息，建议你添加墨迹天气插件以及时更新天气数据。</string>
+    <string name="pop_title">墨迹生活资讯</string>
+    <string name="pop_no_value">暂无指数信息</string>
+    <string name="moji_recommend_info">墨迹推荐信息</string>
+    <string name="m9_notify_skin">墨迹天气皮肤功能正在移植中，会在后期版本中加入,谢谢你的支持！</string>
+    <string name="network_exception">网络异常</string>
+    <string name="network_exception_prompt">下载皮肤失败，请检查您的网络是否中断。或服务器忙，请您稍稍后再试。</string>
+    <string name="network_download_cancle">取消下载</string>
+    <string name="network_cancle_prompt">皮肤下载已经取消！</string>
+    <string name="install_skin_package">"正在安装皮肤包请稍后...
+当前文件"</string>
+    <string name="install_skin_package_ok">"安装成功！ 是否要切换到皮肤列表来使用当前皮肤？ 
+注意:非官方发布的个别皮肤,不能保证所有屏幕下的显示效果,若出现问题请切换回官方皮肤."</string>
+    <string name="install_skin_ok">"切换成功,请退出主程序查看效果.
+注意:非官方发布的个别皮肤，不能保证所有屏幕下的显示效果,若出现问题请切换回官方皮肤."</string>
+    <string name="delete_skin_ok">删除成功!</string>
+    <string name="install_skin_fail">安装失败，请检查皮肤包文件是否被破坏，以及SD卡有无剩余空间.</string>
+    <string name="network_downloading">正在下载，请稍候...</string>
+    <string name="install_skin">正在安装，请稍候...</string>
+    <string name="skin_copying">正在复制:</string>
+    <string name="skin_default">默认皮肤</string>
+    <string name="skin_author">作者:</string>
+    <string name="skin_release">发布:</string>
+    <string name="skin_rating">评分:</string>
+    <string name="skin_size">大小:</string>
+    <string name="skin_name">皮肤名:</string>
+    <string name="skin_download_num">下载次数:</string>
+    <string name="skin_old">皮肤工具</string>
+    <string name="skin_fen">分</string>
+    <string name="skin_moyou">墨友</string>
+    <string name="skin_notice">提示内容:</string>
+    <string name="skin_notic_no_skin">没有发现皮肤包，请拷贝mja文件到SD卡的moji目录下。如果您下载的是zip格式并且解压缩之后没有mja文件，那么直接修改zip后缀为mja就可以使用。</string>
+    <string name="skin_switch">请稍候，正在执行优化和切换...</string>
+    <string name="skin_total_1">共有皮肤</string>
+    <string name="skin_total_2">个,当前是第</string>
+    <string name="skin_total_3">个.</string>
+    <string name="skin_old_prompt">(该皮肤是旧版皮肤，若显示异常请下载其最新的版本)</string>
+    <string name="skin_description">描述</string>
+    <string name="auto_update_setting">自动更新设置</string>
+    <string name="auto_update_set_ok">开启自动更新</string>
+    <string name="auto_update_notice">注:无网络时本程序不会自动联网</string>
+    <string name="auto_update_interval_time">更新间隔时间设置</string>
+    <string name="auto_update_interval_time_setting">更新的间隔时间</string>
+    <string name="auto_update_default_time">4小时</string>
+    <string name="auto_update_choice_interval_time">请选择间隔时间</string>
+    <string name="auto_update_time_setting">每日自动更新时间段设定</string>
+    <string name="auto_update_start_time_setting">开始时间点</string>
+    <string name="auto_update_start_time">08:00</string>
+    <string name="auto_update_choce_start_time">请选择开始时间点</string>
+    <string name="auto_update_end_time_setting">结束时间点</string>
+    <string name="auto_update_end_time">22:00</string>
+    <string name="auto_update_choce_end_time">请选择结束时间点</string>
+    <string name="auto_update_remind">提醒</string>
+    <string name="auto_update_remind_title">提醒您注意</string>
+    <string name="auto_update_remind_contents">本软件会自动根据网络状况(高峰时间拥挤、无法连接等)适当调整更新时间，以上并不代表绝对精确时间。</string>
+    <string name="auto_update_notification_setting">焦点城市天气提示设置</string>
+    <string name="auto_update_alert_notification_setting">预警提示设置</string>
+    <string name="auto_update_notification_ok">突变天气提示</string>
+    <string name="auto_update_notification_summary">已开启，当气温或天气情况出现剧烈变化时，会在通知栏进行提示。</string>
+    <string name="auto_update_notification_way">提示类型</string>
+    <string name="auto_update_notification_voice">声音提示</string>
+    <string name="auto_update_notification_skake">振动提示</string>
+    <string name="auto_update_alert_notification_title">预警信息提示</string>
+    <string name="auto_update_alert_notification_summary_on">已开启,将在通知栏及时得到最新的预警信息。</string>
+    <string name="auto_update_alert_notification_summary_off">已关闭,可手动查看预警信息。</string>
+    <string name="Setting_desktop_display">桌面插件</string>
+    <string name="Setting_voice_play">定时播报</string>
+    <string name="Setting_AutoLocation">GPS定位</string>
+    <string name="Setting_auto_share">天气分享</string>
+    <string name="Setting_auto_update">自动更新</string>
+    <string name="Setting_sent_suggestion">发送建议</string>
+    <string name="Setting_check_newversion">检查新版本</string>
+    <string name="Setting_help">帮助</string>
+    <string name="Setting_about">关于</string>
+    <string name="Setting_notice">通知与提示</string>
+    <string name="Setting_animation">天气动画</string>
+    <string name="Setting_desktop_widget_bg">背景图片设置</string>
+    <string name="Setting_desktop_widget_bg_summary">设置桌面插件背景显示</string>
+    <string name="Setting_desktop_defaultDesktop">恢复桌面默认设置</string>
+    <string name="Setting_desktop_defaultDesktop_summary">恢复桌面的默认设置</string>
+    <string name="Setting_desktop_InstallSkin_sdcard">从SD卡安装皮肤</string>
+    <string name="Setting_desktop_InstallSkin_sdcard_summary">从SD卡中搜索mja皮肤包并安装</string>
+    <string name="Setting_desktop_ManageSkin">更换/管理皮肤</string>
+    <string name="Setting_desktop_ManageSkin_summary">设置桌面插件背景显示</string>
+    <string name="Setting_desktop_Customize_Shortcut_Button">桌面插件热区设定</string>
+    <string name="Setting_desktop_Customize_Shortcut_Button_summary">设置点击桌面插件不同位置后的行为</string>
+    <string name="Setting_grid9_bt6_title">桌面插件相关设置及帮助</string>
+    <string name="help_title_addWidget">1.如何在桌面上放置墨迹天气插件</string>
+    <string name="help_title_widget_time">2.桌面插件时间不动</string>
+    <string name="help_title_installskin">3.皮肤安装方法</string>
+    <string name="dialog_widget_description">4.墨迹天气插件说明</string>
+    <string name="menu_update">更新天气</string>
+    <string name="menu_skin_manage">皮肤管理</string>
+    <string name="menu_share_weather">分享天气</string>
+    <string name="menu_voice_play">语音播报</string>
+    <string name="menu_huangli">黄历</string>
+    <string name="menu_setting">设置</string>
+    <string name="menu_city_manager">城市管理</string>
+    <string name="menu_update_all">全部更新</string>
+    <string name="custom_title">热区设置</string>
+    <string name="custom_fixedarea_title">查看桌面插件固定热区</string>
+    <string name="custom_4X2_A">4x2插件左上角热区</string>
+    <string name="custom_4X2_B">4x2插件右上角热区</string>
+    <string name="custom_4X2_D">4x2插件右下角热区</string>
+    <string name="custom_4X1_B">4x1插件右侧热区</string>
+    <string name="custom_notice">注意</string>
+    <string name="custom_notice_all">"第一次加载列表可能会比较慢,请耐心等待。
+另外由于您的系统原因,默认的设置可能无效."</string>
+    <string name="custom_notice_detail">如果以上热区均未设置墨迹九宫格，则以下设置不起作用。</string>
+    <string name="custom_widget_hotarea_title">桌面插件自定义热区设置</string>
+    <string name="custom_ninegrid_title">九宫格设置</string>
+    <string name="custom_app_noset">未设定</string>
+    <string name="custom_app_default">默认设置</string>
+    <string name="custom_app_voice">语音播报</string>
+    <string name="custom_app_huangli">黄历</string>
+    <string name="custom_app_grid9">墨迹快捷九宫格</string>
+    <string name="custom_app_clock">闹钟</string>
+    <string name="custom_app_calendar">日历</string>
+    <string name="custom_app_update_weather">更新天气</string>
+    <string name="custom_select_app">选择程序</string>
+    <string name="custom_edittext_9item_1">九宫格自定项1</string>
+    <string name="custom_edittext_9item_2">九宫格自定项2</string>
+    <string name="custom_edittext_9item_3">九宫格自定项3</string>
+    <string name="custom_edittext_9item_4">九宫格自定项4</string>
+    <string name="custom_edittext_9item_5">九宫格自定项5</string>
+    <string name="custom_edittext_9item_6">九宫格自定项6</string>
+    <string name="custom_save_setting_title">如果您已经选择好,那么请点击以下按钮:</string>
+    <string name="custom_save_quit">保存我的设置并退出</string>
+    <string name="moji_shareWeather">天气分享</string>
+    <string name="moji_current_playvoice">当前正在播报语音 ! 请稍候再次点击播报。</string>
+    <string name="moji_is_playing_voice">墨迹天气为您播报，</string>
+    <string name="voice_today_is">今天是</string>
+    <string name="voice_year">年</string>
+    <string name="voice_month">月</string>
+    <string name="voice_date">日</string>
+    <string name="voice_time_is">现在时间是</string>
+    <string name="voice_hour">点</string>
+    <string name="voice_minute">分</string>
+    <string name="voice_zheng">整</string>
+    <string name="voice_minus">零下</string>
+    <string name="voice_degree">度</string>
+    <string name="voice_from"/>
+    <string name="voice_to">到</string>
+    <string name="voice_less_than">小于</string>
+    <string name="voice_greater_than">大于</string>
+    <string name="voice_level">级</string>
+    <string name="voice_lowest_temperature">最低温度</string>
+    <string name="voice_open_already">已开启</string>
+    <string name="voice_close_already">已关闭</string>
+    <string name="voice_set_time">语音播报时间设置为:</string>
+    <string name="voice_no_data">检测到语音数据文件不存在。建议下载语音播报数据包，以体验更好的语音天气播报服务。语音数据包为2M左右，建议使用wifi下载。</string>
+    <string name="voice_no_bgdata">语音数据文件已更新，加入了舒畅的背景音乐。建议下载更新包，以体验更好的语音天气播报服务。语音数据更新包为500K左右，建议使用wifi下载。 (以后再说，将不会体验背景音乐效果，也可在设置-定时播报-语音包更新 ,更新最新完整语音包。)</string>
+    <string name="voice_data_upate_title">更新语音数据包</string>
+    <string name="voice_data_upate_summary">更新最新最完整的数据包，体验更好的语音播报服务。</string>
+    <string name="moisture_degree">湿度</string>
+    <string name="percent_sign">％</string>
+    <string name="C_degree_sign">℃</string>
+    <string name="UV">紫外线</string>
+    <string name="no_other_weather_data">暂无其他实况数据</string>
+    <string name="publish">发布</string>
+    <string name="weather_is_updating">正在更新...</string>
+    <string name="away_from">距</string>
+    <string name="live_temperature">实况温度：</string>
+    <string name="temperature_range">温度范围：</string>
+    <string name="wind_describe">风向风力：</string>
+    <string name="wind_force">风力：</string>
+    <string name="temperature">温度</string>
+    <string name="wind">风力</string>
+    <string name="weather_desc">天气情况：</string>
+    <string name="humidity">湿度：</string>
+    <string name="uv">紫外线：</string>
+    <string name="matter_today">今天是：</string>
+    <string name="night_low_temperature">夜间低温</string>
+    <string name="click_widget_to_select_city">请点击插件，选择预报天气的城市</string>
+    <string name="no_sd_card_for_widget">检测到SD卡被拔出,重新挂载SD卡之后本插件会在1分钟之内自动刷新.</string>
+    <string name="failed_to_load_skin">皮肤载入失败,请点此处重新设置。或者先移除再重新放置本插件到桌面</string>
+    <string name="click_to_select_city">请点击此处选择预报天气的城市</string>
+    <string name="dialog_access_web_link">访问链接页面</string>
+    <string name="dialog_prompt_deleting_city">请问您是否确认删除当前城市?</string>
+    <string name="dialog_prompt_deleting_all_city">确认删除所有城市?</string>
+    <string name="dialog_prompt_exit">是否退出墨迹天气?</string>
+    <string name="dialog_send_feedback_by_internet">发送反馈（网络形式）</string>
+    <string name="dialog_send">发送</string>
+    <string name="dialog_found_old_version">发现并存的旧版墨迹天气</string>
+    <string name="dialog_uninstall_old_version">卸载旧版本</string>
+    <string name="dialog_no_memory">内存不足，确定后退出，您再次进入本程序就正常了。</string>
+    <string name="dialog_voice_prompt_content">为了体验更好的语音播报服务，请更新当前城市天气数据</string>
+    <string name="dialog_failed_to_load_sdcard">加载SD卡失败。请检查SD卡是否存在！</string>
+    <string name="dialog_nonetwork">暂时没有可用的网络，请稍后再试。</string>
+    <string name="dialog_waitting">正在检查，请稍候...</string>
+    <string name="dialog_sent_messageOK">意见已经发送，谢谢您.</string>
+    <string name="dialog_sent_messageNO">您还没输入建议或意见。</string>
+    <string name="dialog_back_defaultweight">是否恢复桌面插件默认设置？</string>
+    <string name="dialog_back_defaultweight_ok">成功，请退出主程序查看效果.</string>
+    <string name="dialog_widget_select_bg">选择插件背景</string>
+    <string name="dialog_widget_select_clock_color">选择时钟数字颜色</string>
+    <string name="dialog_widget_select_clock_style">选择时间显示样式</string>
+    <string name="dialog_widget_nosdcard">加载SD卡失败，请检查SD卡是否存在</string>
+    <string name="dialog_widget_novoicedata">检测到你还未下载语音文件，请下载后再次播报。</string>
+    <string name="dialog_widget_nocity">检测到你还未添加城市，请进入主程序添加城市。</string>
+    <string name="dialog_widget_update">为了体验更好的语音播报服务，请更新当前城市天气数据。</string>
+    <string name="dialog_add_widget">"检测到您没有使用墨迹天气桌面插件，请手动放置。方法如下：
+回到桌面，在桌面空白处长按1秒以上，或按下menu键，选择添加，在出现的菜单选择'添加小部件'，注意部分HTC手机可能不是这个名字，在出现的列表里面选择'墨迹天气4x1'或者'墨迹天气4x2'，桌面一般是4x4的网格大小，如果提示没有空余位置，请移动或删除现有的桌面插件或图标。"</string>
+    <string name="dialog_need_update_weather">当前分享城市还未更新天气数据，请你更新天气后再分享！</string>
+    <string name="dialog_select_app">请选择要启动的程序</string>
+    <string name="Toast_updating">正在更新,请稍候...</string>
+    <string name="Widget_check_Nocity">您没有设置多个城市可供切换！</string>
+    <string name="Widget_check_city">正在切换,请稍候...</string>
+    <string name="moji_newVersion_features_title">墨迹天气新特性</string>
+    <string name="moji_newVersion_features_sum">墨迹天气更新列表</string>
+    <string name="moji_newVersion_features_content">"1.增加桌面插件默认皮肤动画效果，十种可选。
+ 2.语音播报加入背景音乐和停止操作。
+ 3.天气分享可定制问候语。
+ 4.自动更新时间设定更为灵活。
+ 5.天气分享设置界面重新调整。 
+ 6.增加了黄历查询（也可查询农历）
+ 7.皮肤列表中“已下载”/“正在使用”的皮肤增加了标签
+ 8.改版桌面插件热区设置
+ 9.九宫格提供6个自定义
+ 10.新的关于界面。
+
+"</string>
+    <string name="moji_notification_title">墨迹天气提示</string>
+    <string name="moji_content_title">墨迹天气消息</string>
+    <string name="moji_content_title_network">某次自动更新遇到网络异常</string>
+    <string name="moji_content_text_network">请启动墨迹天气主界面获取更多信息.</string>
+    <string name="moji_content_title_newversion">墨迹天气有新版本可用</string>
+    <string name="moji_content_title_mustupdate">墨迹天气需要升级到最新版</string>
+    <string name="moji_content_title_test">试用资格受到限制,请申请</string>
+    <string name="moji_content_go_to_update">您好,为了您更好的使用,墨迹天气软件需要升级, 您可以点击下面的按钮来打开升级页面.</string>
+    <string name="skin_exception">出现异常，请确认您已经启用桌面插件，并检查皮肤是否损坏。请暂时切换为默认皮肤。</string>
+    <string name="skin_loading">正在载入...</string>
+    <string name="skin_comment_rating">说说您的看法</string>
+    <string name="skin_very_bad">坑爹呢!太难看了!</string>
+    <string name="skin_bad">这个皮肤很一般...</string>
+    <string name="skin_generalization">看起来还不错啦~</string>
+    <string name="skin_good">怎么看都觉得美...</string>
+    <string name="skin_very_good">完美!太适合我了!</string>
+    <string name="skin_comment_hint">请输入评论内容...</string>
+    <string name="skin_no_grade">您没有评分...</string>
+    <string name="skin_prompt_default">这是默认皮肤哦！</string>
+    <string name="skin_prompt_no_comment">您还没有评分或评论！</string>
+    <string name="skin_prompt_not_comment">只有在皮肤市场下载并安装的皮肤才可以评分评论！</string>
+    <string name="skin_prompt_wait_optimize">请稍候,正在执行优化...</string>
+    <string name="skin_prompt_wait_delete">请稍候,正在执行删除...</string>
+    <string name="skin_prompt_using">此皮肤正在使用，请安装其他皮肤！</string>
+    <string name="skin_prompt_delete_using">不得删除使用中的皮肤！请切换到默认或者其他皮肤.</string>
+    <string name="skin_prompt_delete_default">内置皮肤不能删除！</string>
+    <string name="skin_comment_more">更多人的评论！</string>
+    <string name="skin_my_comment">我的评论</string>
+    <string name="skin_share_suggest">与他人分享您对皮肤的看法.</string>
+    <string name="skin_comment">评论</string>
+    <string name="skin_comment_msg">此处显示的是最近的评论，要阅读所有评论，请点击下面的“更多”按钮。</string>
+    <string name="skin_click_comment">点击这里，评分评论.</string>
+    <string name="skin_comment_date">评论日期</string>
+    <string name="skin_comment_content">评论内容</string>
+    <string name="skin_button_comment_more">更 多</string>
+    <string name="skin_detail">皮肤详情:</string>
+    <string name="skin_using">(使用中)</string>
+    <string name="skin_info">皮肤信息:</string>
+    <string name="skin_list_load_faile">无法加载皮肤列表，加载墨迹天气皮肤需要SD卡支持。请检查SD卡是否存在！</string>
+    <string name="skin_list_warning">使用GPRS网络下载皮肤将会消耗您的流量（由您的电话网络运营商收取流量费）,建议您下载皮肤时使用WIFI(WLAN)的形式.</string>
+    <string name="skin_selector_newest">最新皮肤</string>
+    <string name="skin_selector_hottest">人气皮肤</string>
+    <string name="skin_selector_installed">已安装皮肤</string>
+    <string name="skin_download_wrong">数据格式错误</string>
+    <string name="skin_install_skin">查看已安装皮肤</string>
+    <string name="skin_screen_type">"您好!
+墨迹天气暂无此分辨率的皮肤，会在后续版本增加。感谢您对墨迹天气的支持!"</string>
+    <string name="send_suggest_no_comment">未发送您的建议或意见。建议或意见不能为空，请填写！</string>
+    <string name="toast_send_comment_ok">评论提交成功!</string>
+    <string name="toast_send_comment_fail">评论提交失败，请重试!</string>
+    <string name="animation_weather_canvas_scale">1.4</string>
+    <string name="no_value">暂无</string>
+    <string name="no_value_skin_author">作者:暂无</string>
+    <string name="no_value_skin_commentRating">评分:暂无</string>
+    <string name="no_value_skin_publishDate">发布:暂无</string>
+    <string name="no_value_skin_size">大小:暂无</string>
+    <string name="skin_prompt_delete">您确定要删除这款皮肤？</string>
+    <string name="moji_screen_type">"您好!
+墨迹天气暂不支持您当前的分辨率，后期会适配各种分辨率。感谢您对墨迹天气的支持!"</string>
+    <string name="moji_data_unzip">正在解压，请稍后...</string>
+    <string name="unzipping">"正在解压: 
+"</string>
+    <string name="download_network_error">当前网络不稳定，请检查您的网络是否中断，或服务器忙，请您稍后再试。</string>
+    <string name="download_unzip_error">解压文件错误,请稍后尝试或选择PC端下载语音包。</string>
+    <string name="auth_share_msg">我正在使用#墨迹天气#玩微博，分享天气非常方便，让手机看天气成为享受！快来体验：http://www.mojichina.com</string>
+    <string name="auth_share_regist_weibo">注册微博</string>
+    <string name="auth_share_reminder">用户名和密码将在1分钟内以短信形式发送到您的手机，请注意查收，如一分钟内未收到一键注册结果，请使用手机号码作为用户名，手机号码后六位作为密码尝试登录。</string>
+    <string name="save_picture_fail_msg">截图失败，点击分享只能分享文字。</string>
+    <string name="save_picture_fail_manual">截图失败，转为文字分享。</string>
+    <string name="Daily_Detail">每日详情</string>
+    <string name="Daily_Detail_Kindnote">温馨提示</string>
+    <string name="Daily_Detail_Weather">天气详情</string>
+    <string name="Daily_Detail_festival">节日节气</string>
+    <string name="Daily_Detail_Sunrise">日出时间</string>
+    <string name="Daily_Detail_Sunset">日落时间</string>
+    <string name="Daily_Detail_Sunset_Sunrise">日出日落</string>
+    <string name="Auto_locaiton_gps">检测到你还未开启GPS模块。</string>
+    <string name="button_Setting">设置GPS</string>
+    <string name="Auto_Location_Gps_Notify">GPS定位较慢，请稍后！</string>
+    <string name="Auto_Location_Gps_Fail">GPS定位失败，自动使用网络定位。</string>
+    <string name="Auto_Location_No_Notifiy">不再提问</string>
+    <string name="Auto_Location_Dialog_Title">是否使用GPS定位</string>
+    <string name="Auto_Location_Dialog_Content">新版添加GPS定位功能!开启GPS定位功能可以使墨迹天气定位更加准确,但在定位过程中会增加手机耗电量,适合户外使用。</string>
+    <string name="Auto_Location_setting">自动定位设置</string>
+    <string name="Auto_Location_Gps">GPS定位</string>
+    <string name="Auto_Location_Gps_ON">使用GPS定位可以使您的定位更加准确(会增加耗电量)</string>
+    <string name="Auto_Location_Gps_OFF">启用GPS定位并开启GPS模块(C网用户此设置无效)</string>
+    <string name="animation_setting_title">天气动画设置</string>
+    <string name="animation_setting_checkbox_title">天气动画开关</string>
+    <string name="animation_setting_checkbox_summaryOn">"开启天气动画,享受绚丽的天气场景
+注:个别低分辨率手机天气动画显示
+会有一些视觉效果的影响!"</string>
+    <string name="animation_setting_checkbox_summaryOff">关闭天气动画,以静态图标展示天气场景</string>
+    <string name="early_warning_china_weather">中国气象频道</string>
+    <string name="early_warning_china_weather_main">(中国气象频道)</string>
+    <string name="early_warning_china_weather_data">中国气象频道提供</string>
+    <string name="early_warning_detail">点击查看详细信息</string>
+    <string name="china_weather_beijing">北京市专业气象台</string>
+    <string name="early_warning_moji_title">-墨迹天气</string>
+    <string name="advanced_voice_setting">语音播报设置</string>
+    <string name="advanced_auto_voice">自动播报</string>
+    <string name="advanced_voice_time">设置播报时间</string>
+    <string name="advanced_voice_working_days">仅工作日播报</string>
+    <string name="voice_play_title">墨迹天气语音播报</string>
+    <string name="voice_play_content">墨迹天气为您播报，给您带来快捷的天气信息，祝您开心愉快！点击取消停止语音播报。</string>
+    <string name="voice_play_stop_toast">语音播报已停止。</string>
+    <string name="voice_data_newest">您已使用最新最完整的语音数据，希望能给你带来更方便的天气播报服务，祝你开心愉快！</string>
+    <string name="voice_bgdata_toast">语音数据文件已更新，加入了舒畅的背景音乐。建议下载更新包，以体验更好的语音天气播报服务。</string>
+    <string name="voice_play_start_toast">墨迹天气正在为你语音播报，再次点击可停止播报。</string>
+    <string name="hotarea_watch_fixedarea_title">墨迹固定热区</string>
+    <string name="cskin_installer_delete">您确定要删除这款皮肤吗？</string>
+    <string name="thisisit">您当前已位于九宫格！</string>
+    <string name="huangli">黄历</string>
+    <string name="huangli_nodate">没有该月数据，是否重新选择日期？</string>
+    <string name="huangli_nodate2">没有该月数据</string>
+    <string name="huangli_search">黄历查询</string>
+    <string name="huangli_yi">宜：</string>
+    <string name="huangli_ji">忌：</string>
+    <string name="huangli_chong">冲：</string>
+    <string name="huangli_sha">煞：</string>
+    <string name="huangli_cheng">成：</string>
+    <string name="huangli_zhengchong">正冲</string>
+    <string name="huangli_taishen">胎神</string>
+    <string name="huangli_share">一键分享</string>
+    <string name="huangli_share_title">黄历分享</string>
+    <string name="huangli_back">回到今天</string>
+    <string name="huangli_share_moji">墨迹天气为您分享</string>
+    <string name="huangli_toast1">今天已是</string>
+    <string name="huangli_toast2">，不用再点啦！</string>
+    <string name="huangli_broadcast_content_suiciwei">岁次维</string>
+    <string name="share_manual_share">手动分享(列表项可点击)</string>
+    <string name="share_micro_share">手动分享</string>
+    <string name="share_character_share">文字分享</string>
+    <string name="share_personal_regards">个性问候语</string>
+    <string name="share_regards_dialog_title">设置问候语</string>
+    <string name="summary_personal_regards">在天气信息前加上您自定义的问候语，为您传达诚挚的问候。当前未设置个性问候语。</string>
+    <string name="share_input_personal_regards">请输入您的个性问候语</string>
+    <string name="share_current_personal_regards">当前个性问候语：</string>
+    <string name="huangli_nodata_dg_title">提示</string>
+    <string name="hour">小时</string>
+    <string name="update_interval_title">设置更新间隔</string>
+    <string name="update_interval">更新间隔：</string>
+    <string name="update_start_time">开始时间：</string>
+    <string name="update_end_time">结束时间：</string>
+    <string name="update_interval_error">您输入的更新间隔不符合请重新输入。</string>
+    <string name="update_interval_summary">默认间隔4小时，间隔范围：0.5~24 小时。当前设置间隔时间：</string>
+    <string name="update_time_zero">00:00</string>
+    <string name="share_setting_summary">设置分享类型，城市，天数，以及个性问候语。</string>
+    <string name="share_setting_manual_summary">可通过设置分享带图片天气信息，部分低配手机可能会截图失败。</string>
+    <string name="clockanim_category">桌面时钟动画</string>
+    <string name="clockanim_checkbox_title">时钟动画开关</string>
+    <string name="clockanim_checkbox_summaryon">如果出现卡屏或者不流畅现象请关闭。</string>
+    <string name="clockanim_checkbox_summaryoff">开启时钟动画将使桌面不再沉闷。</string>
+    <string name="clockanim_listpreference_title">动态时钟效果</string>
+    <string name="clockanim_listpreference_dialog">动态效果选择</string>
+    <string name="desktopsetting_others">其他桌面插件设置</string>
+    <string name="about_text">"
+ 发布于2012年3月14日 
+
+ 墨迹风云 荣誉出品 
+ Copyright 2009-2012 
+ Moji Studio 
+ All rights reserved 
+
+ 语音包由盛大语音创新院提供 
+ 
+ 主页: http://www.mojichina.com 
+ 论坛: http://forum.mojichina.com 
+ WAP页: http://a.mojichina.com 
+微博:http://weibo.com/mojiweather 
+ 官方QQ交流群:11227796 
+ 邮件:cs@mojichina.com 
+ 
+ 开发组: 
+ starfeng 
+ 坏小虎 
+阿TeN 
+亦妍 
+ 木有小虾米 
+ MaxToooNG 
+ 罗伯特 
+ 
+ UI组: 
+ 项小镂lōu 
+ LovelessDark 
+ 
+ 测试组: 
+ 城子 
+ ypang 
+ keid 
+ 
+ 鸣谢: 
+ 论坛管理组 
+ 管理员 Yellow小豆 
+ 
+ 超级版主 进化者 
+ 超级版主 blackwords 
+ 超级版主 lee22332003 
+ 超级版主 lingdujialan 
+ 超级版主 杰杰 
+ 超级版主 强仔仔 
+ 超级版主 szlj2006 
+ 
+ 版主 旧照碎片 
+ 版主 最爱牛妞 
+ 版主 小贺 
+ 版主 程绍权(csqsw) 
+ 版主 腐朽的木乃伊 
+ 版主 司徒少 
+ 版主 霸盗 
+ 版主 FHL
+ 版主 hujun5032104 
+ 版主 墨迹熊猫 
+ 版主 天狼dy 
+ 版主 西林拐五 
+ 版主 李相精 
+ 版主 baby1982 
+ 
+ 资源发布总编 
+ Blackwords 
+
+ 皮肤制作组: 
+ szlj2006 
+ 霸盗 
+ yuanmc 
+ gmiii 
+ benwant 
+ 数字 
+ 
+ 本版特别感谢 
+ szlj2006提供精美原创皮肤！
+
+ GoogleCeo 
+ lee22332003提供详细内测报告 
+ 
+感谢墨迹天气用户的支持 
+ 
+墨迹因你而精彩！"</string>
+    <string name="share_content_setting">文字内容设置</string>
+    <string name="share_manaul_setting">手动分享设置</string>
+    <string name="share_manual_type">手动分享类型</string>
+    <string name="workdays_open_already">只在周一至周五定时播报</string>
+    <string name="workdays_close_already">每天定时播报</string>
+    <string name="setting_voice_auto_setting">自动播报设置</string>
+    <string name="add_city_long_click1">选择您要对\"</string>
+    <string name="add_city_long_click2">\"的操作</string>
+    <string name="trend_vertical_text">丨</string>
+    <string name="moji_offical_recommend">墨迹官网推荐</string>
+    <string name="add_city_edit_text">搜索全球城市(中文/拼音)</string>
+    <string name="add_city_no_city">没有你要查询的地区天气</string>
+    <string name="add_city">添加城市</string>
+    <string name="add_city_hot">热门城市</string>
+    <string name="index_no_data">暂无数据</string>
+    <string name="weather_current_no_data">暂无</string>
+    <string name="weather_current_no_wind">暂无风力描述</string>
+    <string name="dialog_message_broadcasting">墨迹天气为您播报，检测到您当前正在使用语音播报。</string>
+    <string name="dialog_message_broadcast_max_memory">您好！语音播报目前正处于优化阶段，在部分手机上可能不能完全体现，请期待后续版本，谢谢您对墨迹的支持。</string>
+    <string name="dialog_message_broadcast_must_update">您好！语音数据包需要更新才能继续使用,请在设置/定时播报中点击更新语音数据包.</string>
+    <string name="moji_content_must_update">您好,为了您更好的使用,墨迹天气软件需要升级。</string>
+    <string name="dialog_title_date">选择日期</string>
+    <string name="dialog_title_time">选择时间</string>
+    <string name="all_date">全部</string>
+    <string name="birthday_date">生日</string>
+    <string name="festival_date">节日</string>
+    <string name="repayment_date">还款日</string>
+    <string name="commemorate_date">纪念日</string>
+    <string name="days_matter">倒数日</string>
+    <string name="save_date">保存</string>
+    <string name="add_date">添加</string>
+    <string name="matter_repeat">周期</string>
+    <string name="matter_repeat_choose">选择周期</string>
+    <string name="matter_repeat_type">默认仅一次</string>
+    <string name="matter_category">分类</string>
+    <string name="matter_notice_time">提示时间</string>
+    <string name="matter_time_summary">08:00</string>
+    <string name="matter_notice_date">日期</string>
+    <string name="matter_date_summary">今天</string>
+    <string name="matter_title">标题</string>
+    <string name="matter_title_hint">请输入标题</string>
+    <string name="matter_notification_enable">提示开关</string>
+    <string name="matter_voice_enable">语音提示</string>
+    <string name="matter_delete">删除</string>
+    <string name="matter_edit">编辑</string>
+    <string name="matter_current_setting">当前设置：</string>
+    <string name="matter_repeat_once">仅一次</string>
+    <string name="matter_repeat_perweek">每周</string>
+    <string name="matter_repeat_permonth">每月</string>
+    <string name="matter_repeat_peryear">每年</string>
+    <string name="matter_category_all">全部</string>
+    <string name="matter_category_birthday">生日</string>
+    <string name="matter_category_festival">节日</string>
+    <string name="matter_category_repayment">还款日</string>
+    <string name="matter_category_commemorate">纪念日</string>
+    <string name="matter_category_choose">选择分类</string>
+    <string name="matter_delete_notice">点击确定删除当前倒数日事件！</string>
+    <string name="matter_save_notice">标题不能为空!</string>
+    <string name="matter_left_day">还有</string>
+    <string name="matter_past_day">已过</string>
+    <string name="matter_list_emptyview">点击“+”号添加倒数日</string>
+    <string name="matter_not_save">是否放弃保存？</string>
+    <string name="matter_current">倒数日到期</string>
+    <string name="rc_title">墨迹推荐</string>
+    <string name="rc_intro">简介</string>
+    <string name="rc_softdesc">软件描述：</string>
+    <string name="rc_releasedate">发布日期：</string>
+    <string name="rc_version">版本：</string>
+    <string name="rc_size">大小：</string>
+    <string name="rc_notificationtext">正在下载应用</string>
+    <string name="rc_download">下载</string>
+    <string name="rc_installed">已安装</string>
+    <string name="rc_downloading_ison">下载中</string>
+    <string name="rc_download_finish">已下载</string>
+    <string name="rc_update">更新</string>
+    <string name="rc_loading">正在加载数据...</string>
+    <string name="rc_installavailable">下载成功,请执行安装！</string>
+    <string name="rc_versionupdate">版本升级</string>
+    <string name="rc_installimmediate">立即安装</string>
+    <string name="rc_installlateron">以后再说</string>
+    <string name="rc_unknowsize">无法获知文件大小</string>
+    <string name="rc_nosdcardOrProtocted">SDCard不存在或者写保护</string>
+    <string name="rc_downloading">正在下载中</string>
+    <string name="rc_download_success">下载成功</string>
+    <string name="rc_download_fail">下载失败</string>
+    <string name="rc_getdata_fail">获取网络数据失败</string>
+    <string name="rc_no_network">网络异常</string>
+    <string name="weather_public_today">今天</string>
+    <string name="weather_location_server_error">您好！服务器查询错误，请你稍候再试，谢谢！</string>
+    <string name="add_concern_title">添加资讯</string>
+    <string name="days_matter_dialog_title">墨迹倒数日</string>
+    <string name="days_matter_boradcast_content">墨迹天气为您播报，今天是：</string>
+    <string name="days_matter_dialog_content_today">今天是：</string>
+    <string name="trend_wind_rotate">旋转风</string>
+    <string name="trend_wind_breeze">微风</string>
+    <string name="trend_wind_1">南风</string>
+    <string name="trend_wind_2">西南风</string>
+    <string name="trend_wind_3">西风</string>
+    <string name="trend_wind_4">西北风</string>
+    <string name="trend_wind_5">北风</string>
+    <string name="trend_wind_6">东北风</string>
+    <string name="trend_wind_7">东风</string>
+    <string name="trend_wind_8">东南风</string>
+    <string name="weather_info_low_temperature">低温:</string>
+    <string name="life_title_constellation">星座运程</string>
+    <string name="life_toast_favourite">喜欢！</string>
+    <string name="life_toast_favourite_already">今天您已经喜欢过！</string>
+    <string name="life_send_share_text1">分享：亲们，我刚在@墨迹天气 看到今天的”</string>
+    <string name="life_send_share_text2">“，内容丰富、实用性强，真的是一款很不错的生活助手哦！赶紧把它领回家吧！</string>
+    <string name="life_add_concern_ok">关注成功</string>
+    <string name="life_add_concern_fail">关注失败</string>
+    <string name="life_cancle_concern_ok">取消关注成功</string>
+    <string name="life_cancle_concern_fail">取消关注失败</string>
+    <string name="life_add_concern_loading">正在关注...</string>
+    <string name="life_cancle_concern_loading">正在取消...</string>
+</resources>

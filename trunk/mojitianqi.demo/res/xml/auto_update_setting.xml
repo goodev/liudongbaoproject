@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.moji.mjweather">
+    <CheckBoxPreference android:title="@string/auto_update_set_ok" android:key="checkbox_preference" android:summary="@string/auto_update_notice" android:defaultValue="true" />
+    <Preference android:title="@string/auto_update_interval_time_setting" android:key="update_interval" android:summary="@string/auto_update_default_time" android:dependency="checkbox_preference" />
+    <PreferenceCategory android:title="@string/auto_update_time_setting">
+        <Preference android:title="@string/auto_update_start_time_setting" android:key="update_start_time" android:dependency="checkbox_preference" />
+        <Preference android:title="@string/auto_update_end_time_setting" android:key="update_end_time" android:dependency="checkbox_preference" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/auto_update_remind">
+        <Preference android:enabled="false" android:title="@string/auto_update_remind_title" android:selectable="false" android:key="auto_update_summary" android:summary="@string/auto_update_remind_contents" android:dependency="checkbox_preference" />
+    </PreferenceCategory>
+</PreferenceScreen>

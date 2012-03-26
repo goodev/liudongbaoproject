@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ssss1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/sv" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="0.0px" android:layout_marginRight="0.0px">
+        <LinearLayout android:orientation="vertical" android:id="@id/ly1" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="18.0sp" android:background="#ff405b4f" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/help_title_addWidget" />
+            <TextView android:textSize="15.0sp" android:autoLink="web" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/msg_setwidget" />
+            <TextView android:textSize="18.0sp" android:background="#ff405b4f" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/help_title_widget_time" />
+            <TextView android:textSize="15.0sp" android:autoLink="web" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/msg_timedead" />
+            <TextView android:textSize="18.0sp" android:background="#ff405b4f" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/help_title_installskin" />
+            <TextView android:textSize="15.0sp" android:autoLink="web" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/msg_install_skin" />
+            <TextView android:textSize="18.0sp" android:background="#ff405b4f" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/dialog_widget_description" />
+            <TextView android:textSize="15.0sp" android:autoLink="web" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/help_widget" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

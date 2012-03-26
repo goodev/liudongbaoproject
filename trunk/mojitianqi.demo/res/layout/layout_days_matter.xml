@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/layout_days_matter" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/relativeLayout1" android:background="@drawable/title_bg" android:layout_width="fill_parent" android:layout_height="@dimen/days_matter_title_button_height">
+        <TextView android:textSize="@dimen/days_matter_list_title_size" android:id="@id/textReciprocal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/days_matter" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <Button android:id="@id/btAddDate" android:background="@drawable/days_matter_add_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/days_matter_padding" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <LinearLayout android:layout_gravity="center_horizontal" android:paddingLeft="@dimen/days_matter_padding" android:paddingTop="@dimen/days_matter_padding" android:paddingRight="@dimen/days_matter_padding" android:layout_width="fill_parent" android:layout_height="@dimen/days_matter_title_height">
+        <LinearLayout android:layout_gravity="center_horizontal" android:id="@id/linearLayout2" android:background="@drawable/days_matter_click" android:padding="1.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <Button android:textSize="@dimen/days_matter_button_size" android:textColor="@color/days_matter_title_button" android:id="@id/btAllDates" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/all_date" android:layout_weight="1.0" />
+            <Button android:textSize="@dimen/days_matter_button_size" android:textColor="@color/days_matter_title_button" android:id="@id/btBirthdayDate" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/birthday_date" android:layout_weight="1.0" />
+            <Button android:textSize="@dimen/days_matter_button_size" android:textColor="@color/days_matter_title_button" android:id="@id/btFestivalDate" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/festival_date" android:layout_weight="1.0" />
+            <Button android:textSize="@dimen/days_matter_button_size" android:textColor="@color/days_matter_title_button" android:id="@id/btRepaymentDate" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/repayment_date" android:layout_weight="1.0" />
+            <Button android:textSize="@dimen/days_matter_button_size" android:textColor="@color/days_matter_title_button" android:id="@id/btCommemorateDate" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/commemorate_date" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:id="@id/layoutMatterList" android:padding="@dimen/days_matter_padding" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ListView android:id="@id/listDaysMatter" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@drawable/days_matter_click" android:divider="@color/transparent" android:dividerHeight="@dimen/days_matter_padding" />
+        <TextView android:textSize="16.0sp" android:gravity="center_horizontal" android:id="@id/daysmatter_emptytext" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/matter_list_emptyview" />"
+</LinearLayout>
+</LinearLayout>

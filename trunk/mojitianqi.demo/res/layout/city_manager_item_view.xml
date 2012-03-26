@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/linearLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/frameLayout1" android:layout_width="fill_parent" android:layout_height="113.0dip">
+        <ImageView android:id="@id/ivCityGridBg" android:background="@drawable/city_grid_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+        <ImageView android:layout_gravity="top|right|center" android:id="@id/ivWeatherImg" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/na" />
+        <LinearLayout android:layout_gravity="bottom|left|center" android:orientation="vertical" android:id="@id/linearLayout2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginBottom="6.0dip">
+            <TextView android:textSize="16.0sp" android:id="@id/tvDescribe" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="15.0sp" android:id="@id/tvTemperature" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="11.0sp" android:id="@id/tvSyncTime" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="center" android:id="@id/ivPlus" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/addcity" />
+        <ProgressBar android:layout_gravity="center" android:id="@id/pbUpdateItem" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </FrameLayout>
+    <TextView android:textSize="22.0sp" android:gravity="center_horizontal" android:layout_gravity="bottom|center" android:id="@id/tvCityName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+</LinearLayout>

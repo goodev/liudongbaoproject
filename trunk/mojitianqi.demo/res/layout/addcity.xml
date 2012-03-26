@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:background="@drawable/daily_detail_title_bg" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <TextView android:textSize="24.0sp" android:textColor="#ffffffff" android:gravity="left|center" android:id="@id/Textaddcity" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:text="@string/add_city" android:cursorVisible="false" android:singleLine="true" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:background="@drawable/add_city_edit_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="13.0dip" android:layout_marginRight="10.0dip">
+            <ImageButton android:layout_gravity="center" android:id="@id/ibSearchPic" android:background="@color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/search_pic" />
+            <EditText android:textSize="20.0sp" android:gravity="left|center" android:id="@id/EditText01" android:background="@color/transparent" android:layout_width="0.0dip" android:layout_height="40.0dip" android:hint="@string/add_city_edit_text" android:singleLine="true" android:maxLength="20" android:layout_weight="1.0" />
+            <ImageButton android:layout_gravity="center" android:id="@id/ImageButton01" android:background="@color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/i_delete_2" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="0.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip">
+            <TextView android:textSize="20.0sp" android:layout_gravity="center_horizontal" android:id="@android:id/empty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/add_city_no_city" />
+            <TextView android:textSize="20.0sp" android:textColor="#a0ffffff" android:gravity="left|center" android:id="@id/TextDefaultCity" android:background="@drawable/line_bg_73_bottom" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginLeft="0.0dip" android:text="@string/add_city_hot" />
+            <GridView android:gravity="center_vertical" android:id="@id/GridDefaultCity" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@drawable/add_city_grid_click_bg" android:verticalSpacing="10.0dip" android:numColumns="3" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/ScrollView01" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout01" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout02" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <TextView android:textSize="18.0sp" android:textColor="@color/black" android:id="@id/skinName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="无" />
+                    <TextView android:textColor="@color/black" android:id="@id/skinAuthror" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="无" />
+                    <TextView android:textColor="@color/black" android:id="@id/skinPublishTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="无" />
+                    <TextView android:textColor="@color/black" android:id="@id/skinSize" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="无" />
+                    <RatingBar android:id="@id/skinRating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5" style="?android:attr/ratingBarStyleSmall" />
+                    <Button android:textSize="18.0sp" android:id="@id/skinDownload" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="下  载" />
+                </LinearLayout>
+                <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/LinearLayout03" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <ImageView android:layout_gravity="center_horizontal" android:id="@id/skinLogo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/logo800" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout04" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textSize="15.0sp" android:textColor="#ffffffff" android:id="@id/TextView01" android:background="#ff414141" android:layout_width="fill_parent" android:layout_height="20.0dip" android:text="皮肤信息" />
+                <TextView android:textColor="@color/black" android:layout_gravity="center_horizontal" android:id="@id/skinDetailInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0px" android:text="无" />
+                <TextView android:textSize="15.0sp" android:textColor="#ffffffff" android:id="@id/TextView01" android:background="#ff414141" android:layout_width="fill_parent" android:layout_height="20.0dip" android:layout_marginTop="10.0px" android:text="插件预览,若图片尚未显示，请稍候..." />
+                <ImageView android:layout_gravity="center_horizontal" android:id="@id/skinImage4_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:src="@drawable/logo800" android:scaleType="fitCenter" />
+                <ImageView android:layout_gravity="center_horizontal" android:id="@id/skinImage4_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:src="@drawable/logo800" android:scaleType="fitCenter" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

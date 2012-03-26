@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient android:startColor="@color/picker_view_current_startcolor" android:endColor="@color/picker_view_current_endcolor" android:angle="90.0" android:centerColor="@color/picker_view_current_centercolor" />
+    <stroke android:width="@dimen/picker_view_center_stroke_width" android:color="@color/picker_view_current_strokecolor" />
+</shape>

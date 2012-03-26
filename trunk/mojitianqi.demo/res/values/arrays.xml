@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_select_add_remove_cancel_dialog_title">
+        <item>更新天气</item>
+        <item>更换城市</item>
+        <item>删除城市</item>
+    </string-array>
+    <string-array name="array_widget_op_menu">
+        <item>安装SD卡上的皮肤包</item>
+        <item>更换皮肤、管理皮肤</item>
+        <item>自定义快捷按钮设定</item>
+    </string-array>
+    <string-array name="array_widget_bg">
+        <item>使用背景</item>
+        <item>完全透明</item>
+    </string-array>
+    <string-array name="array_hotarea_fixedarea_introduction">
+        <item>4x2插件左下方：切换城市</item>
+        <item>4x2插件中下方：墨迹天气</item>
+        <item>4x1插件左侧：墨迹天气</item>
+    </string-array>
+    <string-array name="array_hotcity_name">
+        <item>自动定位</item>
+        <item>北京</item>
+        <item>上海</item>
+        <item>广州</item>
+        <item>深圳</item>
+        <item>武汉</item>
+        <item>南京</item>
+        <item>杭州</item>
+        <item>西安</item>
+        <item>郑州</item>
+        <item>成都</item>
+        <item>东莞</item>
+        <item>沈阳</item>
+        <item>天津</item>
+        <item>哈尔滨</item>
+        <item>长沙</item>
+        <item>福州</item>
+        <item>石家庄</item>
+        <item>苏州</item>
+        <item>重庆</item>
+        <item>无锡</item>
+        <item>济南</item>
+        <item>大连</item>
+        <item>佛山</item>
+        <item>厦门</item>
+        <item>南昌</item>
+        <item>太原</item>
+        <item>长春</item>
+        <item>合肥</item>
+        <item>浦东</item>
+        <item>青岛</item>
+        <item>汕头</item>
+        <item>昆明</item>
+        <item>南宁</item>
+    </string-array>
+    <string-array name="array_hotcity_id">
+        <item>-1</item>
+        <item>33</item>
+        <item>340</item>
+        <item>126</item>
+        <item>352</item>
+        <item>402</item>
+        <item>288</item>
+        <item>143</item>
+        <item>411</item>
+        <item>489</item>
+        <item>53</item>
+        <item>506</item>
+        <item>351</item>
+        <item>379</item>
+        <item>146</item>
+        <item>47</item>
+        <item>109</item>
+        <item>355</item>
+        <item>503</item>
+        <item>57</item>
+        <item>1318</item>
+        <item>191</item>
+        <item>64</item>
+        <item>102</item>
+        <item>412</item>
+        <item>285</item>
+        <item>374</item>
+        <item>42</item>
+        <item>149</item>
+        <item>626</item>
+        <item>318</item>
+        <item>342</item>
+        <item>219</item>
+        <item>289</item>
+    </string-array>
+    <string-array name="array_weather_introduce">
+        <item>晴 天</item>
+        <item>多 云</item>
+        <item>夜间多云</item>
+        <item>夜间晴朗</item>
+        <item>雷阵雨</item>
+        <item>小 雨</item>
+        <item>中 雨</item>
+        <item>沙尘暴</item>
+        <item>雾</item>
+        <item>雪</item>
+        <item>阴</item>
+        <item>夜间雷阵雨</item>
+    </string-array>
+    <integer-array name="array_weather_id">
+        <item>0</item>
+        <item>1</item>
+        <item>31</item>
+        <item>30</item>
+        <item>3</item>
+        <item>7</item>
+        <item>8</item>
+        <item>20</item>
+        <item>18</item>
+        <item>6</item>
+        <item>2</item>
+        <item>33</item>
+    </integer-array>
+    <string-array name="day_of_week">
+        <item>星期日</item>
+        <item>星期一</item>
+        <item>星期二</item>
+        <item>星期三</item>
+        <item>星期四</item>
+        <item>星期五</item>
+        <item>星期六</item>
+    </string-array>
+    <string-array name="China_month">
+        <item>正月</item>
+        <item>一月</item>
+        <item>二月</item>
+        <item>三月</item>
+        <item>四月</item>
+        <item>五月</item>
+        <item>六月</item>
+        <item>七月</item>
+        <item>八月</item>
+        <item>九月</item>
+        <item>十月</item>
+        <item>十一月</item>
+        <item>十二月</item>
+    </string-array>
+    <string-array name="mSkinResourcesName">
+        <item>setting</item>
+        <item>preview</item>
+        <item>logo</item>
+        <item>na</item>
+        <item>w0</item>
+        <item>w1</item>
+        <item>w2</item>
+        <item>w3</item>
+        <item>w4</item>
+        <item>w5</item>
+        <item>w6</item>
+        <item>w7</item>
+        <item>w8</item>
+        <item>w9</item>
+        <item>w10</item>
+        <item>w13</item>
+        <item>w14</item>
+        <item>w15</item>
+        <item>w16</item>
+        <item>w17</item>
+        <item>w18</item>
+        <item>w19</item>
+        <item>w20</item>
+        <item>w21</item>
+        <item>w29</item>
+        <item>w30</item>
+        <item>w31</item>
+        <item>w32</item>
+        <item>w33</item>
+        <item>w34</item>
+        <item>w35</item>
+        <item>w36</item>
+        <item>widget_4x1_bkg</item>
+        <item>widget_4x2_bkg</item>
+        <item>n9</item>
+        <item>n8</item>
+        <item>n7</item>
+        <item>n6</item>
+        <item>n5</item>
+        <item>n4</item>
+        <item>n3</item>
+        <item>n2</item>
+        <item>n1</item>
+        <item>n0</item>
+        <item>colon_b</item>
+        <item>colon_w</item>
+        <item>skininfo</item>
+        <item>skin4x1</item>
+        <item>skin4x2</item>
+    </string-array>
+    <string-array name="share_days_entries">
+        <item>2天</item>
+        <item>3天</item>
+    </string-array>
+    <string-array name="share_days_entryValues">
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="share_type_entries">
+        <item>文字</item>
+        <item>文字和图片</item>
+    </string-array>
+    <string-array name="share_type_entryValues">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="array_download_method">
+        <item>电子市场(推荐)</item>
+        <item>墨迹官方下载</item>
+    </string-array>
+    <string-array name="clock_anim_entries">
+        <item>飘</item>
+        <item>蹦哒</item>
+        <item>滚入</item>
+        <item>翻页时钟</item>
+        <item>落</item>
+        <item>百叶窗</item>
+        <item>颤动</item>
+        <item>飞散</item>
+        <item>组装</item>
+        <item>眨眼</item>
+    </string-array>
+    <string-array name="clock_anim_entryvalues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    <string-array name="weibo_channel_type">
+        <item>CHANNEL_SINA</item>
+        <item>CHANNEL_TENCENT</item>
+        <item>CHANNEL_RENREN</item>
+        <item>CHANNEL_KAIXIN</item>
+    </string-array>
+    <string-array name="huangli_nongli_day">
+        <item>11日</item>
+        <item>12日</item>
+        <item>13日</item>
+        <item>14日</item>
+        <item>15日</item>
+        <item>16日</item>
+        <item>17日</item>
+        <item>18日</item>
+        <item>19日</item>
+        <item>20日</item>
+        <item>21日</item>
+        <item>22日</item>
+        <item>23日</item>
+        <item>24日</item>
+        <item>25日</item>
+        <item>26日</item>
+        <item>27日</item>
+        <item>28日</item>
+        <item>29日</item>
+        <item>30日</item>
+    </string-array>
+    <string-array name="huangli_nongli_day2">
+        <item>十一</item>
+        <item>十二</item>
+        <item>十三</item>
+        <item>十四</item>
+        <item>十五</item>
+        <item>十六</item>
+        <item>十七</item>
+        <item>十八</item>
+        <item>十九</item>
+        <item>二十</item>
+        <item>廿一</item>
+        <item>廿二</item>
+        <item>廿三</item>
+        <item>廿四</item>
+        <item>廿五</item>
+        <item>廿六</item>
+        <item>廿七</item>
+        <item>廿八</item>
+        <item>廿九</item>
+        <item>三十</item>
+    </string-array>
+    <string-array name="huangli_nongli_month">
+        <item>11月</item>
+        <item>12月</item>
+    </string-array>
+    <string-array name="huangli_nongli_month2">
+        <item>冬月</item>
+        <item>腊月</item>
+    </string-array>
+    <string-array name="index_indexname">
+        <item>洗车指数：</item>
+        <item>紫外线指数：</item>
+        <item>化妆指数：</item>
+        <item>穿衣指数：</item>
+        <item>运动指数：</item>
+        <item>精品软件推荐</item>
+    </string-array>
+    <string-array name="tools_item">
+        <item>皮肤小铺</item>
+        <item>黄历查询</item>
+        <item>倒数日</item>
+        <item>墨迹推荐</item>
+    </string-array>
+    <string-array name="kind_notice_words">
+        <item>明天c有w,</item>
+        <item>请带好雨具</item>
+        <item>请带好雨具，行车注意防滑。</item>
+        <item>请带好雨具，地面易结冰，注意防滑。</item>
+        <item>沙尘天气，外出时带好口罩。</item>
+        <item>明天c大幅降温d度，请添加衣服保暖</item>
+    </string-array>
+    <string-array name="days_matter_calendar">
+        <item>公历</item>
+        <item>农历</item>
+    </string-array>
+    <string-array name="days_matter_month_nongli">
+        <item>正月</item>
+        <item>二月</item>
+        <item>三月</item>
+        <item>四月</item>
+        <item>五月</item>
+        <item>六月</item>
+        <item>七月</item>
+        <item>八月</item>
+        <item>九月</item>
+        <item>十月</item>
+        <item>冬月</item>
+        <item>腊月</item>
+    </string-array>
+    <string-array name="days_matter_day_nongli">
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+        <item>初四</item>
+        <item>初五</item>
+        <item>初六</item>
+        <item>初七</item>
+        <item>初八</item>
+        <item>初九</item>
+        <item>初十</item>
+        <item>十一</item>
+        <item>十二</item>
+        <item>十三</item>
+        <item>十四</item>
+        <item>十五</item>
+        <item>十六</item>
+        <item>十七</item>
+        <item>十八</item>
+        <item>十九</item>
+        <item>二十</item>
+        <item>廿一</item>
+        <item>廿二</item>
+        <item>廿三</item>
+        <item>廿四</item>
+        <item>廿五</item>
+        <item>廿六</item>
+        <item>廿七</item>
+        <item>廿八</item>
+        <item>廿九</item>
+        <item>三十</item>
+    </string-array>
+</resources>

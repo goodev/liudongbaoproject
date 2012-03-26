@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="aboutview_textsize">30</integer>
+    <integer name="aboutview_totalmove">2200</integer>
+    <integer name="weathertrendactivity_ondraw_weathericonscale">80</integer>
+</resources>

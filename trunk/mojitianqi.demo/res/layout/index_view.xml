@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/index_view_root" android:background="@color/transparent" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/rlIndexTitle" android:background="@drawable/title_bg" android:layout_width="fill_parent" android:layout_height="@dimen/workspace_title_height">
+        <ImageView android:id="@id/cityManager_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/title_city_manager_press" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/title_text_size" android:textColor="#ffffffff" android:id="@id/index_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pop_title" android:singleLine="true" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/index_add_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/index_add" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="horizontal" android:id="@id/rlIndexContent" android:background="@drawable/index_info_bg" android:layout_width="fill_parent" android:layout_height="@dimen/index_info_height" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip">
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="@dimen/index_info_city_size" android:textColor="#ffeeeeee" android:id="@id/index_cityName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/index_info_date_size" android:textColor="#ffeeeeee" android:id="@id/index_Date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:singleLine="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <FrameLayout android:id="@id/fl_life" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+        <ImageView android:id="@id/imageView1" android:background="@drawable/index_list_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ListView android:id="@id/weatherIndexListView" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@color/transparent" android:cacheColorHint="@color/transparent" android:divider="@color/transparent" android:dividerHeight="1.0dip" android:headerDividersEnabled="true" android:footerDividersEnabled="true" />
+    </FrameLayout>
+</LinearLayout>

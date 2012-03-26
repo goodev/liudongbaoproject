@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/relativeLayout1" android:background="@drawable/matter_category_dialog_bg" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/setting_list_height">
+        <TextView android:textSize="@dimen/days_matter_list_content_size" android:textColor="@color/black" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:text="@string/matter_category_birthday" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/imageView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:src="@drawable/birthday" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/relativeLayout2" android:background="@drawable/matter_category_dialog_bg" android:layout_width="fill_parent" android:layout_height="@dimen/setting_list_height">
+        <TextView android:textSize="@dimen/days_matter_list_content_size" android:textColor="@color/black" android:id="@id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:text="@string/matter_category_festival" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/imageView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:src="@drawable/festival" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/relativeLayout3" android:background="@drawable/matter_category_dialog_bg" android:layout_width="fill_parent" android:layout_height="@dimen/setting_list_height">
+        <TextView android:textSize="@dimen/days_matter_list_content_size" android:textColor="@color/black" android:id="@id/textView3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:text="@string/matter_category_repayment" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/imageView3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:src="@drawable/repayment" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/relativeLayout4" android:background="@drawable/matter_category_dialog_bg" android:layout_width="fill_parent" android:layout_height="@dimen/setting_list_height">
+        <TextView android:textSize="@dimen/days_matter_list_content_size" android:textColor="@color/black" android:id="@id/textView4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:text="@string/matter_category_commemorate" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/imageView4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:src="@drawable/commemorate" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

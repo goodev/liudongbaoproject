@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/add_concern_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/rlIndexTitle" android:background="@drawable/wap_title_bg" android:layout_width="fill_parent" android:layout_height="@dimen/workspace_title_height">
+        <ImageButton android:id="@id/ib_favourite" android:background="@drawable/favorite_click" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/title_text_size" android:textColor="@color/white" android:id="@id/tv_webTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/life_title_constellation" android:singleLine="true" android:layout_centerInParent="true" />
+        <ImageButton android:id="@id/ib_share" android:background="@drawable/share_click" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <WebView android:id="@id/wv" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_x="0.0dip" android:layout_y="0.0dip" android:layout_weight="1.0" />
+</LinearLayout>

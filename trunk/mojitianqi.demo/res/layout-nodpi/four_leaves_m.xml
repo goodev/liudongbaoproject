@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:id="@id/fl_m_linear1" android:layoutAnimation="@anim/la_four_leaves1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_m_image1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/fl_m_linear2" android:layoutAnimation="@anim/la_four_leaves2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_m_image2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/fl_m_linear3" android:layoutAnimation="@anim/la_four_leaves3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_m_image3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/fl_m_linear4" android:layoutAnimation="@anim/la_four_leaves4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_m_image4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:id="@id/fl_m_linear5" android:layoutAnimation="@anim/la_four_leaves5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_m_image5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/fl_m_linear6" android:layoutAnimation="@anim/la_four_leaves6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_m_image6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/fl_m_linear7" android:layoutAnimation="@anim/la_four_leaves7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_m_image7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/fl_m_linear8" android:layoutAnimation="@anim/la_four_leaves8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:id="@id/fl_m_image8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitXY" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

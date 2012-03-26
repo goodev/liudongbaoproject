@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/layout_tools" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:background="@drawable/title_bg" android:layout_width="fill_parent" android:layout_height="@dimen/bottom_tab_height">
+            <TextView android:textSize="@dimen/title_text_size" android:textColor="@color/white" android:gravity="center" android:id="@id/cityname" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/tab_item_tools" />
+        </LinearLayout>
+        <GridView android:gravity="center" android:id="@id/gridview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="20.0dip" android:listSelector="@drawable/tools_pressed" android:transcriptMode="disabled" android:horizontalSpacing="10.0dip" android:verticalSpacing="10.0dip" android:stretchMode="columnWidth" android:columnWidth="90.0dip" android:numColumns="auto_fit" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <include layout="@layout/rc_banner" />
+    </FrameLayout>
+</RelativeLayout>
