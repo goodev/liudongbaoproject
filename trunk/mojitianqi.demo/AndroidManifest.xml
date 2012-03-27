@@ -231,68 +231,6 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent" />
         <activity android:name="com.exchange.View.LandingWebViewActivity" />
-
-        <service
-            android:name="com.adm.common.DownloadingService"
-            android:exported="true"
-            android:process=":DownloadingService" />
-        <service android:name=".service.WeatherUpdateService" />
-        <service android:name=".widget.AbstractWidget$WidgetUpdateService" />
-        <service android:name=".widget.AbstractWidget$UpdateImmediatelyService" />
-        <service android:name=".widget.AbstractWidget$ReloadSkinService" />
-        <service android:name=".service.StatsService" />
-        <service android:name=".service.AutoShareService" />
-        <service android:name=".service.VoicePlayAlarmService" />
-        <service android:name=".daysmatter.DaysMatterService" />
-
-        <receiver android:name=".receiver.PackageReceiver" >
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REMOVED" />
-                <action android:name="android.intent.action.PACKAGE_ADDED" />
-                <action android:name="android.intent.action.PACKAGE_REPLACED" />
-
-                <data android:scheme="package" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name=".receiver.MojiReceiver" >
-            <intent-filter>
-                <action android:name="android.intent.action.TIME_SET" />
-                <action android:name="android.intent.action.DATE_CHANGED" />
-                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".CMojiWidget4x1"
-            android:label="@string/widget_title_mid" >
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="android.intent.action.TIME_SET" />
-                <action android:name="android.intent.action.DATE_CHANGED" />
-                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-                <action android:name="android.intent.action.USER_PRESENT" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/moji_weather_widget_4x1" />
-        </receiver>
-        <receiver
-            android:name=".CMojiWidget4x2"
-            android:label="@string/widget_title_big" >
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="android.intent.action.TIME_SET" />
-                <action android:name="android.intent.action.DATE_CHANGED" />
-                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-                <action android:name="android.intent.action.USER_PRESENT" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/moji_weather_widget_4x2" />
-        </receiver>
     </application>
 
 </manifest>
