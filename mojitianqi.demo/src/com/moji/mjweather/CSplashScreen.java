@@ -60,7 +60,7 @@ public class CSplashScreen extends Activity {
 		requestWindowFeature(1);
 		//UiUtil.saveStatusBarHeight(this);
 		getWindow().setFormat(-2);
-		setContentView(0x7f03004b);
+		setContentView(R.layout.layout_splash);
 		((ImageView) findViewById(0x7f0d01ac)).setImageResource(0x7f02012e);
 		Message message = new Message();
 		message.what = 0;
