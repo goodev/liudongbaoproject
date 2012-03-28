@@ -39,6 +39,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
 
 public class StatsService extends Service
 {
@@ -76,13 +77,7 @@ public class StatsService extends Service
             stopSelf();
         }
 
-        final StatsService this$0;
-
-        private SendStatsThread()
-        {
-            this$0 = StatsService.this;
-            super();
-        }
+       
 
     }
 
@@ -94,40 +89,49 @@ public class StatsService extends Service
 
     public static void checkAdSwitch()
     {
-        XmlPullParser xmlpullparser;
-        int i;
-        InputStream inputstream = HttpUtil.doGet("ad.moji001.com", UrlUtil.getAdSwitcherURL(), 0L).mInputStream;
-        xmlpullparser = Xml.newPullParser();
-        xmlpullparser.setInput(inputstream, "utf-8");
-        i = xmlpullparser.getEventType();
-          goto _L1
-_L3:
-        i = xmlpullparser.next();
-          goto _L1
-_L7:
-        if("s".equals(xmlpullparser.getName()) && xmlpullparser.getAttributeValue(null, "pos") != null && xmlpullparser.getAttributeValue(null, "pos").length() > 0 && Integer.parseInt(xmlpullparser.getAttributeValue(null, "pos")) == 2 && xmlpullparser.getAttributeValue(null, "pb").equals("umeng"))
-            Gl.saveAdON(true);
-        if(true) goto _L3; else goto _L2
-_L2:
-        Exception exception;
-        exception;
-        MojiLog.e("StatsService", "checkAdSwitch: ", exception);
-_L5:
-        MojiLog.d("StatsService", (new StringBuilder()).append("checkAdSwitch: ").append(Gl.getAdON()).toString());
-        return;
-_L1:
-        if(i == 1) goto _L5; else goto _L4
-_L4:
-        i;
-        JVM INSTR tableswitch 0 3: default 42
-    //                   0 42
-    //                   1 42
-    //                   2 54
-    //                   3 42;
-           goto _L6 _L6 _L6 _L7 _L6
-_L6:
-        if(true) goto _L3; else goto _L8
-_L8:
+        XmlPullParser xmlpullparser=null;
+        int i=0;
+        InputStream inputstream;
+		try {
+			inputstream = HttpUtil.doGet("ad.moji001.com", UrlUtil.getAdSwitcherURL(), 0L).mInputStream;
+	        xmlpullparser = Xml.newPullParser();
+	        xmlpullparser.setInput(inputstream, "utf-8");
+	        i = xmlpullparser.getEventType();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+   
+       
+        while(true){
+        	if(i == 1){
+        		MojiLog.d("StatsService", (new StringBuilder()).append("checkAdSwitch: ").append(Gl.getAdON()).toString());
+                return;
+        	}
+        	switch(i){
+        	case 2: 
+        		try {
+					i = xmlpullparser.next();
+					 if("s".equals(xmlpullparser.getName()) && xmlpullparser.getAttributeValue(null, "pos") != null && xmlpullparser.getAttributeValue(null, "pos").length() > 0 && Integer.parseInt(xmlpullparser.getAttributeValue(null, "pos")) == 2 && xmlpullparser.getAttributeValue(null, "pb").equals("umeng"))
+		                    Gl.saveAdON(true);
+				} catch (XmlPullParserException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+           	
+        		break;
+        	case 0:
+        	case 1:
+        	case 3:
+        		default :break;
+        	}
+        	
+        }
+ 
     }
 
     public static void checkAdSwitchAsync()
