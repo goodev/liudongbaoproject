@@ -60,9 +60,9 @@ public class TabSelectorActivity extends TabActivity
         FileInputStream fileinputstream;
         Map map;
         String s;
-        String s1;
+        String s1=null;
         File file;
-        String s2;
+        String s2=null;
         if(flag)
             s = "newversion.xml";
         else
@@ -72,63 +72,39 @@ public class TabSelectorActivity extends TabActivity
         else
             s1 = "adv";
         file = Gl.Ct().getFileStreamPath(s);
-        if(file == null || !file.exists()) goto _L2; else goto _L1
-_L1:
+        if(file == null || !file.exists()) return;  
         fileinputstream = null;
-        fileinputstream = Gl.Ct().openFileInput(s);
+        try {
+			fileinputstream = Gl.Ct().openFileInput(s);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         map = Util.parseNewVersionOrPushInfo(fileinputstream, s1);
-        if(map.size() <= 0) goto _L4; else goto _L3
-_L3:
+        if(map.size() > 0)  
         s2 = (String)map.get("info");
-        if(s2 == null || s2.equals("")) goto _L4; else goto _L5
-_L5:
-        if(!flag) goto _L7; else goto _L6
-_L6:
+        if(s2 != null && 
+        		!s2.equals(""))  
+        if(!flag) 
+        {
+ 
+        
+                    getDlgMgr().showUrlDialog((String)map.get("info"), (String)map.get("url"));
+                
+                Gl.setHighPriorityDialogIsOpen(true);
+        }
+        	else  
         getDlgMgr().showNewVersionDialog((String)map.get("info"), 0x7f0b001d, map);
-_L8:
-        Gl.setHighPriorityDialogIsOpen(true);
-_L4:
-        Exception exception;
-        if(fileinputstream != null)
-            try
-            {
-                fileinputstream.close();
-            }
-            catch(IOException ioexception2) { }
+ 
         Gl.Ct().deleteFile(s);
-_L2:
-        return;
-_L7:
-        try
-        {
-            getDlgMgr().showUrlDialog((String)map.get("info"), (String)map.get("url"));
-        }
-        catch(FileNotFoundException filenotfoundexception)
-        {
-            if(fileinputstream != null)
-                try
-                {
-                    fileinputstream.close();
-                }
-                catch(IOException ioexception1) { }
-            break MISSING_BLOCK_LABEL_136;
-        }
-          goto _L8
-        exception;
-        if(fileinputstream != null)
-            try
-            {
-                fileinputstream.close();
-            }
-            catch(IOException ioexception) { }
-        throw exception;
-          goto _L8
+ 
+
     }
 
     private void forTest()
     {
         if(StatsUtil.isDevelopMode())
-            startService(new Intent(this, com/moji/mjweather/service/StatsService));
+            startService(new Intent(this,  StatsService.class));
     }
 
     private CDialogManager getDlgMgr()
@@ -146,27 +122,27 @@ _L7:
         StatsUtil.updateStatsCount(com.moji.mjweather.util.StatsUtil.StatsCount.COUNT_SS);
         cityweatherinfo = WeatherData.getCityInfo(i);
         s = WeatherData.getCityWeatherDescription(Gl.getCurrentCityIndex(), Gl.getShareForecastDays().intValue(), false);
-        if(cityweatherinfo.mShowType == com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_OK) goto _L2; else goto _L1
-_L1:
-        getDlgMgr().ShowMsgOKDialog(0x7f0b016e);
-_L4:
-        return;
-_L2:
-        boolean flag = false;
-        if(Gl.getManualShareType().equals("1"))
+        if(cityweatherinfo.mShowType == com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_OK) 
+
         {
-            flag = UiUtil.savePictureShot(ShareMicroBlogUtil.saveCityViewBitmap(this, Gl.getCurrentCityIndex()));
-            if(flag)
-            {
-                weatherImageTextShare(s);
-                continue; /* Loop/switch isn't completed */
-            }
+        	 boolean flag = false;
+             if(Gl.getManualShareType().equals("1"))
+             {
+                 flag = UiUtil.savePictureShot(ShareMicroBlogUtil.saveCityViewBitmap(this, Gl.getCurrentCityIndex()));
+                 if(!flag)
+                 {
+                     weatherImageTextShare(s);
+                     
+                 }
+             }
+             weatherTextShare(s);
+             if(Gl.getManualShareType().equals("1") && !flag)
+                 Toast.makeText(this, getString(0x7f0b01b7), 0).show();
+             
         }
-        weatherTextShare(s);
-        if(Gl.getManualShareType().equals("1") && !flag)
-            Toast.makeText(this, getString(0x7f0b01b7), 0).show();
-        if(true) goto _L4; else goto _L3
-_L3:
+        	else  
+        getDlgMgr().ShowMsgOKDialog(0x7f0b016e);
+ 
     }
 
     private void startWidgetServiceIfNeeded()
@@ -221,33 +197,17 @@ _L3:
     public void onCheckedChanged(RadioGroup radiogroup, int i)
     {
         isExit = false;
-        i;
-        JVM INSTR tableswitch 2131558831 2131558835: default 40
-    //                   2131558831 41
-    //                   2131558832 59
-    //                   2131558833 71
-    //                   2131558834 83
-    //                   2131558835 95;
-           goto _L1 _L2 _L3 _L4 _L5 _L6
-_L1:
-        return;
-_L2:
-        mTabHost.setCurrentTabByTag("tab_weather");
-        WeatherTabPublisher.getInstance().publish();
-        continue; /* Loop/switch isn't completed */
-_L3:
-        mTabHost.setCurrentTabByTag("tab_trend");
-        continue; /* Loop/switch isn't completed */
-_L4:
-        mTabHost.setCurrentTabByTag("tab_index");
-        continue; /* Loop/switch isn't completed */
-_L5:
-        mTabHost.setCurrentTabByTag("tab_tools");
-        continue; /* Loop/switch isn't completed */
-_L6:
-        mTabHost.setCurrentTabByTag("tab_setting");
-        if(true) goto _L1; else goto _L7
-_L7:
+        switch(i)
+        {
+        case 2131558831: mTabHost.setCurrentTabByTag("tab_weather");
+        WeatherTabPublisher.getInstance().publish();break;
+        case 2131558832:mTabHost.setCurrentTabByTag("tab_trend");break;
+        case 2131558833:mTabHost.setCurrentTabByTag("tab_index");break;
+        case 2131558834:mTabHost.setCurrentTabByTag("tab_tools");break;
+        case 2131558835:mTabHost.setCurrentTabByTag("tab_setting");break;
+        default:return;
+        }
+       
     }
 
     protected void onCreate(Bundle bundle)
@@ -258,11 +218,11 @@ _L7:
         getWindow().getDecorView().setBackgroundDrawable(null);
         setContentView(0x7f03004c);
         mTabHost = getTabHost();
-        mTabHost.addTab(mTabHost.newTabSpec("tab_weather").setIndicator("tab_weather").setContent(new Intent(this, com/moji/mjweather/activity/WeatherMainActivity)));
-        mTabHost.addTab(mTabHost.newTabSpec("tab_trend").setIndicator("tab_trend").setContent(new Intent(this, com/moji/mjweather/activity/WeatherTrendActivity)));
-        mTabHost.addTab(mTabHost.newTabSpec("tab_index").setIndicator("tab_index").setContent(new Intent(this, com/moji/mjweather/activity/WeatherIndexActivity)));
-        mTabHost.addTab(mTabHost.newTabSpec("tab_tools").setIndicator("tab_tools").setContent(new Intent(this, com/moji/mjweather/activity/WeatherToolsActivity)));
-        mTabHost.addTab(mTabHost.newTabSpec("tab_setting").setIndicator("tab_setting").setContent(new Intent(this, com/moji/mjweather/activity/WeatherSettingActivity)));
+        mTabHost.addTab(mTabHost.newTabSpec("tab_weather").setIndicator("tab_weather").setContent(new Intent(this,  WeatherMainActivity.class)));
+        mTabHost.addTab(mTabHost.newTabSpec("tab_trend").setIndicator("tab_trend").setContent(new Intent(this,  WeatherTrendActivity.class)));
+        mTabHost.addTab(mTabHost.newTabSpec("tab_index").setIndicator("tab_index").setContent(new Intent(this,  WeatherIndexActivity.class)));
+        mTabHost.addTab(mTabHost.newTabSpec("tab_tools").setIndicator("tab_tools").setContent(new Intent(this,  WeatherToolsActivity.class)));
+        mTabHost.addTab(mTabHost.newTabSpec("tab_setting").setIndicator("tab_setting").setContent(new Intent(this,  WeatherSettingActivity.class)));
         mRadioGroup = (RadioGroup)findViewById(0x7f0d01ae);
         mRadioGroup.setOnCheckedChangeListener(this);
         if(UiUtil.getStatusBarHeight() == 0)

@@ -36,8 +36,7 @@ public class VoicePlayAlarmService extends Service
         j = PlayerUtil.getMinutesNum(date1);
         MojiLog.d("VoicePlayAlarmService", (new StringBuilder()).append("nowTimeMinutesNums = ").append(i).toString());
         MojiLog.d("VoicePlayAlarmService", (new StringBuilder()).append("playTimeMinutesNums = ").append(j).toString());
-        if(i != j) goto _L2; else goto _L1
-_L1:
+        if(i == j)  {
         if(Util.isNeedUpdateWeatherData(Gl.getCurrentCityIndex()))
         {
             MojiLog.d("VoicePlayAlarmService", "alarmPlayVoice update weather");
@@ -64,9 +63,8 @@ _L1:
         {
             stopSelf();
         }
-_L4:
-        return;
-_L2:
+        }
+ 
         if(i < j)
         {
             MojiLog.d("VoicePlayAlarmService", "alarmPlayVoice need wait");
@@ -77,33 +75,40 @@ _L2:
             MojiLog.d("VoicePlayAlarmService", "alarmPlayVoice Gone");
             setNextPlayAlarm(0x5265c00L + date1.getTime());
         }
-        if(true) goto _L4; else goto _L3
-_L3:
+         
     }
 
     private void checkVoicePlay()
     {
-        if(!Gl.getAutoVoicePlay()) goto _L2; else goto _L1
-_L1:
-        if(!Gl.getAlarmOnlyWorkingDay() || isWorkingDay()) goto _L4; else goto _L3
-_L3:
-        int i = Calendar.getInstance().get(7);
-        if(i != 7) goto _L6; else goto _L5
-_L5:
-        setNextPlayAlarm(0xa4cb800L + System.currentTimeMillis());
-_L8:
-        return;
-_L6:
-        if(i == 1)
-            setNextPlayAlarm(0x5265c00L + System.currentTimeMillis());
-        continue; /* Loop/switch isn't completed */
-_L4:
-        alarmPlayVoice();
-        continue; /* Loop/switch isn't completed */
-_L2:
-        stopSelf();
-        if(true) goto _L8; else goto _L7
-_L7:
+        if(!Gl.getAutoVoicePlay()) 
+        {
+        	stopSelf();
+        	return;
+        }
+        	else
+        	{  
+        		if(!Gl.getAlarmOnlyWorkingDay() || isWorkingDay()) 
+        		{
+        			alarmPlayVoice();
+        			return;
+        		}
+        		else {
+ 
+        		        int i = Calendar.getInstance().get(7);
+        		        if(i != 7) 
+        		        {
+        		        	if(i == 1)
+        		                setNextPlayAlarm(0x5265c00L + System.currentTimeMillis());
+        		        	return;
+        		        }
+        		        	else 
+        		        {
+        		        	  setNextPlayAlarm(0xa4cb800L + System.currentTimeMillis());
+        		        }
+        		}
+        	}
+
+  
     }
 
     private boolean isExistsVoiceData()
@@ -122,14 +127,14 @@ _L7:
     {
         boolean flag = true;
         int i = Calendar.getInstance().get(7);
-        if(i == flag || i == 7)
+        if(i == 1 || i == 7)
             flag = false;
         return flag;
     }
 
     private void setNextPlayAlarm(long l)
     {
-        PendingIntent pendingintent = PendingIntent.getService(this, 0, new Intent(this, com/moji/mjweather/service/VoicePlayAlarmService), 0);
+        PendingIntent pendingintent = PendingIntent.getService(this, 0, new Intent(this, VoicePlayAlarmService.class), 0);
         AlarmManager alarmmanager = (AlarmManager)getSystemService("alarm");
         alarmmanager.cancel(pendingintent);
         alarmmanager.set(0, l, pendingintent);
@@ -146,13 +151,7 @@ _L7:
                 stopVoicePlay();
             }
 
-            final VoicePlayAlarmService this$0;
-
-            
-            {
-                this$0 = VoicePlayAlarmService.this;
-                super();
-            }
+           
         }
 ).setOnCancelListener(new android.content.DialogInterface.OnCancelListener() {
 
@@ -161,14 +160,7 @@ _L7:
                 Toast.makeText(VoicePlayAlarmService.this, 0x7f0b01da, 0).show();
                 stopVoicePlay();
             }
-
-            final VoicePlayAlarmService this$0;
-
-            
-            {
-                this$0 = VoicePlayAlarmService.this;
-                super();
-            }
+ 
         }
 ).create();
         mAlarmVoiceDialog.getWindow().setType(2003);
@@ -188,14 +180,7 @@ _L7:
                 if(mAlarmVoiceDialog != null)
                     mAlarmVoiceDialog.dismiss();
             }
-
-            final VoicePlayAlarmService this$0;
-
-            
-            {
-                this$0 = VoicePlayAlarmService.this;
-                super();
-            }
+ 
         }
 );
         mVoicePlayer.play(false, true);
