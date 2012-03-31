@@ -30,6 +30,7 @@ import java.net.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
 
 // Referenced classes of package com.moji.mjweather.activity:
 //            AddConcernActivity, CityManagerActivity, WebViewActivity
@@ -47,14 +48,10 @@ public class WeatherIndexActivity extends Activity
         String icon;
         String id;
         String name;
-        final WeatherIndexActivity this$0;
+       
         String type;
 
-        private LifeInfo()
-        {
-            this$0 = WeatherIndexActivity.this;
-            super();
-        }
+       
 
     }
 
@@ -62,13 +59,7 @@ public class WeatherIndexActivity extends Activity
     {
 
         List lifeList;
-        final WeatherIndexActivity this$0;
-
-        private WeatherLifeInfo()
-        {
-            this$0 = WeatherIndexActivity.this;
-            super();
-        }
+       
 
     }
 
@@ -77,142 +68,134 @@ public class WeatherIndexActivity extends Activity
 
         private boolean mergeXML()
         {
+        	boolean flag;
+        	if(mOrderInfo != null && mEntryInfo != null)
+        	    flag = true;
+        	else
+        	    flag = false;
             List list = mOrderInfo.lifeList;
             List list1 = mEntryInfo.lifeList;
-            int i = 0;
-label0:
-            do
-            {
-                if(i < list.size())
-                {
-                    int j = 0;
-                    do
-                    {
-label1:
-                        {
-                            if(j < list1.size())
-                            {
-                                if(!((LifeInfo)list.get(i)).id.equals(((LifeInfo)list1.get(j)).id) || !((LifeInfo)list.get(i)).type.equals("content") || !((LifeInfo)list1.get(j)).type.equals("content"))
-                                    break label1;
-                                ((LifeInfo)mOrderInfo.lifeList.get(i)).name = ((LifeInfo)mEntryInfo.lifeList.get(j)).name;
-                                ((LifeInfo)mOrderInfo.lifeList.get(i)).icon = ((LifeInfo)mEntryInfo.lifeList.get(j)).icon;
-                                ((LifeInfo)mOrderInfo.lifeList.get(i)).digest = ((LifeInfo)mEntryInfo.lifeList.get(j)).digest;
-                                ((LifeInfo)mOrderInfo.lifeList.get(i)).entry = ((LifeInfo)mEntryInfo.lifeList.get(j)).entry;
-                            }
-                            i++;
-                            continue label0;
-                        }
-                        j++;
-                    } while(true);
-                }
-                boolean flag;
-                if(mOrderInfo != null && mEntryInfo != null)
-                    flag = true;
-                else
-                    flag = false;
-                return flag;
-            } while(true);
+            
+for(int i = 0;i < list.size();i++ ){
+	for(int j = 0;j < list1.size();j++ )
+	 
+    {
+ 
+                if(!((LifeInfo)list.get(i)).id.equals(((LifeInfo)list1.get(j)).id) || !((LifeInfo)list.get(i)).type.equals("content") || !((LifeInfo)list1.get(j)).type.equals("content"))
+                   return false;
+                ((LifeInfo)mOrderInfo.lifeList.get(i)).name = ((LifeInfo)mEntryInfo.lifeList.get(j)).name;
+                ((LifeInfo)mOrderInfo.lifeList.get(i)).icon = ((LifeInfo)mEntryInfo.lifeList.get(j)).icon;
+                ((LifeInfo)mOrderInfo.lifeList.get(i)).digest = ((LifeInfo)mEntryInfo.lifeList.get(j)).digest;
+                ((LifeInfo)mOrderInfo.lifeList.get(i)).entry = ((LifeInfo)mEntryInfo.lifeList.get(j)).entry;
+            
         }
+        
+    }  
+ 
+
+	return flag;
+}
+
+ 
 
         private boolean parse(InputStream inputstream, boolean flag)
         {
-            XmlPullParser xmlpullparser;
-            int i;
+            XmlPullParser xmlpullparser=null;
+            int i=0;
             LifeInfo lifeinfo;
             ArrayList arraylist;
             WeatherLifeInfo weatherlifeinfo;
             String s;
             String s1;
             xmlpullparser = Xml.newPullParser();
-            xmlpullparser.setInput(inputstream, "utf-8");
-            i = xmlpullparser.getEventType();
+            try {
+				xmlpullparser.setInput(inputstream, "utf-8");
+				 i = xmlpullparser.getEventType();
+			} catch (XmlPullParserException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+           
             lifeinfo = null;
             arraylist = new ArrayList();
             weatherlifeinfo = null;
             s = "";
             if(!flag)
-                break MISSING_BLOCK_LABEL_464;
+                return false;
             s1 = "cl";
-_L6:
-            if(i == 1) goto _L2; else goto _L1
-_L1:
-            String s2 = xmlpullparser.getName();
-            i;
-            JVM INSTR tableswitch 0 3: default 100
-        //                       0 100
-        //                       1 100
-        //                       2 112
-        //                       3 351;
-               goto _L3 _L3 _L3 _L4 _L5
-_L3:
-            i = xmlpullparser.next();
-              goto _L6
-_L4:
-            if(s1.equals(s2))
-                weatherlifeinfo = new WeatherLifeInfo();
-            else
-            if("cate".equals(s2))
-            {
-                lifeinfo = new LifeInfo();
-                lifeinfo.id = xmlpullparser.getAttributeValue(null, "id");
-                lifeinfo.name = xmlpullparser.getAttributeValue(null, "name");
-                lifeinfo.type = "category";
-                s = lifeinfo.name;
-                arraylist.add(lifeinfo);
-            } else
-            if("item".equals(s2))
-            {
-                lifeinfo = new LifeInfo();
-                lifeinfo.id = xmlpullparser.getAttributeValue(null, "id");
-                lifeinfo.name = xmlpullparser.getAttributeValue(null, "name");
-                lifeinfo.icon = xmlpullparser.getAttributeValue(null, "icon");
-                lifeinfo.type = "content";
-                lifeinfo.digest = xmlpullparser.getAttributeValue(null, "digest");
-                lifeinfo.entry = xmlpullparser.getAttributeValue(null, "entry");
-                lifeinfo.favorites = xmlpullparser.getAttributeValue(null, "favorites");
-                lifeinfo.category = s;
-            }
-              goto _L3
-_L5:
-            if(s1.equals(s2))
-                weatherlifeinfo.lifeList = arraylist;
-            else
-            if(!"cate".equals(s2) && "item".equals(s2))
-                arraylist.add(lifeinfo);
-              goto _L3
-_L2:
-            boolean flag1;
-            if(weatherlifeinfo == null)
-            {
-                flag1 = false;
-                MojiLog.d("WeatherIndexActivity", "\u89E3\u6790\u5931\u8D25~~");
-            } else
-            {
-                if(flag)
-                    mOrderInfo = weatherlifeinfo;
-                else
-                    mEntryInfo = weatherlifeinfo;
-                flag1 = true;
-                MojiLog.d("WeatherIndexActivity", "\u89E3\u6790\u6210\u529F~~");
-            }
-            break MISSING_BLOCK_LABEL_475;
-            s1 = "ol";
-              goto _L6
-            Exception exception;
-            exception;
-            flag1 = false;
-            return flag1;
+ 
+          while(true)   
+          {
+        	  if(i == 1){
+        		  boolean flag1;
+                  if(weatherlifeinfo == null)
+                  {
+                      flag1 = false;
+                      MojiLog.d("WeatherIndexActivity", "\u89E3\u6790\u5931\u8D25~~");
+                  } else
+                  {
+                      if(flag)
+                          mOrderInfo = weatherlifeinfo;
+                      else
+                          mEntryInfo = weatherlifeinfo;
+                      flag1 = true;
+                      MojiLog.d("WeatherIndexActivity", "\u89E3\u6790\u6210\u529F~~");
+                  }
+                 
+                  s1 = "ol";
+                    
+                  return flag1;
+        	  }
+        	  String s2 = xmlpullparser.getName();
+           switch(i){
+           case 0:break;
+           case 1:break;
+           case 2:  if(s1.equals(s2))
+               weatherlifeinfo = new WeatherLifeInfo();
+           else
+           if("cate".equals(s2))
+           {
+               lifeinfo = new LifeInfo();
+               lifeinfo.id = xmlpullparser.getAttributeValue(null, "id");
+               lifeinfo.name = xmlpullparser.getAttributeValue(null, "name");
+               lifeinfo.type = "category";
+               s = lifeinfo.name;
+               arraylist.add(lifeinfo);
+           } else
+           if("item".equals(s2))
+           {
+               lifeinfo = new LifeInfo();
+               lifeinfo.id = xmlpullparser.getAttributeValue(null, "id");
+               lifeinfo.name = xmlpullparser.getAttributeValue(null, "name");
+               lifeinfo.icon = xmlpullparser.getAttributeValue(null, "icon");
+               lifeinfo.type = "content";
+               lifeinfo.digest = xmlpullparser.getAttributeValue(null, "digest");
+               lifeinfo.entry = xmlpullparser.getAttributeValue(null, "entry");
+               lifeinfo.favorites = xmlpullparser.getAttributeValue(null, "favorites");
+               lifeinfo.category = s;
+           }break;
+           case 3:    if(s1.equals(s2))
+               weatherlifeinfo.lifeList = arraylist;
+           else
+           if(!"cate".equals(s2) && "item".equals(s2))
+               arraylist.add(lifeinfo);break;
+           default: break;
+           }
+           try {
+			i = xmlpullparser.next();
+		} catch (XmlPullParserException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+          }
+         
+          
         }
 
-        final WeatherIndexActivity this$0;
-
-
-
-        private ParseWeatherLife()
-        {
-            this$0 = WeatherIndexActivity.this;
-            super();
-        }
+         
 
     }
 
@@ -232,56 +215,39 @@ _L2:
                 public void handleMessage(Message message)
                 {
                     super.handleMessage(message);
-                    message.what;
-                    JVM INSTR tableswitch 502 510: default 60
-                //                               502 500
-                //                               503 61
-                //                               504 60
-                //                               505 60
-                //                               506 153
-                //                               507 60
-                //                               508 60
-                //                               509 60
-                //                               510 233;
-                       goto _L1 _L2 _L3 _L1 _L1 _L4 _L1 _L1 _L1 _L5
-_L1:
-                    return;
-_L3:
-                    if(!isCancel && isXmlOK(true) && isXmlOK(false))
+                    switch(message.what)
+                    {
+                    case 502:Looper.myLooper().quit();break;
+                    case 503:if(!isCancel && isXmlOK(true) && isXmlOK(false))
                         mainHandler.sendMessage(mainHandler.obtainMessage(504));
                     else
-                        mainHandler.sendMessage(mainHandler.obtainMessage(505));
-                    continue; /* Loop/switch isn't completed */
-_L4:
-                    if(!isCancel && mParseWeatherLife.mergeXML())
+                        mainHandler.sendMessage(mainHandler.obtainMessage(505));break;
+                    case 504:return;
+                    case 505:return;
+                    case 506: if(!isCancel && mParseWeatherLife.mergeXML())
                         mainHandler.sendMessage(mainHandler.obtainMessage(507));
                     else
-                        mainHandler.sendMessage(mainHandler.obtainMessage(508));
-                    continue; /* Loop/switch isn't completed */
-_L5:
-                    mPreviewFile = (new StringBuilder()).append(message.arg1).append("lifePreview.jpg").toString();
+                        mainHandler.sendMessage(mainHandler.obtainMessage(508));break;
+                    case 507:return;
+                    case 508:return;
+                    case 509:return;
+                    case 510: mPreviewFile = (new StringBuilder()).append(message.arg1).append("lifePreview.jpg").toString();
                     File file = new File((new StringBuilder()).append(mPreviewPath).append(mPreviewFile).toString());
-                    if(isDownloadIMG() && FileUtil.delAllFile(mPreviewPath) && download((String)message.obj, mPreviewPath, mPreviewFile, _fld0))
+                    if(isDownloadIMG() && FileUtil.delAllFile(mPreviewPath) && download((String)message.obj, mPreviewPath, mPreviewFile,WeatherIndexActivity.this.getApplicationContext() ))
                     {
                         Gl.setLifeImgDate(WeatherIndexActivity.getCurrentDate());
                         mainHandler.sendMessage(mainHandler.obtainMessage(511));
                     } else
-                    if(!file.exists() && download((String)message.obj, mPreviewPath, mPreviewFile, _fld0))
-                        mainHandler.sendMessage(mainHandler.obtainMessage(511));
-                    continue; /* Loop/switch isn't completed */
-_L2:
-                    Looper.myLooper().quit();
-                    if(true) goto _L1; else goto _L6
-_L6:
+                    if(!file.exists() && download((String)message.obj, mPreviewPath, mPreviewFile, WeatherIndexActivity.this.getApplicationContext() ))
+                        mainHandler.sendMessage(mainHandler.obtainMessage(511));break;
+                    default : return;
+
+                    
+                    }
+                 
                 }
 
-                final DownloadThread this$1;
-
-                
-                {
-                    this$1 = DownloadThread.this;
-                    super();
-                }
+                 
             }
 ;
             if(mDownloadHandler == null)
@@ -293,12 +259,12 @@ _L6:
 
         private boolean isCancel;
         Handler mainHandler;
-        final WeatherIndexActivity this$0;
+       
 
 
         DownloadThread(Handler handler)
         {
-            this$0 = WeatherIndexActivity.this;
+           
             super("WeatherIndexActivity:DownloadThread");
             mainHandler = handler;
             isCancel = false;
@@ -337,59 +303,62 @@ _L6:
                 s = ((LifeInfo)mOrderInfo.lifeList.get(i)).type;
             }
             catch(Exception exception) { }
-            if(s == null || !s.equals("category")) goto _L2; else goto _L1
-_L1:
+            if(s == null || !s.equals("category")) 
+            {
+ 
+                    if(s != null && s.equals("content"))
+                    {
+                        relativeLayout = (RelativeLayout)mLayoutInflater.inflate(0x7f030036, null);
+                        imageview = (ImageView)relativeLayout.findViewById(0x7f0d00e2);
+                        textview = (TextView)relativeLayout.findViewById(0x7f0d0002);
+                        textview1 = (TextView)relativeLayout.findViewById(0x7f0d00e3);
+                        textview2 = (TextView)relativeLayout.findViewById(0x7f0d00e6);
+                        imageview1 = (ImageView)relativeLayout.findViewById(0x7f0d00e5);
+                        try
+                        {
+                            file = new File((new StringBuilder()).append(mPreviewPath).append(((LifeInfo)mOrderInfo.lifeList.get(i)).id).append("lifePreview.jpg").toString());
+                            if(file.exists())
+                            {
+                                imageview.setImageBitmap(BitmapFactory.decodeFile(file.toString()));
+                                MojiLog.d("WeatherIndexActivity", (new StringBuilder()).append("imgFile:").append(file.toString()).toString());
+                            } else
+                            {
+                                imageview.setImageResource(0x7f0200c6);
+                            }
+                            if(((LifeInfo)mOrderInfo.lifeList.get(i)).id.equals("20"))
+                            {
+                                textview2.setVisibility(8);
+                                imageview1.setVisibility(8);
+                            } else
+                            {
+                                textview2.setVisibility(0);
+                                imageview1.setVisibility(0);
+                            }
+                            textview.setText(((LifeInfo)mOrderInfo.lifeList.get(i)).name);
+                            textview1.setText(((LifeInfo)mOrderInfo.lifeList.get(i)).digest);
+                            textview2.setText(((LifeInfo)mOrderInfo.lifeList.get(i)).favorites);
+                            mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(510, Integer.parseInt(((LifeInfo)mOrderInfo.lifeList.get(i)).id), 0, ((LifeInfo)mOrderInfo.lifeList.get(i)).icon));
+                        }
+                        catch(Exception exception1) { }
+                    }
+                
+            }
+            	
+            	else {
             relativeLayout = (RelativeLayout)mLayoutInflater.inflate(0x7f030037, null);
             ((TextView)relativeLayout.findViewById(0x7f0d00e7)).setText(((LifeInfo)mOrderInfo.lifeList.get(i)).name);
-_L4:
+            	}
             return relativeLayout;
-_L2:
-            if(s != null && s.equals("content"))
-            {
-                relativeLayout = (RelativeLayout)mLayoutInflater.inflate(0x7f030036, null);
-                imageview = (ImageView)relativeLayout.findViewById(0x7f0d00e2);
-                textview = (TextView)relativeLayout.findViewById(0x7f0d0002);
-                textview1 = (TextView)relativeLayout.findViewById(0x7f0d00e3);
-                textview2 = (TextView)relativeLayout.findViewById(0x7f0d00e6);
-                imageview1 = (ImageView)relativeLayout.findViewById(0x7f0d00e5);
-                try
-                {
-                    file = new File((new StringBuilder()).append(mPreviewPath).append(((LifeInfo)mOrderInfo.lifeList.get(i)).id).append("lifePreview.jpg").toString());
-                    if(file.exists())
-                    {
-                        imageview.setImageBitmap(BitmapFactory.decodeFile(file.toString()));
-                        MojiLog.d("WeatherIndexActivity", (new StringBuilder()).append("imgFile:").append(file.toString()).toString());
-                    } else
-                    {
-                        imageview.setImageResource(0x7f0200c6);
-                    }
-                    if(((LifeInfo)mOrderInfo.lifeList.get(i)).id.equals("20"))
-                    {
-                        textview2.setVisibility(8);
-                        imageview1.setVisibility(8);
-                    } else
-                    {
-                        textview2.setVisibility(0);
-                        imageview1.setVisibility(0);
-                    }
-                    textview.setText(((LifeInfo)mOrderInfo.lifeList.get(i)).name);
-                    textview1.setText(((LifeInfo)mOrderInfo.lifeList.get(i)).digest);
-                    textview2.setText(((LifeInfo)mOrderInfo.lifeList.get(i)).favorites);
-                    mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(510, Integer.parseInt(((LifeInfo)mOrderInfo.lifeList.get(i)).id), 0, ((LifeInfo)mOrderInfo.lifeList.get(i)).icon));
-                }
-                catch(Exception exception1) { }
-            }
-            if(true) goto _L4; else goto _L3
-_L3:
+
+ 
         }
 
         LayoutInflater mLayoutInflater;
         RelativeLayout relativeLayout;
-        final WeatherIndexActivity this$0;
-
+       
         public WeatherLifeAdapter()
         {
-            this$0 = WeatherIndexActivity.this;
+ 
             super();
             mLayoutInflater = (LayoutInflater)getSystemService("layout_inflater");
         }
@@ -404,13 +373,7 @@ _L3:
             mHandler.sendMessage(mHandler.obtainMessage(512, result));
         }
 
-        final WeatherIndexActivity this$0;
-
-        private UpdateCallbackImpl()
-        {
-            this$0 = WeatherIndexActivity.this;
-            super();
-        }
+ 
 
     }
 
@@ -428,7 +391,7 @@ _L3:
                     {
                         String s = lifeinfo.entry.replace("${CityID}", String.valueOf(mCityID));
                         MojiLog.d("WeatherIndexActivity", s);
-                        Intent intent1 = new Intent(WeatherIndexActivity.this, com/moji/mjweather/activity/WebViewActivity);
+                        Intent intent1 = new Intent(WeatherIndexActivity.this,  WebViewActivity.class);
                         Bundle bundle = new Bundle();
                         bundle.putString("bundle_key_category", ((LifeInfo)mOrderInfo.lifeList.get(i)).category);
                         bundle.putString("bundle_key_name", ((LifeInfo)mOrderInfo.lifeList.get(i)).name);
@@ -441,22 +404,14 @@ _L3:
                     } else
                     if(lifeinfo.type.equals("content") && lifeinfo.entry != null && lifeinfo.entry.contains("moji://"))
                     {
-                        Intent intent = new Intent(WeatherIndexActivity.this, com/moji/mjweather/recommend/RecommendListActivity);
+                        Intent intent = new Intent(WeatherIndexActivity.this,  RecommendListActivity.class);
                         intent.putExtra("place", 2);
                         startActivity(intent);
                     }
             }
             catch(Exception exception) { }
         }
-
-        final WeatherIndexActivity this$0;
-
-        private ItemClickListener()
-        {
-            this$0 = WeatherIndexActivity.this;
-            super();
-        }
-
+ 
     }
 
 
@@ -467,51 +422,30 @@ _L3:
             public void handleMessage(Message message)
             {
                 super.handleMessage(message);
-                message.what;
-                JVM INSTR tableswitch 501 512: default 72
-            //                           501 73
-            //                           502 72
-            //                           503 72
-            //                           504 124
-            //                           505 151
-            //                           506 72
-            //                           507 161
-            //                           508 282
-            //                           509 292
-            //                           510 72
-            //                           511 406
-            //                           512 302;
-                   goto _L1 _L2 _L1 _L1 _L3 _L4 _L1 _L5 _L6 _L7 _L1 _L8 _L9
-_L1:
-                return;
-_L2:
-                mNotUpdating = true;
+                switch(message.what)
+                {
+                case 501: mNotUpdating = true;
                 mDownloadHandler = (Handler)message.obj;
-                mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(503));
-                continue; /* Loop/switch isn't completed */
-_L3:
-                mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(506));
-                continue; /* Loop/switch isn't completed */
-_L4:
-                setFailState();
-                continue; /* Loop/switch isn't completed */
-_L5:
-                dismissDialog();
+                mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(503));break;
+                case 502:return;
+                case 503:return;
+                case 504:mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(506));break;
+                case 505: setFailState();break;
+                case 506:return;
+                case 507:dismissDialog();
                 if(mOrderInfo != null && mOrderInfo.lifeList != null)
                     mTotalListLine = mOrderInfo.lifeList.size();
                 if(mOrderInfo != null && mOrderInfo.lifeList != null)
                     mTotalListLine = mOrderInfo.lifeList.size();
                 mWeatherLifeAdapter.notifyDataSetChanged();
-                mNotUpdating = false;
-                continue; /* Loop/switch isn't completed */
-_L6:
-                setFailState();
-                continue; /* Loop/switch isn't completed */
-_L7:
-                setFailState();
-                continue; /* Loop/switch isn't completed */
-_L9:
-                if(AbstractWeatherUpdater.isSucceed((com.moji.mjweather.common.WeatherUpdater.Result)message.obj))
+                mNotUpdating = false;break;
+                case 508: setFailState();break;
+                case 509: setFailState();break;
+                case 510:return;
+                case 511: if(mDownloadHandler != null)
+                    mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(503));
+               return;
+                case 512: if(AbstractWeatherUpdater.isSucceed((com.moji.mjweather.common.WeatherUpdater.Result)message.obj))
                 {
                     mCityID = WeatherData.getCityInfo(mCurrentCityIndex).mWeatherMainInfo.mCityId;
                     initLifeData();
@@ -519,22 +453,14 @@ _L9:
                 if(mDownloadHandler != null)
                     mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(503));
                 if(mUpdateCallbackImpl != null)
-                    WeatherPublisher.getInstance().unSubscribe(mUpdateCallbackImpl);
-                continue; /* Loop/switch isn't completed */
-_L8:
-                if(mDownloadHandler != null)
-                    mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(503));
-                if(true) goto _L1; else goto _L10
-_L10:
+                    WeatherPublisher.getInstance().unSubscribe(mUpdateCallbackImpl);break;
+                default :return;
+
+                }
+                 
             }
 
-            final WeatherIndexActivity this$0;
-
-            
-            {
-                this$0 = WeatherIndexActivity.this;
-                super();
-            }
+           
         }
 ;
     }
@@ -566,29 +492,26 @@ _L10:
         String s4;
         s3 = "";
         s4 = "";
-        if(s == null) goto _L2; else goto _L1
-_L1:
-        URL url = new URL(s);
+        if(s == null) return false ;  
+        URL url=null;
+		try {
+			url = new URL(s);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         String s5;
         s3 = url.getHost();
         s5 = url.getPath();
         s4 = s5;
-_L3:
+ 
         boolean flag;
         MojiLog.d("WeatherIndexActivity", (new StringBuilder()).append("getHost:").append(s3).append(" **getPath:").append(s4).toString());
         flag = SkinUtil.download(context, s3, s4, s1, SkinUtil.getImgNotDeleteCacheDir(), s2);
-_L4:
+ 
         return flag;
-        MalformedURLException malformedurlexception;
-        malformedurlexception;
-_L5:
-        malformedurlexception.printStackTrace();
-          goto _L3
-_L2:
-        flag = false;
-          goto _L4
-        malformedurlexception;
-          goto _L5
+ 
+ 
     }
 
     protected static String getCurrentDate()
@@ -664,12 +587,9 @@ _L2:
         l1 = Date.parse(Gl.getLifeImgDate());
         if(l > l1 + 5L * 0x5265c00L)
             flag = true;
-_L2:
+ 
         return flag;
-        Exception exception;
-        exception;
-        if(true) goto _L2; else goto _L1
-_L1:
+         
     }
 
     private boolean isDownloadXML(String s)
@@ -682,24 +602,21 @@ _L1:
         l1 = Date.parse(Gl.getLifeInfoDate(mCityID, s));
         if(l > l1)
             flag = true;
-_L2:
+ 
         return flag;
-        Exception exception;
-        exception;
-        if(true) goto _L2; else goto _L1
-_L1:
+      
     }
 
     private boolean isXmlOK(boolean flag)
     {
         String s1;
-        boolean flag1;
+        boolean flag1 = false;
         String s = null;
         s1 = "";
         String s2 = null;
         String s3 = null;
         File file1;
-        FileInputStream fileinputstream2;
+        FileInputStream fileinputstream2 = null;
         FileInputStream fileinputstream3;
         if(flag && mCityID > 0)
         {
@@ -715,17 +632,49 @@ _L1:
             s2 = getUrlEntry();
             s3 = "LifeEntry";
         }
-        if(mCityID <= 0 || !isDownloadXML(s3) || !FileUtil.delFile(s1) || !SkinUtil.download(Gl.Ct(), s, s2, s1)) goto _L2; else goto _L1
-_L1:
+        if(mCityID <= 0 || !isDownloadXML(s3) || !FileUtil.delFile(s1) || !SkinUtil.download(Gl.Ct(), s, s2, s1)) 
+
+        {
+ 
+                File file;
+                FileInputStream fileinputstream;
+                file = new File(s1);
+                if(!file.exists())
+                 return false;
+                MojiLog.d("WeatherIndexActivity", (new StringBuilder()).append("listFilePath:FAIL").append(file).toString());
+                fileinputstream = null;
+                FileInputStream fileinputstream1;
+				try {
+					fileinputstream1 = new FileInputStream(file);
+					fileinputstream = fileinputstream1;
+	                if(mParseWeatherLife.parse(fileinputstream2, flag))
+	                {
+	                    Gl.setLifeInfoDate(mCityID, s3, getCurrentDate());
+	                    flag1 = true;
+	                } else
+	                {
+	                    flag1 = false;
+	                }
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                
+        }
+        	
+        	else {
         file1 = new File(s1);
-        if(!file1.exists()) goto _L4; else goto _L3
-_L3:
+        if(!file1.exists())return false;
+ 
         MojiLog.d("WeatherIndexActivity", (new StringBuilder()).append("listFilePath:OK").append(file1).toString());
         fileinputstream2 = null;
-        fileinputstream3 = new FileInputStream(file1);
-        fileinputstream2 = fileinputstream3;
-_L5:
-        FileNotFoundException filenotfoundexception1;
+        try {
+			fileinputstream2 = new FileInputStream(file1);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+ 
         if(mParseWeatherLife.parse(fileinputstream2, flag))
         {
             Gl.setLifeInfoDate(mCityID, s3, getCurrentDate());
@@ -734,54 +683,22 @@ _L5:
         {
             flag1 = false;
         }
-_L6:
-        return flag1;
-        filenotfoundexception1;
-        filenotfoundexception1.printStackTrace();
-          goto _L5
-_L4:
-        flag1 = false;
-          goto _L6
-_L2:
-        File file;
-        FileInputStream fileinputstream;
-        file = new File(s1);
-        if(!file.exists())
-            break MISSING_BLOCK_LABEL_415;
-        MojiLog.d("WeatherIndexActivity", (new StringBuilder()).append("listFilePath:FAIL").append(file).toString());
-        fileinputstream = null;
-        FileInputStream fileinputstream1 = new FileInputStream(file);
-        fileinputstream = fileinputstream1;
-_L7:
-        FileNotFoundException filenotfoundexception;
-        if(mParseWeatherLife.parse(fileinputstream, flag))
-            flag1 = true;
-        else
-            flag1 = false;
-          goto _L6
-        filenotfoundexception;
-        filenotfoundexception.printStackTrace();
-          goto _L7
-        flag1 = false;
-          goto _L6
+        	}
+ 
+     return flag1;
     }
 
     private void onBack()
     {
         if(mDownloadHandler == null)
-            break MISSING_BLOCK_LABEL_56;
+           return;
         mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(502));
         if(mDownloadThread != null && mDownloadThread.isAlive())
         {
             mDownloadThread.doCancel();
             mDownloadThread.interrupt();
         }
-_L1:
-        return;
-        Exception exception;
-        exception;
-        exception.printStackTrace();
-          goto _L1
+ 
     }
 
     private void setFailState()
@@ -863,8 +780,42 @@ _L1:
     protected void onActivityResult(int i, int j, Intent intent)
     {
         super.onActivityResult(i, j, intent);
-        if(i != 513 || WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType != com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NEED_BE_UPDATE) goto _L2; else goto _L1
-_L1:
+        if(i != 513 || WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType != com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NEED_BE_UPDATE) 
+
+        {
+         
+                if(i == 513 && WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType == com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_OK)
+                {
+                    if(mCurrentCityIndex != Gl.getCurrentCityIndex())
+                    {
+                        initLifeData();
+                        showProDialog();
+                        if(mDownloadHandler != null)
+                            mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(503));
+                    }
+                } else
+                if(i == 513 && WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType == com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NOSET)
+                {
+                    initLifeData();
+                    clearList();
+                    if(mDownloadHandler != null)
+                        mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(503));
+                } else
+                if(i == 514 && WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType == com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_OK)
+                {
+                    showProDialog();
+                    if(mDownloadHandler != null)
+                        mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(503));
+                } else
+                if(i == 515 && WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType == com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_OK)
+                {
+                    showProDialog();
+                    if(mDownloadHandler != null)
+                        mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(503));
+                }
+          }
+        	
+        	else{
         initLifeData();
         clearList();
         if(mCityID > 0 || mCityID == -99)
@@ -873,58 +824,25 @@ _L1:
             mEmptyText.setText(getResources().getString(0x7f0b017f));
             updateWeather(Gl.getCurrentCityIndex());
         }
-_L4:
-        return;
-_L2:
-        if(i == 513 && WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType == com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_OK)
-        {
-            if(mCurrentCityIndex != Gl.getCurrentCityIndex())
-            {
-                initLifeData();
-                showProDialog();
-                if(mDownloadHandler != null)
-                    mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(503));
-            }
-        } else
-        if(i == 513 && WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType == com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NOSET)
-        {
-            initLifeData();
-            clearList();
-            if(mDownloadHandler != null)
-                mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(503));
-        } else
-        if(i == 514 && WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType == com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_OK)
-        {
-            showProDialog();
-            if(mDownloadHandler != null)
-                mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(503));
-        } else
-        if(i == 515 && WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType == com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_OK)
-        {
-            showProDialog();
-            if(mDownloadHandler != null)
-                mDownloadHandler.sendMessage(mDownloadHandler.obtainMessage(503));
-        }
-        if(true) goto _L4; else goto _L3
-_L3:
+        	}
     }
 
     public void onClick(View view)
     {
-        if(view != mIvIndexADDImg) goto _L2; else goto _L1
-_L1:
-        Intent intent = new Intent(this, com/moji/mjweather/activity/AddConcernActivity);
+        if(view != mIvIndexADDImg) 
+
+        {
+        	 if(view == mIvCityManagerImg)
+                 startActivityForResult(new Intent(this, CityManagerActivity.class), 513);
+        }
+        	else {
+        Intent intent = new Intent(this,  AddConcernActivity.class);
         Bundle bundle = new Bundle();
         bundle.putInt("bundle_key_city_id", mCityID);
         intent.putExtras(bundle);
         startActivityForResult(intent, 514);
-_L4:
-        return;
-_L2:
-        if(view == mIvCityManagerImg)
-            startActivityForResult(new Intent(this, com/moji/mjweather/activity/CityManagerActivity), 513);
-        if(true) goto _L4; else goto _L3
-_L3:
+        	}
+ 
     }
 
     protected void onCreate(Bundle bundle)
@@ -958,16 +876,16 @@ _L3:
 
     public boolean onFling(MotionEvent motionevent, MotionEvent motionevent1, float f, float f1)
     {
-        if(motionevent.getX() - motionevent1.getX() <= 50F || Math.abs(f) <= 0F) goto _L2; else goto _L1
-_L1:
+        if(motionevent.getX() - motionevent1.getX() <= 50F || Math.abs(f) <= 0F)
+        {
+        	
+        	if(motionevent1.getX() - motionevent.getX() > 50F && Math.abs(f) > 0F)
+                updateCityInfo("right");
+        }
+        	else  
         updateCityInfo("left");
-_L4:
-        return false;
-_L2:
-        if(motionevent1.getX() - motionevent.getX() > 50F && Math.abs(f) > 0F)
-            updateCityInfo("right");
-        if(true) goto _L4; else goto _L3
-_L3:
+     return false;
+ 
     }
 
     public boolean onKeyDown(int i, KeyEvent keyevent)
