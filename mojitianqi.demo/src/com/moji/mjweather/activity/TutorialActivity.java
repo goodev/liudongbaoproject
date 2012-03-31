@@ -77,13 +77,7 @@ public class TutorialActivity extends Activity
                         }
                     }
 
-                    final GalleryAdapter this$1;
-
-                
-                {
-                    this$1 = GalleryAdapter.this;
-                    super();
-                }
+                   
                 }
 );
             }
@@ -92,11 +86,11 @@ public class TutorialActivity extends Activity
 
         private ViewHolder mHolder;
         private LayoutInflater mLayoutInflater;
-        final TutorialActivity this$0;
+         
 
         public GalleryAdapter(Context context)
         {
-            this$0 = TutorialActivity.this;
+           
             super();
             mLayoutInflater = null;
             mLayoutInflater = (LayoutInflater)context.getSystemService("layout_inflater");

@@ -30,7 +30,14 @@ public class HuangLiActivity extends Activity
     private class HuangLiDBHelper
     {
 
-        private void init(Context context)
+        
+
+		public HuangLiDBHelper(HuangLiActivity huangLiActivity) {
+			super();
+			// TODO Auto-generated constructor stub
+		}
+
+		private void init(Context context)
         {
             File file;
             String s;
@@ -43,20 +50,19 @@ public class HuangLiActivity extends Activity
             if(!file1.exists())
                 file1.mkdir();
             if(!file.exists())
+            {  try
             {
                 InputStream inputstream = context.getResources().openRawResource(0x7f060000);
                 FileOutputStream fileoutputstream = new FileOutputStream(file);
                 byte abyte0[] = new byte[8192];
-                Exception exception;
-                do
+                  do
                 {
                     int i = inputstream.read(abyte0);
                     if(i <= 0)
                         break;
                     fileoutputstream.write(abyte0, 0, i);
                 } while(true);
-                try
-                {
+              
                     fileoutputstream.close();
                     inputstream.close();
                     Gl.saveHuangLiDBVersion(2);
@@ -77,15 +83,9 @@ public class HuangLiActivity extends Activity
                 {
                     MojiLog.e("HuangLiActivity", "failed to open db: ", exception2);
                 }
-            if(mDB != null)
-                break MISSING_BLOCK_LABEL_212;
+ 
             mDB = context.openOrCreateDatabase(s, 0, null);
-_L1:
-            return;
-            Exception exception1;
-            exception1;
-            MojiLog.e("HuangLiActivity", "failed to copy or open db: ", exception1);
-              goto _L1
+ 
         }
 
         public void close()
@@ -121,20 +121,7 @@ _L1:
             }
             if(cursor != null)
                 cursor.close();
-_L2:
             return huangliitem;
-            Exception exception1;
-            exception1;
-            MojiLog.e("HuangLiActivity", "failed to get data: ", exception1);
-            if(cursor != null)
-                cursor.close();
-            if(true) goto _L2; else goto _L1
-_L1:
-            Exception exception;
-            exception;
-            if(cursor != null)
-                cursor.close();
-            throw exception;
         }
 
         private static final String COLUMN_CHENG = "Cheng";
@@ -153,14 +140,7 @@ _L1:
         private static final String DATABASE_NAME = "huangli.db";
         private static final String TABLE_NAME = "HL_s";
         private SQLiteDatabase mDB;
-        final HuangLiActivity this$0;
-
-        public HuangLiDBHelper(Context context)
-        {
-            this$0 = HuangLiActivity.this;
-            super();
-            init(context);
-        }
+        
     }
 
     public class HuangLiItem
@@ -178,11 +158,11 @@ _L1:
         String mTaishen;
         String mYi;
         String mZhengchong;
-        final HuangLiActivity this$0;
+ 
 
         public HuangLiItem()
         {
-            this$0 = HuangLiActivity.this;
+ 
             super();
             mHuangLiYear = getResources().getString(0x7f0b01e3);
             mHuangLiMonth = "";
@@ -210,25 +190,15 @@ _L1:
             public void handleMessage(Message message)
             {
                 super.handleMessage(message);
-                message.what;
-                JVM INSTR tableswitch 1 1: default 28
-            //                           1 29;
-                   goto _L1 _L2
-_L1:
-                return;
-_L2:
-                mBroadcastButton.setBackgroundResource(0x7f02014a);
-                if(true) goto _L1; else goto _L3
-_L3:
+               switch( message.what)
+               {
+               case 1:  mBroadcastButton.setBackgroundResource(0x7f02014a); break;
+               default: return;
+               }
+              
             }
 
-            final HuangLiActivity this$0;
-
-            
-            {
-                this$0 = HuangLiActivity.this;
-                super();
-            }
+           
         }
 ;
     }
@@ -249,19 +219,11 @@ _L3:
 
     private void fling(MotionEvent motionevent)
     {
-        motionevent.getAction();
-        JVM INSTR tableswitch 0 1: default 28
-    //                   0 29
-    //                   1 48;
-           goto _L1 _L2 _L3
-_L1:
-        return;
-_L2:
-        spanx = motionevent.getX();
-        spany = motionevent.getY();
-        continue; /* Loop/switch isn't completed */
-_L3:
-        MojiLog.d("HuangLiActivity", (new StringBuilder()).append("x=").append(spanx - motionevent.getX()).append("y=").append(spany - motionevent.getY()).toString());
+        int action = motionevent.getAction();
+        switch(action){
+        case 0:   spanx = motionevent.getX();
+        spany = motionevent.getY(); break;
+        case 1: MojiLog.d("HuangLiActivity", (new StringBuilder()).append("x=").append(spanx - motionevent.getX()).append("y=").append(spany - motionevent.getY()).toString());
         if(spanx - motionevent.getX() > dptopx(120) && spany - motionevent.getY() < dptopx(150) && spany - motionevent.getY() > dptopx(-150))
         {
             mHaveData = true;
@@ -335,9 +297,10 @@ _L3:
             mViewFlipper.setOutAnimation(getApplicationContext(), 0x7f040058);
             if(mHaveData)
                 mViewFlipper.showPrevious();
+        } break;
+        default:return;
         }
-        if(true) goto _L1; else goto _L4
-_L4:
+        
     }
 
     private String getBroadcastHuangliContent()
@@ -467,13 +430,7 @@ _L4:
                 return false;
             }
 
-            final HuangLiActivity this$0;
-
-            
-            {
-                this$0 = HuangLiActivity.this;
-                super();
-            }
+           
         }
 );
         mDateButton.setOnClickListener(new android.view.View.OnClickListener() {
@@ -482,14 +439,7 @@ _L4:
             {
                 showDialog(1);
             }
-
-            final HuangLiActivity this$0;
-
-            
-            {
-                this$0 = HuangLiActivity.this;
-                super();
-            }
+ 
         }
 );
         mShareButton.setOnClickListener(new android.view.View.OnClickListener() {
@@ -503,14 +453,7 @@ _L4:
                 intent.setType("text/plain");
                 startActivity(Intent.createChooser(intent, getResources().getString(0x7f0b01ed)));
             }
-
-            final HuangLiActivity this$0;
-
-            
-            {
-                this$0 = HuangLiActivity.this;
-                super();
-            }
+ 
         }
 );
         mBackButton.setOnClickListener(new android.view.View.OnClickListener() {
@@ -556,34 +499,21 @@ _L4:
                     }
                 }
             }
-
-            final HuangLiActivity this$0;
-
-            
-            {
-                this$0 = HuangLiActivity.this;
-                super();
-            }
+ 
         }
 );
         mBroadcastButton.setOnClickListener(new android.view.View.OnClickListener() {
 
             public void onClick(View view)
             {
-                PlayerUtil.broadcastHuangliContent(mCDialogManager, HuangLiActivity.this, mainHandler, getBroadcastHuangliContent());
+                //PlayerUtil.broadcastHuangliContent(mCDialogManager, HuangLiActivity.this, mainHandler, getBroadcastHuangliContent());
                 if(PlayerUtil.isBroadcasting)
                     mBroadcastButton.setBackgroundResource(0x7f02014b);
                 else
                     mBroadcastButton.setBackgroundResource(0x7f02014a);
             }
 
-            final HuangLiActivity this$0;
-
-            
-            {
-                this$0 = HuangLiActivity.this;
-                super();
-            }
+           
         }
 );
         HuangLiItem huangliitem = mDBHelper.getHuangLiData(mDateFormat.format(mCalendar.getTime()));
@@ -606,13 +536,7 @@ _L4:
                     showDialog(1);
                 }
 
-                final HuangLiActivity this$0;
-
-            
-            {
-                this$0 = HuangLiActivity.this;
-                super();
-            }
+                
             }
 ).setNegativeButton(getString(0x7f0b0018), new android.content.DialogInterface.OnClickListener() {
 
@@ -620,13 +544,7 @@ _L4:
                 {
                 }
 
-                final HuangLiActivity this$0;
-
-            
-            {
-                this$0 = HuangLiActivity.this;
-                super();
-            }
+                 
             }
 ).create();
         else
