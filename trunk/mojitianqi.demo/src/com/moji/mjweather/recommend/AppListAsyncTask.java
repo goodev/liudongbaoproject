@@ -29,13 +29,13 @@ public final class AppListAsyncTask extends AsyncTask
         place = i;
     }
 
-    protected transient Integer doInBackground(ListCallBack alistcallback[])
+    protected   Integer doInBackground(ListCallBack alistcallback[])
     {
         mCallBack = alistcallback[0];
-        return Integer.valueOf(ProtocalProxy.getAppListReq(context, false, place));
+        return null;
     }
 
-    protected volatile Object doInBackground(Object aobj[])
+    protected   Object doInBackground(Object aobj[])
     {
         return doInBackground((ListCallBack[])aobj);
     }
@@ -56,7 +56,7 @@ public final class AppListAsyncTask extends AsyncTask
             mCallBack.doCallBack(message);
     }
 
-    protected volatile void onPostExecute(Object obj)
+    protected   void onPostExecute(Object obj)
     {
         onPostExecute((Integer)obj);
     }

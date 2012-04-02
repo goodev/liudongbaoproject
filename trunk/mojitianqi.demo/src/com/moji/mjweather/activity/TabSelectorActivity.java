@@ -5,26 +5,37 @@
 
 package com.moji.mjweather.activity;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Map;
+
 import android.app.TabActivity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.*;
-import android.widget.*;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.RadioGroup;
+import android.widget.TabHost;
+import android.widget.Toast;
+
 import com.moji.mjweather.CDialogManager;
 import com.moji.mjweather.Gl;
-import com.moji.mjweather.common.*;
+import com.moji.mjweather.common.MojiLog;
+import com.moji.mjweather.common.WeatherAlert;
+import com.moji.mjweather.common.WeatherData;
+import com.moji.mjweather.common.WeatherTabPublisher;
 import com.moji.mjweather.data.CityWeatherInfo;
 import com.moji.mjweather.service.StatsService;
 import com.moji.mjweather.service.WeatherUpdateService;
-import com.moji.mjweather.util.*;
-import com.moji.mjweather.widget.WidgetManager;
+import com.moji.mjweather.util.ShareMicroBlogUtil;
+import com.moji.mjweather.util.StatsUtil;
+import com.moji.mjweather.util.UiUtil;
+import com.moji.mjweather.util.Util;
 import com.moji.mjweather.widgetskin.SkinSelector;
-import java.io.*;
-import java.util.Map;
 
 // Referenced classes of package com.moji.mjweather.activity:
 //            WeatherMainActivity, WeatherTrendActivity, WeatherIndexActivity, WeatherToolsActivity, 
@@ -137,14 +148,7 @@ public class TabSelectorActivity extends TabActivity implements
 	}
 
 	private void startWidgetServiceIfNeeded() {
-		if (mOldCityIndex != Gl.getCurrentCityIndex()) {
-			mOldCityIndex = Gl.getCurrentCityIndex();
-			WidgetManager
-					.startWidgetService(
-							this,
-							null,
-							com.moji.mjweather.widget.WidgetManager.WidgetServiceType.UPDATE_NOW);
-		}
+		 
 	}
 
 	private void weatherImageTextShare(String s) {

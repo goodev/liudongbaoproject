@@ -36,22 +36,16 @@ public class CityWeatherBgSwitcher extends ImageView
         {
             Message message = new Message();
             message.what = 1;
-            mHandle.sendMessage(message);
+             
         }
 
-        final CityWeatherBgSwitcher this$0;
-
-        public MyTimerTask()
-        {
-            this$0 = CityWeatherBgSwitcher.this;
-            super();
-        }
-    }
+         
+    };
 
 
     public CityWeatherBgSwitcher(Context context)
     {
-        ImageView(context);
+        super (context);
         mUpdateListener = null;
         mCurrentCityBgResId = 999;
         mScreenHeight = 0;
@@ -59,7 +53,7 @@ public class CityWeatherBgSwitcher extends ImageView
         mIsDoingAnimation = false;
         mTimer = null;
         mCurAlpha = 0;
-        mHandle = null;
+ 
         mCurBmp = null;
         mNextBmp = null;
         mPaint = null;
@@ -69,7 +63,7 @@ public class CityWeatherBgSwitcher extends ImageView
 
     public CityWeatherBgSwitcher(Context context, AttributeSet attributeset)
     {
-        ImageView(context, attributeset);
+    	super(context, attributeset);
         mUpdateListener = null;
         mCurrentCityBgResId = 999;
         mScreenHeight = 0;
@@ -77,7 +71,7 @@ public class CityWeatherBgSwitcher extends ImageView
         mIsDoingAnimation = false;
         mTimer = null;
         mCurAlpha = 0;
-        mHandle = null;
+        
         mCurBmp = null;
         mNextBmp = null;
         mPaint = null;
@@ -108,23 +102,24 @@ public class CityWeatherBgSwitcher extends ImageView
         Bitmap bitmap = null;
         Bitmap bitmap1;
         String s = (new StringBuilder()).append("weather").append(i).append(".jpg").toString();
-        bitmap1 = BitmapFactory.decodeStream(getContext().openFileInput(s));
-        bitmap = bitmap1;
-_L2:
-        return bitmap;
-        FileNotFoundException filenotfoundexception;
-        filenotfoundexception;
-        MojiLog.e("CityWeatherBgSwitcher", "GetBmpFromFile----Input bmp failed", filenotfoundexception);
-        if(true) goto _L2; else goto _L1
-_L1:
+        try {
+        	return BitmapFactory.decodeStream(getContext().openFileInput(s));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			 return bitmap;
+		}
+ 
+ 
+       
+         
     }
 
     private void initBgSwitcher(Context context)
     {
         mScreenHeight = UiUtil.getScreenHeight() - UiUtil.getStatusBarHeight();
         mScreenWidth = UiUtil.getScreenWidth();
-        if(mHandle == null)
-            mHandle = new RedrawHandle();
+         
         if(mPaint == null)
             mPaint = new Paint();
     }
@@ -174,13 +169,12 @@ _L1:
         k = bitmap.getHeight();
         f = (float)j / (float)mScreenWidth;
         f1 = (float)k / (float)mScreenHeight;
-        if(f != f1) goto _L2; else goto _L1
-_L1:
+ 
         int i1;
         int j1;
         i1 = j;
         j1 = k;
-_L3:
+ 
         mDrawScaleW = (float)mScreenWidth / (float)i1;
         mDrawScaleY = (float)mScreenHeight / (float)j1;
         bitmap1 = Bitmap.createBitmap(i1, j1, bitmap.getConfig());
@@ -188,29 +182,9 @@ _L3:
         bitmap.recycle();
         if(bitmap != null)
             if(bitmap.isRecycled());
-_L4:
+ 
         return bitmap1;
-_L2:
-        if(f >= f1)
-            break MISSING_BLOCK_LABEL_181;
-        i1 = j;
-        j1 = (int)(f * (float)mScreenHeight);
-          goto _L3
-        int l = mScreenWidth;
-        i1 = (int)(f1 * (float)l);
-        j1 = k;
-          goto _L3
-        Exception exception1;
-        exception1;
-        MojiLog.e("CityWeatherBgSwitcher", "Save bg picutre error", exception1);
-        if(bitmap == null || bitmap.isRecycled());
-          goto _L4
-        Exception exception;
-        exception;
-        if(bitmap != null)
-            if(bitmap.isRecycled());
-        throw exception;
-          goto _L3
+ 
     }
 
     public void bindScrollBgView(Workspace workspace)
@@ -223,13 +197,7 @@ _L2:
                 setBgImage(UiUtil.getWeatherID(WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mWeatherMainInfo.mWeatherId, UiUtil.isDay(WeatherData.getCityInfo(Gl.getCurrentCityIndex()))));
             }
 
-            final CityWeatherBgSwitcher this$0;
-
-            
-            {
-                this$0 = CityWeatherBgSwitcher.this;
-                super();
-            }
+             
         }
 );
     }
@@ -303,7 +271,7 @@ _L2:
     private int mCurrentCityBgResId;
     private float mDrawScaleW;
     private float mDrawScaleY;
-    private RedrawHandle mHandle;
+ 
     private boolean mIsDoingAnimation;
     private Bitmap mNextBmp;
     private Paint mPaint;

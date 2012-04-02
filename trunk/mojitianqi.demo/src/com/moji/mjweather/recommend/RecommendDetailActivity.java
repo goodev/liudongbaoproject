@@ -69,11 +69,10 @@ public class RecommendDetailActivity extends Activity
         }
 
         private Context mContext;
-        final RecommendDetailActivity this$0;
-
+   
         public ImageAdapter(Context context)
         {
-            this$0 = RecommendDetailActivity.this;
+            
             super();
             mContext = context;
         }
@@ -83,97 +82,15 @@ public class RecommendDetailActivity extends Activity
     public RecommendDetailActivity()
     {
         tasks = new ArrayList();
-        mTask = null;
-        mImageList = new ArrayList();
+         mImageList = new ArrayList();
         handler = new Handler() {
 
             public void handleMessage(Message message)
             {
-                message.what;
-                JVM INSTR tableswitch 1 2: default 28
-            //                           1 29
-            //                           2 469;
-                   goto _L1 _L2 _L3
-_L1:
-                return;
-_L2:
-                if(mSoft != null)
-                {
-                    setVisibility();
-                    iconIV.setImageResource(0x7f0200c6);
-                    String s = mSoft.getAppIconPath();
-                    String s1 = (new StringBuilder()).append("icon_").append(mSoft.getAppid()).append(".png").toString();
-                    Drawable drawable = AppUtil.searchDrawable(s1);
-                    String s2;
-                    String as[];
-                    if(drawable != null)
-                        iconIV.setImageDrawable(drawable);
-                    else
-                        drawable = AsyncImageLoader.loadDrawable(s1, s, new AsyncImageLoader.ImageCallback() {
-
-                            public void imageLoaded(Drawable drawable1, String s4)
-                            {
-                                if(drawable1 != null)
-                                    iconIV.setImageDrawable(drawable1);
-                                else
-                                    iconIV.setImageResource(0x7f0200c6);
-                            }
-
-                            final _cls1 this$1;
-
-                    
-                    {
-                        this$1 = _cls1.this;
-                        super();
-                    }
-                        }
-);
-                    if(drawable != null)
-                        iconIV.setImageDrawable(drawable);
-                    else
-                        iconIV.setImageResource(0x7f0200c6);
-                    setText(titleNameTV, mSoft.getAppName());
-                    setText(appNameTV, mSoft.getAppName());
-                    setText(appDescTV, mSoft.getAppDesc().replaceAll("\r", "").replaceAll("\n", ""));
-                    setText(appVersionTV, mSoft.getAppPkgVersionName());
-                    setText(appSizeTV, mSoft.getAppSize());
-                    s2 = mSoft.getAppPicturePath();
-                    new String[5];
-                    as = s2.split(";");
-                    for(int i = 0; i < as.length; i++)
-                    {
-                        String s3 = (new StringBuilder()).append(mSoft.getAppid()).append("_").append(i).append(".png").toString();
-                        GetSoftImageTask getsoftimagetask = new GetSoftImageTask(RecommendDetailActivity.this);
-                        tasks.add(getsoftimagetask);
-                        Object aobj[] = new Object[3];
-                        aobj[0] = RecommendDetailActivity.this;
-                        aobj[1] = as[i];
-                        aobj[2] = s3;
-                        getsoftimagetask.execute(aobj);
-                    }
-
-                    setDownloadBtn();
-                }
-                continue; /* Loop/switch isn't completed */
-_L3:
-                if(adapter == null)
-                {
-                    adapter = new ImageAdapter(RecommendDetailActivity.this);
-                    gallery.setAdapter(adapter);
-                }
-                adapter.notifyDataSetChanged();
-                gallery.setSelection(adapter.getCount() / 2);
-                if(true) goto _L1; else goto _L4
-_L4:
+               
             }
 
-            final RecommendDetailActivity this$0;
-
-            
-            {
-                this$0 = RecommendDetailActivity.this;
-                super();
-            }
+          
         }
 ;
     }
@@ -217,92 +134,10 @@ _L4:
 
     private void requestData(String s)
     {
-        ArrayList arraylist;
-        if(mSoft != null)
-            break MISSING_BLOCK_LABEL_126;
-        arraylist = (ArrayList)RC.categorysMap.get(Integer.valueOf(mPlace));
-        if(arraylist == null || arraylist.size() <= 0) goto _L2; else goto _L1
-_L1:
-        int i = 0;
-_L6:
-        if(arraylist.size() <= 0) goto _L2; else goto _L3
-_L3:
-        SoftWare software = (SoftWare)arraylist.get(i);
-        if(!software.getAppid().equals(getIntent().getStringExtra("appid"))) goto _L5; else goto _L4
-_L4:
-        mSoft = software;
-        Message message1 = new Message();
-        message1.what = 1;
-        if(handler != null)
-            handler.sendMessage(message1);
-_L2:
-        return;
-_L5:
-        i++;
-          goto _L6
-        Message message = new Message();
-        message.what = 1;
-        if(handler != null)
-            handler.sendMessage(message);
-          goto _L2
+         
     }
 
-    public static void setBannerImage(Context context, SoftWare software, final ImageView rc, final ImageView rCancel, final FrameLayout banner)
-    {
-        if(software == null) goto _L2; else goto _L1
-_L1:
-        String s;
-        String s1;
-        Drawable drawable;
-        s = software.getAppBannerUrl();
-        s1 = (new StringBuilder()).append("banner_").append(software.getAppid()).append(".png").toString();
-        drawable = AppUtil.searchDrawable(s1);
-        if(drawable == null) goto _L4; else goto _L3
-_L3:
-        banner.setVisibility(0);
-        rc.setImageDrawable(drawable);
-        rCancel.setImageResource(0x7f020105);
-_L2:
-        return;
-_L4:
-        Drawable drawable1 = AsyncImageLoader.loadDrawable(s1, s, new AsyncImageLoader.ImageCallback() {
-
-            public void imageLoaded(Drawable drawable2, String s2)
-            {
-                if(drawable2 != null)
-                {
-                    banner.setVisibility(0);
-                    rc.setImageDrawable(drawable2);
-                    rCancel.setImageResource(0x7f020105);
-                } else
-                {
-                    banner.setVisibility(8);
-                }
-            }
-
-            final FrameLayout val$banner;
-            final ImageView val$rCancel;
-            final ImageView val$rc;
-
-            
-            {
-                banner = framelayout;
-                rc = imageview;
-                rCancel = imageview1;
-                super();
-            }
-        }
-);
-        if(drawable1 != null)
-        {
-            banner.setVisibility(0);
-            rc.setImageDrawable(drawable1);
-            rCancel.setImageResource(0x7f020105);
-        }
-        if(true) goto _L2; else goto _L5
-_L5:
-    }
-
+ 
     private void setDownloadBtn()
     {
         String s;
@@ -315,83 +150,7 @@ _L5:
 
     private void setDownloadBtn(String s)
     {
-        int i;
-        if(mSoft.getAppid().equals(s))
-        {
-            i = ((Integer)RecommendListActivity.stateMap.get(s)).intValue();
-        } else
-        {
-            i = AppUtil.check(this, mSoft.getAppPkgName(), mSoft.getAppPkgVersionCode());
-            int j = AppUtil.checkIfHaveDownlaod(mSoft.getAppid());
-            if(j == 5)
-            {
-                switch(i)
-                {
-                case 2: // '\002'
-                    i = j;
-                    break;
-                }
-                continue;
-            }
-        }
-        do
-        {
-            if(i == 2)
-            {
-                downloadStatusImage.setBackgroundResource(0x7f020106);
-                downloadStatus.setTextColor(RC.DOWNLOAD_TEXT_COLOR);
-                downloadStatus.setText(0x7f0b0254);
-                downloadArea.setBackgroundResource(0x7f020107);
-            } else
-            if(i == 1)
-            {
-                downloadStatusImage.setBackgroundResource(0x7f020109);
-                downloadStatus.setTextColor(RC.INSTALLED_TEXT_COLOR);
-                downloadStatus.setText(0x7f0b0255);
-                downloadArea.setBackgroundResource(0x7f080014);
-            } else
-            if(i == 3)
-            {
-                downloadStatusImage.setBackgroundResource(0x7f02010f);
-                downloadStatus.setTextColor(RC.DOWNLOAD_TEXT_COLOR);
-                downloadStatus.setText(0x7f0b0258);
-                downloadArea.setBackgroundResource(0x7f020110);
-            } else
-            if(i == 4)
-            {
-                downloadStatusImage.setBackgroundResource(0x7f020108);
-                downloadStatus.setTextColor(RC.INSTALLED_TEXT_COLOR);
-                downloadStatus.setText(0x7f0b0256);
-                downloadArea.setBackgroundResource(0x7f080014);
-            } else
-            if(i == 5)
-            {
-                downloadStatusImage.setBackgroundResource(0x7f020106);
-                downloadStatus.setTextColor(RC.DOWNLOAD_TEXT_COLOR);
-                downloadStatus.setText(0x7f0b0257);
-                downloadArea.setBackgroundResource(0x7f020107);
-            }
-            if(i != 1)
-                downloadArea.setOnClickListener(new android.view.View.OnClickListener() {
-
-                    public void onClick(View view)
-                    {
-                        Downloader.download(false, mPlace, mPosition, mSoft, RecommendDetailActivity.this);
-                    }
-
-                    final RecommendDetailActivity this$0;
-
-            
-            {
-                this$0 = RecommendDetailActivity.this;
-                super();
-            }
-                }
-);
-            else
-                downloadArea.setOnClickListener(null);
-            return;
-        } while(true);
+         
     }
 
     private void setText(TextView textview, String s)
@@ -423,8 +182,7 @@ _L5:
     {
         super.onCreate(bundle);
         instance = this;
-        PackageInfoReceiver.registerReceiver(this, null);
-        requestWindowFeature(1);
+          requestWindowFeature(1);
         setContentView(0x7f030059);
         Intent intent = getIntent();
         if(intent == null)
@@ -446,12 +204,8 @@ _L5:
     {
         if(instance == this)
             instance = null;
-        PackageInfoReceiver.unregisterReceiver(this, null);
-        if(mTask != null)
-            mTask.cancel(true);
-        for(int i = 0; i < tasks.size(); i++)
-            ((GetSoftImageTask)tasks.get(i)).cancel(true);
-
+ 
+     
         if(mImageList != null)
         {
             for(int j = 0; j < mImageList.size(); j++)
@@ -521,9 +275,7 @@ _L5:
     private ArrayList mImageList;
     private int mPlace;
     private int mPosition;
-    private SoftWare mSoft;
-    private GetSoftWareDetailTask mTask;
-    private LinearLayout ssloading;
+      private LinearLayout ssloading;
     private ArrayList tasks;
     private TextView titleNameTV;
 

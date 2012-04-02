@@ -21,6 +21,7 @@ import com.moji.mjweather.common.WeatherData;
 import com.moji.mjweather.data.CityWeatherInfo;
 import com.moji.mjweather.util.HttpUtil;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URLEncoder;
 import java.util.Date;
@@ -42,16 +43,9 @@ public class WebViewActivity extends Activity
                 public void handleMessage(Message message)
                 {
                     super.handleMessage(message);
-                    message.what;
-                    JVM INSTR tableswitch 602 604: default 36
-                //                               602 37
-                //                               603 36
-                //                               604 165;
-                       goto _L1 _L2 _L1 _L3
-_L1:
-                    return;
-_L2:
-                    if(!isCancel && sendFavourite())
+                    switch(message.what)
+                    {
+                    case 602: if(!isCancel && sendFavourite())
                     {
                         MojiLog.d("WebViewActivity", (new StringBuilder()).append("SEND_FAVORITE:").append(mCityID).toString());
                         Gl.setLifeInfoDate(mCityID, "LifeOrder", "2000/01/01");
@@ -59,22 +53,14 @@ _L2:
                     } else
                     {
                         mainHandler.sendMessage(mainHandler.obtainMessage(606));
+                    }break;
+                    case 603:return;
+                    case 604: Looper.myLooper().quit();break;
+                   default:return;
+                    
                     }
-                    continue; /* Loop/switch isn't completed */
-_L3:
-                    Looper.myLooper().quit();
-                    if(true) goto _L1; else goto _L4
-_L4:
-                }
-
-                final FavouriteThread this$1;
-
-                
-                {
-                    this$1 = FavouriteThread.this;
-                    super();
-                }
-            }
+                 
+            }}
 ;
             if(mFavouriteHandler == null)
             {
@@ -90,12 +76,11 @@ _L4:
 
         private boolean isCancel;
         Handler mainHandler;
-        final WebViewActivity this$0;
-
+     
 
         FavouriteThread(Handler handler)
         {
-            this$0 = WebViewActivity.this;
+            
             super("WebViewActivity:DownloadThread");
             mainHandler = handler;
             isCancel = false;
@@ -109,48 +94,27 @@ _L4:
 
             public void handleMessage(Message message)
             {
-                if(Thread.currentThread().isInterrupted()) goto _L2; else goto _L1
-_L1:
-                message.what;
-                JVM INSTR lookupswitch 5: default 64
-            //                           0: 70
-            //                           1: 103
-            //                           601: 189
-            //                           605: 136
-            //                           606: 175;
-                   goto _L2 _L3 _L4 _L5 _L6 _L7
-_L2:
-                super.handleMessage(message);
-                return;
-_L3:
-                if(mProgressDialog != null && !isFinishing())
-                    mProgressDialog.show();
-                continue; /* Loop/switch isn't completed */
-_L4:
-                if(mProgressDialog != null && !isFinishing())
-                    mProgressDialog.hide();
-                continue; /* Loop/switch isn't completed */
-_L6:
-                favouriteBtn.setClickable(true);
+                if(!Thread.currentThread().isInterrupted()) return;
+ 
+                switch(message.what)
+                {
+                
+                case 0: if(mProgressDialog != null && !isFinishing())
+                    mProgressDialog.show();break;
+                case 1:if(mProgressDialog != null && !isFinishing())
+                    mProgressDialog.hide();break;
+                case 601:favouriteBtn.setClickable(true);
                 favouriteBtn.setBackgroundResource(0x7f0200af);
-                Toast.makeText(WebViewActivity.this, 0x7f0b0277, 0).show();
-                continue; /* Loop/switch isn't completed */
-_L7:
-                favouriteBtn.setClickable(true);
-                continue; /* Loop/switch isn't completed */
-_L5:
-                mFavouriteHandler = (Handler)message.obj;
-                if(true) goto _L2; else goto _L8
-_L8:
+                Toast.makeText(WebViewActivity.this, 0x7f0b0277, 0).show();break;
+                case 605: favouriteBtn.setClickable(true);break;
+                case 606: mFavouriteHandler = (Handler)message.obj;break;
+                default:super.handleMessage(message);
+                return;
+                }
+               
             }
-
-            final WebViewActivity this$0;
 
             
-            {
-                this$0 = WebViewActivity.this;
-                super();
-            }
         }
 ;
     }
@@ -170,12 +134,9 @@ _L8:
         l1 = Date.parse(Gl.getFavoriteDate(mCityID, mContentID));
         if(l > l1)
             flag = true;
-_L2:
+ 
         return flag;
-        Exception exception;
-        exception;
-        if(true) goto _L2; else goto _L1
-_L1:
+ 
     }
 
     private void lifeTextShare(String s)
@@ -189,18 +150,20 @@ _L1:
     private boolean sendFavourite()
     {
         MojiLog.d("WebViewActivity", (new StringBuilder()).append("c.moji001.com").append(getURL()).toString());
-        String s = (new BufferedReader(new InputStreamReader(HttpUtil.doGet("c.moji001.com", getURL(), 0L).mInputStream))).readLine();
-        if(s != null && s.equals("0"))
-            Gl.setFavoriteDate(mCityID, mContentID, WeatherIndexActivity.getCurrentDate());
-        boolean flag = true;
-_L2:
-        return flag;
-        Exception exception;
-        exception;
-        exception.printStackTrace();
-        flag = false;
-        if(true) goto _L2; else goto _L1
-_L1:
+        String s;
+		try {
+			s = (new BufferedReader(new InputStreamReader(HttpUtil.doGet("c.moji001.com", getURL(), 0L).mInputStream))).readLine();
+			 if(s != null && s.equals("0"))
+		            Gl.setFavoriteDate(mCityID, mContentID, WeatherIndexActivity.getCurrentDate());
+			 return true;
+		} catch ( Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}  
+       
+        
+ 
     }
 
     public void init()
@@ -229,18 +192,8 @@ _L1:
                             {
                                 loadUrl(view, failingUrl);
                             }
-
-                            final _cls2 this$1;
-                            final String val$failingUrl;
-                            final WebView val$view;
-
-                    
-                    {
-                        this$1 = _cls2.this;
-                        view = webview;
-                        failingUrl = s;
-                        super();
-                    }
+ 
+ 
                         }
 ).setNegativeButton(0x7f0b0018, new android.content.DialogInterface.OnClickListener() {
 
@@ -249,13 +202,10 @@ _L1:
                                 finish();
                             }
 
-                            final _cls2 this$1;
+                             
 
                     
-                    {
-                        this$1 = _cls2.this;
-                        super();
-                    }
+                    
                         }
 ).create();
                     mDialog.show();
@@ -268,13 +218,7 @@ _L1:
                 return true;
             }
 
-            final WebViewActivity this$0;
-
-            
-            {
-                this$0 = WebViewActivity.this;
-                super();
-            }
+             
         }
 );
         mWebView.setWebChromeClient(new WebChromeClient() {
@@ -285,14 +229,7 @@ _L1:
                     mHandler.sendEmptyMessage(1);
                 super.onProgressChanged(webview, i);
             }
-
-            final WebViewActivity this$0;
-
-            
-            {
-                this$0 = WebViewActivity.this;
-                super();
-            }
+ 
         }
 );
         mWebView.setDownloadListener(new DownloadListener() {
@@ -303,13 +240,7 @@ _L1:
                 startActivity(new Intent("android.intent.action.VIEW", uri));
             }
 
-            final WebViewActivity this$0;
-
             
-            {
-                this$0 = WebViewActivity.this;
-                super();
-            }
         }
 );
         LinearLayout linearlayout = (LinearLayout)mLayoutInflater.inflate(0x7f030051, null);
@@ -340,25 +271,27 @@ _L1:
                 view.loadUrl(url);
             }
 
-            final WebViewActivity this$0;
-            final String val$url;
-            final WebView val$view;
-
-            
-            {
-                this$0 = WebViewActivity.this;
-                url = s;
-                view = webview;
-                super();
-            }
+             
         }
 ).start();
     }
 
     public void onClick(View view)
     {
-        if(view != favouriteBtn) goto _L2; else goto _L1
-_L1:
+        if(view != favouriteBtn) 
+        {
+        	if(view == shareBtn)
+            {
+                String s = (new StringBuilder()).append("#").append(mCategory).append("#").toString();
+                String s1 = getResources().getString(0x7f0b0279);
+                String s2 = mName;
+                String s3 = getResources().getString(0x7f0b027a);
+                String s4 = mEntry;
+                lifeTextShare((new StringBuilder()).append(s).append(s1).append(s2).append(s3).append(s4).toString());
+            }
+        }
+        	
+        	else {
         if(!isClickable())
         {
             Toast.makeText(this, 0x7f0b0278, 0).show();
@@ -367,20 +300,7 @@ _L1:
             favouriteBtn.setClickable(false);
             mFavouriteHandler.sendMessage(mFavouriteHandler.obtainMessage(602));
         }
-_L4:
-        return;
-_L2:
-        if(view == shareBtn)
-        {
-            String s = (new StringBuilder()).append("#").append(mCategory).append("#").toString();
-            String s1 = getResources().getString(0x7f0b0279);
-            String s2 = mName;
-            String s3 = getResources().getString(0x7f0b027a);
-            String s4 = mEntry;
-            lifeTextShare((new StringBuilder()).append(s).append(s1).append(s2).append(s3).append(s4).toString());
-        }
-        if(true) goto _L4; else goto _L3
-_L3:
+        	}
     }
 
     public void onCreate(Bundle bundle)
@@ -404,12 +324,7 @@ _L3:
             mFavouriteThread.setCancel();
             mFavouriteThread.interrupt();
         }
-_L1:
-        return;
-        Exception exception;
-        exception;
-        exception.printStackTrace();
-          goto _L1
+ 
     }
 
     public boolean onKeyDown(int i, KeyEvent keyevent)

@@ -27,143 +27,22 @@ public final class AdUtil
 
     public static void uploadPVUVStats(final int cityId)
     {
-        es.submit(new Runnable() {
-
-            public void run()
-            {
-                Response response;
-                String s = UrlUtil.getUploadUVPVPrefix();
-                String s1 = (new StringBuilder()).append(s).append("&CityID=").append(cityId).toString();
-                MojiLog.d("AdUtil", s1);
-                Request request = new Request(s1);
-                response = (new RHttpUtil(Gl.Ct())).doRequest(request);
-                if(response.getRespCode() != 200)
-                    break MISSING_BLOCK_LABEL_154;
-                MojiLog.d("AdUtil", (new StringBuilder()).append("pvuvResponseCode:").append(response.getRespCode()).toString());
-                MojiLog.d("AdUtil", (new StringBuilder()).append("pvuvResponseBody:").append(new String(response.getRespData(), "utf-8")).toString());
-_L1:
-                return;
-                UnsupportedEncodingException unsupportedencodingexception1;
-                unsupportedencodingexception1;
-                unsupportedencodingexception1.printStackTrace();
-                  goto _L1
-                MojiLog.d("AdUtil", (new StringBuilder()).append("pvuvResponseCode:").append(response.getRespCode()).toString());
-                try
-                {
-                    MojiLog.d("AdUtil", (new StringBuilder()).append("pvuvResponseBody:").append(new String(response.getRespData(), "utf-8")).toString());
-                }
-                catch(UnsupportedEncodingException unsupportedencodingexception)
-                {
-                    unsupportedencodingexception.printStackTrace();
-                }
-                  goto _L1
-            }
-
-            final int val$cityId;
-
-            
-            {
-                cityId = i;
-                super();
-            }
-        }
-);
+        
     }
 
-    private static void uploadStats(final String action, final int place, final int item, final String appId)
-    {
-        es.submit(new Runnable() {
-
-            public void run()
-            {
-                String s;
-                String s1;
-                s = UrlUtil.getUploadADUrlPrefix();
-                s1 = "";
-                place;
-                JVM INSTR tableswitch 1 4: default 40
-            //                           1 136
-            //                           2 136
-            //                           3 142
-            //                           4 142;
-                   goto _L1 _L2 _L2 _L3 _L3
-_L3:
-                break MISSING_BLOCK_LABEL_142;
-_L1:
-                break; /* Loop/switch isn't completed */
-_L2:
-                s1 = "Recommend";
-                  goto _L4
-                s1 = "Banner";
-_L4:
-                Response response;
-                String s2;
-                String s3;
-                Request request;
-                if(action.equals("show"))
-                {
-                    ArrayList arraylist = (ArrayList)RC.categorysMap.get(Integer.valueOf(place));
-                    String s4 = "";
-                    if(arraylist != null)
-                    {
-                        for(int i = 0; i < arraylist.size(); i++)
-                            s4 = (new StringBuilder()).append(s4).append(((SoftWare)arraylist.get(i)).getAppid()).append(",").toString();
-
-                    }
-                    s2 = s4.substring(0, -2 + s4.length());
-                } else
-                {
-                    s2 = appId;
-                }
-                s3 = (new StringBuilder()).append(s).append("&ADID=").append(s2).append("&Position=").append(place).append("&Category=").append(s1).append("&Order=").append(item).append("&Action=").append(action).toString();
-                MojiLog.d("AdUtil", s3);
-                request = new Request(s3);
-                response = (new RHttpUtil(Gl.Ct())).doRequest(request);
-                if(response.getRespCode() != 200)
-                    break MISSING_BLOCK_LABEL_366;
-                MojiLog.d("AdUtil", (new StringBuilder()).append("ResponseCode:").append(response.getRespCode()).toString());
-                MojiLog.d("AdUtil", (new StringBuilder()).append("ResponseBody:").append(new String(response.getRespData(), "utf-8")).toString());
-_L5:
-                return;
-                UnsupportedEncodingException unsupportedencodingexception1;
-                unsupportedencodingexception1;
-                unsupportedencodingexception1.printStackTrace();
-                  goto _L5
-                MojiLog.d("AdUtil", (new StringBuilder()).append("ResponseCode:").append(response.getRespCode()).toString());
-                try
-                {
-                    MojiLog.d("AdUtil", (new StringBuilder()).append("ResponseBody:").append(new String(response.getRespData(), "utf-8")).toString());
-                }
-                catch(UnsupportedEncodingException unsupportedencodingexception)
-                {
-                    unsupportedencodingexception.printStackTrace();
-                }
-                  goto _L5
-            }
-
-            final String val$action;
-            final String val$appId;
-            final int val$item;
-            final int val$place;
-
-            
-            {
-                place = i;
-                action = s;
-                appId = s1;
-                item = j;
-                super();
-            }
-        }
-);
-    }
+    
 
     public static void uploadStatsClick(int i, int j, String s)
     {
         uploadStats("click", i, j, s);
     }
 
-    public static void uploadStatsDDL(int i, int j, String s)
+    private static void uploadStats(String string, int i, int j, String s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void uploadStatsDDL(int i, int j, String s)
     {
         uploadStats("ddl", i, j, s);
     }
