@@ -17,7 +17,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.*;
 import com.moji.mjweather.Gl;
 import com.moji.mjweather.common.MojiLog;
-import com.moji.mjweather.daysmatter.DaysMatterActivity;
 import com.moji.mjweather.recommend.*;
 import com.moji.mjweather.util.FileUtil;
 import com.moji.mjweather.util.UiUtil;
@@ -59,9 +58,7 @@ public class WeatherToolsActivity extends Activity
 
     private void getExsitData()
     {
-        if(ProtocalProxy.getExistData(3))
-            updateADSuccessDeal();
-        else
+      
             Gl.resetADUpdateTime(3);
     }
 
@@ -80,13 +77,7 @@ public class WeatherToolsActivity extends Activity
                     updateADFailureDeal();
             }
 
-            final WeatherToolsActivity this$0;
-
-            
-            {
-                this$0 = WeatherToolsActivity.this;
-                super();
-            }
+             
         }
 ;
         applistasynctask.execute(alistcallback);
@@ -124,12 +115,7 @@ public class WeatherToolsActivity extends Activity
 
     private void updateADSuccessDeal()
     {
-        softs = (ArrayList)RC.categorysMap.get(Integer.valueOf(3));
-        if(softs != null && softs.size() > 0)
-        {
-            soft = (SoftWare)softs.get((int)(Math.random() * (double)softs.size()));
-            RecommendDetailActivity.setBannerImage(this, soft, rc, rCancel, banner);
-        }
+         
     }
 
     protected void onCreate(Bundle bundle)
@@ -159,22 +145,10 @@ public class WeatherToolsActivity extends Activity
 
             public void onClick(View view)
             {
-                if(soft != null)
-                {
-                    Intent intent = new Intent(WeatherToolsActivity.this, com/moji/mjweather/recommend/RecommendDetailActivity);
-                    intent.putExtra("appid", soft.getAppid());
-                    intent.putExtra("place", 3);
-                    startActivity(intent);
-                }
+                 
             }
-
-            final WeatherToolsActivity this$0;
 
             
-            {
-                this$0 = WeatherToolsActivity.this;
-                super();
-            }
         }
 );
         rCancel.setOnClickListener(new android.view.View.OnClickListener() {
@@ -184,13 +158,7 @@ public class WeatherToolsActivity extends Activity
                 banner.removeAllViews();
             }
 
-            final WeatherToolsActivity this$0;
-
             
-            {
-                this$0 = WeatherToolsActivity.this;
-                super();
-            }
         }
 );
         fade = AnimationUtils.loadAnimation(this, 0x7f040009);
@@ -199,30 +167,17 @@ public class WeatherToolsActivity extends Activity
 
     public void onItemClick(AdapterView adapterview, View view, int i, long l)
     {
-        i;
-        JVM INSTR tableswitch 0 3: default 32
-    //                   0 33
-    //                   1 51
-    //                   2 69
-    //                   3 87;
-           goto _L1 _L2 _L3 _L4 _L5
-_L1:
-        return;
-_L2:
-        startActivity(new Intent(this, com/moji/mjweather/widgetskin/SkinSelector));
-        continue; /* Loop/switch isn't completed */
-_L3:
-        startActivity(new Intent(this, com/moji/mjweather/activity/HuangLiActivity));
-        continue; /* Loop/switch isn't completed */
-_L4:
-        startActivity(new Intent(this, com/moji/mjweather/daysmatter/DaysMatterActivity));
-        continue; /* Loop/switch isn't completed */
-_L5:
-        Intent intent = new Intent(this, com/moji/mjweather/recommend/RecommendListActivity);
-        intent.putExtra("place", 1);
-        startActivity(intent);
-        if(true) goto _L1; else goto _L6
-_L6:
+       switch(i)
+       {
+       case 0:startActivity(new Intent(this,  SkinSelector.class));break;
+       case 1:startActivity(new Intent(this,  HuangLiActivity.class));break;
+       case 2: break;
+       case 3:Intent intent = new Intent(this,  RecommendListActivity.class);
+       intent.putExtra("place", 1);
+       startActivity(intent);break;
+       default: return;
+       }
+       
     }
 
     protected void onResume()
@@ -231,11 +186,7 @@ _L6:
         MojiLog.v("WeatherToolsActivity", "onResume");
         mGridView.startAnimation(fade);
         softs = (ArrayList)RC.categorysMap.get(Integer.valueOf(3));
-        if(softs != null && softs.size() > 0)
-        {
-            soft = (SoftWare)softs.get((int)(Math.random() * (double)softs.size()));
-            RecommendDetailActivity.setBannerImage(this, soft, rc, rCancel, banner);
-        }
+        
     }
 
     private static final String MAP_KEY_IMAGE = "ItemImage";
@@ -244,7 +195,7 @@ _L6:
     private static final int TOOLS_AD = 3;
     private static final int TOOLS_DAYSMATTER = 2;
     private static final int TOOLS_HUANGLI = 1;
-    private static final int TOOLS_SKIN;
+    private static final int TOOLS_SKIN=0;
     private AppListAsyncTask appListAsyncTask;
     private FrameLayout banner;
     private Animation fade;
@@ -253,7 +204,7 @@ _L6:
     private LinearLayout mLayout;
     private ImageView rCancel;
     private ImageView rc;
-    private SoftWare soft;
+ 
     private ArrayList softs;
 
 

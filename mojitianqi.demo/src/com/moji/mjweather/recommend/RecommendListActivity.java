@@ -30,33 +30,19 @@ public class RecommendListActivity extends Activity
 
             public void handleMessage(Message message)
             {
-                message.what;
-                JVM INSTR tableswitch 1 2: default 28
-            //                           1 34
-            //                           2 111;
-                   goto _L1 _L2 _L3
-_L1:
-                super.handleMessage(message);
-                return;
-_L2:
-                loading.setVisibility(8);
-                softadapter = new SoftWareListAdapter(RecommendListActivity.this, (List)RC.categorysMap.get(Integer.valueOf(place)), place);
-                softlist.setAdapter(softadapter);
-                continue; /* Loop/switch isn't completed */
-_L3:
-                tv.setText(getString(0x7f0b0263));
-                pb.setVisibility(8);
-                if(true) goto _L1; else goto _L4
-_L4:
+               switch( message.what){
+               case 1:loading.setVisibility(8);
+               /*softadapter = new SoftWareListAdapter(RecommendListActivity.this, (List)RC.categorysMap.get(Integer.valueOf(place)), place);
+               softlist.setAdapter(softadapter);*/break;
+               case 2: tv.setText(getString(0x7f0b0263));
+               pb.setVisibility(8);break;
+               default: super.handleMessage(message);
+               return;
+               }
+              
             }
 
-            final RecommendListActivity this$0;
-
-            
-            {
-                this$0 = RecommendListActivity.this;
-                super();
-            }
+          
         }
 ;
     }
@@ -67,7 +53,7 @@ _L4:
         instance = this;
         requestWindowFeature(1);
         setContentView(0x7f03005b);
-        PackageInfoReceiver.registerReceiver(this, null);
+        //PackageInfoReceiver.registerReceiver(this, null);
         place = getIntent().getIntExtra("place", 0);
         loading = (LinearLayout)findViewById(0x7f0d020b);
         pb = (ProgressBar)findViewById(0x7f0d0209);
@@ -80,43 +66,22 @@ _L4:
             public void onItemClick(AdapterView adapterview, View view, int i, long l)
             {
                 Object obj = adapterview.getAdapter().getItem(i);
-                if(obj instanceof SoftWare)
+                /*if(obj instanceof SoftWare)
                 {
                     SoftWare software = (SoftWare)obj;
-                    Intent intent = new Intent(RecommendListActivity.this, com/moji/mjweather/recommend/RecommendDetailActivity);
+                    Intent intent = new Intent(RecommendListActivity.this,  RecommendDetailActivity.class);
                     intent.putExtra("appid", software.getAppid());
                     intent.putExtra("place", place);
                     intent.putExtra("position", i + 1);
                     startActivity(intent);
-                }
+                }*/
             }
-
-            final RecommendListActivity this$0;
-
-            
-            {
-                this$0 = RecommendListActivity.this;
-                super();
-            }
+ 
         }
 );
         if(arraylist == null)
         {
-            if(Gl.getADUpdateSuccessTime(place).equals((new SimpleDateFormat("yyyy/MM/dd")).format(new Date())))
-            {
-                isSuccess = ProtocalProxy.getExistData(place);
-                Message message1 = new Message();
-                if(isSuccess)
-                {
-                    message1.what = 1;
-                } else
-                {
-                    Gl.resetADUpdateTime(place);
-                    message1.what = 2;
-                }
-                handler.sendMessage(message1);
-            } else
-            {
+  
                 appListAsyncTask = new AppListAsyncTask(this, place);
                 AppListAsyncTask applistasynctask = appListAsyncTask;
                 AppListAsyncTask.ListCallBack alistcallback[] = new AppListAsyncTask.ListCallBack[1];
@@ -127,17 +92,11 @@ _L4:
                         handler.sendMessage(message2);
                     }
 
-                    final RecommendListActivity this$0;
-
-            
-            {
-                this$0 = RecommendListActivity.this;
-                super();
-            }
+                  
                 }
 ;
                 applistasynctask.execute(alistcallback);
-            }
+           
         } else
         {
             Message message = new Message();
@@ -152,52 +111,45 @@ _L4:
         super.onDestroy();
         if(instance == this)
             instance = null;
-        PackageInfoReceiver.unregisterReceiver(this, null);
+      //  PackageInfoReceiver.unregisterReceiver(this, null);
         if(appListAsyncTask != null && !appListAsyncTask.isCancelled())
             appListAsyncTask.cancel(true);
     }
 
     public void onDownloadFinish()
     {
-        if(softadapter != null)
-            softadapter.refresh();
+        
     }
 
     public void onDownloading()
     {
-        if(softadapter != null)
-            softadapter.refresh();
+         
     }
 
     public void onInstalled()
     {
-        if(softadapter != null)
-            softadapter.refresh();
+         
     }
 
     public void onReplaced()
     {
-        if(softadapter != null)
-            softadapter.refresh();
+        
     }
 
     protected void onResume()
     {
-        if(softadapter != null)
-            softadapter.refresh();
+        
         super.onResume();
     }
 
     public void onUninstalled()
     {
-        if(softadapter != null)
-            softadapter.refresh();
+        
     }
 
     public void refreshListData(List list)
     {
-        if(softadapter != null)
-            softadapter.setData(list);
+         
     }
 
     private static final int FAILURE = 2;
@@ -210,7 +162,7 @@ _L4:
     private LinearLayout loading;
     private ProgressBar pb;
     private int place;
-    private SoftWareListAdapter softadapter;
+ 
     private ListView softlist;
     private TextView tv;
 

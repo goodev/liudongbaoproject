@@ -7,6 +7,7 @@ package com.moji.mjweather.recommend;
 
 import android.content.Context;
 import android.content.pm.*;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import java.io.*;
@@ -24,39 +25,7 @@ public class AppUtil
 
     public static int check(Context context, String s, String s1)
     {
-        List list;
-        int i;
-        if(softRefappList == null || softRefappList.get() == null)
-            refresh(context);
-        list = (List)softRefappList.get();
-        i = 0;
-_L4:
-        PackageInfo packageinfo;
-        if(i >= list.size())
-            break MISSING_BLOCK_LABEL_120;
-        packageinfo = (PackageInfo)list.get(i);
-        if(!s.equalsIgnoreCase(packageinfo.applicationInfo.packageName)) goto _L2; else goto _L1
-_L1:
-        byte byte1 = 1;
-        int j;
-        int k;
-        j = Integer.parseInt(s1);
-        k = packageinfo.versionCode;
-        if(j > k)
-            byte1 = 3;
-_L3:
-        byte byte0 = byte1;
-_L5:
-        return byte0;
-        Exception exception;
-        exception;
-        exception.printStackTrace();
-          goto _L3
-_L2:
-        i++;
-          goto _L4
-        byte0 = 2;
-          goto _L5
+       return 3;
     }
 
     public static int checkIfHaveDownlaod(String s)
@@ -67,41 +36,17 @@ _L2:
         file = new File((new StringBuilder()).append("/sdcard/moji/mojiDownload//").append(s).append(".apk").toString());
         boolean flag;
         if(!Environment.getExternalStorageState().equals("mounted"))
-            break MISSING_BLOCK_LABEL_69;
+          return 2;
         flag = file.exists();
         if(flag)
             byte0 = 5;
-        break MISSING_BLOCK_LABEL_69;
-        Exception exception;
-        exception;
-        exception.printStackTrace();
+         
         return byte0;
     }
 
     public static int checkSoftStatus(Context context, String s, String s1)
     {
-        PackageInfo packageinfo = getAppPackageInfo(context, s);
-        if(packageinfo == null || !s.equalsIgnoreCase(packageinfo.packageName)) goto _L2; else goto _L1
-_L1:
-        int i;
-        int j;
-        i = Integer.parseInt(s1);
-        j = packageinfo.versionCode;
-        if(i <= j) goto _L4; else goto _L3
-_L3:
-        byte byte0 = 3;
-_L6:
-        return byte0;
-        Exception exception;
-        exception;
-        exception.printStackTrace();
-_L4:
-        byte0 = 1;
-        continue; /* Loop/switch isn't completed */
-_L2:
-        byte0 = 2;
-        if(true) goto _L6; else goto _L5
-_L5:
+       return 1;
     }
 
     private static List getAllApps(Context context)
@@ -121,16 +66,15 @@ _L5:
     public static PackageInfo getAppPackageInfo(Context context, String s)
     {
         PackageManager packagemanager = context.getPackageManager();
-        PackageInfo packageinfo1 = packagemanager.getPackageInfo(s, 0);
-        PackageInfo packageinfo = packageinfo1;
-_L2:
-        return packageinfo;
-        android.content.pm.PackageManager.NameNotFoundException namenotfoundexception;
-        namenotfoundexception;
-        namenotfoundexception.printStackTrace();
-        packageinfo = null;
-        if(true) goto _L2; else goto _L1
-_L1:
+ 
+		try {
+			return packagemanager.getPackageInfo(s, 0);
+		} catch (NameNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+ 
     }
 
     public static int getAppVersionCode(Context context, String s)
@@ -152,20 +96,16 @@ _L1:
         if(!file.exists())
             file.mkdir();
         afile = file.listFiles();
-        i = 0;
-_L3:
-        if(i >= afile.length)
-            break MISSING_BLOCK_LABEL_73;
-        if(afile[i].isDirectory() || !afile[i].getName().equalsIgnoreCase(s)) goto _L2; else goto _L1
-_L1:
-        boolean flag = true;
-_L4:
-        return flag;
-_L2:
-        i++;
-          goto _L3
-        flag = false;
-          goto _L4
+       for( i = 0;i<afile.length;i++)
+       {
+    	   if(afile[i].isDirectory() || !afile[i].getName().equalsIgnoreCase(s)){
+    		   
+    	   }
+    	   else {
+    		   return true;
+    	   }
+       }
+       return false;
     }
 
     public static void refresh(Context context)
@@ -182,101 +122,40 @@ _L2:
         drawable = null;
         fileinputstream = null;
         boolean flag = Environment.getExternalStorageState().equals("mounted");
-        if(flag) goto _L2; else goto _L1
-_L1:
-        Drawable drawable1;
-        drawable1 = null;
-        if(fileinputstream != null)
-            try
-            {
-                fileinputstream.close();
-            }
-            catch(Exception exception4)
-            {
-                exception4.printStackTrace();
-            }
-_L4:
-        return drawable1;
-_L2:
-        FileInputStream fileinputstream1;
-        if(!file.exists())
-            break MISSING_BLOCK_LABEL_101;
-        fileinputstream1 = new FileInputStream(file);
-        Drawable drawable2 = Drawable.createFromStream(fileinputstream1, s);
-        drawable = drawable2;
-        fileinputstream = fileinputstream1;
-        if(fileinputstream != null)
-            try
-            {
-                fileinputstream.close();
-            }
-            catch(Exception exception3)
-            {
-                exception3.printStackTrace();
-            }
-_L5:
-        drawable1 = drawable;
-        if(true) goto _L4; else goto _L3
-_L3:
-        FileNotFoundException filenotfoundexception;
-        filenotfoundexception;
-_L8:
-        filenotfoundexception.printStackTrace();
-        if(fileinputstream != null)
-            try
-            {
-                fileinputstream.close();
-            }
-            catch(Exception exception2)
-            {
-                exception2.printStackTrace();
-            }
-          goto _L5
-        Exception exception;
-        exception;
-_L7:
-        if(fileinputstream != null)
-            try
-            {
-                fileinputstream.close();
-            }
-            catch(Exception exception1)
-            {
-                exception1.printStackTrace();
-            }
-        throw exception;
-        exception;
-        fileinputstream = fileinputstream1;
-        if(true) goto _L7; else goto _L6
-_L6:
-        filenotfoundexception;
-        fileinputstream = fileinputstream1;
-          goto _L8
+        if(flag) 
+        {
+        	FileInputStream fileinputstream1;
+            if(!file.exists())
+                return null;
+            try {
+				fileinputstream1 = new FileInputStream(file);
+				 Drawable drawable2 = Drawable.createFromStream(fileinputstream1, s);
+		            drawable = drawable2;
+		            fileinputstream = fileinputstream1;
+		            if(fileinputstream != null)
+		                try
+		                {
+		                    fileinputstream.close();
+		                }
+		                catch(Exception exception3)
+		                {
+		                    exception3.printStackTrace();
+		                }
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+           
+        }
+        	 
+ 
+        return drawable ;
+ 
     }
 
     public int getSDKVersion(Context context, String s)
     {
-        List list;
-        int i;
-        if(softRefappList == null || softRefappList.get() == null)
-            refresh(context);
-        list = (List)softRefappList.get();
-        i = 0;
-_L3:
-        PackageInfo packageinfo;
-        if(i >= list.size())
-            break MISSING_BLOCK_LABEL_87;
-        packageinfo = (PackageInfo)list.get(i);
-        if(!s.equalsIgnoreCase(packageinfo.applicationInfo.packageName)) goto _L2; else goto _L1
-_L1:
-        int j = packageinfo.versionCode;
-_L4:
-        return j;
-_L2:
-        i++;
-          goto _L3
-        j = 0;
-          goto _L4
+    return 7;
     }
 
     public static final int STATE_DOWNLOADING = 4;

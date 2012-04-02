@@ -5,21 +5,25 @@
 
 package com.moji.mjweather;
 
+import java.util.Map;
+
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.*;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
-import android.os.*;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.moji.mjweather.activity.AddCityActivity;
-import com.moji.mjweather.common.MojiLog;
 import com.moji.mjweather.util.DownloadManager;
 import com.moji.mjweather.util.Util;
-import com.moji.mjweather.widget.WidgetManager;
-import java.util.Map;
 
 // Referenced classes of package com.moji.mjweather:
 //            Gl
@@ -78,11 +82,7 @@ public class CDialogManager {
 	}
 
 	private void updateImmediatelyService() {
-		WidgetManager
-				.startWidgetService(
-						m_context,
-						null,
-						com.moji.mjweather.widget.WidgetManager.WidgetServiceType.UPDATE_NOW);
+	 
 	}
 
 	public void CancelCurrentDialog() {

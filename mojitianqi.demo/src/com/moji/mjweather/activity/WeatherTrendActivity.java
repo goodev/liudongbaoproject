@@ -43,13 +43,7 @@ public class WeatherTrendActivity extends Activity
             updateHandler.sendMessage(message);
         }
 
-        final WeatherTrendActivity this$0;
-
-        private UpdateCallbackImpl()
-        {
-            this$0 = WeatherTrendActivity.this;
-            super();
-        }
+        
 
     }
 
@@ -76,24 +70,23 @@ public class WeatherTrendActivity extends Activity
             float f;
             mTextPaint = new Paint();
             f = (UiUtil.getScreenWidth() * TEXT_SIZE) / 540;
-            if(Gl.getScreenTypeIntValue() != 0) goto _L2; else goto _L1
-_L1:
+            if(Gl.getScreenTypeIntValue() != 0) 
+
+            {
+            	if(12F > f)
+                    f = 12F;
+                else
+                if(25F < f)
+                    f = 25F;
+            }
+            	else  
             f = 10F;
-_L4:
-            mTextPaint.setTextSize(f);
+    mTextPaint.setTextSize(f);
             mTextPaint.setColor(-1);
             mBtnWidth = (int)(2.5F * (f * (float)getResources().getString(0x7f0b014a).length()));
             mTabLeftHighlight = ProcessBmp(BitmapFactory.decodeResource(getResources(), 0x7f020165), 2 * mBtnWidth, BACK_HEIGHT, 0);
             mTabRightHighlight = ProcessBmp(BitmapFactory.decodeResource(getResources(), 0x7f020166), 2 * mBtnWidth, BACK_HEIGHT, 0);
-            return;
-_L2:
-            if(12F > f)
-                f = 12F;
-            else
-            if(25F < f)
-                f = 25F;
-            if(true) goto _L4; else goto _L3
-_L3:
+      
         }
 
         public Bitmap ProcessBmp(Bitmap bitmap, float f, float f1, int i)
@@ -159,31 +152,29 @@ _L3:
 
         public boolean onTouchEvent(MotionEvent motionevent)
         {
-            if(!mIsUpdating && !mIsDoingFadeAnimation && WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType != com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NEED_BE_UPDATE && mCityInfo.mShowType != com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NOSET) goto _L2; else goto _L1
-_L1:
-            return true;
-_L2:
-            int i = motionevent.getAction();
-            float f = motionevent.getX();
-            float f1 = motionevent.getY();
-            switch(i)
+            if(!mIsUpdating && !mIsDoingFadeAnimation && WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType != com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NEED_BE_UPDATE && mCityInfo.mShowType != com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NOSET)
             {
-            case 0: // '\0'
-                if(mTabRect.contains(f, f1))
-                    mAllowSwitch = true;
-                break;
-
-            case 1: // '\001'
-                if(mAllowSwitch)
+            	int i = motionevent.getAction();
+                float f = motionevent.getX();
+                float f1 = motionevent.getY();
+                switch(i)
                 {
-                    mAllowSwitch = false;
+                case 0: // '\0'
                     if(mTabRect.contains(f, f1))
-                        changeTrendType();
+                        mAllowSwitch = true;
+                    break;
+
+                case 1: // '\001'
+                    if(mAllowSwitch)
+                    {
+                        mAllowSwitch = false;
+                        if(mTabRect.contains(f, f1))
+                            changeTrendType();
+                    }
+                    break;
                 }
-                break;
             }
-            if(true) goto _L1; else goto _L3
-_L3:
+            return false;
         }
 
         private final int BACK_HEIGHT;
@@ -203,7 +194,7 @@ _L3:
         private Bitmap mTabRightHighlight;
         private Paint mTextPaint;
         private int mTextSplitLineX;
-        final WeatherTrendActivity this$0;
+  
 
 
         public SwitcherView(Context context)
@@ -218,7 +209,7 @@ _L3:
 
         public SwitcherView(Context context, AttributeSet attributeset, int i)
         {
-            this$0 = WeatherTrendActivity.this;
+             
             super(context, attributeset, i);
             SCALE = getResources().getDisplayMetrics().density;
             TEXT_SIZE = (int)(0.5F + 13F * SCALE);
@@ -246,11 +237,7 @@ _L3:
 
         private void calculateCityCount()
         {
-            mCityCount = 0;
-            for(int i = 0; i < 9; i++)
-                if(WeatherData.getCityInfo(i).mShowType != com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NOSET)
-                    int i = 
-// JavaClassFileOutputException: get_constant: invalid tag
+        }
 
         private void prepareDrawBuffer()
         {
@@ -259,12 +246,9 @@ _L3:
                 mTrendDrawBuffer = getNewBuffer();
                 if(mIsTempType)
                 {
-                    DrawTrendTempView.onDraw(WeatherTrendActivity.this, mContent.getWidth(), mContent.getHeight(), mTrendDrawBuffer, mCanvas, mCityInfo);
-                } else
+                 } else
                 {
-                    DrawTrendWindView.init(mCityInfo, WeatherTrendActivity.this);
-                    DrawTrendWindView.onDraw(WeatherTrendActivity.this, mContent.getWidth(), mContent.getHeight(), mTrendDrawBuffer, mCanvas, mCityInfo);
-                }
+                 }
             }
         }
 
@@ -291,38 +275,12 @@ _L3:
 
         public boolean onTouchEvent(MotionEvent motionevent)
         {
-            if(!mIsUpdating) goto _L2; else goto _L1
-_L1:
-            makeToast(ToastType.TOAST_UPDATING);
-_L10:
-            return true;
-_L2:
-            if(mIsDoingFadeAnimation) goto _L4; else goto _L3
-_L3:
-            motionevent.getAction();
-            JVM INSTR tableswitch 0 1: default 60
-        //                       0 63
-        //                       1 74;
-               goto _L5 _L6 _L7
-_L5:
-            break; /* Loop/switch isn't completed */
-_L6:
-            moveX = motionevent.getX();
-            break; /* Loop/switch isn't completed */
-_L7:
-            boolean flag;
-            if(Math.abs(moveX - motionevent.getX()) <= 50F)
-                break; /* Loop/switch isn't completed */
-            calculateCityCount();
-            flag = false;
-            if(moveX >= motionevent.getX()) goto _L9; else goto _L8
-_L8:
-            int i = 
-// JavaClassFileOutputException: get_constant: invalid tag
+        	return super.onTouchEvent(motionevent);
+        }
 
         private static final int LINE_DISTANCE = 25;
         float moveX;
-        final WeatherTrendActivity this$0;
+ 
 
         public TrendView(Context context)
         {
@@ -336,49 +294,21 @@ _L8:
 
         public TrendView(Context context, AttributeSet attributeset, int i)
         {
-            this$0 = WeatherTrendActivity.this;
+ 
             super(context, attributeset, i);
             moveX = 0F;
         }
     }
 
-    static final class ToastType extends Enum
+    static   enum ToastType  
     {
 
-        public static ToastType valueOf(String s)
-        {
-            return (ToastType)Enum.valueOf(com/moji/mjweather/activity/WeatherTrendActivity$ToastType, s);
-        }
-
-        public static ToastType[] values()
-        {
-            return (ToastType[])$VALUES.clone();
-        }
-
-        private static final ToastType $VALUES[];
-        public static final ToastType TOAST_CANCEL_UPDATE;
-        public static final ToastType TOAST_FIRST_CITY;
-        public static final ToastType TOAST_LAST_CITY;
-        public static final ToastType TOAST_UPDATING;
-
-        static 
-        {
-            TOAST_UPDATING = new ToastType("TOAST_UPDATING", 0);
-            TOAST_FIRST_CITY = new ToastType("TOAST_FIRST_CITY", 1);
-            TOAST_LAST_CITY = new ToastType("TOAST_LAST_CITY", 2);
-            TOAST_CANCEL_UPDATE = new ToastType("TOAST_CANCEL_UPDATE", 3);
-            ToastType atoasttype[] = new ToastType[4];
-            atoasttype[0] = TOAST_UPDATING;
-            atoasttype[1] = TOAST_FIRST_CITY;
-            atoasttype[2] = TOAST_LAST_CITY;
-            atoasttype[3] = TOAST_CANCEL_UPDATE;
-            $VALUES = atoasttype;
-        }
-
-        private ToastType(String s, int i)
-        {
-            super(s, i);
-        }
+        
+            TOAST_UPDATING ,
+            TOAST_FIRST_CITY ,
+            TOAST_LAST_CITY ,
+            TOAST_CANCEL_UPDATE ;
+             
     }
 
 
@@ -426,40 +356,31 @@ _L8:
                     mIsBacklayoutChanged = false;
                     adjustBacklayout();
                 }
-                message.what;
-                JVM INSTR tableswitch 0 0: default 64
-            //                           0 72;
-                   goto _L1 _L2
-_L1:
-                changeUpdateBtnState();
+               if( message.what==0){
+            	   com.moji.mjweather.common.WeatherUpdater.Result result = (com.moji.mjweather.common.WeatherUpdater.Result)message.obj;
+                   if(AbstractWeatherUpdater.isSucceed(result))
+                   {
+                       Gl.Ct().deleteFile((new StringBuilder()).append(mCityInfo.m_cityID).append(".txt").toString());
+                       mCityInfo.mShowType = com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_OK;
+                       changeBg(mCityInfo);
+                       createTrendView();
+                       startFadeAnimation();
+                   } else
+                   {
+                       mCDialogManager.CancelCurrentDialog();
+                       mCDialogManager.ShowMsgOKDialogFromString((String)result.errMsg);
+                       if(mWeatherUpdater != null)
+                           mWeatherUpdater.cancel();
+                   }
+               }
+               else
+               { changeUpdateBtnState();
                 return;
-_L2:
-                com.moji.mjweather.common.WeatherUpdater.Result result = (com.moji.mjweather.common.WeatherUpdater.Result)message.obj;
-                if(AbstractWeatherUpdater.isSucceed(result))
-                {
-                    Gl.Ct().deleteFile((new StringBuilder()).append(mCityInfo.m_cityID).append(".txt").toString());
-                    mCityInfo.mShowType = com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_OK;
-                    changeBg(mCityInfo);
-                    createTrendView();
-                    startFadeAnimation();
-                } else
-                {
-                    mCDialogManager.CancelCurrentDialog();
-                    mCDialogManager.ShowMsgOKDialogFromString((String)result.errMsg);
-                    if(mWeatherUpdater != null)
-                        mWeatherUpdater.cancel();
-                }
-                if(true) goto _L1; else goto _L3
-_L3:
-            }
-
-            final WeatherTrendActivity this$0;
+               }
+                
+       }
 
             
-            {
-                this$0 = WeatherTrendActivity.this;
-                super();
-            }
         }
 ;
     }
@@ -636,7 +557,7 @@ _L3:
         CityWeatherInfo cityweatherinfo;
         cityweatherinfo = WeatherData.getCityInfo(mCurrentCityIndex);
         mCityName.setText((new StringBuilder()).append(cityweatherinfo.mCityName).append(getString(0x7f0b004b)).toString());
-        break MISSING_BLOCK_LABEL_42;
+         
         if(cityweatherinfo.mShowType != com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NOSET && cityweatherinfo.mShowType != com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NEED_BE_UPDATE && cityweatherinfo.mWeatherTrendInfoList.size() != 0)
         {
             int i = 0;
@@ -662,7 +583,7 @@ _L3:
         CityWeatherInfo cityweatherinfo;
         cityweatherinfo = WeatherData.getCityInfo(mCurrentCityIndex);
         mCityName.setText((new StringBuilder()).append(cityweatherinfo.mCityName).append(getString(0x7f0b004c)).toString());
-        break MISSING_BLOCK_LABEL_42;
+ 
         if(cityweatherinfo.mShowType != com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NOSET && cityweatherinfo.mShowType != com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NEED_BE_UPDATE && cityweatherinfo.mWeatherTrendInfoList.size() != 0)
         {
             int i = 0;
@@ -744,21 +665,19 @@ _L3:
     protected void onActivityResult(int i, int j, Intent intent)
     {
         super.onActivityResult(i, j, intent);
-        if(!Gl.needNotifyTrendCityChanged()) goto _L2; else goto _L1
-_L1:
+        if(!Gl.needNotifyTrendCityChanged()) 
+        {
+        	mIsFromCityView = true;
+            if(i == 100 && WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType == com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NEED_BE_UPDATE && updateWeather(Gl.getCurrentCityIndex()))
+            {
+                mIsBacklayoutChanged = true;
+                adjustBacklayout();
+            }
+        }
+        	else{
         Gl.setNeedNotifyTrendState(false);
         createTrendView();
-_L4:
-        return;
-_L2:
-        mIsFromCityView = true;
-        if(i == 100 && WeatherData.getCityInfo(Gl.getCurrentCityIndex()).mShowType == com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NEED_BE_UPDATE && updateWeather(Gl.getCurrentCityIndex()))
-        {
-            mIsBacklayoutChanged = true;
-            adjustBacklayout();
-        }
-        if(true) goto _L4; else goto _L3
-_L3:
+        	}
     }
 
     public void onAnimationEnd(Animation animation)
@@ -777,28 +696,26 @@ _L3:
 
     public void onClick(View view)
     {
-        if(view.getId() != 0x7f0d01b8) goto _L2; else goto _L1
-_L1:
-        startActivityForResult(new Intent(this, com/moji/mjweather/activity/CityManagerActivity), 100);
-_L4:
-        return;
-_L2:
-        if(view.getId() == 0x7f0d01b5)
-            startActivityForResult(new Intent(this, com/moji/mjweather/activity/CityManagerActivity), 100);
-        else
-        if(!mIsUpdating)
+        if(view.getId() != 0x7f0d01b8) 
         {
-            if(mCityInfo.mShowType != com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NOSET && updateWeather(Gl.getCurrentCityIndex()))
+        	if(view.getId() == 0x7f0d01b5)
+                startActivityForResult(new Intent(this,  CityManagerActivity.class), 100);
+            else
+            if(!mIsUpdating)
             {
-                mIsBacklayoutChanged = true;
-                adjustBacklayout();
+                if(mCityInfo.mShowType != com.moji.mjweather.data.CityWeatherInfo.ShowType.ST_NOSET && updateWeather(Gl.getCurrentCityIndex()))
+                {
+                    mIsBacklayoutChanged = true;
+                    adjustBacklayout();
+                }
+            } else
+            {
+                cancelUpdateWeather(true);
             }
-        } else
-        {
-            cancelUpdateWeather(true);
         }
-        if(true) goto _L4; else goto _L3
-_L3:
+        	else  
+        startActivityForResult(new Intent(this,  CityManagerActivity.class), 100);
+ 
     }
 
     protected void onCreate(Bundle bundle)
@@ -842,37 +759,28 @@ _L3:
     {
         super.onResume();
         MojiLog.v("WeatherTrendActivity", "onResume");
-        if(!Gl.needNotifyTrendCityChanged()) goto _L2; else goto _L1
-_L1:
+        if(!Gl.needNotifyTrendCityChanged()) {
+        	 boolean flag;
+             flag = false;
+             if(mCurrentCityIndex != Gl.getCurrentCityIndex())
+             {
+                 flag = true;
+                 createTrendView();
+             }
+             
+        }
+        	else  
+        	{
         Gl.setNeedNotifyTrendState(false);
         createTrendView();
         startFadeAnimation();
-_L4:
-        return;
-_L2:
-        boolean flag;
-        flag = false;
-        if(mCurrentCityIndex != Gl.getCurrentCityIndex())
-        {
-            flag = true;
-            createTrendView();
-        }
-        if(mIsFromCityView)
-            break; /* Loop/switch isn't completed */
-        startFadeAnimation();
-_L5:
+        	}
+ 
         StatsUtil.updateStatsPv(com.moji.mjweather.util.StatsUtil.StatsPv.PV_TC);
-        if(true) goto _L4; else goto _L3
-_L3:
-        mIsFromCityView = false;
-        if(flag)
-        {
-            changeBg(mCityInfo);
-            startFadeAnimation();
-        }
-          goto _L5
-        if(true) goto _L4; else goto _L6
-_L6:
+        
+ 
+        
+          
     }
 
     private static final int ALLOW_SLIDE_DISTANCE = 50;
