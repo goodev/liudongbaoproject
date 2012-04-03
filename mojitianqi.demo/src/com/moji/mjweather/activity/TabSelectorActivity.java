@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.moji.mjweather.CDialogManager;
 import com.moji.mjweather.Gl;
+import com.moji.mjweather.R;
 import com.moji.mjweather.common.MojiLog;
 import com.moji.mjweather.common.WeatherAlert;
 import com.moji.mjweather.common.WeatherData;
@@ -217,7 +218,7 @@ public class TabSelectorActivity extends TabActivity implements
 		requestWindowFeature(1);
 		getWindow().setFormat(-2);
 		getWindow().getDecorView().setBackgroundDrawable(null);
-		setContentView(0x7f03004c);
+		setContentView(R.layout.layout_tab_selector);
 		mTabHost = getTabHost();
 		mTabHost.addTab(mTabHost.newTabSpec("tab_weather")
 				.setIndicator("tab_weather")

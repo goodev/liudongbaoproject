@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
 import com.moji.mjweather.Gl;
+import com.moji.mjweather.R;
 
 public class TutorialActivity extends Activity
 {
@@ -109,7 +110,7 @@ public class TutorialActivity extends Activity
         super.onCreate(bundle);
         requestWindowFeature(1);
         getWindow().setFormat(-2);
-        setContentView(0x7f03006e);
+        setContentView(R.layout.tutorial);
         mGallery = (Gallery)findViewById(0x7f0d0240);
         mAdapter = new GalleryAdapter(this);
         mGallery.setAdapter(mAdapter);
