@@ -1,18 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.moji.mjweather.view.CityWeatherBgSwitcher android:id="@id/WeatherBackSwitcher" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
-    <TabHost android:id="@android:id/tabhost" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
-            <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
-            <TabWidget android:id="@android:id/tabs" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
-            <RadioGroup android:gravity="center_vertical" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/main_radio" android:background="@drawable/tabbar_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@id/radio_weather" android:tag="radio_weather" android:checked="true" android:text="@string/tab_item_weather" android:drawableTop="@drawable/tab_weather_selector" style="@style/main_tab_bottom" />
-                <RadioButton android:id="@id/radio_trend" android:tag="radio_trend" android:text="@string/tab_item_trend" android:drawableTop="@drawable/tab_trend_selector" style="@style/main_tab_bottom" />
-                <RadioButton android:id="@id/radio_index" android:tag="radio_index" android:text="@string/tab_item_index" android:drawableTop="@drawable/tab_index_selector" style="@style/main_tab_bottom" />
-                <RadioButton android:id="@id/radio_tools" android:tag="radio_tools" android:text="@string/tab_item_tools" android:drawableTop="@drawable/tab_tools_selector" style="@style/main_tab_bottom" />
-                <RadioButton android:id="@id/radio_setting" android:tag="radio_setting" android:text="@string/tab_item_setting" android:drawableTop="@drawable/tab_setting_selector" style="@style/main_tab_bottom" />
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.moji.mjweather.view.CityWeatherBgSwitcher
+        android:id="@id/WeatherBackSwitcher"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0" />
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:visibility="gone" />
+
+            <RadioGroup
+                android:id="@id/main_radio"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@drawable/tabbar_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@id/radio_weather"
+                    style="@style/main_tab_bottom"
+                    android:checked="true"
+                    android:drawableTop="@drawable/tab_weather_selector"
+                    android:tag="radio_weather"
+                    android:text="@string/tab_item_weather" />
+
+                <RadioButton
+                    android:id="@id/radio_trend"
+                    style="@style/main_tab_bottom"
+                    android:drawableTop="@drawable/tab_trend_selector"
+                    android:tag="radio_trend"
+                    android:text="@string/tab_item_trend" />
+
+                <RadioButton
+                    android:id="@id/radio_index"
+                    style="@style/main_tab_bottom"
+                    android:drawableTop="@drawable/tab_index_selector"
+                    android:tag="radio_index"
+                    android:text="@string/tab_item_index" />
+
+                <RadioButton
+                    android:id="@id/radio_tools"
+                    style="@style/main_tab_bottom"
+                    android:drawableTop="@drawable/tab_tools_selector"
+                    android:tag="radio_tools"
+                    android:text="@string/tab_item_tools" />
+
+                <RadioButton
+                    android:id="@id/radio_setting"
+                    style="@style/main_tab_bottom"
+                    android:drawableTop="@drawable/tab_setting_selector"
+                    android:tag="radio_setting"
+                    android:text="@string/tab_item_setting" />
             </RadioGroup>
         </LinearLayout>
     </TabHost>
+
 </FrameLayout>

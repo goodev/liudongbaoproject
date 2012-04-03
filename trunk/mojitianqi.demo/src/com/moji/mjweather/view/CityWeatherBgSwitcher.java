@@ -284,35 +284,6 @@ public class CityWeatherBgSwitcher extends ImageView
 
 
 
-/*
-    static int access$102(CityWeatherBgSwitcher cityweatherbgswitcher, int i)
-    {
-        cityweatherbgswitcher.mCurAlpha = i;
-        return i;
-    }
-
-*/
-
-
-/*
-    static int access$120(CityWeatherBgSwitcher cityweatherbgswitcher, int i)
-    {
-        int j = cityweatherbgswitcher.mCurAlpha - i;
-        cityweatherbgswitcher.mCurAlpha = j;
-        return j;
-    }
-
-*/
-
-
-/*
-    static Bitmap access$202(CityWeatherBgSwitcher cityweatherbgswitcher, Bitmap bitmap)
-    {
-        cityweatherbgswitcher.mCurBmp = bitmap;
-        return bitmap;
-    }
-
-*/
 
 
 }
